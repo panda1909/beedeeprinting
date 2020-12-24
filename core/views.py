@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 
 class Home(TemplateView):
     def get(self, request):
-        return render(request, 'core/contactus.html')
+        return render(request, 'core/all_products.html')
 
 
 class Aboutus(TemplateView):
