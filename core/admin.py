@@ -2,35 +2,11 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
+class OrdersAdmin(admin.ModelAdmin):
+    list_display = ['OrderId','Customer','Status','Quantity','Size','Price']
+    #list_editable = ['OrderId','Customer','Status','Quantity','Size','Price']
+class CustomerDataAdmin(admin.ModelAdmin):
+    list_display = ['Name','Email','Cell','Address']
 
-admin.site.register(business_cards_price)
-admin.site.register(edge_painted_business_cards_price)
-admin.site.register(foil_business_cards_price)
-admin.site.register(raised_ink_business_cards_price)
-admin.site.register(pantone_business_cards_price)
-admin.site.register(plastic_business_cards_price)
-admin.site.register(raised_spot_uv_business_cards_price)
-admin.site.register(PostCards)
-admin.site.register(QuotationPostCards)
-admin.site.register(BrochuresAndFlyers)
-admin.site.register(DirectMailPostCards)
-admin.site.register(QuotationDirectMailPostCards)
-admin.site.register(Calendars)
-admin.site.register(HangTags)
-admin.site.register(LabelsAndStickers)
-admin.site.register(NCRForms)
-admin.site.register(PresentationFolders)
-admin.site.register(CustomHolidayCards)
-admin.site.register(Envelopes)
-admin.site.register(LetterHeads)
-admin.site.register(NotePads)
-admin.site.register(FoamcorePosters)
-admin.site.register(QuotationFoamcorePosters)
-admin.site.register(PosterPrinting)
-admin.site.register(QuotationPosterPrinting)
-admin.site.register(RetractableBanners)
-admin.site.register(TableCovers)
-admin.site.register(Orders)
-admin.site.register(CustomerData)
-admin.site.register(FloorStickers)
-admin.site.register(QuotationFloorStickers)
+admin.site.register(Orders,OrdersAdmin)
+admin.site.register(CustomerData,CustomerDataAdmin)

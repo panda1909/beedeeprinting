@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ROOT_URLCONF = 'beedeeprinting.urls'
 
 # Application definition
 
@@ -39,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'core'
+    'core',
+    'Business_Cards',
+    'Business_Stationary',
+    'Large_Format_Printing',
+    'Marketing_Products',
 ]
 
 MIDDLEWARE = [
