@@ -39,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
 
+    
     'core',
     'Business_Cards',
     'Business_Stationary',
     'Large_Format_Printing',
     'Marketing_Products',
+
 ]
 
 MIDDLEWARE = [
