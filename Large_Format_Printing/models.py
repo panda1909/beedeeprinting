@@ -55,6 +55,7 @@ class RetractableBanners(models.Model):
     Quantity_To = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Thirty_Three_By_Eighty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '33" x 80"')
     Thirty_Three_By_Eighty_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '33" x 80" Discounted')
+    Template = models.ImageField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
     Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):

@@ -2,19 +2,15 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
-
-
                           
 class Orders(models.Model):
     OrderId = models.CharField(null=False, max_length=256)
     Product_name = models.CharField(null=False, max_length=512, default='pd')
     Customer = models.CharField(null=False, max_length=512)
-
     Delivery_address = models.CharField(null=False, max_length=512, default='pd')
     Contact = PhoneNumberField()
     Email = models.EmailField(max_length=254)
     Delivery_date = models.DateField( auto_now=False, auto_now_add=False)
-
     Status = models.CharField(null=False, max_length=256)
     Quantity = models.PositiveIntegerField(default=1, blank=False, editable=True)
     Size = models.CharField(null=False, max_length=1024)
