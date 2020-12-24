@@ -10,6 +10,7 @@ class business_cards_price(models.Model):
     digital_Fast_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     offset_HQ_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    description = models.CharField(default='Des',max_length=5000)
 
     def __str__(self):
         return str(self.quantity)
