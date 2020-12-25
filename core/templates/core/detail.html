@@ -1,0 +1,2650 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title> Product detail </title>
+{% endblock title %}
+
+{% block content %}
+
+<!--Main Product Detail : Begin-->
+<main class="main" id="product-detail">
+    <!--Breadcrumb : Begin-->
+    <section class="header-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <h1 class="mh-title" style="font-size: 200%; color:black"> {{ label }}</h1>
+                </div>
+                <div class="breadcrumb-w col-sm-8">
+                    <span class="hidden-xs">You are here:</span>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="http://netbaseteam.com/">Home</a>
+                        </li>
+                        <li>
+                            <a href="category_grid.html">Business Cards</a>
+                        </li>
+                        <li>
+                            <span>{{ label }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Breadcrumb : End-->
+    <!--Product info : Begin-->
+    <section class="product-info-w">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="padding-top: 8%;">
+                    <div class="tab-content clearfix">
+                        <div role="tabpanel" class="tab-pane active">
+                            <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w">
+                                <div class="ideal">
+                                    <img src="{{ image }}" alt="ideal 1">
+                                </div>
+                                <div class="ideal">
+                                    <img src="{{ image }}" alt="ideal 2">
+                                </div>
+                                <div class="ideal">
+                                    <img src="{{ image }}" alt="ideal 3">
+                                </div>
+                                <div class="ideal">
+                                    <img src="{{ image }}" alt="ideal 4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#features" aria-controls="features"
+                                        role="tab" data-toggle="tab">Description</a></li>
+                                <li role="presentation"><a href="#ideals" aria-controls="ideals" role="tab"
+                                        data-toggle="tab">Templates</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="tab-content clearfix">
+                            <div role="tabpanel" class="tab-pane active" id="features">
+                                <div class="product-shortdescript v-middle">
+                                    <div class="col-sm-12 col-xs-12">
+                                        <div class="v-middle">
+                                            {{ Des |safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--Product info : Begin-->
+
+    <!--Add to cart : Begin-->
+    <section class="add-to-cart-w">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 product-options">
+                    <div class="atc-header">
+                        <span class="number">1</span>
+                        <h3>Instant Price Calculator</h3>
+                    </div>
+                    <div class="options-list-w">
+                        <div class="row">
+                            <div class="block-options col-md-4 col-sm-5">
+                                <div class="options-col">
+                                    <span class="cur-option-w">
+                                        <span class="cur-option-val">Letter</span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                    <ul class="d-none po-list">
+                                        <li><span>A6</span></li>
+                                        <li><span>A5</span></li>
+                                        <li><span>A4</span></li>
+                                        <li><span>A3</span></li>
+                                        <li><span>DL</span></li>
+                                        <li><span>148mm Square</span></li>
+                                        <li><span>210mm Square</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block-options col-md-4 col-sm-5">
+                                <div class="options-col">
+                                    <span class="cur-option-w">
+                                        <span class="cur-option-val">No Larnination</span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                    <ul class="d-none po-list">
+                                        <li><span>No Larnination</span></li>
+                                        <li><span>Matt Lamination</span></li>
+                                        <li><span>Gloss Lamination</span></li>
+                                        <li><span>Velvet Lamination</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="block-options col-md-4 col-sm-5">
+                                <div class="options-col">
+                                    <span class="cur-option-w">
+                                        <span class="cur-option-val">Single Sided</span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                    <ul class="d-none po-list">
+                                        <li><span>Single Sided</span></li>
+                                        <li><span>Double Sided</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block-options col-md-4 col-sm-5">
+                                <div class="options-col">
+                                    <span class="cur-option-w">
+                                        <span class="cur-option-val">Ford</span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                    <ul class="d-none po-list">
+                                        <li><span>A6</span></li>
+                                        <li><span>A5</span></li>
+                                        <li><span>A4</span></li>
+                                        <li><span>A3</span></li>
+                                        <li><span>DL</span></li>
+                                        <li><span>148mm Square</span></li>
+                                        <li><span>210mm Square</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="option-grib-w col-md-12">
+                            <div class="scroll-pane horizontal-only">
+                                <table>
+                                    <tr class="strikeout">
+                                        <th>Quantity</th>
+                                        <th rowspan="1">80gsm</th>
+                                        <th rowspan="1">100gsm</th>
+                                        <th rowspan="1">120gsm</th>
+                                        <th rowspan="1">150gsm</th>
+                                        <th rowspan="1">190gsm</th>
+                                        <th rowspan="1">200gsm</th>
+                                        <th rowspan="1">250gsm</th>
+                                        <th rowspan="1">300gsm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>100</th>
+                                        <td>
+                                            $10
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>150</th>
+                                        <td>
+                                            $10
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>200</th>
+                                        <td>
+                                            $10
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>250</th>
+                                        <td>
+                                            $10
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>300</th>
+                                        <td>$10<table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>350</th>
+                                        <td>$10<table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>500</th>
+                                        <td>$10<table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>1000</th>
+                                        <td>$10<table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>1500</th>
+                                        <td>$10<table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$20
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$23
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$25
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$30
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$34
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$40
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>$50
+                                            <table class="title">
+                                                <tr>
+                                                    <td>101 - 200</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>A6</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gloss Lamination</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Single Sided</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DL</td>
+                                                    <td>:+2.00$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>80gsm</td>
+                                                    <td>:+1.00$</td>
+                                                </tr>
+                                                <tr class="mt-total">
+                                                    <td>Total Price</td>
+                                                    <td>10.00$</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row product-share hidden-xs">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-3 social">
+                                    <ul>
+                                        <li class="label">Share:</li>
+                                        <li class="twiter">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li class="facebook">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li class="google-plus">
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        </li>
+                                        <li class="pinterest">
+                                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                        </li>
+                                        <li class="twiter">
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-3 add-to-wishlist">
+                                    <a href="#">
+                                        <i class="fa fa-heart"></i> Add to wishlist
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 email-to-friend">
+                                    <a href="#">
+                                        <i class="fa fa-envelope"></i>Email to friend
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 upload-add-cart">
+                    <div class="row">
+                        <div class="upload-file col-md-12 col-sm-12 hidden-xs">
+                            <div class="atc-header">
+                                <span class="number">2</span>
+                                <h3>Get Started</h3>
+                            </div>
+                            <p class="upload-allow">
+                                You can only upload files that are allowed as jpg, jpeg, png, txt, doc, docx, xls,
+                                xlsx...
+                            </p>
+                            <div class="box-upload">
+                                <span class="icon">
+                                    <i class="fa fa-file-text-o"></i>
+                                    <i class="fa fa-arrow-up border-radius-50"></i>
+                                </span>
+                                <p>Upload a complete dessign</p>
+                                <button type="button" class="btn upload-btn">Get started</button>
+                            </div>
+                        </div>
+                        <div class="add-to-cart col-md-12 col-sm-12 col-xs-12">
+                            <div class="atc-header">
+                                <span class="number visible-480 visible-xs">2</span>
+                                <span class="number hidden-xs">3</span>
+                                <h3>Add to cart</h3>
+                            </div>
+                            <div class="quantity-price-w row">
+                                <div class="col-xs-6 quantity">
+                                    <label>Quantity</label>
+                                    <input type="text" name="qty" class="qty" value="101">
+                                </div>
+                                <div class="price-total col-xs-6">
+                                    <label>Total:</label>
+                                    <span class="price">$13.50</span>
+                                </div>
+                                <div class="add-cart-btn-w col-xs-12">
+                                    <button type="button" class="add-cart-btn btn">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Add to cart : End-->
+
+    <!-- Product upload file: Begin-->
+    <section class="upload-file-w d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-offset-md-3">
+                    <a id="close-upload-popup">
+                        <i></i>
+                    </a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Upload File</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="btn btn-success fileinput-button">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>Add files...</span>
+                                <input type="file" name="files[]" multiple="">
+                            </span>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary start">
+                                <span>Upload</span>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary cancel">
+                                <span>Cancel</span>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary delete">
+                                <span>Delete</span>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="checkbox" class="toggle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Product upload file: End-->
+</main><!-- Main Product Detail: End -->
+
+{% endblock content %}

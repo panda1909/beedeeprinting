@@ -3,10 +3,12 @@ from django.core.validators import MinValueValidator
 # Create your models here.
 
 class Calendars(models.Model):
+    label = models.CharField(default="Calender", max_length=30, editable=False)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Description = models.TextField(default='des',max_length=2048)
+    image = models.ImageField(upload_to='static/Calender', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
