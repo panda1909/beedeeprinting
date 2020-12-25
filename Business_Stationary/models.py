@@ -13,8 +13,7 @@ class Envelopes(models.Model):
     A7 = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'A7 (5.25X7.25)')
     A7_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'A7 (5.25X7.25) Discounted')
     A7_Template = models.ImageField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.Quantity)
 
@@ -26,8 +25,7 @@ class LetterHeads(models.Model):
     Eight_By_Five_By_Eleven = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '8.5" x 11"')
     Eight_By_Five_By_Eleven_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '8.5" x 11" Discounted')
     Template = models.ImageField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.Quantity)
 
@@ -38,10 +36,22 @@ class NotePads(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Three_By_Six_By_Four_By_Eight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '3.625" x 4.875"')
     Three_By_Six_By_Four_By_Eight_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '3.625" x 4.875" Discounted')
-    Description = models.TextField(default='des',max_length=2048)
     
     def __str__(self):
         return str(self.Quantity)
 
     class Meta:
         verbose_name = "3 - NotePad" 
+
+class Products(models.Model):
+    Label = models.CharField(max_length=50,default='prod')
+    Description = models.TextField(default='des',max_length=5000)
+    image1 = models.ImageField(upload_to='static/Product_Images/Business_Stationary/',max_length=None)
+    image2 = models.ImageField(upload_to='static/Product_Images/Business_Stationary/',max_length=None)
+    image3 = models.ImageField(upload_to='static/Product_Images/Business_Stationary/',max_length=None)
+
+    def __str__(self):
+        return(self.Label)
+    
+    class Meta:
+        verbose_name = "0 - Product List"        

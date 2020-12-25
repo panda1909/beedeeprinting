@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Envelopes)
 admin.site.register(LetterHeads)
 admin.site.register(NotePads)
+admin.site.register(Products)

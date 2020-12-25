@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+
 # Create your models here.
 
 class Calendars(models.Model):
@@ -7,7 +8,6 @@ class Calendars(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Description = models.TextField(default='des',max_length=2048)
     image = models.ImageField(upload_to='static/Calender', max_length=256, blank=True)
     
     def __str__(self):
@@ -20,7 +20,6 @@ class BrochuresAndFlyers(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):
         return str(self.quantity)
@@ -30,7 +29,6 @@ class BrochuresAndFlyers(models.Model):
 
 class PostCards(models.Model):
    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-   Description = models.TextField(default='des',max_length=2048)
    
    def __str__(self):
        return str(self.quantity)
@@ -78,7 +76,6 @@ class QuotationPostCards(models.Model):
 
 class DirectMailPostCards(models.Model):
    quantity = models.IntegerField(default=2, null=False)
-   Description = models.TextField(default='des',max_length=2048)
 
    def __str__(self):
        return str(self.quantity)
@@ -109,7 +106,6 @@ class HangTags(models.Model):
     Two_By_Five_By_Two_By_Five_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '2.5" x 2.5" Discounted')
     Two_By_Six = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '2" x 6"')
     Two_By_Six_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '2" x 6" Discounted')
-    Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):
         return str(self.Quantity)
@@ -125,7 +121,6 @@ class LabelsAndStickers(models.Model):
     Three_By_Three_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '3" x 3" Discounted')
     Four_By_Four = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '4" x 4"')
     Four_by_Four_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '4" x 4" Discounted')
-    Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):
         return str(self.Quantity)
@@ -139,7 +134,6 @@ class NCRForms(models.Model):
     Five_By_Five_By_Eight_By_Five_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '5.5" x 8.5" Discounted')
     Eight_By_Five_By_Eleven = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '8.5" x 11"')
     Eight_By_Five_By_Eleven_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '8.5" x 11" Discounted')
-    Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):
         return str(self.Quantity)
@@ -155,8 +149,7 @@ class PresentationFolders(models.Model):
     Nine_By_Twelve_Offset = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9" x 12" Offset Folders')
     Nine_By_Twelve_Offset_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9" x 12" Offset Discounted')
     Nine_By_Twelve_Offset_Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.Quantity)
 
@@ -168,7 +161,6 @@ class CustomHolidayCards(models.Model):
     Folding_Card = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'Folding card - closed size is 5" x 7"')
     Folding_Card_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'Folding card - closed size is 5" x 7" Discounted')
     Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):
         return str(self.Quantity)
@@ -176,3 +168,15 @@ class CustomHolidayCards(models.Model):
     class Meta:
         verbose_name = "9 - Custom Holiday Card"    
 
+class Products(models.Model):
+    Label = models.CharField(max_length=50,default='prod')
+    Description = models.TextField(default='des',max_length=5000)
+    image1 = models.ImageField(upload_to='static/Product_Images/Marketing_Products/',max_length=None)
+    image2 = models.ImageField(upload_to='static/Product_Images/Marketing_Products/',max_length=None)
+    image3 = models.ImageField(upload_to='static/Product_Images/Marketing_Products/',max_length=None)
+
+    def __str__(self):
+        return(self.Label)
+    
+    class Meta:
+        verbose_name = "0 - Product List"

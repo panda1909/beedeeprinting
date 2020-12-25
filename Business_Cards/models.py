@@ -11,7 +11,6 @@ class business_cards_price(models.Model):
     Digital_Fast_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     offset_HQ_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Description = models.TextField(default='des',max_length=2048)
     Offset_HQ_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
 
@@ -32,8 +31,7 @@ class edge_painted_business_cards_price(models.Model):
     Square = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Square_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Square_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.quantity)
 
@@ -45,8 +43,7 @@ class foil_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.quantity)
 
@@ -58,8 +55,7 @@ class raised_spot_uv_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.quantity)
 
@@ -72,8 +68,7 @@ class pantone_business_cards_price(models.Model):
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.quantity)
 
@@ -88,8 +83,7 @@ class plastic_business_cards_price(models.Model):
     Credit_card_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="Credit Card Size Price")
     Credit_card_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="Credit Card Size Price Discounted")
     Credit_card_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.quantity)
 
@@ -102,11 +96,22 @@ class raised_ink_business_cards_price(models.Model):
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
-
+    
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
         verbose_name = "7 - Raised ink business cards price"
 
+class Products(models.Model):
+    Label = models.CharField(max_length=50,default='prod')
+    Description = models.TextField(default='des',max_length=5000)
+    image1 = models.ImageField(upload_to='static/Product_Images/Business_Cards/',max_length=None)
+    image2 = models.ImageField(upload_to='static/Product_Images/Business_Cards/',max_length=None)
+    image3 = models.ImageField(upload_to='static/Product_Images/Business_Cards/',max_length=None)
+
+    def __str__(self):
+        return(self.Label)
+    
+    class Meta:
+        verbose_name = "0 - Product List"

@@ -5,7 +5,6 @@ from django.core.validators import MinValueValidator
 
 class FoamcorePosters(models.Model):
    quantity = models.IntegerField(default=2, null=False)
-   Description = models.TextField(default='des',max_length=2048)
 
    def __str__(self):
        return str(self.quantity)
@@ -29,7 +28,6 @@ class QuotationFoamcorePosters(models.Model):
 
 class PosterPrinting(models.Model):
    quantity = models.IntegerField(default=2, null=False)
-   Description = models.TextField(default='des',max_length=2048)
 
    def __str__(self):
        return str(self.quantity)
@@ -56,7 +54,6 @@ class RetractableBanners(models.Model):
     Thirty_Three_By_Eighty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '33" x 80"')
     Thirty_Three_By_Eighty_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '33" x 80" Discounted')
     Template = models.ImageField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
-    Description = models.TextField(default='des',max_length=2048)
 
     def __str__(self):
         return (str(self.Quantity_From)+ "-" + str(self.Quantity_To))
@@ -69,7 +66,7 @@ class TableCovers(models.Model):
     Quantity_To = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Ninety_By_One_Three_Two = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '6 foot table cover (90" x 132")')
     Ninety_By_One_Three_Two_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '6 foot table cover (90" x 132") Discounted')
-    Description = models.TextField(default='des',max_length=2048)
+
     def __str__(self):
         return (str(self.Quantity_From)+ "-" + str(self.Quantity_To))
 
@@ -78,7 +75,6 @@ class TableCovers(models.Model):
 
 class FloorStickers(models.Model):
    quantity = models.IntegerField(default=2, null=False)
-   Description = models.TextField(default='des',max_length=2048)
    
    def __str__(self):
        return str(self.quantity)
@@ -98,3 +94,16 @@ class QuotationFloorStickers(models.Model):
 
    class Meta:
        verbose_name = "5.1 - Floor Sticker"        
+
+class Products(models.Model):
+    Label = models.CharField(max_length=50,default='prod')
+    Description = models.TextField(default='des',max_length=5000)
+    image1 = models.ImageField(upload_to='static/Product_Images/Large_Format_Printing/',max_length=None)
+    image2 = models.ImageField(upload_to='static/Product_Images/Large_Format_Printing/',max_length=None)
+    image3 = models.ImageField(upload_to='static/Product_Images/Large_Format_Printing/',max_length=None)
+
+    def __str__(self):
+        return(self.Label)
+    
+    class Meta:
+        verbose_name = "0 - Product List"       
