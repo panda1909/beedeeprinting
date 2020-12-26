@@ -33,171 +33,107 @@
                 <aside id="sidebar_cate" class="col-sm-3 hidden-xs">
                     <h3 class="sidebar-title">Category</h3>
                     <ul id="cate_list" class="cate_list">
+                        
                         <li class="level0 parent">
                             <a href="#" title="Business Cards">
-                                <span>All Products</span>
+                                <span style="color: black;">Business Cards</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
+                            
                             <ul class="level0">
+                                {% for bc_product in bc_product %}
                                 <li class="level1 nav-1-1 first item">
                                     <a href="#" title="Premium Business Cards">
-                                        Premium Business Cards
-                                        <span class="count-item">(22)</span>
+                                        {{ bc_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-2 item">
-                                    <a href="#" title="Free Business Cards">
-                                        Free Business Cards
-                                        <span class="count-item">(45)</span>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="level0 parent">
+                            <a href="#" title="Business Stationary">
+                                <span style="color: black;">Business Stationary</span>
+                                <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                            </a>
+                            
+                            <ul class="level0">
+                                {% for bs_product in bs_product %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="#" title="Premium Business Cards">
+                                        {{ bs_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-3 item">
-                                    <a href="#" title="Die-Cut Business Cards">
-                                        Die-Cut Business Cards
-                                        <span class="count-item">(30)</span>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="level0 parent">
+                            <a href="#" title="Large Format Printing">
+                                <span style="color: black;">Large Format Printing</span>
+                                <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                            </a>
+                            
+                            <ul class="level0">
+                                {% for lf_product in lf_product %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="#" title="Premium Business Cards">
+                                        {{ lf_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-4 item">
-                                    <a href="#" title="Standard Business Cards">
-                                        Standard Business Cards
-                                        <span class="count-item">(25)</span>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="level0 parent">
+                            <a href="#" title="Marketing Products">
+                                <span style="color: black;">Marketing Products</span>
+                                <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                            </a>
+                            
+                            <ul class="level0">
+                                {% for mp_product in mp_product %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="#" title="Premium Business Cards">
+                                        {{ mp_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-5 item">
-                                    <a href="#" class="Personal Business Cards">
-                                        Personal Business Cards
-                                        <span class="count-item">(6)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-6 item">
-                                    <a href="#" title="Business Card Holders">
-                                        Business Card Holders
-                                        <span class="count-item">(11)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-7 item">
-                                    <a href="#" title="Networking Cards">
-                                        Networking Cards
-                                        <span class="count-item">(6)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-8 item">
-                                    <a href="#" title="Appointment Cards">
-                                        Appointment Cards
-                                        <span class="count-item">(11)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-9 last item">
-                                    <a href="#" title="Mommy Cards">
-                                        Mommy Cards
-                                        <span class="count-item">(24)</span>
-                                    </a>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </li>
                         <li class="level0 parent">
                             <a href="#" title="Business Cards">
-                                <span>Business Cards</span>
+                                <span style="color: black;">All Products</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
                             <ul class="level0">
+                                {% for bc_product in bc_product %}
                                 <li class="level1 nav-1-1 first item">
                                     <a href="#" title="Premium Business Cards">
-                                        Premium Business Cards
-                                        <span class="count-item">(22)</span>
+                                        {{ bc_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-2 item">
-                                    <a href="#" title="Free Business Cards">
-                                        Free Business Cards
-                                        <span class="count-item">(45)</span>
+                                {% endfor %}
+                                {% for bs_product in bs_product %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="#" title="Premium Business Cards">
+                                        {{ bs_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-3 item">
-                                    <a href="#" title="Die-Cut Business Cards">
-                                        Die-Cut Business Cards
-                                        <span class="count-item">(30)</span>
+                                {% endfor %}
+                                {% for lf_product in lf_product %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="#" title="Premium Business Cards">
+                                        {{ lf_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-4 item">
-                                    <a href="#" title="Standard Business Cards">
-                                        Standard Business Cards
-                                        <span class="count-item">(25)</span>
+                                {% endfor %}
+                                {% for mp_product in mp_product %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="#" title="Premium Business Cards">
+                                        {{ mp_product.Label }}
                                     </a>
                                 </li>
-                                <li class="level1 nav-1-5 item">
-                                    <a href="#" class="Personal Business Cards">
-                                        Personal Business Cards
-                                        <span class="count-item">(6)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-6 item">
-                                    <a href="#" title="Business Card Holders">
-                                        Business Card Holders
-                                        <span class="count-item">(11)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-7 item">
-                                    <a href="#" title="Networking Cards">
-                                        Networking Cards
-                                        <span class="count-item">(6)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-8 item">
-                                    <a href="#" title="Appointment Cards">
-                                        Appointment Cards
-                                        <span class="count-item">(11)</span>
-                                    </a>
-                                </li>
-                                <li class="level1 nav-1-9 last item">
-                                    <a href="#" title="Mommy Cards">
-                                        Mommy Cards
-                                        <span class="count-item">(24)</span>
-                                    </a>
-                                </li>
+                                {% endfor %}
+                                
                             </ul>
-                        </li>
-                        <li class="level0">
-                            <a href="#" title="Postcards">
-                                Postcards
-                                <span class="count-item">(81)</span>
-                            </a>
-                        </li>
-                        <li class="level0">
-                            <a href="#" title="Carbonless Form">
-                                Carbonless Form
-                                <span class="count-item">(10)</span>
-                            </a>
-                        </li>
-                        <li class="level0">
-                            <a href="#" title="Catalogs">
-                                Catalogs
-                                <span class="count-item">(22)</span>
-                            </a>
-                        </li>
-                        <li class="level0" title="Counter Cards">
-                            <a href="#">
-                                Counter Cards
-                                <span class="count-item">(45)</span>
-                            </a>
-                        </li>
-                        <li class="level0" title="Door Hangers">
-                            <a href="#">
-                                Door Hangers
-                                <span class="count-item">(30)</span>
-                            </a>
-                        </li>
-                        <li class="level0" title="Envelopes">
-                            <a href="#">
-                                Envelopes
-                                <span class="count-item">(25)</span>
-                            </a>
-                        </li>
-                        <li class="level0" title="Flyers">
-                            <a href="#">
-                                Flyers
-                                <span class="count-item">(6)</span>
-                            </a>
                         </li>
                     </ul>
                     <div class="category-left-banner">
@@ -266,11 +202,12 @@
                         </div>
                     </div>
                     <div class="row products-grid category-product">
+                        {% for bc_product in bc_product %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                 <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/grouper-business-card.jpg' %}"
-                                        alt="Grouper Business card">
+                                    <img  src="{{ bc_product.image1 }}"
+                                        alt="{{ bc_product.Label }}">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
@@ -283,9 +220,9 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">Grouper Business card</a>
+                                    <a href="detail.html" title="product" class="product-name">{{ bc_product.Label }}</a>
                                     <div class="price-box">
-                                        <span class="normal-price">$ 9.00</span>
+                                        <span class="normal-price">View Pricing</span>
                                     </div>
                                     <div class="rating-box">
                                         <i class="fa fa-star"></i>
@@ -297,263 +234,125 @@
 
                                 </div>
                             </li>
-                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/brochures.jpg' %}" alt="New Brochures">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">New Brochures</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 9.80</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/flyers-two-page.jpg' %}" alt="Flyers Two Page">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
-                                    <span class="product-icon sale-icon">Sale</span>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">Flyers Two Page</a>
-                                    <div class="price-box">
-                                        <span class="old-price">$ 16.98</span>
-                                        <span class="special-price">$ 12.98</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/business-card.jpg' %}" alt="Business Card">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">Business Card</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 9.80</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/cate-list-business-card-05.jpg' %}"
-                                        alt="eSliproser Postcards">
-                                        <div class="action">
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                        </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">eSliproser Postcards</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 10.09</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/holiday-postcard-2.jpg' %}" alt="Holiday Postcard 2">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">Holiday Postcard 2</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 10.09</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/postcard-mailing-services.jpg' %}"
-                                        alt="Postcard Mailing Services">
-                                        <div class="action">
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                        </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">Postcard Mailing
-                                        Services</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 10.09</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/holiday-postcard.jpg' %}" alt="Holiday Postcard">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">Holiday Postcard</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 10.09</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pro-item col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                <div class="product-image-action">
-                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business Card">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">New Business Card</a>
-                                    <div class="price-box">
-                                        <span class="normal-price">$ 9.80</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                </div>
-                            </li>
+                            
                         </ul>
+                        {% endfor %}
                     </div>
-                    <div class="bottom-toolbar row">
-                        <div class="col-md-12 pager">
-                            <ul>
-                                <li class="previous page-change hidden">
-                                    <a href="#"><i class="fa fa-angle-left"></i></a>
-                                </li>
-                                <li class="current">
-                                    <span>1</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="page 2">2</a>
-                                </li>
-                                <li>
-                                    <a href="#" title="page 3">3</a>
-                                </li>
-                                <li>
-                                    <a href="#" title="page 4">4</a>
-                                </li>
-                                <li>
-                                    <a href="#" title="page 5">5</a>
-                                </li>
-                                <li class="next page-change">
-                                    <a href="#"><i class="fa fa-angle-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                    
+                    <div class="row products-grid category-product">
+                        {% for bs_product in bs_product %}
+                        <ul>
+                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
+                                <div class="product-image-action">
+                                    <img src="{{ bs_product.image1 }}"
+                                        alt="{{ bs_product.Label }}">
+                                    <div class="action">
+                                        <button type="button" data-toggle="tooltip" data-placement="top"
+                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="tooltip" data-placement="top"
+                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="detail.html" title="product" class="product-name">{{ bs_product.Label }}</a>
+                                    <div class="price-box">
+                                        <span class="normal-price">View Pricing</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="row products-grid category-product">
+
+                        {% for mp_product in mp_product %}
+                        <ul>
+                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
+                                <div class="product-image-action">
+                                    <img  src="{{ mp_product.image1 }}"
+                                        alt="{{ mp_product.Label }}">
+                                    <div class="action">
+                                        <button type="button" data-toggle="tooltip" data-placement="top"
+                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="tooltip" data-placement="top"
+                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="detail.html" title="product" class="product-name">{{ mp_product.Label }}</a>
+                                    <div class="price-box">
+                                        <span class="normal-price">View Pricing</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        {% endfor %}
+                    </div>
+
+                    <div class="row products-grid category-product">
+                        {% for lf_product in lf_product %}
+                        <ul>
+                            <li class="pro-item col-md-4 col-sm-6 col-xs-12">
+                                <div class="product-image-action">
+                                    <img src="{{ lf_product.image1 }}"
+                                        alt="{{ lf_product.Label }}">
+                                    <div class="action">
+                                        <button type="button" data-toggle="tooltip" data-placement="top"
+                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </button>
+                                        <button type="button" data-toggle="tooltip" data-placement="top"
+                                            title="Quickview" class="add-to-cart gbtn" title="Quickview">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="detail.html" title="product" class="product-name">{{ lf_product.Label }}</a>
+                                    <div class="price-box">
+                                        <span class="normal-price">View Pricing</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        {% endfor %}
                     </div>
                 </section><!-- Category product grid : End -->
             </div>

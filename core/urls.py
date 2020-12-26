@@ -1,9 +1,9 @@
 from django.urls import path, include
-from .views import Home, Aboutus, Cart, detail_calender
+from .views import Home, Aboutus, Cart, business_card
 
 urlpatterns = [
      path('', Home, name='Home'),
-     path('allproducts', detail_calender, name='allproducts' ),
+     path('Business-Cards', business_card, name='business_card' ),
      path('aboutus', Aboutus.as_view(), name='Aboutus'),
      path('cart', Cart.as_view(), name='Cart'),
      

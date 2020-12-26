@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 hidden-xs">
-                    <h1 class="mh-title" style="font-size: 200%; color:black"> {{ label }}</h1>
+                    <h1 class="mh-title" style="font-size: 200%; color:black"> {{ business_card.Label }}</h1>
                 </div>
                 <div class="breadcrumb-w col-sm-8">
                     <span class="hidden-xs">You are here:</span>
@@ -26,7 +26,7 @@
                             <a href="category_grid.html">Business Cards</a>
                         </li>
                         <li>
-                            <span>{{ label }}</span>
+                            <span>{{ business_card.Label }}</span>
                         </li>
                     </ul>
                 </div>
@@ -38,21 +38,18 @@
     <section class="product-info-w">
         <div class="container">
             <div class="row">
-                <div class="col-md-6" style="padding-top: 8%;">
+                <div class="col-md-6" style="padding-top: 12%;">
                     <div class="tab-content clearfix">
                         <div role="tabpanel" class="tab-pane active">
                             <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w">
                                 <div class="ideal">
-                                    <img src="{{ image }}" alt="ideal 1">
+                                    <img src="{{ business_card.image1 }}" alt="ideal 1">
                                 </div>
                                 <div class="ideal">
-                                    <img src="{{ image }}" alt="ideal 2">
+                                    <img src="{{ business_card.image2 }}" alt="ideal 2">
                                 </div>
                                 <div class="ideal">
-                                    <img src="{{ image }}" alt="ideal 3">
-                                </div>
-                                <div class="ideal">
-                                    <img src="{{ image }}" alt="ideal 4">
+                                    <img src="{{ business_card.image3 }}" alt="ideal 3">
                                 </div>
                             </div>
                         </div>
@@ -72,12 +69,10 @@
                     </div>
                     <div class="row">
                         <div class="tab-content clearfix">
-                            <div role="tabpanel" class="tab-pane active" id="features">
-                                <div class="product-shortdescript v-middle">
-                                    <div class="col-sm-12 col-xs-12">
-                                        <div class="v-middle">
-                                            {{ Des |safe }}
-                                        </div>
+                            <div  role="tabpanel" class="tab-pane active" id="features">
+                                <div  class="product-shortdescript v-middle">
+                                    <div style="overflow-y:scroll; width: 100%; height: 450px; padding:20px">
+                                        {{ business_card.Description |safe }}
                                     </div>
                                 </div>
                             </div>
