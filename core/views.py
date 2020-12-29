@@ -15,7 +15,7 @@ from django.template import loader
 
 # Create your views here.
 
-def business_card(request):
+def Home(request):
     business_card = bc_products.objects.get(id=1)
     
     context = {
@@ -23,7 +23,20 @@ def business_card(request):
     }
     return render(request, "core/detail.html", context)
 
-def Home(request):
+class Aboutus(TemplateView):
+    def get(self, request):
+        return render(request, 'core/aboutus.html')
+
+def Checkout(request):
+    return render(request, 'core/checkout.html')
+
+
+def Cart(request):
+    return render(request, 'core/cart.html')
+
+# ------  All Products page/funct  ------ # 
+
+def All_products(request):
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -37,11 +50,96 @@ def Home(request):
     }
     return render(request, "core/all_products.html", context)
 
-class Aboutus(TemplateView):
-    def get(self, request):
-        return render(request, 'core/aboutus.html')
+# ------  Catogirze Pages in frontend  ------ # 
+# ------  All pages are dynamic using if else and db ------ #
 
+def Business_card(request):
+    bc_object = bc_products.objects.all()
+    bs_object = bs_products.objects.all()
+    lf_object = lf_products.objects.all()
+    mp_object = mp_products.objects.all()
+    bc_card = 1
+    bs_card = 0
+    lf_card = 0
+    mp_card = 0
 
-class Cart(TemplateView):
-    def get(self, request):
-        return render(request, 'core/cart.html')
+    context = {
+        "bc_product" : bc_object,
+        "bs_product" : bs_object,
+        "lf_product" : lf_object,
+        "mp_product" : mp_object,
+        "bc_card" : bc_card,
+        "bs_card" : bs_card,
+        "lf_card" : lf_card,
+        "mp_card" : mp_card
+    }
+    return render(request, "core/catogery.html", context)
+
+def Business_stationary(request):
+    bc_object = bc_products.objects.all()
+    bs_object = bs_products.objects.all()
+    lf_object = lf_products.objects.all()
+    mp_object = mp_products.objects.all()
+    bc_card = 0
+    bs_card = 1
+    lf_card = 0
+    mp_card = 0
+
+    context = {
+        "bc_product" : bc_object,
+        "bs_product" : bs_object,
+        "lf_product" : lf_object,
+        "mp_product" : mp_object,
+        "bc_card" : bs_card,
+        "bs_card" : bs_card,
+        "lf_card" : lf_card,
+        "mp_card" : mp_card
+    }
+    return render(request, "core/catogery.html", context)
+
+def Large_format(request):
+    bc_object = bc_products.objects.all()
+    bs_object = bs_products.objects.all()
+    lf_object = lf_products.objects.all()
+    mp_object = mp_products.objects.all()
+    bc_card = 0
+    bs_card = 0
+    lf_card = 1
+    mp_card = 0
+
+    context = {
+        "bc_product" : bc_object,
+        "bs_product" : bs_object,
+        "lf_product" : lf_object,
+        "mp_product" : mp_object,
+        "bc_card" : bs_card,
+        "bs_card" : bs_card,
+        "lf_card" : lf_card,
+        "mp_card" : mp_card
+    }
+    return render(request, "core/catogery.html", context)
+
+def Marketing_products(request):
+    bc_object = bc_products.objects.all()
+    bs_object = bs_products.objects.all()
+    lf_object = lf_products.objects.all()
+    mp_object = mp_products.objects.all()
+    bc_card = 0
+    bs_card = 0
+    lf_card = 0
+    mp_card = 1
+
+    context = {
+        "bc_product" : bc_object,
+        "bs_product" : bs_object,
+        "lf_product" : lf_object,
+        "mp_product" : mp_object,
+        "bc_card" : bs_card,
+        "bs_card" : bs_card,
+        "lf_card" : lf_card,
+        "mp_card" : mp_card
+    }
+    return render(request, "core/catogery.html", context)
+
+# ------  Catogirze Pages in frontend  ------ # 
+# ------  All pages are dynamic using if else and db ------ #
