@@ -106,4 +106,16 @@ class Products(models.Model):
         return(self.Label)
     
     class Meta:
-        verbose_name = "0 - Product List"       
+        verbose_name = "Product List"   
+
+class Extra_features(models.Model):
+    banner_material = models.CharField(max_length=250, blank=True)
+    banner_material_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])    
+    second_side_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+
+    def __str__(self):
+        return(self.banner_material)
+
+    class Meta:
+        verbose_name = "0 - Extra Feature"
+        

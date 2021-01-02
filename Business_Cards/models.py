@@ -18,7 +18,8 @@ class business_cards_price(models.Model):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "1 - Simple business cards price"    
+        verbose_name = "1 - Simple business cards price"  
+  
 
 class edge_painted_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
@@ -37,6 +38,7 @@ class edge_painted_business_cards_price(models.Model):
 
     class Meta:
         verbose_name = "2 - Edge painted business cards price"    
+
 
 class foil_business_cards_price(models.Model):
     US_Standard_size = models.CharField(max_length=555)
@@ -63,7 +65,7 @@ class raised_spot_uv_business_cards_price(models.Model):
         verbose_name = "4 - Raised spot UV business cards price"
 
 class pantone_business_cards_price(models.Model):
-    US_Standard_Size = models.CharField(max_length=555)
+    US_Standard_Size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
@@ -114,4 +116,26 @@ class Products(models.Model):
         return(self.Label)
     
     class Meta:
-        verbose_name = "0 - Product List"
+        verbose_name = "Product List"
+
+class Extra_features(models.Model):
+    size = models.CharField(max_length=50, blank=True)
+    size_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    paper_type = models.CharField(max_length=250, blank=True)
+    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    second_side_foil_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    second_side_raied_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    traditional_raised_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    plastic_type = models.CharField(max_length=250, blank=True)
+    plastic_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    raised_ink_colors = models.CharField(max_length=250, blank=True)
+    rasied_ink_colors_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+
+
+    def __str__(self):
+        return str(self.size + self.paper_type)
+
+
+    class Meta:
+        verbose_name = "0 - Extra Feature"        

@@ -179,4 +179,24 @@ class Products(models.Model):
         return(self.Label)
     
     class Meta:
-        verbose_name = "0 - Product List"
+        verbose_name = "Product List"
+
+class Extra_features(models.Model):
+    second_side_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    flat_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    half_fold_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    tri_fold_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    z_fold_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    double_parallel_fold_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    individual_cut_labels_price =  models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    three_part_form_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    form_numbering_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    paper_type = models.CharField(blank=True, max_length=250)
+    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    blank_envelope_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+
+    def __str__(self):
+        return("extra Features")
+
+    class Meta:
+        verbose_name = "0 - Extra Feature"

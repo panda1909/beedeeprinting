@@ -14,7 +14,7 @@ admin.site.register(LabelsAndStickers)
 admin.site.register(NCRForms)
 admin.site.register(PresentationFolders)
 admin.site.register(CustomHolidayCards)
-admin.site.register(Products)
+admin.site.register(Extra_features)
 # admin.site.register(Templates)
 
 
