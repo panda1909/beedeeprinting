@@ -54,4 +54,18 @@ class Products(models.Model):
         return(self.Label)
     
     class Meta:
-        verbose_name = "0 - Product List"        
+        verbose_name = "Product List"        
+
+
+class Extra_features(models.Model):
+    paper_type = models.CharField(max_length=250, blank=True)
+    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    standard_window_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+
+
+    def __str__(self):
+        return (self.paper_type)
+
+    class Meta:
+        verbose_name = "0 - Extra Feature"
