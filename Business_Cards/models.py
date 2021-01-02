@@ -7,10 +7,10 @@ from django.core.validators import MinValueValidator
 class business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    digital_Fast_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)])
     Digital_Fast_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    offset_HQ_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)])
     Offset_HQ_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
 

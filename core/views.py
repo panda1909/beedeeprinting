@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
 # All category products
-from Business_Cards.models import Products as bc_products
+from Business_Cards.models import Products as bc_products , business_cards_price
 from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
@@ -24,7 +24,9 @@ def Home(request):
     return render(request, "core/home.html", context)
 
 def Detail(request):
-    business_card = bc_products.objects.get(id=1)
+    bc_card_price = business_cards_price.objects.all()
+    
+    product = bc_products.objects.get(id=1)
     
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
@@ -37,6 +39,7 @@ def Detail(request):
         "lf_product" : lf_object,
         "mp_product" : mp_object,
         "business_card": business_card,
+        "bc_card_price" : bc_card_price,
     }
     return render(request, "core/detail.html", context)
 
