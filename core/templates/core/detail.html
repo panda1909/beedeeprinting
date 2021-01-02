@@ -34,29 +34,233 @@
         </div>
     </section>
     <!--Breadcrumb : End-->
-    <!--Product info : Begin-->
-    <section class="product-info-w">
+    <section class="category-w parten-bg">
         <div class="container">
             <div class="row">
-                <div class="col-md-6" style="padding-top: 12%;">
-                    <div class="tab-content clearfix">
-                        <div role="tabpanel" class="tab-pane active">
-                            <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w">
-                                <div class="ideal">
-                                    <img src="{{ business_card.image1 }}" alt="ideal 1">
-                                </div>
-                                <div class="ideal">
-                                    <img src="{{ business_card.image2 }}" alt="ideal 2">
-                                </div>
-                                <div class="ideal">
-                                    <img src="{{ business_card.image3 }}" alt="ideal 3">
+                <div class="col">
+                    <aside id="sidebar_cate" class="col-sm-3 hidden-xs">
+                        <h3 class="sidebar-title">Category</h3>
+                        <ul id="cate_list" class="cate_list">
+
+                            <li class="level0 parent">
+                                <a href="#" title="Business Cards">
+                                    <span style="color: black;">Business Cards</span>
+                                    <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                                </a>
+
+                                <ul class="level0">
+                                    {% for bc_product in bc_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ bc_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="level0 parent">
+                                <a href="#" title="Business Stationary">
+                                    <span style="color: black;">Business Stationary</span>
+                                    <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                                </a>
+
+                                <ul class="level0">
+                                    {% for bs_product in bs_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ bs_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="level0 parent">
+                                <a href="#" title="Large Format Printing">
+                                    <span style="color: black;">Large Format Printing</span>
+                                    <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                                </a>
+
+                                <ul class="level0">
+                                    {% for lf_product in lf_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ lf_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="level0 parent">
+                                <a href="#" title="Marketing Products">
+                                    <span style="color: black;">Marketing Products</span>
+                                    <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                                </a>
+
+                                <ul class="level0">
+                                    {% for mp_product in mp_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ mp_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="level0 parent">
+                                <a href="#" title="Business Cards">
+                                    <span style="color: black;">All Products</span>
+                                    <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
+                                </a>
+                                <ul class="level0">
+                                    {% for bc_product in bc_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ bc_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                    {% for bs_product in bs_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ bs_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                    {% for lf_product in lf_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ lf_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                    {% for mp_product in mp_product %}
+                                    <li class="level1 nav-1-1 first item">
+                                        <a href="#" title="Premium Business Cards">
+                                            {{ mp_product.Label }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="category-left-banner">
+                            <a href="#" title="category left banner">
+                                <img src="{% static 'images/banner/category/left-banner2.jpg' %}" alt="Left banner">
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="tab-content clearfix">
+                                <div role="tabpanel" class="tab-pane active">
+                                    <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w">
+                                        <div class="ideal">
+                                            <img src="{{ business_card.image1 }}" alt="ideal 1">
+                                        </div>
+                                        <div class="ideal">
+                                            <img src="{{ business_card.image2 }}" alt="ideal 2">
+                                        </div>
+                                        <div class="ideal">
+                                            <img src="{{ business_card.image3 }}" alt="ideal 3">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="container">
+                                <div class="row" style="width: 75%;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a href="#features"
+                                                        aria-controls="features" role="tab"
+                                                        data-toggle="tab">Description</a></li>
+                                                <li role="presentation"><a href="#ideals" aria-controls="ideals"
+                                                        role="tab" data-toggle="tab">Templates</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="tab-content clearfix">
+                                            <div role="tabpanel" class="tab-pane active" id="features">
+                                                <div class="product-shortdescript v-middle">
+                                                    <!-- <div class="col-sm-12 col-xs-12"> -->
+                                                        <div style="overflow-y: scroll; width:100%; height: 450px; padding:20px;">
+                                                            {{ business_card.Description |safe }}
+                                                        </div>
+                                                    <!-- </div> -->
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="ideals">
+                                                
+                                                <div class="paper-des v-middle">
+                                                    <div class="col-sm-11 col-sm-offset-1">
+                                                        <div class="v-middle">
+                                                            <h3>13 pt. Cardstock, Uncoated Paper</h3>
+                                                            <ul>
+                                                                <li><i class="fa fa-check"></i> Lighter weight uncoated cardstock</li>
+                                                                <li><i class="fa fa-check"></i> Requires scoring prior to folding</li>
+                                                                <li><i class="fa fa-check"></i> Paper from sustainable sources, 30% recycled content</li>
+                                                                <li><i class="fa fa-check"></i> Some natural fibers may be visible</li>
+                                                                <li><i class="fa fa-check"></i> Excellent writability</li>
+                                                                <li><i class="fa fa-check"></i> Recommended for Appointment Cards, Invitations and Note Cards</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                    <div class="product-image v-middle">
+                                                    <div class="col-sm-12">
+                                                        <img src="images/img-paper.png" alt="ideal 1" class="v-middle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
+                <!-- <div class="col">
+                    <div class="container" >
+                        <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#features" aria-controls="features"
+                                                    role="tab" data-toggle="tab">Description</a></li>
+                                            <li role="presentation"><a href="#ideals" aria-controls="ideals" role="tab"
+                                                    data-toggle="tab">Templates</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="tab-content clearfix">
+                                        <div  role="tabpanel" class="tab-pane active" id="features">
+                                            <div  class="product-shortdescript v-middle">
+                                                <div style="overflow-y:scroll; width: 100%; height: 450px; padding:20px">
+                                                    {{ business_card.Description |safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
 
-                <div class="col-md-6">
+        </div>
+    </section>
+    <!--Product info : Begin-->
+    <!-- <section class="product-info-w">
+        <div class="container">
+            <div class="row">
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
                             <ul class="nav nav-tabs" role="tablist">
@@ -78,11 +282,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </section> -->
     <!--Product info : Begin-->
 
     <!--Add to cart : Begin-->

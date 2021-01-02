@@ -21,6 +21,23 @@ def Home(request):
     context = {
         "business_card": business_card,
     }
+    return render(request, "core/home.html", context)
+
+def Detail(request):
+    business_card = bc_products.objects.get(id=1)
+    
+    bc_object = bc_products.objects.all()
+    bs_object = bs_products.objects.all()
+    lf_object = lf_products.objects.all()
+    mp_object = mp_products.objects.all()
+
+    context = {
+        "bc_product" : bc_object,
+        "bs_product" : bs_object,
+        "lf_product" : lf_object,
+        "mp_product" : mp_object,
+        "business_card": business_card,
+    }
     return render(request, "core/detail.html", context)
 
 class Aboutus(TemplateView):
@@ -90,7 +107,7 @@ def Business_stationary(request):
         "bs_product" : bs_object,
         "lf_product" : lf_object,
         "mp_product" : mp_object,
-        "bc_card" : bs_card,
+        "bc_card" : bc_card,
         "bs_card" : bs_card,
         "lf_card" : lf_card,
         "mp_card" : mp_card
@@ -112,10 +129,10 @@ def Large_format(request):
         "bs_product" : bs_object,
         "lf_product" : lf_object,
         "mp_product" : mp_object,
-        "bc_card" : bs_card,
+        "bc_card" : bc_card,
         "bs_card" : bs_card,
         "lf_card" : lf_card,
-        "mp_card" : mp_card
+        "mp_card" : mp_card,
     }
     return render(request, "core/catogery.html", context)
 
@@ -134,7 +151,7 @@ def Marketing_products(request):
         "bs_product" : bs_object,
         "lf_product" : lf_object,
         "mp_product" : mp_object,
-        "bc_card" : bs_card,
+        "bc_card" : bc_card,
         "bs_card" : bs_card,
         "lf_card" : lf_card,
         "mp_card" : mp_card
