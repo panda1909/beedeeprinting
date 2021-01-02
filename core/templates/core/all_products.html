@@ -11,16 +11,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 hidden-xs">
-                    <h1 class="mh-title">Business Cards</h1>
+                    <h1 class="mh-title">All Products</h1>
                 </div>
                 <div class="breadcrumb-w col-sm-9">
                     <span>You are here:</span>
                     <ul class="breadcrumb">
                         <li>
-                            <a href="http://netbaseteam.com/">Home</a>
+                            <a href="{% url 'home' %}">Home</a>
                         </li>
                         <li>
-                            <span>Business Cards</span>
+                            <span>All Products</span>
                         </li>
                     </ul>
                 </div>
@@ -237,9 +237,6 @@
                             
                         </ul>
                         {% endfor %}
-                    </div>
-                    
-                    <div class="row products-grid category-product">
                         {% for bs_product in bs_product %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
@@ -275,11 +272,6 @@
                             
                         </ul>
                         {% endfor %}
-
-                    </div>
-
-                    <div class="row products-grid category-product">
-
                         {% for mp_product in mp_product %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
@@ -315,9 +307,6 @@
                             
                         </ul>
                         {% endfor %}
-                    </div>
-
-                    <div class="row products-grid category-product">
                         {% for lf_product in lf_product %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
@@ -354,6 +343,7 @@
                         </ul>
                         {% endfor %}
                     </div>
+                  
                 </section><!-- Category product grid : End -->
             </div>
             <div class="row">

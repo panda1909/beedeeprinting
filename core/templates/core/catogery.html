@@ -11,16 +11,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 hidden-xs">
-                    <h1 class="mh-title">Business Cards</h1>
+                    {% if bc_card %} 
+                        <h1 class="mh-title">Business Cards</h1>
+                    {% elif bs_card %}
+                        <h1 class="mh-title">Business Stationary</h1>
+                    {% elif lf_card %}
+                        <h1 class="mh-title">Large Format printing</h1>
+                    {% else %}
+                        <h1 class="mh-title">Marketing Products</h1>
+                    {% endif %}
                 </div>
                 <div class="breadcrumb-w col-sm-9">
                     <span>You are here:</span>
                     <ul class="breadcrumb">
                         <li>
-                            <a href="http://netbaseteam.com/">Home</a>
+                            <a href="{% url 'home' %}">Home</a>
                         </li>
                         <li>
-                            <span>Business Cards</span>
+                            {% if bc_card %} 
+                                <span>Business Cards</span>
+                            {% elif bs_card %}
+                                <span>Business Stationary</span>
+                            {% elif lf_card %}
+                                <span>Large Format printing</span>
+                            {% else %}
+                                <span>Marketing Products</span>
+                            {% endif %}
                         </li>
                     </ul>
                 </div>

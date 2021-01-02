@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
 # All category products
-from Business_Cards.models import Products as bc_products , business_cards_price
+from Business_Cards.models import Products as bc_products 
+from Business_Cards.models import business_cards_price
 from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
@@ -16,30 +17,32 @@ from django.template import loader
 # Create your views here.
 
 def Home(request):
-    business_card = bc_products.objects.get(id=1)
-    
-    context = {
-        "business_card": business_card,
-    }
-    return render(request, "core/home.html", context)
+    return render(request, "core/home.html")
 
-def Detail(request):
-    bc_card_price = business_cards_price.objects.all()
+def BC_Detail(request):
     
     product = bc_products.objects.get(id=1)
-    
+
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
 
+
     context = {
+    #    price table    #
+        # "product1" : table,
+    #   side bar content    #
         "bc_product" : bc_object,
         "bs_product" : bs_object,
         "lf_product" : lf_object,
         "mp_product" : mp_object,
-        "business_card": business_card,
-        "bc_card_price" : bc_card_price,
+    #    Product info   #
+        "label" : product.Label,
+        "Description": product.Description,
+        "image1" : product.image1,
+        "image2" : product.image2,
+        "image3" : product.image3,
     }
     return render(request, "core/detail.html", context)
 

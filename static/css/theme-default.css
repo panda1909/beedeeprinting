@@ -848,7 +848,7 @@ a.product-name:hover{
 }
 /*Menu all product --------------------------------------*/
 #main-menu ul li.all-product ul.level0{
-  height: 450px;
+  height: 230px;
 }
 #main-menu ul li.all-product ul.level1{
   display: block;
@@ -861,7 +861,7 @@ a.product-name:hover{
 #main-menu li.all-product ul.level2{
   border-top:3px solid #25bce9;
   min-width: 429px;
-  height: 450px;
+  height: 340px;
 }
 #main-menu li.all-product ul.level2 li{
   width: 50%;
