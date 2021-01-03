@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 from phonenumber_field.modelfields import PhoneNumberField
+from .validators import validate_file_extension
 
                           
 class Orders(models.Model):
@@ -15,7 +16,7 @@ class Orders(models.Model):
     Quantity = models.PositiveIntegerField(default=1, blank=False, editable=True)
     Size = models.CharField(null=False, max_length=1024)
     Price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Template = models.ImageField(upload_to='static/Order_templates', max_length=256)
+    Template = models.FileField(upload_to='static/Order_templates', max_length=256, validators=[validate_file_extension])
 
     def __str__(self):
         return str(self.OrderId)
