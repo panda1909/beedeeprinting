@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
 # All category products
@@ -10,6 +11,7 @@ from Marketing_Products.models import Products as mp_products
 
 from django.http import HttpResponse
 from django.template import loader
+from .form import ImageFileUploadForm
 
 
 
@@ -20,16 +22,26 @@ def Home(request):
 
 
 def BC_Detail(request):
+    
     product = bc_products.objects.get(id=1)
-
     table = business_cards_price.objects.all() 
-
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
+    
+    if request.method == 'POST':
+        form = ImageFileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return JsonResponse ({'error': False, 'message': 'Upload Successfully'})
+        else:
+            return JsonResponse({'error': True, 'errors': form.errors})
+    else:
+        form =ImageFileUploadForm()
 
     context = {
+        "form" : form,
     #   Price Table    #
         "table" : table,        
     #   side bar content    #
