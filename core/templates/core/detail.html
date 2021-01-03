@@ -5,10 +5,6 @@
 <title> Product detail </title>
 {% endblock title %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-{% endblock extra_css %}
-
 {% block content %}
 <!--Main Product Detail : Begin-->
 <main class="main" id="product-detail">
@@ -16,11 +12,11 @@
     <section class="header-page">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 hidden-xs">
-                    <h1 class="mh-title" style="font-size: 200%; color:black"> {{ label }}</h1>
+                <div class="col-sm-3 hidden-xs">
+                    <h1 class="mh-title" > {{ label }}</h1>
                 </div>
-                <div class="breadcrumb-w col-sm-8">
-                    <span class="hidden-xs">You are here:</span>
+                <div class="breadcrumb-w col-sm-9">
+                    <span class="hidden-xs"><strong>You are here:</strong></span>
                     <ul class="breadcrumb">
                         <li>
                             <a href="{% url 'home' %}">Home</a>
@@ -180,9 +176,9 @@
                                             <ul class="nav nav-tabs" role="tablist">
                                                 <li role="presentation" class="active"><a href="#features"
                                                         aria-controls="features" role="tab"
-                                                        data-toggle="tab">Description</a></li>
+                                                        data-toggle="tab"><strong >Description</strong></a></li>
                                                 <li role="presentation"><a href="#ideals" aria-controls="ideals"
-                                                        role="tab" data-toggle="tab">Templates</a></li>
+                                                        role="tab" data-toggle="tab"><strong >Templates</strong></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -250,6 +246,41 @@
                         <span class="number">1</span>
                         <h3>Instant Price Calculator</h3>
                     </div>
+                    <div class="row">
+                        <div class="option-grib-w col-md-12">
+                            <div class="scroll-pane horizontal-only">
+                                <table>
+                                    <tr class="strikeout">
+                                        <th>Quantity</th>
+                                        <th rowspan="1"> Digital Fast</th>
+                                        <th rowspan="1"> Offset High Quality</th>
+                                    </tr>
+                                    {% for table in table %}
+                                    <tr>
+                                        <th>{{ table.quantity }} </th>
+                                        <td>
+                                            {% if not table.digital_Fast_Discounted %} 
+                                                ${{ table.digital_Fast }}
+                                            {% else %}
+                                                <Del>${{ table.digital_Fast }}</Del> &nbsp; ${{ table.digital_Fast_Discounted }}
+                                            {% endif %} 
+                                        </td>
+                                        <td>
+                                            {% if not table.offset_HQ_Discounted %} 
+                                                ${{ table.offset_HQ }}
+                                            {% else %}
+                                                <Del>${{ table.offset_HQ }}</Del> &nbsp; ${{ table.offset_HQ_Discounted }}
+                                            {% endif %} 
+                                        </td>
+                                       
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
                     <form method="POST">
                         <div class="options-list-w">
                             <div class="row">
@@ -313,37 +344,12 @@
                             </div>
                         </div>
                     </form>
-
-                    <div class="row">
-                        <div class="option-grib-w col-md-12">
-                            <div class="scroll-pane horizontal-only">
-                                <table>
-                                    <tr class="strikeout">
-                                        <th>Quantity</th>
-                                        <th rowspan="1"> Digital Fast</th>
-                                        <th rowspan="1"> Offset High Quality</th>
-                                    </tr>
-                                    {% for table in table %}
-                                    <tr>
-                                        <th>{{ table.quantity }} </th>
-                                        <td>
-                                            {% if not table.digital_Fast_Discounted %} 
-                                                ${{ table.digital_Fast }}
-                                            {% else %}
-                                                <Del>${{ table.digital_Fast }}</Del> &nbsp; ${{ table.digital_Fast_Discounted }}
-                                            {% endif %} 
-                                        </td>
-                                        <td>
-                                            {% if not table.offset_HQ_Discounted %} 
-                                                ${{ table.offset_HQ }}
-                                            {% else %}
-                                                <Del>${{ table.offset_HQ }}</Del> &nbsp; ${{ table.offset_HQ_Discounted }}
-                                            {% endif %} 
-                                        </td>
-                                       
-                                    </tr>
-                                    {% endfor %}
-                                </table>
+                    <div class="add-to-cart">
+                        
+                        <div class="quantity-price-w row">
+                            <div class="price-total col-xs-6">
+                                <label>Total:</label>
+                                <span class="price">$13.50</span>
                             </div>
                         </div>
                     </div>
@@ -356,8 +362,7 @@
                                 <h3>Get Started</h3>
                             </div>
                             <p class="upload-allow">
-                                You can only upload files that are allowed as jpg, jpeg, png, txt, doc, docx, xls,
-                                xlsx...
+                                You can only upload files that are allowed as jpg, jpeg, png...
                             </p>
                             <div class="box-upload">
                                 <span class="icon">
@@ -374,19 +379,12 @@
                                 <span class="number hidden-xs">3</span>
                                 <h3>Add to cart</h3>
                             </div>
+                        </div>
                             <div class="quantity-price-w row">
-                                <div class="col-xs-6 quantity">
-                                    <label>Quantity</label>
-                                    <input type="text" name="qty" class="qty" value="101">
-                                </div>
-                                <div class="price-total col-xs-6">
-                                    <label>Total:</label>
-                                    <span class="price">$13.50</span>
-                                </div>
                                 <div class="add-cart-btn-w col-xs-12">
                                     <button type="button" class="add-cart-btn btn">
                                         <i class="fa fa-shopping-cart"></i>
-                                        Add To Cart
+                                        Place Order
                                     </button>
                                 </div>
                             </div>
