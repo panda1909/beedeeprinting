@@ -13,25 +13,25 @@ from django.template import loader
 
 
 
-
 # Create your views here.
 
 def Home(request):
-    return render(request, "core/home.html")
+    return render(request, "core/index.html")
+
 
 def BC_Detail(request):
-    
     product = bc_products.objects.get(id=1)
+
+    table = business_cards_price.objects.all() 
 
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
 
-
     context = {
-    #    price table    #
-        # "product1" : table,
+    #   Price Table    #
+        "table" : table,        
     #   side bar content    #
         "bc_product" : bc_object,
         "bs_product" : bs_object,

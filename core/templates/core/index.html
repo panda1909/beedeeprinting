@@ -12,7 +12,7 @@
         <div class="slide-show">
             <div class="vt-slideshow">
                 <ul>
-                    <li class="slide1" data-transition="random"><img src="images/slider/home/bg_slider_1.jpg" alt="" />
+                    <li class="slide1" data-transition="random"><img src="{% static 'images/slider/home/bg_slider_1.jpg' %}" alt="" />
                         <div class="tp-caption lfr" data-x="right" data-hoffset="-56" data-y="170" data-start="800"
                             data-speed="2000" data-endspeed="300"><span class="style1"><span
                                     class="textcolor">Flyers</span> & Leaflets</span></div>
@@ -30,7 +30,7 @@
                             data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn"
                                 href="#">buy now</a></div>
                     </li>
-                    <li class="slide2" data-transition="random"><img src="images/slider/home/bg_slider_2.jpg" alt="" />
+                    <li class="slide2" data-transition="random"><img src="{% static 'images/slider/home/bg_slider_2.jpg' %}" alt="" />
                         <div class="tp-caption lfr" data-x="left" data-hoffset="" data-y="170" data-start="800"
                             data-speed="2000" data-endspeed="300"><span class="style1"><span
                                     class="textcolor">Flyers</span> & Leaflets</span></div>
@@ -48,7 +48,7 @@
                             data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="#">buy now</a>
                         </div>
                     </li>
-                    <li class="slide3" data-transition="random"><img src="images/slider/home/bg_slider_3.jpg" alt="" />
+                    <li class="slide3" data-transition="random"><img src="{% static 'images/slider/home/bg_slider_3.jpg' %}" alt="" />
                         <div class="tp-caption lft" data-x="left" data-hoffset="" data-y="170" data-start="800"
                             data-speed="2000" data-endspeed="300"><span class="style1"><span
                                     class="textcolor">Flyers</span> & Leaflets</span></div>
@@ -71,66 +71,7 @@
         </div>
     </section>
     <!--Home Category : Begin-->
-    <section class="home-category">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
-                    <a href="#" class="image">
-                        <img src="images/banner/category/1.jpg" alt="banner-category" />
-                    </a>
-                    <div class="info">
-                        <a href="#">CANVAS PRINT</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 block block-center">
-                    <div class="inner-top">
-                        <div class="box-left">
-                            <a href="#" class="image frist">
-                                <img src="images/banner/category/2.jpg" alt="banner-category" />
-                            </a>
-                            <div class="info">
-                                <a href="#">BROCHURE</a>
-                            </div>
-                        </div>
-                        <div class="box-right">
-                            <a href="#" class="image">
-                                <img src="images/banner/category/3.jpg" alt="banner-category" />
-                            </a>
-                            <div class="info">
-                                <a href="#">BUSINESS CARD</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inner-bottom">
-                        <a href="#" class="image">
-                            <img src="images/banner/category/4.jpg" alt="banner-category" />
-                        </a>
-                        <div class="info">
-                            <a href="#">LOGO PRINT</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-right">
-                    <div class="inner-top">
-                        <a href="#" class="image">
-                            <img src="images/banner/category/5.jpg" alt="banner-category" />
-                        </a>
-                        <div class="info">
-                            <a href="#">ENVELOPE</a>
-                        </div>
-                    </div>
-                    <div class="inner-bottom">
-                        <a href="#" class="image">
-                            <img src="images/banner/category/6.jpg" alt="banner-category" />
-                        </a>
-                        <div class="info">
-                            <a href="#">COVER PRINT</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
     <!--Home Trust : Begin-->
     <section class="trust-w hidden-xs">
         <div class="container">
@@ -142,7 +83,6 @@
                         <span class="tr-line"></span>
                         <p>Bright inks. Thick Paper. Precise cuts. We believe that quality printing matters. That
                             quality printing matters.</p>
-                        <a href="#" class="btn-readmore" title="Quality Printing">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block-trust trust-col-time-delivery">
@@ -151,7 +91,6 @@
                         <h3>Timely Delivery</h3>
                         <span class="tr-line"></span>
                         <p>No printer is faster. Order today by 8:00pm EST and you can even get it tomorrow.</p>
-                        <a href="#" class="btn-readmore" title="Timely Delivery">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block-trust trust-col-eco-minded">
@@ -162,7 +101,6 @@
                         <p>
                             Overnight Prints is the greenest online printer in the world. See our Waterless technology.
                         </p>
-                        <a href="#" class="btn-readmore" title="Eco-Minded">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 block-trust trust-col-eco-money">
@@ -174,7 +112,6 @@
                             Most sellers work with buyers to quickly resolve issues, but if a solution isn't reached, we
                             can help.
                         </p>
-                        <a href="#" class="btn-readmore" title="Eco-Minded">Read more</a>
                     </div>
                 </div>
             </div>
@@ -195,7 +132,7 @@
                 <ul class="slider-w slider-owl">
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/1.jpg" alt="Grouper Business card">
+                            <img src="{% static 'images/product/263x263/1.jpg' %}" alt="Grouper Business card">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -232,7 +169,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/2.jpg" alt="New Brochures">
+                            <img src="{% static 'images/product/263x263/2.jpg' %}" alt="New Brochures">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top" title="Add-to-cart"
                                     class="add-to-cart gbtn">
@@ -268,7 +205,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/3.jpg" alt="Flyers Two Page">
+                            <img src="{% static 'images/product/263x263/3.jpg' %}" alt="Flyers Two Page">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -306,7 +243,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/4.jpg" alt="Business Card">
+                            <img src="{% static 'images/product/263x263/4.jpg' %}" alt="Business Card">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -342,7 +279,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/eSliproser-postcard.jpg" alt="eSliproser Postcards">
+                            <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}" alt="eSliproser Postcards">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -378,7 +315,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/holiday-postcard-2.jpg" alt="Holiday Postcard 2">
+                            <img src="{% static 'images/product/263x263/holiday-postcard-2.jpg' %}" alt="Holiday Postcard 2">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -415,7 +352,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/postcard-mailing-services.jpg"
+                            <img src="{% static 'images/product/263x263/postcard-mailing-services.jpg' %}"
                                 alt="Postcard Mailing Services">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
@@ -452,7 +389,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/holiday-postcard.jpg" alt="Holiday Postcard">
+                            <img src="{% static 'images/product/263x263/holiday-postcard.jpg' %}" alt="Holiday Postcard">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -488,7 +425,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/new-business-card.jpg" alt="New Business Card">
+                            <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business Card">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -525,7 +462,7 @@
                     </li>
                     <li class="pro-item">
                         <div class="product-image-action">
-                            <img src="images/product/263x263/holiday-postcard-3.jpg" alt="Holiday Postcard 3">
+                            <img src="{% static 'images/product/263x263/holiday-postcard-3.jpg' %}" alt="Holiday Postcard 3">
                             <div class="action">
                                 <button type="button" data-toggle="tooltip" data-placement="top"
                                     class="add-to-cart gbtn" title="Add to cart">
@@ -575,16 +512,7 @@
                         <span></span>
                         <i class="fa fa-star"></i>
                     </span>
-                    <ul>
-                        <li class="active"><a data-toggle="tab" href="#tab1">All projects</a></li>
-                        <li><a data-toggle="tab" href="#tab2">Leaflets & Flyers</a></li>
-                        <li><a data-toggle="tab" href="#tab3" class="last">Logo</a></li>
-                        <li><a data-toggle="tab" href="#tab4" class="last">Stationary</a></li>
-                        <li><a data-toggle="tab" href="#tab5" class="last">3d product</a></li>
-                        <li><a data-toggle="tab" href="#tab6" class="last">Presentation</a></li>
-                        <li><a data-toggle="tab" href="#tab7" class="last">Brochure</a></li>
-                        <li><a data-toggle="tab" href="#tab8" class="last">Ecommerce</a></li>
-                    </ul>
+                    
                 </div>
                 <!--New Products Title : End -->
                 <div class="tab-content">
@@ -593,7 +521,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -630,7 +558,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -667,7 +595,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -705,7 +633,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -748,7 +676,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-postcard-card.jpg" alt="New Postcard Cards">
+                                    <img src="{% static 'images/product/263x263/new-postcard-card.jpg' %}" alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -785,7 +713,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/postcard-mailing-services.jpg"
+                                    <img src="{% static 'images/product/263x263/postcard-mailing-services.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -830,7 +758,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -865,7 +793,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -902,7 +830,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -940,7 +868,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -983,7 +911,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/grouper-business-card.jpg"
+                                    <img src="{% static 'images/product/263x263/grouper-business-card.jpg' %}"
                                         alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1021,7 +949,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/flyers-two-page.jpg"
+                                    <img src="{% static 'images/product/263x263/flyers-two-page.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1066,7 +994,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1101,7 +1029,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1138,7 +1066,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1176,7 +1104,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1219,7 +1147,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-postcard-card.jpg" alt="New Postcard Cards">
+                                    <img src="{% static 'images/product/263x263/new-postcard-card.jpg' %}" alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1256,7 +1184,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/postcard-mailing-services.jpg"
+                                    <img src="{% static 'images/product/263x263/postcard-mailing-services.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1301,7 +1229,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1336,7 +1264,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1373,7 +1301,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1411,7 +1339,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1454,7 +1382,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/grouper-business-card.jpg"
+                                    <img src="{% static 'images/product/263x263/grouper-business-card.jpg' %}"
                                         alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1492,7 +1420,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/flyers-two-page.jpg"
+                                    <img src="{% static 'images/product/263x263/flyers-two-page.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1537,7 +1465,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1572,7 +1500,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1608,7 +1536,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1646,7 +1574,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1689,7 +1617,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-postcard-card.jpg" alt="New Postcard Cards">
+                                    <img src="{% static 'images/product/263x263/new-postcard-card.jpg' %}" alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1726,7 +1654,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/postcard-mailing-services.jpg"
+                                    <img src="{% static 'images/product/263x263/postcard-mailing-services.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1771,7 +1699,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1806,7 +1734,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1842,7 +1770,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1880,7 +1808,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -1923,7 +1851,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/grouper-business-card.jpg"
+                                    <img src="{% static 'images/product/263x263/grouper-business-card.jpg' %}"
                                         alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -1960,7 +1888,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/flyers-two-page.jpg"
+                                    <img src="{% static 'images/product/263x263/flyers-two-page.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -2005,7 +1933,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2040,7 +1968,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2077,7 +2005,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -2115,7 +2043,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2158,7 +2086,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-postcard-card.jpg" alt="New Postcard Cards">
+                                    <img src="{% static 'images/product/263x263/new-postcard-card.jpg' %}" alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2195,7 +2123,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/postcard-mailing-services.jpg"
+                                    <img src="{% static 'images/product/263x263/postcard-mailing-services.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -2240,7 +2168,7 @@
                         <div class="col-md-6 col-sm-8 hidden-xs">
                             <div class="pro-item large-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/business-card-large-item.jpg" alt="Grouper Business card">
+                                    <img src="{% static 'images/product/business-card-large-item.jpg' %}" alt="Grouper Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2275,7 +2203,7 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pro-item visible-xs">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/business-card-2.jpg" alt="Business card 2">
+                                    <img src="{% static 'images/product/263x263/business-card-2.jpg' %}" alt="Business card 2">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2312,7 +2240,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/eSliproser-postcard.jpg"
+                                    <img src="{% static 'images/product/263x263/eSliproser-postcard.jpg' %}"
                                         alt="eSliproser Postcards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -2350,7 +2278,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/new-business-card.jpg" alt="New Business card">
+                                    <img src="{% static 'images/product/263x263/new-business-card.jpg' %}" alt="New Business card">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             class="add-to-cart gbtn" title="Add to cart">
@@ -2393,7 +2321,7 @@
                         <div class="col-md-3 visible-md visible-lg">
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/grouper-business-card.jpg"
+                                    <img src="{% static 'images/product/263x263/grouper-business-card.jpg' %}"
                                         alt="New Postcard Cards">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -2431,7 +2359,7 @@
                             </div>
                             <div class="pro-item">
                                 <div class="product-image-action">
-                                    <img src="images/product/263x263/flyers-two-page.jpg"
+                                    <img src="{% static 'images/product/263x263/flyers-two-page.jpg' %}"
                                         alt="Postcard Mailing Services">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
@@ -2477,259 +2405,7 @@
     </section>
     <!--Home New Products : End -->
     <!--Home blog : Begin -->
-    <section class="home-blog">
-        <div class="container">
-            <div class="row">
-                <div class="block-title-w">
-                    <h2 class="block-title">recent blog post</h2>
-                    <span class="icon-title">
-                        <span></span>
-                        <i class="fa fa-star"></i>
-                    </span>
-                </div>
-                <div class="blog-content-w" id="blog-content-w">
-                    <div class="slider">
-                        <div class="slider-inner">
-                            <div class="wrap-item">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-                                    <div class="inner">
-                                        <a class="image" href="#">
-                                            <img src="images/blog/1.jpg" alt="blog-01" />
-                                        </a>
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                        <a class="image" href="#">
-                                            <img src="images/blog/2.jpg" alt="blog-01" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-                                    <div class="inner">
-                                        <a class="image" href="#">
-                                            <img src="images/blog/3.jpg" alt="blog-01" />
-                                        </a>
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                        <a class="image" href="#">
-                                            <img src="images/blog/4.jpg" alt="blog-01" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wrap-item">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-                                    <div class="inner">
-                                        <a class="image" href="#">
-                                            <img src="images/blog/1.jpg" alt="blog-01" />
-                                        </a>
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                        <a class="image" href="#">
-                                            <img src="images/blog/2.jpg" alt="blog-01" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-                                    <div class="inner">
-                                        <a class="image" href="#">
-                                            <img src="images/blog/3.jpg" alt="blog-01" />
-                                        </a>
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                        <a class="image" href="#">
-                                            <img src="images/blog/4.jpg" alt="blog-01" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wrap-item">
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-                                    <div class="inner">
-                                        <a class="image" href="#">
-                                            <img src="images/blog/1.jpg" alt="blog-01" />
-                                        </a>
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                        <a class="image" href="#">
-                                            <img src="images/blog/2.jpg" alt="blog-01" />
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item">
-                                    <div class="inner">
-                                        <a class="image" href="#">
-                                            <img src="images/blog/3.jpg" alt="blog-01" />
-                                        </a>
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 item item-even">
-                                    <div class="inner">
-                                        <div class="info">
-                                            <div class="title">
-                                                <a href="#">Happy Holidays Photo Cards</a>
-                                            </div>
-                                            <div class="sub-title">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                                                    diam...
-                                                </p>
-                                            </div>
-                                            <a href="#" class="read-more">Read more</a>
-                                        </div>
-                                        <a class="image" href="#">
-                                            <img src="images/blog/4.jpg" alt="blog-01" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <!--Home make print : Begin -->
     <section class="home-make-print">
         <div class="container">
@@ -2865,25 +2541,9 @@
                 </div>
                 <div class="or-service-w">
                     <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-                        <div class="or-image">
+                        <!-- <div class="or-image">
                             <a href="#">
-                                <img src="images/our_service/1.png" alt="service-01" />
-                            </a>
-                        </div>
-                        <div class="or-title">
-                            <a href="#">graphic Design</a>
-                        </div>
-                        <div class="or-text">
-                            <p>
-                                let us design your next print project!
-                            </p>
-                        </div>
-                        <a href="#" class="btn-readmore order-now">Order now</a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-                        <div class="or-image">
-                            <a href="#">
-                                <img src="images/our_service/2.png" alt="service-02" />
+                                <img src="{% static 'images/our_service/2.png' %}" alt="service-02" />
                             </a>
                         </div>
                         <div class="or-title">
@@ -2894,12 +2554,29 @@
                                 Delivery, we can hand it all for you!
                             </p>
                         </div>
-                        <a href="#" class="btn-readmore order-now">Order now</a>
+                        <a href="#" class="btn-readmore order-now">Order now</a> -->
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6 or-block">
                         <div class="or-image">
                             <a href="#">
-                                <img src="images/our_service/3.png" alt="service-03" />
+                                <img src="{% static 'images/our_service/1.png' %}" alt="service-01" />
+                            </a>
+                        </div>
+                        <div class="or-title">
+                            <a href="#">graphic Design</a>
+                        </div>
+                        <div class="or-text">
+                            <p>
+                                let us design your next print project!
+                            </p>
+                        </div>
+                        <!-- <a href="#" class="btn-readmore order-now">Order now</a> -->
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 col-xs-6 or-block">
+                        <div class="or-image">
+                            <a href="#">
+                                <img src="{% static 'images/our_service/3.png' %}" alt="service-03" />
                             </a>
                         </div>
                         <div class="or-title">
@@ -2910,12 +2587,12 @@
                                 we'll bring all your creative ideas to life!
                             </p>
                         </div>
-                        <a href="#" class="btn-readmore order-now">Order now</a>
+                        <!-- <a href="#" class="btn-readmore order-now">Order now</a> -->
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-                        <div class="or-image">
+                        <!-- <div class="or-image">
                             <a href="#">
-                                <img src="images/our_service/4.png" alt="service-04" />
+                                <img src="{% static 'images/our_service/4.png' %}" alt="service-04" />
                             </a>
                         </div>
                         <div class="or-title">
@@ -2926,14 +2603,14 @@
                                 we'll if your file is ready to print!
                             </p>
                         </div>
-                        <a href="#" class="btn-readmore order-now">Order now</a>
+                        <a href="#" class="btn-readmore order-now">Order now</a> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--Home out recent : Begin -->
-    <section class="home-out-recent">
+    <!-- <section class="home-out-recent">
         <div class="container">
             <div class="row">
                 <div class="block-title-w">
@@ -2959,7 +2636,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -2978,7 +2655,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -2997,7 +2674,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3016,7 +2693,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3035,7 +2712,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3054,7 +2731,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3075,7 +2752,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3094,7 +2771,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3113,7 +2790,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3132,7 +2809,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3151,7 +2828,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3170,7 +2847,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3191,7 +2868,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3210,7 +2887,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3229,7 +2906,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3248,7 +2925,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3267,7 +2944,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3286,7 +2963,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3307,7 +2984,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3326,7 +3003,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3345,7 +3022,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3364,7 +3041,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3383,7 +3060,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3402,7 +3079,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3423,7 +3100,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3442,7 +3119,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3461,7 +3138,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3480,7 +3157,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3499,7 +3176,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3518,7 +3195,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3539,7 +3216,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3558,7 +3235,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3577,7 +3254,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3596,7 +3273,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3615,7 +3292,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3634,7 +3311,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3655,7 +3332,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3674,7 +3351,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3693,7 +3370,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3712,7 +3389,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3731,7 +3408,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3750,7 +3427,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3771,7 +3448,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/5.png" alt="service-05" />
+                                        <img src="{% static 'images/our_service/5.png' %}" alt="service-05" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3790,7 +3467,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/6.png" alt="service-06" />
+                                        <img src="{% static 'images/our_service/6.png' %}" alt="service-06" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3809,7 +3486,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/7.png" alt="service-07" />
+                                        <img src="{% static 'images/our_service/7.png' %}" alt="service-07" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3828,7 +3505,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/8.png" alt="service-08" />
+                                        <img src="{% static 'images/our_service/8.png' %}" alt="service-08" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3847,7 +3524,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/9.png" alt="service-09" />
+                                        <img src="{% static 'images/our_service/9.png' %}" alt="service-09" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3866,7 +3543,7 @@
                             <div class="w-block-recent">
                                 <div class="image-recent">
                                     <a href="#">
-                                        <img src="images/our_service/10.png" alt="service-10" />
+                                        <img src="{% static 'images/our_service/10.png' %}" alt="service-10" />
                                     </a>
                                 </div>
                                 <div class="info-recent">
@@ -3886,7 +3563,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--Home Testimonials : Begin -->
     <section class="home-testimonial">
         <div class="container">
@@ -3897,7 +3574,7 @@
                             <div class="item">
                                 <div class="inner">
                                     <div class="image">
-                                        <a href="#"><img src="images/testimonials/1.png" alt="terminal-01" /></a>
+                                        <a href="#"><img src="{% static 'images/testimonials/1.png' %}" alt="terminal-01" /></a>
                                     </div>
                                     <div class="tes-name">
                                         <a href="#">Sam Ibister</a>
@@ -3915,7 +3592,7 @@
                             <div class="item">
                                 <div class="inner">
                                     <div class="image">
-                                        <a href="#"><img src="images/testimonials/2.png" alt="terminal-01" /></a>
+                                        <a href="#"><img src="{% static 'images/testimonials/2.png' %}" alt="terminal-01" /></a>
                                     </div>
                                     <div class="tes-name">
                                         <a href="#">Sam Ibister</a>
@@ -3933,7 +3610,7 @@
                             <div class="item">
                                 <div class="inner">
                                     <div class="image">
-                                        <a href="#"><img src="images/testimonials/3.png" alt="terminal-01" /></a>
+                                        <a href="#"><img src="{% static 'images/testimonials/3.png' %}" alt="terminal-01" /></a>
                                     </div>
                                     <div class="tes-name">
                                         <a href="#">Sam Ibister</a>
@@ -3958,32 +3635,32 @@
                 <div class="bran-block">
                     <div class="item col-md-2 col-sm-4 col-xs-6">
                         <a href="#" class="image">
-                            <img src="images/brands/1.png" alt="brand-01" />
+                            <img src="{% static 'images/brands/1.png' %}" alt="brand-01" />
                         </a>
                     </div>
                     <div class="item col-md-2 col-sm-4 col-xs-6">
                         <a href="#" class="image">
-                            <img src="images/brands/2.png" alt="brand-02" />
+                            <img src="{% static 'images/brands/2.png' %}" alt="brand-02" />
                         </a>
                     </div>
                     <div class="item col-md-2 col-sm-4 col-xs-6">
                         <a href="#" class="image">
-                            <img src="images/brands/3.png" alt="brand-03" />
+                            <img src="{% static 'images/brands/3.png' %}" alt="brand-03" />
                         </a>
                     </div>
                     <div class="item col-md-2 col-sm-4 col-xs-6">
                         <a href="#" class="image">
-                            <img src="images/brands/4.png" alt="brand-04" />
+                            <img src="{% static 'images/brands/4.png' %}" alt="brand-04" />
                         </a>
                     </div>
                     <div class="item col-md-2 col-sm-4 col-xs-6">
                         <a href="#" class="image">
-                            <img src="images/brands/5.png" alt="brand-05" />
+                            <img src="{% static 'images/brands/5.png' %}" alt="brand-05" />
                         </a>
                     </div>
                     <div class="item col-md-2 col-sm-4 col-xs-6">
                         <a href="#" class="image">
-                            <img src="images/brands/6.png" alt="brand-06" />
+                            <img src="{% static 'images/brands/6.png' %}" alt="brand-06" />
                         </a>
                     </div>
                 </div>

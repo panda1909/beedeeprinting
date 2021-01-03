@@ -5,8 +5,11 @@
 <title> Product detail </title>
 {% endblock title %}
 
-{% block content %}
+{% block extra_css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+{% endblock extra_css %}
 
+{% block content %}
 <!--Main Product Detail : Begin-->
 <main class="main" id="product-detail">
     <!--Breadcrumb : Begin-->
@@ -310,6 +313,7 @@
                             </div>
                         </div>
                     </form>
+
                     <div class="row">
                         <div class="option-grib-w col-md-12">
                             <div class="scroll-pane horizontal-only">
@@ -319,67 +323,27 @@
                                         <th rowspan="1"> Digital Fast</th>
                                         <th rowspan="1"> Offset High Quality</th>
                                     </tr>
-                                    
+                                    {% for table in table %}
                                     <tr>
-                                        {% for quantity in quantity %}
-                                        <th>{{ quantity }} </th>
-                                        {% for product1 in product1  %}
+                                        <th>{{ table.quantity }} </th>
                                         <td>
-                                            {% if not discount1 %} 
-                                                ${{ product1 }}
+                                            {% if not table.digital_Fast_Discounted %} 
+                                                ${{ table.digital_Fast }}
                                             {% else %}
-                                                <Del>${{ product1 }}</Del> &nbsp; ${{ discount1 }}
+                                                <Del>${{ table.digital_Fast }}</Del> &nbsp; ${{ table.digital_Fast_Discounted }}
                                             {% endif %} 
                                         </td>
-                                        {% endfor %}
                                         <td>
-                                            {% if not bc_card_price.offset_HQ_Discounted %}
-                                            ${{ bc_card_price.offset_HQ }}
+                                            {% if not table.offset_HQ_Discounted %} 
+                                                ${{ table.offset_HQ }}
                                             {% else %}
-                                            <Del>${{ bc_card_price.offset_HQ }}</Del> &nbsp; ${{
-                                            bc_card_price.offset_HQ_Discounted }}
-                                            {% endif %}
+                                                <Del>${{ table.offset_HQ }}</Del> &nbsp; ${{ table.offset_HQ_Discounted }}
+                                            {% endif %} 
                                         </td>
                                        
                                     </tr>
                                     {% endfor %}
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-share hidden-xs">
-                        <div class="col-xs-12">
-                            <div class="row">
-                                <div class="col-sm-3 social">
-                                    <ul>
-                                        <li class="label">Share:</li>
-                                        <li class="twiter">
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li class="facebook">
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        </li>
-                                        <li class="pinterest">
-                                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                                        </li>
-                                        <li class="twiter">
-                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-3 add-to-wishlist">
-                                    <a href="#">
-                                        <i class="fa fa-heart"></i> Add to wishlist
-                                    </a>
-                                </div>
-                                <div class="col-sm-3 email-to-friend">
-                                    <a href="#">
-                                        <i class="fa fa-envelope"></i>Email to friend
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>

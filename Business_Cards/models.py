@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+import django_tables2 as tables
 
 
 # Create your models here.
