@@ -24,7 +24,9 @@ def Home(request):
 def BC_Detail(request):
     
     product = bc_products.objects.get(id=1)
+
     table = business_cards_price.objects.all() 
+
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
