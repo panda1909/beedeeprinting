@@ -260,7 +260,8 @@
                                             {% if not table.digital_Fast_Discounted %}
                                             ${{ table.digital_Fast }}
                                             {% else %}
-                                            <Del>${{ table.digital_Fast }}</Del> &nbsp; ${{ table.digital_Fast_Discounted }}
+                                            <Del>${{ table.digital_Fast }}</Del> &nbsp;
+                                            ${{ table.digital_Fast_Discounted }}
                                             {% endif %}
                                         </td>
                                         <td>
@@ -341,6 +342,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- <input type="submit"/> -->
                     </form>
                     <div class="add-to-cart">
                         <div class="quantity-price-w row">
@@ -361,12 +363,15 @@
                             <p class="upload-allow">
                                 You can only upload files that are allowed as jpg, jpeg, png...
                             </p>
-
-                            <form enctype="multipart/form-data" id="id_ajax_upload_form" method="POST" novalidate="">
+                            <!-- enctype="multipart/form-data" id="id_ajax_upload_form" -->
+                            <form method="POST">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 <input type="submit" />
                             </form>
+                            
+                            
+
 
 
                             <!-- <div class="box-upload">
