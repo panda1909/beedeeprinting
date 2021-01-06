@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-import django_tables2 as tables
+#import django_tables2 as tables
 
 
 # Create your models here.
@@ -9,10 +9,10 @@ class business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)])
-    Digital_Fast_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    Digital_Fast_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)])
-    Offset_HQ_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    Offset_HQ_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
 
     def __str__(self):
@@ -26,13 +26,13 @@ class edge_painted_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    US_Standard_Size_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    US_Standard_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     European_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     European_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    European_Size_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    European_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     Square = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Square_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Square_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    Square_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
@@ -70,7 +70,7 @@ class pantone_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
@@ -82,10 +82,10 @@ class plastic_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="US Standard Size Price")
     US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="US Standard Size Price Discounted")
-    US_Standard_Size_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    US_Standard_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     Credit_card_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="Credit Card Size Price")
     Credit_card_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="Credit Card Size Price Discounted")
-    Credit_card_Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    Credit_card_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
@@ -94,11 +94,11 @@ class plastic_business_cards_price(models.Model):
         verbose_name = "6 - Plastic business cards price"
 
 class raised_ink_business_cards_price(models.Model):
-    US_Standard_Size = models.CharField(max_length=555)
+    US_Standard_Size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Template = models.ImageField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)

@@ -8,7 +8,7 @@ class Calendars(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    image = models.ImageField(upload_to='static/Calender', max_length=256, blank=True)
+    #image = models.ImageField(upload_to='static/Calender', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
@@ -64,7 +64,7 @@ class QuotationPostCards(models.Model):
    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
    dimensionX = models.PositiveIntegerField(default=0, blank=False, editable=True)
    dimensionY = models.PositiveIntegerField(default=0, blank=False, editable=True)
-   Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+   Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
 #    templates = models.ManyToManyField(Templates)
 
    def __str__(self):
@@ -90,7 +90,7 @@ class QuotationDirectMailPostCards(models.Model):
    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
    dimensionX = models.PositiveIntegerField(default=0, blank=False, editable=True)
    dimensionY = models.PositiveIntegerField(default=0, blank=False, editable=True)
-   Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+   Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
 
    def __str__(self):
        return (str(self.DirectMailPostCards) + " " + str(self.dimensionX) + "x" + str(self.dimensionY))
@@ -145,10 +145,10 @@ class PresentationFolders(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Nine_By_Twelve_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9" x 12" Fast - Digital Fast')
     Nine_By_Twelve_Fast_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9" x 12" Digital Fast Discounted')
-    Nine_by_Twleve_Fast_Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+    Nine_by_Twleve_Fast_Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
     Nine_By_Twelve_Offset = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9" x 12" Offset Folders')
     Nine_By_Twelve_Offset_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9" x 12" Offset Discounted')
-    Nine_By_Twelve_Offset_Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+    Nine_By_Twelve_Offset_Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.Quantity)
@@ -160,7 +160,7 @@ class CustomHolidayCards(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Folding_Card = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'Folding card - closed size is 5" x 7"')
     Folding_Card_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'Folding card - closed size is 5" x 7" Discounted')
-    Template = models.ImageField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+    Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
 
     def __str__(self):
         return str(self.Quantity)

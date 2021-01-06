@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
 
-    'django_tables2',
+    #'django_tables2',
     'core',
     'Business_Cards',
     'Business_Stationary',
