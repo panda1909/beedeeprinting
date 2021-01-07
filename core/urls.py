@@ -3,6 +3,7 @@ from .views import Home, Aboutus, Cart, Business_card, All_products, Business_st
 
 urlpatterns = [
      path('', Home, name='home'),
+<<<<<<< HEAD
      path('All-Products', All_products, name='all_products' ),
      path('Aboutus', Aboutus.as_view(), name='aboutus'),
      path('Cart', Cart, name='cart'),
@@ -13,5 +14,16 @@ urlpatterns = [
      path('Marketing-Products', Marketing_products, name='marketing_products'),
      path('Large-Format', Large_format, name='large_format'),
    #  path('PostCardDetail', PostCardDetail, name='PostCardDetail')
+=======
+     path('all-Products', All_products, name='all_products' ),
+     path('aboutus', Aboutus.as_view(), name='aboutus'),
+     path('cart', Cart, name='cart'),
+     path('checkout', Checkout, name='checkout'),
+     path('detail', BC_Detail, name='bc_detail'),
+     path('business-Cards', Business_card, name='business_card' ),
+     path('business-Stationary', Business_stationary, name='business_stationary'),
+     path('marketing-Products', Marketing_products, name='marketing_products'),
+     path('large-Format', Large_format, name='large_format'),
+>>>>>>> 4517851e8c565ce07047ac796ad2824e8b53d9df
      
 ]

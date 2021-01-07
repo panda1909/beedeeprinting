@@ -11,7 +11,7 @@ from Marketing_Products.models import Products as mp_products
 
 from django.http import HttpResponse
 from django.template import loader
-from .form import ImageFileUploadForm
+from .form import ImageFileUploadForm, BusinessCard
 
 
 
@@ -29,16 +29,28 @@ def BC_Detail(request):
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
-    
+
+    # if request.method == 'POST':
+    #     form = ImageFileUploadForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         return JsonResponse ({'error': False, 'message': 'Upload Successfully'})
+    #     else:
+    #         return JsonResponse({'error': True, 'errors': form.errors})
+    # else:
+    #     form =ImageFileUploadForm()
+
     if request.method == 'POST':
-        form = ImageFileUploadForm(request.POST, request.FILES)
+        print("------1-------")
+        form = BusinessCard(request.POST)
         if form.is_valid():
-            form.save()
-            return JsonResponse ({'error': False, 'message': 'Upload Successfully'})
+            print("-------------")
+            print (form.cleaned_data['Quantity'])
         else:
-            return JsonResponse({'error': True, 'errors': form.errors})
+            print("not valid ---------2")
     else:
-        form =ImageFileUploadForm()
+        print("-2----------2--")
+        form =BusinessCard()
 
     context = {
         "form" : form,
