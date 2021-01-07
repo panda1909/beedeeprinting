@@ -15,8 +15,8 @@ class business_cards_price(models.Model):
     Offset_HQ_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
 
-    def __str__(self):
-        return str(self.quantity)
+    # def __str__(self):
+    #     return str(self.digital_Fast)
 
     class Meta:
         verbose_name = "1 - Simple business cards price"  

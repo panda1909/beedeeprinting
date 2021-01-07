@@ -12,5 +12,6 @@ urlpatterns = [
      path('Business-Stationary', Business_stationary, name='business_stationary'),
      path('Marketing-Products', Marketing_products, name='marketing_products'),
      path('Large-Format', Large_format, name='large_format'),
+   #  path('PostCardDetail', PostCardDetail, name='PostCardDetail')
      
 ]
