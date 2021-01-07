@@ -45,7 +45,7 @@ def BC_Detail(request):
         form = BusinessCard(request.POST)
         if form.is_valid():
             print("-------------")
-            print (form.cleaned_data['Quantity'])
+            print (form.cleaned_data)
         else:
             print("not valid ---------2")
     else:

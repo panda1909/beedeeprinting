@@ -6,17 +6,15 @@ from django.core.validators import MinValueValidator
 # Create your models here.
 
 class business_cards_price(models.Model):
-    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)])
-    Digital_Fast_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)])
-    Offset_HQ_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True, unique=True)
+    digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)], unique=True)
+    offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)], unique=True)
     
 
-    # def __str__(self):
-    #     return str(self.digital_Fast)
+    def __str__(self):
+        return str(self.quantity)
 
     class Meta:
         verbose_name = "1 - Simple business cards price"  
@@ -24,14 +22,14 @@ class business_cards_price(models.Model):
 
 class edge_painted_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     US_Standard_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    European_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    European_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    European_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    European_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     European_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    Square = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    Square_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    Square = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Square_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Square_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
@@ -44,8 +42,8 @@ class edge_painted_business_cards_price(models.Model):
 class foil_business_cards_price(models.Model):
     US_Standard_size = models.CharField(max_length=555)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     
     def __str__(self):
         return str(self.quantity)
@@ -56,8 +54,8 @@ class foil_business_cards_price(models.Model):
 class raised_spot_uv_business_cards_price(models.Model):
     US_Standard_size = models.CharField(max_length=555)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     
     def __str__(self):
         return str(self.quantity)
@@ -68,8 +66,8 @@ class raised_spot_uv_business_cards_price(models.Model):
 class pantone_business_cards_price(models.Model):
     US_Standard_Size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
@@ -80,11 +78,11 @@ class pantone_business_cards_price(models.Model):
 
 class plastic_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="US Standard Size Price")
-    US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="US Standard Size Price Discounted")
+    US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="US Standard Size Price")
+    US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="US Standard Size Price Discounted")
     US_Standard_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    Credit_card_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="Credit Card Size Price")
-    Credit_card_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name="Credit Card Size Price Discounted")
+    Credit_card_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="Credit Card Size Price")
+    Credit_card_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="Credit Card Size Price Discounted")
     Credit_card_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
@@ -96,8 +94,8 @@ class plastic_business_cards_price(models.Model):
 class raised_ink_business_cards_price(models.Model):
     US_Standard_Size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
+    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
@@ -120,18 +118,18 @@ class Products(models.Model):
         verbose_name = "Product List"
 
 class Extra_features(models.Model):
-    size = models.CharField(max_length=50, blank=True)
-    size_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    paper_type = models.CharField(max_length=250, blank=True)
-    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    second_side_foil_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    second_side_raied_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    traditional_raised_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    size = models.CharField(max_length=50, blank=True, unique=True)
+    size_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
+    paper_type = models.CharField(max_length=250, blank=True, unique=True)
+    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
+    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
+    second_side_foil_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    second_side_raied_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
+    traditional_raised_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
     plastic_type = models.CharField(max_length=250, blank=True)
-    plastic_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    plastic_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
     raised_ink_colors = models.CharField(max_length=250, blank=True)
-    rasied_ink_colors_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    rasied_ink_colors_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
 
 
     def __str__(self):
@@ -140,3 +138,13 @@ class Extra_features(models.Model):
 
     class Meta:
         verbose_name = "0 - Extra Feature"        
+
+class business_Cards_Form(models.Model):
+    ref_quantity = models.ForeignKey(business_cards_price, to_field= 'quantity', on_delete=models.CASCADE, related_name='quan')
+    ref_digital_Fast = models.ForeignKey(business_cards_price, to_field='digital_Fast_Discounted', on_delete=models.CASCADE, related_name='digital_Fast_Dis')
+    ref_offset_HQ = models.ForeignKey(business_cards_price, to_field='offset_HQ_Discounted', on_delete=models.CASCADE, related_name='offset_HQ_Dis')
+    ref_size = models.ForeignKey(Extra_features, to_field='size', related_name='sz', on_delete=models.CASCADE)
+    ref_size_price = models.ForeignKey(Extra_features, to_field='size_price', related_name='sz_pr', on_delete=models.CASCADE)
+    ref_paper_type = models.ForeignKey(Extra_features, to_field='paper_type', related_name='papr_typ', on_delete=models.CASCADE)
+    ref_paper_type_price = models.ForeignKey(Extra_features, to_field='paper_type_price', related_name='papr_typ_pr', on_delete=models.CASCADE)
+    ref_second_side_price = models.ForeignKey(Extra_features, to_field='second_side_price', related_name='scnd_sid_pr', on_delete=models.CASCADE)
