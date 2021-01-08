@@ -6,11 +6,11 @@ from django.core.validators import MinValueValidator
 # Create your models here.
 
 class business_cards_price(models.Model):
-    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True, unique=True)
+    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True,  )
     digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)], unique=True)
+    digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)],  )
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)], unique=True)
+    offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)],  )
     
 
     def __str__(self):
@@ -118,13 +118,13 @@ class Products(models.Model):
         verbose_name = "Product List"
 
 class Extra_features(models.Model):
-    size = models.CharField(max_length=50, blank=True, unique=True)
-    size_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
-    paper_type = models.CharField(max_length=250, blank=True, unique=True)
-    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
-    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
+    size = models.CharField(max_length=50, blank=True,  )
+    size_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)],  )
+    paper_type = models.CharField(max_length=250, blank=True,  )
+    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)],  )
+    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)],  )
     second_side_foil_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
-    second_side_raied_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], unique=True)
+    second_side_raied_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)],  )
     traditional_raised_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
     plastic_type = models.CharField(max_length=250, blank=True)
     plastic_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
@@ -138,13 +138,3 @@ class Extra_features(models.Model):
 
     class Meta:
         verbose_name = "0 - Extra Feature"        
-
-class business_Cards_Form(models.Model):
-    ref_quantity = models.ForeignKey(business_cards_price, to_field= 'quantity', on_delete=models.CASCADE, related_name='quan')
-    ref_digital_Fast = models.ForeignKey(business_cards_price, to_field='digital_Fast_Discounted', on_delete=models.CASCADE, related_name='digital_Fast_Dis')
-    ref_offset_HQ = models.ForeignKey(business_cards_price, to_field='offset_HQ_Discounted', on_delete=models.CASCADE, related_name='offset_HQ_Dis')
-    ref_size = models.ForeignKey(Extra_features, to_field='size', related_name='sz', on_delete=models.CASCADE)
-    ref_size_price = models.ForeignKey(Extra_features, to_field='size_price', related_name='sz_pr', on_delete=models.CASCADE)
-    ref_paper_type = models.ForeignKey(Extra_features, to_field='paper_type', related_name='papr_typ', on_delete=models.CASCADE)
-    ref_paper_type_price = models.ForeignKey(Extra_features, to_field='paper_type_price', related_name='papr_typ_pr', on_delete=models.CASCADE)
-    ref_second_side_price = models.ForeignKey(Extra_features, to_field='second_side_price', related_name='scnd_sid_pr', on_delete=models.CASCADE)

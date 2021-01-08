@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
 # All category products
 from Business_Cards.models import Products as bc_products 
-from Business_Cards.models import business_cards_price
+from Business_Cards.models import business_cards_price, Extra_features
 from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
@@ -30,30 +30,13 @@ def BC_Detail(request):
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
 
-    # if request.method == 'POST':
-    #     form = ImageFileUploadForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         form.save()
-    #         return JsonResponse ({'error': False, 'message': 'Upload Successfully'})
-    #     else:
-    #         return JsonResponse({'error': True, 'errors': form.errors})
-    # else:
-    #     form =ImageFileUploadForm()
-
-    if request.method == 'POST':
-        print("------1-------")
-        form = BusinessCard(request.POST)
-        if form.is_valid():
-            print("-------------")
-            print (form.cleaned_data)
-        else:
-            print("not valid ---------2")
-    else:
-        print("-2----------2--")
-        form =BusinessCard()
-
+    menu = business_cards_price.objects.all()
+    menu1 = Extra_features.objects.all()
+   
     context = {
-        "form" : form,
+    #   Form 
+        "menu": menu,
+        "menu1": menu1,
     #   Price Table    #
         "table" : table,        
     #   side bar content    #

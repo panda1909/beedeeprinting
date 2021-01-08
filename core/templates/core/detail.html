@@ -284,9 +284,11 @@
                         <div class="options-list-w">
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
+                                    <p> <strong>Select Business Card Turnaround Time:</strong></p>
+
                                     <div class="options-col">
                                         <span class="cur-option-w">
-                                            <span class="cur-option-val">Select Business Card Turnaround Time</span>
+                                            <span class="cur-option-val">-----</span>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                         <ul class="d-none po-list">
@@ -296,50 +298,65 @@
                                     </div>
                                 </div>
                                 <div class="block-options col-md-4 col-sm-5">
+                                    <p> <strong>Select Quantity:</strong></p>
                                     <div class="options-col">
                                         <span class="cur-option-w">
-                                            <span class="cur-option-val">No Larnination</span>
+                                            <span class="cur-option-val">-----</span>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                         <ul class="d-none po-list">
-                                            <li><span>No Larnination</span></li>
-                                            <li><span>Matt Lamination</span></li>
-                                            <li><span>Gloss Lamination</span></li>
-                                            <li><span>Velvet Lamination</span></li>
+                                            {% for menu in menu %}
+                                            <li><span>{{ menu.quantity }}</span></li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
+                                    <p> <strong>Select Size:</strong></p>
                                     <div class="options-col">
                                         <span class="cur-option-w">
-                                            <span class="cur-option-val">Single Sided</span>
+                                            <span class="cur-option-val">----</span>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                         <ul class="d-none po-list">
-                                            <li><span>Single Sided</span></li>
-                                            <li><span>Double Sided</span></li>
+                                            {% for menu1 in menu1 %}
+                                            <li><span>{{ menu1.size }}</span></li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="block-options col-md-4 col-sm-5">
+                                    <p> <strong> Select Paper Type: </strong></p>
                                     <div class="options-col">
                                         <span class="cur-option-w">
-                                            <span class="cur-option-val">Ford</span>
+                                            <span class="cur-option-val">-----</span>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                         <ul class="d-none po-list">
-                                            <li><span>A6</span></li>
-                                            <li><span>A5</span></li>
-                                            <li><span>A4</span></li>
-                                            <li><span>A3</span></li>
-                                            <li><span>DL</span></li>
-                                            <li><span>148mm Square</span></li>
-                                            <li><span>210mm Square</span></li>
+                                            {% for menu1 in menu1 %}
+                                                <li><span>{{ menu1.paper_type }}</span></li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="block-options col-md-4 col-sm-5">
+                                    <p> <strong> Select Side Printing: </strong></p>
+                                    <div class="options-col">
+                                        <span class="cur-option-w">
+                                            <span class="cur-option-val">-----</span>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <ul class="d-none po-list">
+                                            <li><span>One Sided</span></li>
+                                            <li><span>Two Sided - Front and Back</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                         <!-- <input type="submit"/> -->
@@ -363,25 +380,14 @@
                             <p class="upload-allow">
                                 You can only upload files that are allowed as jpg, jpeg, png...
                             </p>
-                            <!-- enctype="multipart/form-data" id="id_ajax_upload_form" -->
-                            <form method="POST">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <input type="submit" />
-                            </form>
-                            
-                            
-
-
-
-                            <!-- <div class="box-upload">
+                            <div class="box-upload">
                                 <span class="icon">
                                     <i class="fa fa-file-text-o"></i>
                                     <i class="fa fa-arrow-up border-radius-50"></i>
                                 </span>
                                 <p>Upload a complete dessign</p>
                                 <button type="button" class="btn upload-btn">Get started</button>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="add-to-cart col-md-12 col-sm-12 col-xs-12">
                             <div class="atc-header">
