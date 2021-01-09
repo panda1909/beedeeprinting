@@ -3,28 +3,33 @@ from django.core.validators import MinValueValidator
 
 # Create your models here.
 
-class FoamcorePosters(models.Model):
-   quantity = models.IntegerField(default=2, null=False)
+# class FoamcorePosters(models.Model):
+#    quantity = models.IntegerField(default=2, null=False)
 
+#    def __str__(self):
+#        return str(self.quantity)
+
+#    class Meta:
+#        verbose_name = "1 - Foamcore Poster"
+
+
+class FoamcorePosters(models.Model):
+   Quantity = models.IntegerField(default=0, blank=True ,verbose_name='Quantity')
+   Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+   Twelve_By_Eighteen = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='12" x 18" per Unit Cost')
+   Eighteen_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" x 24" per Unit Cost')
+   TwentyFour_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 24" per Unit Cost')
+   Twenty_By_Thrity = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='20" x 30" per Unit Cost')
+   TwentyFour_By_ThirtySix = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 36" per Unit Cost')
+   ThirtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='36" x 48" per Unit Cost')
+   FourtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='46" x 48" per Unit Cost')
+
+   
    def __str__(self):
-       return str(self.quantity)
+       return (str(self.Quantity) + " " + str(self.Discount))
 
    class Meta:
        verbose_name = "1 - Foamcore Poster"
-
-
-class QuotationFoamcorePosters(models.Model):
-   FoamcorePosters = models.ForeignKey(FoamcorePosters, on_delete=models.CASCADE, verbose_name='Foamcore Posters')
-   price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-   price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-   dimensionX = models.PositiveIntegerField(default=0, blank=False, editable=True)
-   dimensionY = models.PositiveIntegerField(default=0, blank=False, editable=True)
-
-   def __str__(self):
-       return (str(self.FoamcorePosters) + " " + str(self.dimensionX) + "x" + str(self.dimensionY))
-
-   class Meta:
-       verbose_name = "1.1 - Foamcore Poster"
 
 class PosterPrinting(models.Model):
    quantity = models.IntegerField(default=2, null=False)

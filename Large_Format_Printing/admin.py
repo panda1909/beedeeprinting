@@ -4,7 +4,6 @@ from .models import *
 # Register your models here.
 
 admin.site.register(FoamcorePosters)
-admin.site.register(QuotationFoamcorePosters)
 admin.site.register(PosterPrinting)
 admin.site.register(QuotationPosterPrinting)
 admin.site.register(RetractableBanners)
