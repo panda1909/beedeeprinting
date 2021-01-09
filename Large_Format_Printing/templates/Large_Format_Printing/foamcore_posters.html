@@ -250,10 +250,8 @@
                                 <table>
                                     <tr class="strikeout">
                                         <th>Quantity</th>
-                                        {% for table in table%}
-                                        <th rowspan="1"> {{ table.dimensionX }}" x {{ table.dimensionY }}"</th>
-                                        {% comment %} <th rowspan="1"> Offset High Quality</th> {% endcomment %}
-                                        {% endfor %}
+                                        <th rowspan="1"> 2" x4"</th>
+                                        <th rowspan="1"> 3" x4"</th>
                                     </tr>
                                     {% for table in table %}
                                     <tr>
@@ -261,7 +259,12 @@
                                         {{ table.FoamcorePosters }} 
                                         </td>
                                         <td>
-                                            $<Del>{{ table.price }}</Del>${{ table.price_Discounted }}
+                                            {% if table.dimensionX == "2" and table.dimensionY == "4"  %}
+                                            <Del>${{ table.price }}</Del>${{ table.price_Discounted }}
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <!-- <Del>${{ table.price }}</Del>${{ table.price_Discounted }} -->
                                         </td>
                                     </tr>
                                     {% endfor %}

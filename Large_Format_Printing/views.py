@@ -10,7 +10,7 @@ from Marketing_Products.models import Products as mp_products
 
 def FoamCorePostersDetail(request):
     product = lf_products.objects.get(id=4)
-    Price_table = QuotationFoamcorePosters.objects.all() 
+    Price_table = QuotationFoamcorePosters.objects.all().distinct()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
