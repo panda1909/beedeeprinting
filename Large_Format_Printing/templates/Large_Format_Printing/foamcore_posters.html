@@ -248,83 +248,28 @@
                         <div class="option-grib-w col-md-12">
                             <div class="scroll-pane horizontal-only">
                                 <table>
-                                    
-                                        <thead>
-                                            <tr class="strikeout">
-                                                <th>Quantity</th>
-                                                {% for eachSize in size %}
-                                                    <th rowspan="1"> {{ eachSize }} - size</th>
-                                                {% endfor %}
-                                            </tr>
-                                        </thead>
-                                        
-                                            {% for eachQuantity in quantity %}
-                                                <tr class="strikeout">
-                                                    <td rowspan="1"> {{ eachQuantity }} - Quantity</td>
-                                                                {% for data in dataset %}       
-                                                                    {% for eachSize in size %} 
-                                                                        {% if data.size == eachSize and data.quantity == eachQuantity %} 
-                                                                            <td rowspan="1"> {{ data.price }}</td>
-                                                                        {% elif data.size != eachSize %}   
-                                                                            <td rowspan="1"> - </td>
-                                                                        {% endif %}
-                                                                {% endfor %}
-                                                        {% endfor %}
-                                                </tr>
-                                            {% endfor %}
-                                </table>
-
-
-
-
-                                <table>
-                                    <thead>
-                                        <tr class="strikeout">
-                                            <th>Quantity</th>
-                                            {% for eachSize in size %}
-                                                <th rowspan="1"> {{ eachSize }} - size</th>
-                                            {% endfor %}
-                                        </tr>
-                                    </thead>
-                                    {% for eachQuantity in quantity %}
                                     <tr class="strikeout">
-                                        {% comment %} {% for x in y%} {% endcomment %}
-                                            <td rowspan="1"> {{ eachQuantity }} - Quantity</td>
-                                                {% for data in dataset %}    
-                                                    {% if data.quantity == eachQuantity %} 
-                                                        <td rowspan="1"> {{ data.price }}</td>
-                                                    {% endif %}                                                    
-                                                {% endfor %}
+                                        <th>Quantity</th>
+                                        <th rowspan="1"> 12" x 18" </th>
+                                        <th rowspan="1"> 18" x 24"</th>
+                                        <th rowspan="1"> 24" x 24" </th>
+                                        <th rowspan="1"> 20" x 30"</th>
+                                        <th rowspan="1"> 24" x 36" </th>
+                                        <th rowspan="1"> 36" x 48"</th>
+                                        <th rowspan="1"> 46" x 48" </th>
+                                    </tr>
+                                    {% for table in table %}
+                                    <tr>
+                                        <th>{{ table.Quantity }}</th>
+                                        <td>
+                                            {{ 2/3 ~ 'ever' }}
+                                        </td>
+                                        <td>
+                                            {{ price.Eighteen_By_TwentyFour }} 
+                                        </td>
                                     </tr>
                                     {% endfor %}
-
-                                    {% comment %} <tr class="strikeout">
-                                        <th>Quantity</th>
-<<<<<<< HEAD
-                                        <th rowspan="1"> 2" x4"</th>
-                                        <th rowspan="1"> 3" x4"</th>
-=======
-                                        {% for table in table%}
-                                        <th rowspan="1"> {{ table.dimensionX }}" x {{ table.dimensionY }}"</th>
-                                        {% comment %} <th rowspan="1"> Offset High Quality</th> {% endcomment %}
-                                        {% comment %} {% endfor %}
->>>>>>> eaabd61fb63258282ffe875eff60a7b41f46a9ef
-                                    </tr>
-                                    {% for table in table %} {% endcomment %}
-                                    {% comment %} <tr>
-                                        <td>
-                                        {{ table.FoamcorePosters }} 
-                                        </td>
-                                        <td>
-                                            {% if table.dimensionX == "2" and table.dimensionY == "4"  %}
-                                            <Del>${{ table.price }}</Del>${{ table.price_Discounted }}
-                                            {% endif %}
-                                        </td>
-                                        <td>
-                                            <!-- <Del>${{ table.price }}</Del>${{ table.price_Discounted }} -->
-                                        </td>
-                                    </tr> {% endcomment %}
-                                    {% comment %} {% endfor %} {% endcomment %}
+                                   
                                 </table>
                             </div>
                         </div>
@@ -356,9 +301,7 @@
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                         <ul class="d-none po-list">
-                                            {% for menu in menu %}
                                             <li><span>{{ menu.quantity }}</span></li>
-                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
@@ -387,7 +330,7 @@
                                         </span>
                                         <ul class="d-none po-list">
                                             {% for menu1 in menu1 %}
-                                                <li><span>{{ menu1.paper_type }}</span></li>
+                                            <li><span>{{ menu1.paper_type }}</span></li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -407,7 +350,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <!-- <input type="submit"/> -->
