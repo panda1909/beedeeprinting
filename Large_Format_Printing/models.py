@@ -16,13 +16,13 @@ from django.core.validators import MinValueValidator
 class FoamcorePosters(models.Model):
    Quantity = models.IntegerField(default=0, blank=True ,verbose_name='Quantity')
    Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
-   Twelve_By_Eighteen = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='12" x 18" per Unit Cost')
-   Eighteen_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" x 24" per Unit Cost')
-   TwentyFour_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 24" per Unit Cost')
-   Twenty_By_Thrity = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='20" x 30" per Unit Cost')
-   TwentyFour_By_ThirtySix = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 36" per Unit Cost')
-   ThirtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='36" x 48" per Unit Cost')
-   FourtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='46" x 48" per Unit Cost')
+   Twelve_By_Eighteen = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='12" x 18" Cost')
+   Eighteen_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" x 24" Cost')
+   TwentyFour_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 24" Cost')
+   Twenty_By_Thrity = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='20" x 30" Cost')
+   TwentyFour_By_ThirtySix = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 36" Cost')
+   ThirtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='36" x 48" Cost')
+   FourtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='46" x 48" Cost')
 
    
    def __str__(self):
