@@ -260,15 +260,17 @@
                                     </tr>
                                     {% for table in table %}
                                     <tr>
-                                        <th>{{ table.Quantity }}</th>
                                         <td>
-                                            {{ 2/3 ~ 'ever' }}
+                                            {{ table.Quantity }}
                                         </td>
+                                    {% endfor %}    
+                                    {% for each in price_1218 %}
                                         <td>
-                                            {{ price.Eighteen_By_TwentyFour }} 
+                                            {{ each }} 
                                         </td>
                                     </tr>
                                     {% endfor %}
+                                    
                                    
                                 </table>
                             </div>

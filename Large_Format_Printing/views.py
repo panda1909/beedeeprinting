@@ -46,5 +46,6 @@ def FoamCorePostersDetail(request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "price_1218" : twlv_b_eghtn
     }
     return render(request, "Large_Format_Printing/foamcore_posters.html", context)

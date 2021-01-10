@@ -75,6 +75,10 @@ TEMPLATES = [
             ],
         },
     },
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [],
+    },
 ]
 
 WSGI_APPLICATION = 'beedeeprinting.wsgi.application'
