@@ -32,9 +32,24 @@ def BC_Detail(request):
 
     menu = business_cards_price.objects.all()
     menu1 = Extra_features.objects.all()
-   
+    var = request.POST
+    print(var)
+    total_price = 0
+    # if request.method == 'POST':
+    #     print("------1-------")
+    #     form = BusinessCard(request.POST)
+    #     if form.is_valid():
+    #         print("-------------")
+    #         print (form.cleaned_data['Quantity'])
+    #     else:
+    #         print("not valid ---------2")
+    # else:
+    #     print("-2----------2--")
+    #     form =BusinessCard()
+        
     context = {
-    #   Form 
+    #   Total Price and form 
+        'total_price' : total_price,
         "menu": menu,
         "menu1": menu1,
     #   Price Table    #

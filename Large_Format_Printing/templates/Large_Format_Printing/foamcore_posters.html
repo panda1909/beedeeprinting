@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load index %}
+{{ my_list|index:x }}
 {% block title %}
 <title> Product detail </title>
 {% endblock title %}
@@ -260,16 +261,22 @@
                                     </tr>
                                     {% for table in table %}
                                     <tr>
-                                        <th>{{ table.Quantity }}</th>
+                                        <td>{{ table.Quantity }}</td>
                                         <td>
-                                            {{ 2/3 ~ 'ever' }}
+                                            <!-- {% for price_1218 in price_1218 %} -->
+                                            <!-- {% with index=forloop.counter0 %} -->
+
+                                            {{ price_1218.1 }}
+                                            
+                                            <!-- {% endwith %} -->
+<!--                                                                         {% endfor %} -->
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             {{ price.Eighteen_By_TwentyFour }} 
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     {% endfor %}
-                                   
+
                                 </table>
                             </div>
                         </div>

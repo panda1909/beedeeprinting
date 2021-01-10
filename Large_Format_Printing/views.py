@@ -19,19 +19,20 @@ def FoamCorePostersDetail(request):
     price_table = FoamcorePosters.objects.all()
     price = FoamcorePosters.objects.get(id=7)
 
+    twlv_b_eghtn = []
     for each in price_table:
         # print(each.Quantity)
         # print('---------')
         # print(price.Twelve_By_Eighteen)
-        twlv_b_eghtn = each.Quantity * price.Twelve_By_Eighteen
-        print(twlv_b_eghtn)
-
+        twlv_b_eghtn.append(int(each.Quantity * price.Twelve_By_Eighteen))
+        
     context = {
     #   Form 
         # "menu": menu,
     #   "menu1": menu1,
     #   Price Table    #
-        "table" : price_table,        
+        "table" : price_table,     
+        "price_1218": twlv_b_eghtn,   
     #   side bar content    #
         "price": price,
         "bc_product" : bc_object,
