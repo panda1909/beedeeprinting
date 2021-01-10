@@ -261,6 +261,7 @@
                                     </tr>
                                     {% for table in table %}
                                     <tr>
+<<<<<<< HEAD
                                         <td>{{ table.Quantity }}</td>
                                         <td>
                                             <!-- {% for price_1218 in price_1218 %} -->
@@ -277,6 +278,20 @@
                                     </tr>
                                     {% endfor %}
 
+=======
+                                        <td>
+                                            {{ table.Quantity }}
+                                        </td>
+                                    {% endfor %}    
+                                    {% for each in price_1218 %}
+                                        <td>
+                                            {{ each }} 
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                   
+>>>>>>> 6fcf06bebb64ec45810edbac3e533f9c8c063c52
                                 </table>
                             </div>
                         </div>
