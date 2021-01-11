@@ -34,6 +34,24 @@ def BC_Detail(request):
     menu1 = Extra_features.objects.all()
     var = request.POST
     print(var)
+    print('---------')
+    printing_type = var['printing_type']
+    quantity = var['quantity']
+    size = var['size']
+    paper_type = var['paper_type']
+    sides = var['sides']
+
+    # quantity_price = business_cards_price.objects.raw(' ')
+    quantity_price = business_cards_price.objects.raw('SELECT digital_Fast FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
+
+    
+    
+    print(printing_type, quantity, size, paper_type, sides)
+    print(quantity_price)
+    print('--------------')
+    for p in quantity_price:
+        price_final = p.digital_Fast
+    print(price_final)
     total_price = 0
     # if request.method == 'POST':
     #     print("------1-------")
