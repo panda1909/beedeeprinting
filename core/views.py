@@ -32,28 +32,61 @@ def BC_Detail(request):
 
     menu = business_cards_price.objects.all()
     menu1 = Extra_features.objects.all()
-    var = request.POST
-    print(var)
-    print('---------')
-    printing_type = var['printing_type']
-    quantity = var['quantity']
-    size = var['size']
-    paper_type = var['paper_type']
-    sides = var['sides']
-
-    # quantity_price = business_cards_price.objects.raw(' ')
-    quantity_price = business_cards_price.objects.raw('SELECT digital_Fast FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
-
     
+    # if stament for getting info from template
+
+    if request.POST:
+        var = request.POST
+        #print(var)
+        #print('---------')
+        printing_type = var['printing_type']
+        quantity = var['quantity']
+        size = var['size']
+        paper_type = var['paper_type']
+        sides = var['sides']
+        type_quantity_query = business_cards_price.objects.raw('SELECT * FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
+        size_query = Extra_features.objects.raw('SELECT id, size_price FROM Business_Cards_Extra_features WHERE size = %s', [size])
+        paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
+        if sides == 'two_sided':
+            sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
+            for u in sides_query:
+                print('------Second Side Price--------')
+                print(u.second_side_price)
+                price_side = u.second_side_price
+                break
+        else:
+            price_side = 0
+        # print('------columns--------')
+        # print(type_quantity_query.columns)
+        # print('-------query-------')
+        # print(type_quantity_query)
+        for i in paper_price_query:
+            print('------Paper Type Price--------')
+            print(i.paper_type_price)
+            price_paper = i.paper_type_price
+
+        for o in size_query:
+            print('------Size Price--------')
+            print(o.size_price)
+            price_size = o.size_price
+        for p in type_quantity_query:
+            if printing_type == 'digital_Fast_Discounted':
+                print('------Digital Fast Price--------')
+                print(p.digital_Fast_Discounted)
+                price_type = p.digital_Fast_Discounted
+            elif printing_type == 'offset_HQ_Discounted':
+                print('------OFFset HQ Price--------')
+                print(p.offset_HQ_Discounted)
+                price_type = p.offset_HQ_Discounted
+                
+                
+        total_price = (float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type
+    else:
+        total_price = 0
     
-    print(printing_type, quantity, size, paper_type, sides)
-    print(quantity_price)
-    print('--------------')
-    for p in quantity_price:
-        price_final = p.digital_Fast
-    print(price_final)
-    total_price = 0
-    # if request.method == 'POST':
+
+
+# if request.method == 'POST':
     #     print("------1-------")
     #     form = BusinessCard(request.POST)
     #     if form.is_valid():
