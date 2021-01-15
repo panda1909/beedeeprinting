@@ -56,10 +56,6 @@ def BC_Detail(request):
                 break
         else:
             price_side = 0
-        # print('------columns--------')
-        # print(type_quantity_query.columns)
-        # print('-------query-------')
-        # print(type_quantity_query)
         for i in paper_price_query:
             print('------Paper Type Price--------')
             print(i.paper_type_price)
@@ -85,19 +81,6 @@ def BC_Detail(request):
         total_price = 0
     
 
-
-# if request.method == 'POST':
-    #     print("------1-------")
-    #     form = BusinessCard(request.POST)
-    #     if form.is_valid():
-    #         print("-------------")
-    #         print (form.cleaned_data['Quantity'])
-    #     else:
-    #         print("not valid ---------2")
-    # else:
-    #     print("-2----------2--")
-    #     form =BusinessCard()
-        
     context = {
     #   Total Price and form 
         'total_price' : total_price,
