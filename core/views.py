@@ -102,6 +102,21 @@ def BC_Detail(request):
     }
     return render(request, "core/detail.html", context)
 
+def Quote(request):
+    bc_object = bc_products.objects.all()
+    bs_object = bs_products.objects.all()
+    lf_object = lf_products.objects.all()
+    mp_object = mp_products.objects.all()
+    context = {
+     
+    #   side bar content    #
+        "bc_product" : bc_object,
+        "bs_product" : bs_object,
+        "lf_product" : lf_object,
+        "mp_product" : mp_object,
+    }
+    return render(request, 'core/qoute.html', context)
+
 class Aboutus(TemplateView):
     def get(self, request):
         return render(request, 'core/aboutus.html')
