@@ -66,14 +66,14 @@ def BC_Detail(request):
             print(o.size_price)
             price_size = o.size_price
         for p in type_quantity_query:
-            if printing_type == 'digital_Fast_Discounted':
+            if printing_type == 'digital_Fast':
                 print('------Digital Fast Price--------')
-                print(p.digital_Fast_Discounted)
-                price_type = p.digital_Fast_Discounted
-            elif printing_type == 'offset_HQ_Discounted':
+                print(p.digital_Fast)
+                price_type = p.digital_Fast
+            elif printing_type == 'offset_HQ':
                 print('------OFFset HQ Price--------')
-                print(p.offset_HQ_Discounted)
-                price_type = p.offset_HQ_Discounted
+                print(p.offset_HQ)
+                price_type = p.offset_HQ
                 
                 
         total_price = (float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type

@@ -8,10 +8,8 @@ from django.core.validators import MinValueValidator
 class business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True,  )
     digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    digital_Fast_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)],  )
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    offset_HQ_Discounted = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0)],  )
-    
+    Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
 
     def __str__(self):
         return str(self.quantity)
@@ -23,15 +21,13 @@ class business_cards_price(models.Model):
 class edge_painted_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     US_Standard_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     European_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    European_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     European_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     Square = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    Square_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Square_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    
+    Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])    
+
     def __str__(self):
         return str(self.quantity)
 

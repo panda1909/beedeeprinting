@@ -300,12 +300,20 @@
                                 <table>
                                     <tr class="strikeout">
                                         <th>Quantity</th>
+                                        <th>Discount</th>
                                         <th rowspan="1"> Digital Fast</th>
                                         <th rowspan="1"> Offset High Quality</th>
                                     </tr>
                                     {% for table in table %}
                                     <tr>
                                         <th>{{ table.quantity }} </th>
+                                        <td>
+                                            {% if table.Discount %}
+                                            <strong> -${{ table.Discount }} </strong>
+                                            {% else %}
+                                            ${{ table.Discount }}
+                                           {% endif %}
+                                        </td>
                                         <td>
                                             {% if not table.digital_Fast_Discounted %}
                                             ${{ table.digital_Fast }}
@@ -339,9 +347,9 @@
                                     <div class="options-col">
                                         <label for="quantity">Select Printing Type:</label>
                                         <select class="select-css" name="printing_type">
-                                            <option value="digital_Fast_Discounted">Rush options: Digital - Fast
+                                            <option value="digital_Fast">Rush options: Digital - Fast
                                             </option>
-                                            <option value="offset_HQ_Discounted">Non Rush options: Offset High Quality
+                                            <option value="offset_HQ">Non Rush options: Offset High Quality
                                             </option>
                                         </select>
                                     </div>

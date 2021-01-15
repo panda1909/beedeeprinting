@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('lf-format', include('Large_Format_Printing.urls')),
+    path('edge-painted', include('Business_Cards.urls')),
 ]
