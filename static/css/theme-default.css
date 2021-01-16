@@ -2,6 +2,9 @@ Del{
   color: red;
   font-size: 15px;
 }
+bold{
+  font-weight: bold;
+}
 body .short-description p{
 	font-family:"Arimo Regular";
  }

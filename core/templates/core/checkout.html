@@ -51,219 +51,9 @@
 
 
             <div class="onepage">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div id="div_billto">
-                        <div class="pane round-box">
-                            <h3 class="title"><span class="icon icon-one">1</span>Shipping Info</h3>
-                            <div class="pane-inner">
-                                <ul id="table_billto" class="adminform user-details no-border">
-                                    <li class="short">
-                                        <div class="field-wrapper">
-                                            <label for="company_field" class="company">Company Name </label>
-                                            <br>
-                                            <input type="text" maxlength="64" value="Shipment" size="30" name="company"
-                                                id="company_field">
-                                        </div>
-                                    </li>
-
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-
-                                            <label for="email_field" class="email">
-                                                E-Mail<em>*</em> </label>
-                                            <br>
-
-                                            <input type="text" maxlength="100" class="required" value="" size="30"
-                                                name="email" id="email_field">
-                                        </div>
-                                    </li>
-
-                                    <li class="short">
-                                        <div class="field-wrapper">
-
-                                            <label for="title_field" class="title">Title</label>
-                                            <br>
-
-                                            <select style="width: 210px" class="vm-chzn-select" name="title" id="title">
-                                                <option selected="selected" value="">-- Select --</option>
-                                                <option value="Mr">Mr</option>
-                                                <option value="Mrs">Mrs</option>
-                                            </select>
-
-                                        </div>
-                                    </li>
-
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-                                            <label for="first_name_field" class="first_name">First Name</label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="first_name"
-                                                id="first_name_field">
-                                        </div>
-                                    </li>
-
-                                    <li class="short">
-                                        <div class="field-wrapper">
-
-                                            <label for="middle_name_field" class="middle_name">
-                                                Middle Name </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="middle_name"
-                                                id="middle_name_field">
-                                        </div>
-                                    </li>
-
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-
-                                            <label for="last_name_field" class="last_name">
-                                                Last Name </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="last_name"
-                                                id="last_name_field">
-                                        </div>
-                                    </li>
-
-
-
-                                    <li class="short">
-                                        <div class="field-wrapper">
-
-                                            <label for="zip_field" class="zip">
-                                                Zip / Postal Code<em>*</em> </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" class="required" value="" size="30"
-                                                name="zip" id="zip_field">
-                                        </div>
-                                    </li>
-
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-
-                                            <label for="virtuemart_country_id_field" class="virtuemart_country_id">
-                                                Country<em>*</em> </label>
-                                            <br>
-
-                                            <select style="width: 210px" class="vm-chzn-select required"
-                                                name="virtuemart_country_id" id="virtuemart_country_id"
-                                                onchange="loadstatebt(this)">
-                                                <option selected="selected" value="">-- Select --</option>
-                                                <option value="1">Afghanistan</option>
-                                                <option value="2">Albania</option>
-                                                <option value="3">Algeria</option>
-                                                <option value="4">American Samoa</option>
-                                                <option value="5">Andorra</option>
-                                                <option value="6">Angola</option>
-                                                <option value="7">Anguilla</option>
-                                                <option value="8">Antarctica</option>
-                                                <option value="9">Antigua and Barbuda</option>
-                                                <option value="10">Argentina</option>
-                                            </select>
-
-                                        </div>
-                                    </li>
-                                    <li class="short">
-                                        <div class="field-wrapper">
-
-                                            <label for="virtuemart_city" class="virtuemart_state_id">
-                                                City<em>*</em> </label>
-                                            <br>
-
-                                            <select style="width: 210px" name="virtuemart_city" class="vm-chzn-select"
-                                                id="virtuemart_city">
-                                                <option value="">-- Select --</option>
-                                            </select>
-                                        </div>
-                                    </li>
-
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-
-                                            <label for="virtuemart_state_id_field" class="virtuemart_state_id">
-                                                State / Province / Region<em>*</em> </label>
-                                            <br>
-
-                                            <select style="width: 210px" name="virtuemart_state_id"
-                                                class="vm-chzn-select" id="virtuemart_state_id">
-                                                <option value="">-- Select --</option>
-                                            </select>
-                                        </div>
-                                    </li>
-
-                                    <li class="short">
-                                        <div class="field-wrapper">
-
-                                            <label for="phone_1_field" class="phone_1">
-                                                Phone </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="phone_1"
-                                                id="phone_1_field">
-                                        </div>
-                                    </li>
-
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-
-                                            <label for="phone_2_field" class="phone_2">
-                                                Mobile phone </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="phone_2"
-                                                id="phone_2_field">
-                                        </div>
-                                    </li>
-                                    <li class="long">
-                                        <div class="field-wrapper">
-
-                                            <label for="address_1_field" class="address_1">
-                                                Address 1<em>*</em> </label>
-                                            <br>
-
-                                            <input type="text" maxlength="64" class="required" value="" size="30"
-                                                name="address_1" id="address_1_field">
-                                        </div>
-                                    </li>
-                                    <li class="long">
-                                        <div class="field-wrapper">
-
-                                            <label for="fax_field" class="fax">
-                                                Fax </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="fax"
-                                                id="fax_field">
-                                        </div>
-                                    </li>
-
-                                </ul>
-
-
-                                <ul id="user-actions-trigger">
-                                    <li>
-                                        <li class="long">
-                                            <div class="field-wrapper agreed">
-                                                <label for="agreed_field" class="agreed">
-                                                    I agree to the Terms of Service <em>*</em>
-                                                </label>
-                                                <input type="checkbox" value="1" id="agreed_field" name="agreed">
-                                            </div>
-                                        </li>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Cos 2 -->
-
-                </div>
-                <div class="col-md-8 col-sm-6 col-xs-12">
+               
+                <!-- shipping_method -->
+                <!-- <div class="col-md-8 col-sm-6 col-xs-12">
                     <div id="right-pane-top" class="col-md-12 col-sm-12 col-xs-12">
                         <div id="shipping_method" class="col-md-6 col-sm-12 col-xs-12">
                             <div class="shipment-pane">
@@ -287,10 +77,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- shipping_method -->
-
+                        </div>
                     </div>
-                </div>
+                </div> -->
                 <div id="checkfull" class="col-md-8 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <!-- render layout -->
@@ -300,19 +89,19 @@
                             <table cellspacing="0" cellpadding="0" border="0" class="cart-summary no-border">
                                 <tbody>
                                     <tr clas="top-header">
-                                        <th align="left" class="th-name">Products Name</th>
-                                        <th width="10%" class="th-price">Price</th>
-                                        <th width="10%" class="th-tax"><span class="priceColor2">Tax</span></th>
-                                        <th width="15%" class="th-quanlity">Quanlity</th>
-                                        <th width="15%" class="th-discount"><span class="priceColor2">Action</span></th>
-                                        <th width="15%" align="left" class="th-total th-last">SubTotal</th>
+                                        <th align="left" class="th-name"><strong>Products Name</strong></th>
+                                        <th width="10%" class="th-price"><strong>Price</strong></th>
+                                        <th width="10%" class="th-tax"><span class="priceColor2"><strong>Tax</strong></span></th>
+                                        <!-- <th width="15%" class="th-quanlity">Quanlity</th> -->
+                                        <!-- <th width="15%" class="th-discount"><span class="priceColor2">Action</span></th> -->
+                                        <th width="15%" align="left" class="th-total th-last"><strong>SubTotal</strong></th>
                                     </tr>
 
                                     <tr valign="top" id="product_row_0"
                                         class="product-detail-row product-detail-last-row sectiontableentry1">
                                         <td align="left" class="pro_name">
                                             <img class="cart-images" src="{% static 'images/op-img01.jpg' %}">
-                                            <a class="product-name" href="#">Wall Graphics</a>
+                                            <span class="product-name" href="#"><strong> Graphics </strong></span>
                                         </td>
                                         <td align="left" class="base-price">
                                             <div class="PricebasePrice vm-display vm-price-value"><span
@@ -324,18 +113,19 @@
                                                         class="vm-price-desc"></span><span
                                                         class="PricetaxAmount">$11.17</span></div>
                                             </span></td>
-                                        <td align="left" class="product-quanlity">
+                                            <!-- Quantity -->
+                                        <!-- <td align="left" class="product-quanlity">
                                             <input type="text" id="quantity_0" value="1" maxlength="4" size="3"
                                                 name="quantity[0]" class="quantity-input js-recalculate"
                                                 title="Update Quantity In Cart">
-                                        </td>
-
-                                        <td align="left" class="product-quanlity action">
+                                        </td> -->
+                                        <!-- Action delete/refresh -->
+                                        <!-- <td align="left" class="product-quanlity action">
                                             <a data-pid="0" href="#" align="middle" title="DUpdate Quantity In Cart"
                                                 name="update" class="fa fa-refresh"> </a>
                                             <a data-pid="0" href="#" align="middle" title="Delete Product From Cart"
                                                 name="remove" class="fa fa-times-circle"> </a>
-                                        </td>
+                                        </td> -->
 
                                         <td align="right" id="subtotal_with_tax_0" colspan="0"
                                             class="sub-total td-last"><span class="line-through">$152.90</span></td>
@@ -375,12 +165,16 @@
                                                         <td class="pr-right"><strong id="bill_total">$122.90</strong>
                                                         </td>
                                                     </tr>
+                                                    <tr class="last">
+                                                        <p style="color:red;"><strong> NOTE:</strong></p>
+                                                        <p>This price is an arbitary, our representative will contact you in <strong style="color: red">24 Hours</strong> with exact price according to your extra notes, special request and exact shipping price. Please fill shipping info so we can contact you.</p>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                     </tr>
                                     <!--  End Total -->
-                                    <tr class="coupon-pane">
+                                    <!-- <tr class="coupon-pane">
                                         <td align="left" class="border-radius-lb" colspan="6">
                                             <input type="text"
                                                 onfocus="if(this.value=='Enter your Coupon code') this.value='';"
@@ -391,7 +185,7 @@
                                             <span class="details-button"><input type="button" value="Save" title="Save"
                                                     class="details-button" id="coupon_code_button"></span>
                                         </td>
-                                    </tr>
+                                    </tr> -->
 
                                 </tbody>
                             </table>
@@ -399,15 +193,15 @@
 
                         <div id="right-pane-bottom">
                             <div class="customer-note">
-                                <p class="comment">Notes and special requests</p>
+                                <p class="comment"><strong>Notes and special requests</strong></p>
                                 <textarea class="inputbox" rows="1" cols="60" name="customer_note"
-                                    id="customer_note_field"></textarea>
+                                    id="customer_note_field" style="border: 2px solid #25bce9;"></textarea>
                             </div>
                             <fieldset class="vm-fieldset-tos">
                                 <input id="tos" class="terms-of-service" type="checkbox" name="tos" value="1">
-                                <span>Click here to read terms of service and check the box to accept them.</span>
+                                <span>Click here to read terms of service and check the box to accept them.<em>*</em></span>
                                 <div class="checkout-button-top">
-                                    <a href="#" class="vm-button-correct"><span>Confirn Purchase</span></a>
+                                    <a href="#" class="vm-button-correct"><span>Confirm Purchase</span></a>
                                 </div>
                             </fieldset>
                         </div><!-- right-pane-bottom -->
@@ -415,6 +209,217 @@
                     </div>
 
                 </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div id="div_billto">
+                        <div class="pane round-box">
+                            <h3 class="title"><span class="icon icon-one">1</span>Shipping Info</h3>
+                            <div class="pane-inner">
+                                <p style="color: red;"> Your information will not use for advertisment purpose.</p>
+                                <ul id="table_billto" class="adminform user-details no-border">
+                                    <li class="short">
+                                        <div class="field-wrapper">
+                                            <label for="company_field" class="company">Company Name: </label>
+                                            <br>
+                                            <input type="text" maxlength="64" value="Shipment" size="30" name="company"
+                                                id="company_field">
+                                        </div>
+                                    </li>
+
+                                    <li class="short right">
+                                        <div class="field-wrapper">
+
+                                            <label for="email_field" class="email">
+                                                E-Mail:<em>*</em> </label>
+                                            <br>
+
+                                            <input type="text" maxlength="100" class="required" value="" size="30"
+                                                name="email" id="email_field">
+                                        </div>
+                                    </li>
+
+                                    <li class="short">
+                                        <div class="field-wrapper">
+
+                                            <label for="title_field" class="title">Title:</label>
+                                            <br>
+
+                                            <select style="width: 210px" class="vm-chzn-select" name="title" id="title">
+                                                <option selected="selected" value="">-- Select --</option>
+                                                <option value="Mr">Mr</option>
+                                                <option value="Mrs">Mrs</option>
+                                            </select>
+
+                                        </div>
+                                    </li>
+
+                                    <li class="short right">
+                                        <div class="field-wrapper">
+                                            <label for="first_name_field" class="first_name">First Name:</label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" value="" size="30" name="first_name"
+                                                id="first_name_field">
+                                        </div>
+                                    </li>
+
+                                    <li class="short">
+                                        <div class="field-wrapper">
+
+                                            <label for="middle_name_field" class="middle_name">
+                                                Middle Name: </label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" value="" size="30" name="middle_name"
+                                                id="middle_name_field">
+                                        </div>
+                                    </li>
+
+                                    <li class="short right">
+                                        <div class="field-wrapper">
+
+                                            <label for="last_name_field" class="last_name">
+                                                Last Name: </label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" value="" size="30" name="last_name"
+                                                id="last_name_field">
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="short">
+                                        <div class="field-wrapper">
+
+                                            <label for="zip_field" class="zip">
+                                                Zip / Postal Code:<em>*</em> </label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" class="required" value="" size="30"
+                                                name="zip" id="zip_field">
+                                        </div>
+                                    </li>
+
+                                    <li class="short right">
+                                        <div class="field-wrapper">
+
+                                            <label for="virtuemart_country_id_field" class="virtuemart_country_id">
+                                                Country:<em>*</em> </label>
+                                            <br>
+
+                                            <select style="width: 210px" class="vm-chzn-select required"
+                                                name="virtuemart_country_id" id="virtuemart_country_id"
+                                                onchange="loadstatebt(this)">
+                                                <option selected="selected" value="">-- Select --</option>
+                                                <option value="1">Afghanistan</option>
+                                                <option value="2">Albania</option>
+                                                <option value="3">Algeria</option>
+                                                <option value="4">American Samoa</option>
+                                                <option value="5">Andorra</option>
+                                                <option value="6">Angola</option>
+                                                <option value="7">Anguilla</option>
+                                                <option value="8">Antarctica</option>
+                                                <option value="9">Antigua and Barbuda</option>
+                                                <option value="10">Argentina</option>
+                                            </select>
+
+                                        </div>
+                                    </li>
+                                    <li class="short">
+                                        <div class="field-wrapper">
+
+                                            <label for="virtuemart_city" class="virtuemart_state_id">
+                                                City:<em>*</em> </label>
+                                            <br>
+
+                                            <select style="width: 210px" name="virtuemart_city" class="vm-chzn-select"
+                                                id="virtuemart_city">
+                                                <option value="">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </li>
+
+                                    <li class="short right">
+                                        <div class="field-wrapper">
+
+                                            <label for="virtuemart_state_id_field" class="virtuemart_state_id">
+                                                State / Province / Region:<em>*</em> </label>
+                                            <br>
+
+                                            <select style="width: 210px" name="virtuemart_state_id"
+                                                class="vm-chzn-select" id="virtuemart_state_id">
+                                                <option value="">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </li>
+
+                                    <li class="short">
+                                        <div class="field-wrapper">
+
+                                            <label for="phone_1_field" class="phone_1">
+                                                Phone: </label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" value="" size="30" name="phone_1"
+                                                id="phone_1_field">
+                                        </div>
+                                    </li>
+
+                                    <li class="short right">
+                                        <div class="field-wrapper">
+
+                                            <label for="phone_2_field" class="phone_2">
+                                                Mobile phone: </label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" value="" size="30" name="phone_2"
+                                                id="phone_2_field">
+                                        </div>
+                                    </li>
+                                    <li class="long">
+                                        <div class="field-wrapper">
+
+                                            <label for="address_1_field" class="address_1">
+                                                Address 1:<em>*</em> </label>
+                                            <br>
+
+                                            <input type="text" maxlength="64" class="required" value="" size="30"
+                                                name="address_1" id="address_1_field">
+                                        </div>
+                                    </li>
+                                    <li class="long">
+                                        <div class="field-wrapper">
+
+                                            <label for="fax_field" class="fax">
+                                                Fax: </label>
+                                            <br>
+
+                                            <input type="text" maxlength="32" value="" size="30" name="fax"
+                                                id="fax_field">
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                <!-- <ul id="user-actions-trigger">
+                                    <li>
+                                        <li class="long">
+                                            <div class="field-wrapper agreed">
+                                                <label for="agreed_field" class="agreed">
+                                                    I agree to the Terms of Service <em>*</em>
+                                                </label>
+                                                <input type="checkbox" value="1" id="agreed_field" name="agreed">
+                                            </div>
+                                        </li>
+                                    </li>
+                                </ul> -->
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Cos 2 -->
+
+                </div>
+            </div>
     </section>
 </main>
 <!--Main index : End-->
