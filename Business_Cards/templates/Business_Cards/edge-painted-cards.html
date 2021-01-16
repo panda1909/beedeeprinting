@@ -314,7 +314,7 @@
                         {% csrf_token %}
                         <p><strong>Please select following option according to your need.</strong></p>
                         <div class="options-list-w">
-                            <div class="row">
+                            {% comment %} <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
                                     <div class="options-col">
                                         <label for="quantity">Select Printing Type:</label>
@@ -326,7 +326,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
                                     <div class="options-col">
@@ -344,9 +344,9 @@
                                     <div class="options-col">
                                         <label for="cars">Select Size:</label>
                                         <select class="select-css" name="size">
-                                            {% for menu1 in menu1 %}
-                                            <option value="{{  menu1.size }}">{{ menu1.size }}</option>
-                                            {% endfor %}
+                                            <option value="US_Standard_Size">US_Standard_Size</option>
+                                            <option value="European_Size">European_Size</option>
+                                            <option value="Square">Square</option>
                                         </select>
                                     </div>
                                 </div>
@@ -358,12 +358,39 @@
                                         <select class="select-css" name="paper_type">
                                             {% for menu1 in menu1 %}
                                             {% if menu1.paper_type %}
+                                            {% if menu1.paper_type == '32pt. bright white uncoated paper' %}
                                             <option value="{{  menu1.paper_type }}">{{ menu1.paper_type }}</option>
+                                            {% endif %}
                                             {% endif %}
                                             {% endfor %}
                                         </select>
                                     </div>
-
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="block-options col-md-4 col-sm-5">
+                                    <div class="options-col">
+                                        <label for="quantity">Select Painted Edge Color:</label>
+                                        <select class="select-css" name="color">
+                                            <option value="White_No_color">White - No color</option>
+                                            <option value="Metallic_Blue">Metallic Blue (Light Blue)</option>
+                                            <option value="Metallic_Green">Metallic Green</option>
+                                            <option value="Metallic_Gold">Metallic Gold</option>
+                                            <option value="Metallic_Hot_Pink">Metallic Hot Pink</option>
+                                            <option value="Metallic_Orange">Metallic Orange</option>
+                                            <option value="Metallic_Purple">Metallic Purple</option>
+                                            <option value="Metallic_Yellow">Metallic Yellow</option>
+                                            <option value="Black">Black</option>
+                                            <option value="Blue">Blue (Dark Blue)</option>
+                                            <option value="Brown">Brown</option>
+                                            <option value="Orange">Orange</option>
+                                            <option value="Pink">Pink</option>
+                                            <option value="Purple">Purple</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Turquoise">Turquoise</option>
+                                            <option value="Yellow">Yellow</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -373,13 +400,12 @@
                                         <select class="select-css" name="sides">
                                             <option value="one_side">One Sided</option>
                                             <option value="two_sided">Two Sided - Front and Back</option>
-
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <input type="submit" > -->
+                         <input type="submit" >
                     </form>
                     <a href="#" class="btn-readmore" title="Quality Printing"><strong> See Quote </strong></a>
                     <!-- <div class="add-to-cart">
