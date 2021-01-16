@@ -101,17 +101,17 @@
                                         class="product-detail-row product-detail-last-row sectiontableentry1">
                                         <td align="left" class="pro_name">
                                             <img class="cart-images" src="{% static 'images/op-img01.jpg' %}">
-                                            <span class="product-name" href="#"><strong> Graphics </strong></span>
+                                            <span class="product-name" href="#"><strong> {{ label }} </strong></span>
                                         </td>
                                         <td align="left" class="base-price">
                                             <div class="PricebasePrice vm-display vm-price-value"><span
                                                     class="vm-price-desc"></span><span
-                                                    class="PricebasePrice">$139.00</span></div>
+                                                    class="PricebasePrice">${{ invoice }}</span></div>
                                         </td>
                                         <td align="right" class="pro_tax"><span class="priceColor2">
                                                 <div class="PricetaxAmount vm-display vm-price-value"><span
                                                         class="vm-price-desc"></span><span
-                                                        class="PricetaxAmount">$11.17</span></div>
+                                                        class="PricetaxAmount">${{ tax }}</span></div>
                                             </span></td>
                                             <!-- Quantity -->
                                         <!-- <td align="left" class="product-quanlity">
@@ -128,7 +128,7 @@
                                         </td> -->
 
                                         <td align="right" id="subtotal_with_tax_0" colspan="0"
-                                            class="sub-total td-last"><span class="line-through">$152.90</span></td>
+                                            class="sub-total td-last"><span class="line-through">${{ final_price }}</span></td>
                                     </tr>
                                     <!--Begin of SubTotal, Tax, Shipment, Coupon Discount and Total listing -->
                                     <!--  Total -->
@@ -141,19 +141,19 @@
                                                         <td class="pr-right">
                                                             <div class="PricesalesPrice vm-display vm-price-value"><span
                                                                     class="vm-price-desc"></span><span
-                                                                    class="PricesalesPrice">$122.90</span></div>
+                                                                    class="PricesalesPrice">${{ invoice }}</span></div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Discount:</td>
                                                         <td class="pr-right">
-                                                            <span id="total_amount" class="priceColor2">$-30.00</span>
+                                                            <span id="total_amount" class="priceColor2">-${{ discount }}</span>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Tax:</td>
                                                         <td class="pr-right"><span id="total_tax"
-                                                                class="priceColor2">$11.17</span></td>
+                                                                class="priceColor2">${{ tax }}</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Shipment:</td>
@@ -162,7 +162,7 @@
                                                     </tr>
                                                     <tr class="last">
                                                         <td>Total:</td>
-                                                        <td class="pr-right"><strong id="bill_total">$122.90</strong>
+                                                        <td class="pr-right"><strong id="bill_total">${{ final_price }}</strong>
                                                         </td>
                                                     </tr>
                                                     <tr class="last">

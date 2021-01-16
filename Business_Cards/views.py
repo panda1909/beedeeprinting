@@ -78,7 +78,8 @@ def Edge_painted_Detail(request):
             price_discount = y.Discount
 
         # adding sum of options        
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity) - price_discount
+        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity)
+
         
         #testing
         print('----------')
@@ -95,6 +96,9 @@ def Edge_painted_Detail(request):
     else:
         total_price = 0
     
+    request.session['invoice'] = total_price
+    request.session['label'] = product.Label
+    request.session['discount'] = price_discount
 
     context = {
     #   Total Price and form 

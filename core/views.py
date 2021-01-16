@@ -109,7 +109,25 @@ class Aboutus(TemplateView):
         return render(request, 'core/aboutus.html')
 
 def Checkout(request):
-    return render(request, 'core/checkout.html')
+    total = request.session['invoice']
+    label = request.session['label']
+    discount = request.session['discount']
+
+    price = total - discount
+    tax = price * .16
+    round_tax = round(tax,2)
+    tax = round_tax
+    price_final = price + tax
+
+    context ={
+        'invoice': total,
+        'label': label,
+        'discount': discount,
+        'discounted_price': price,
+        'tax': tax,
+        'final_price': price_final
+    }
+    return render(request, 'core/checkout.html', context)
 
 
 def Cart(request):
