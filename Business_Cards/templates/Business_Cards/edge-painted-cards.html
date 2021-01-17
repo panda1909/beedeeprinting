@@ -310,7 +310,7 @@
                     </div>
                     <br>
                     <br>
-                    <form method="POST" id="product-detail-form">
+                    <form action={% url 'checkout' %} method="POST" id="product-detail-form">
                         {% csrf_token %}
                         <p><strong>Please select following option according to your need.</strong></p>
                         <div class="options-list-w">
@@ -405,9 +405,9 @@
                                 </div>
                             </div>
                         </div>
-                         <input type="submit" >
+                        <input class="btn-readmore" type="submit" value="See Quote" >
                     </form>
-                    <a href="#" class="btn-readmore" title="Quality Printing"><strong> See Quote </strong></a>
+                    {% comment %} <a href="#"  title="Quality Printing"><strong> See Quote </strong></a> {% endcomment %}
                     <!-- <div class="add-to-cart">
                         <div class="quantity-price-w row">
                             <div class="price-total col-xs-6">

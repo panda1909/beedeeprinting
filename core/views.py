@@ -47,6 +47,7 @@ def BC_Detail(request):
         type_quantity_query = business_cards_price.objects.raw('SELECT * FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
         size_query = Extra_features.objects.raw('SELECT id, size_price FROM Business_Cards_Extra_features WHERE size = %s', [size])
         paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
+        discount_query = business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
         if sides == 'two_sided':
             sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
             for u in sides_query:
@@ -57,28 +58,32 @@ def BC_Detail(request):
         else:
             price_side = 0
         for i in paper_price_query:
-            print('------Paper Type Price--------')
-            print(i.paper_type_price)
             price_paper = i.paper_type_price
 
         for o in size_query:
-            print('------Size Price--------')
-            print(o.size_price)
             price_size = o.size_price
+        
         for p in type_quantity_query:
             if printing_type == 'digital_Fast':
-                print('------Digital Fast Price--------')
-                print(p.digital_Fast)
                 price_type = p.digital_Fast
             elif printing_type == 'offset_HQ':
-                print('------OFFset HQ Price--------')
-                print(p.offset_HQ)
                 price_type = p.offset_HQ
+        
+        for y in discount_query:
+            price_discount = y.Discount
                 
                 
-        total_price = (float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type
+        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+    
+        request.session['invoice'] = total_price
+        request.session['label'] = product.Label
+        request.session['discount'] = price_discount
+
     else:
         total_price = 0
+        request.session['invoice'] = 0
+        request.session['label'] = 0
+        request.session['discount'] = 0
     
 
     context = {

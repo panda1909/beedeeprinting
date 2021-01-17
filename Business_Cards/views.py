@@ -92,13 +92,16 @@ def Edge_painted_Detail(request):
         print(total_price)
         print('----------')
         print('-',price_discount)
+    
+        request.session['invoice'] = total_price
+        request.session['label'] = product.Label
+        request.session['discount'] = price_discount
 
     else:
         total_price = 0
-    
-    request.session['invoice'] = total_price
-    request.session['label'] = product.Label
-    request.session['discount'] = price_discount
+        request.session['invoice'] = 0
+        request.session['label'] = 0
+        request.session['discount'] = 0
 
     context = {
     #   Total Price and form 
