@@ -40,13 +40,13 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <h1>Shopping Cart</h1>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 right">
+                {% comment %} <div class="col-md-6 col-sm-6 col-xs-12 right">
                     <h1>Continue Shopping</h1>
-                </div>
-                <div id="login-pane" class="col-md-12 col-sm-12 col-xs-12">
+                </div> {% endcomment %}
+                {% comment %} <div id="login-pane" class="col-md-12 col-sm-12 col-xs-12">
                     <p>Please fill in the fields below to complete your order.<a id="login-modal-trigger" href="#">
                             Already registered? Click here to login.</a></p>
-                </div>
+                </div> {% endcomment %}
             </div>
 
 
@@ -100,7 +100,7 @@
                                     <tr valign="top" id="product_row_0"
                                         class="product-detail-row product-detail-last-row sectiontableentry1">
                                         <td align="left" class="pro_name">
-                                            <img class="cart-images" src="{% static 'images/op-img01.jpg' %}">
+                                            <img class="cart-images" style="height:100px; width:100px;" src="{{ image}}">
                                             <span class="product-name" href="#"><strong> {{ label }} </strong></span>
                                         </td>
                                         <td align="left" class="base-price">

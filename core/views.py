@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
@@ -78,12 +78,18 @@ def BC_Detail(request):
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
+        request.session['id'] = 1
+        request.session['cat'] = 'bc_products'
+        print('Form Submitted')
 
     else:
         total_price = 0
         request.session['invoice'] = 0
-        request.session['label'] = 0
+        request.session['label'] = ' '
         request.session['discount'] = 0
+        request.session['id'] = 1
+        request.session['cat'] = 'bc_products'
+        print('Form not submitted')
     
 
     context = {
@@ -105,6 +111,8 @@ def BC_Detail(request):
         "image2" : product.image2,
         "image3" : product.image3,
     }
+    if request.POST:
+        return redirect('checkout')
     return render(request, "core/detail.html", context)
 
 
@@ -117,6 +125,23 @@ def Checkout(request):
     total = request.session['invoice']
     label = request.session['label']
     discount = request.session['discount']
+    id = request.session['id']
+    category = request.session['cat']
+
+    if category == 'bc_products':
+        product = bc_products.objects.get(id=id)
+        print(category, id)
+    elif category == 'bs_prodcuts':
+        product = bs_products.objects.get(id=id)
+        print(category, id)
+    elif category == 'lf_products':
+        product = lf_products.objects.get(id=id)
+        print(category, id)
+    elif category == 'mp_products':
+        product = mp_products.objects.get(id=id)
+        print(category, id)
+
+    print(product)
 
     price = total - discount
     tax = price * .16
@@ -130,7 +155,8 @@ def Checkout(request):
         'discount': discount,
         'discounted_price': price,
         'tax': tax,
-        'final_price': price_final
+        'final_price': price_final,
+        'image': product.image1,
     }
     return render(request, 'core/checkout.html', context)
 

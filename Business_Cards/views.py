@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.http import JsonResponse
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
@@ -96,12 +98,17 @@ def Edge_painted_Detail(request):
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
+        request.session['id'] = 2
+        request.session['cat'] = 'bc_products'
+        print('Form Submitted')
+
 
     else:
         total_price = 0
         request.session['invoice'] = 0
         request.session['label'] = 0
         request.session['discount'] = 0
+        print('Form Not Submitted')
 
     context = {
     #   Total Price and form 
@@ -122,4 +129,6 @@ def Edge_painted_Detail(request):
         "image2" : product.image2,
         "image3" : product.image3,
     }
+    if request.POST:
+        return redirect('/checkout')
     return render(request, "Business_Cards/edge-painted-cards.html", context)
