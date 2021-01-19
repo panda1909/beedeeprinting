@@ -17,6 +17,9 @@ class Orders(models.Model):
     Size = models.CharField(null=False, max_length=1024)
     Price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Template = models.FileField(upload_to='static/Order_templates', max_length=256, validators=[validate_file_extension])
+    Second_Template = models.FileField(upload_to='static/Order_templates', blank=True, max_length=256, validators=[validate_file_extension])    
+    Special_requests = models.CharField(max_length=5000, blank=True)
+    Extra_features = models.JSONField(default=dict)
 
     def __str__(self):
         return str(self.OrderId)
