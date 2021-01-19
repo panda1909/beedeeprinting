@@ -114,13 +114,13 @@
                                         <td align="right" class="pro_tax"><span class="priceColor2">
                                                 <div class="PricetaxAmount vm-display vm-price-value"><span
                                                         class="vm-price-desc"></span><span class="PricetaxAmount">$
-                                                            {{ tax }}</span></div>
+                                                        {{ tax }}</span></div>
                                             </span></td>
                                         <!-- Quantity -->
                                         <td align="left" class="discount-price">
                                             <div class="PricebasePrice vm-display vm-price-value"><span
                                                     class="vm-price-desc"></span><span class="PricebasePrice">-$
-                                                        {{ discount }}</span></div>
+                                                    {{ discount }}</span></div>
                                         </td>
                                         <!-- Action delete/refresh -->
                                         <!-- <td align="left" class="product-quanlity action">
@@ -141,12 +141,7 @@
                                 </tbody>
                             </table>
                         </fieldset>
-                        <form enctype="multipart/form-data" id="id_ajax_upload_form" method="POST" novalidate="">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <input type="submit" />
-                        </form>
-
+                       
                         <div id="right-pane-bottom">
                             <div class="customer-note">
                                 <p class="comment"><strong>Notes and special requests</strong></p>
@@ -171,175 +166,179 @@
                         <div class="pane round-box">
                             <h3 class="title"><span class="icon icon-one">1</span>Shipping Info</h3>
                             <div class="pane-inner">
-                                <p style="color: red;"> Your information will not be used for advertisment purposes, as outlined in our privacy policy.</p>
-                                <ul id="table_billto" class="adminform user-details no-border">
-                                    <li class="short">
-                                        <div class="field-wrapper">
-                                            <label for="company_field" class="company">Company Name: </label>
-                                            <br>
-                                            <input type="text" maxlength="64" value="Shipment" size="30" name="company"
-                                                id="company_field">
-                                        </div>
-                                    </li>
+                                <p style="color: red;"> Your information will not be used for advertisment purposes, as
+                                    outlined in our privacy policy.</p>
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <ul id="table_billto" class="adminform user-details no-border">
+                                        <li class="short">
+                                            <div class="field-wrapper">
+                                                <label for="company_field" class="company">Company Name: </label>
+                                                <br>
+                                                <input type="text" maxlength="64" value="Shipment" size="30"
+                                                    name="company" id="company_field">
+                                            </div>
+                                        </li>
 
-                                    <li class="short right">
-                                        <div class="field-wrapper">
+                                        <li class="short right">
+                                            <div class="field-wrapper">
 
-                                            <label for="email_field" class="email">
-                                                E-Mail:<em>*</em> </label>
-                                            <br>
+                                                <label for="email_field" class="email">
+                                                    E-Mail:<em>*</em> </label>
+                                                <br>
+                                                {{ form.Email }}
 
-                                            <input type="text" maxlength="100" class="required" value="" size="30"
-                                                name="email" id="email_field">
-                                        </div>
-                                    </li>
+                                                
+                                            </div>
+                                        </li>
 
-                                    <li class="short">
-                                        <div class="field-wrapper">
+                                        <li class="short">
+                                            <div class="field-wrapper">
 
-                                            <label for="title_field" class="title">Title:</label>
-                                            <br>
+                                                <label for="title_field" class="title">Title:</label>
+                                                <br>
 
-                                            <select style="width: 210px" class="vm-chzn-select" name="title" id="title">
-                                                <option selected="selected" value="">-- Select --</option>
-                                                <option value="Mr">Mr</option>
-                                                <option value="Mrs">Mrs</option>
-                                            </select>
+                                                <select style="width: 210px" class="vm-chzn-select" name="title"
+                                                    id="title">
+                                                    <option selected="selected" value="">-- Select --</option>
+                                                    <option value="Mr">Mr</option>
+                                                    <option value="Mrs">Mrs</option>
+                                                </select>
 
-                                        </div>
-                                    </li>
+                                            </div>
+                                        </li>
 
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-                                            <label for="first_name_field" class="first_name">First Name:</label>
-                                            <br>
+                                        <li class="short right">
+                                            <div class="field-wrapper">
+                                                <label for="first_name_field" class="first_name">First Name:</label>
+                                                <br>
+                                                {{ form.FirstName }}
 
-                                            <input type="text" maxlength="32" value="" size="30" name="first_name"
-                                                id="first_name_field">
-                                        </div>
-                                    </li>
+                                               
+                                            </div>
+                                        </li>
 
-                                    <li class="short">
-                                        <div class="field-wrapper">
+                                        <li class="short">
+                                            <div class="field-wrapper">
 
-                                            <label for="middle_name_field" class="middle_name">
-                                                Middle Name: </label>
-                                            <br>
+                                                <label for="middle_name_field" class="middle_name">
+                                                    Middle Name: </label>
+                                                <br>
+                                                <input type="text" maxlength="32" value="" size="30" name="middle_name"
+                                                    id="middle_name_field">
+                                            </div>
+                                        </li>
 
-                                            <input type="text" maxlength="32" value="" size="30" name="middle_name"
-                                                id="middle_name_field">
-                                        </div>
-                                    </li>
+                                        <li class="short right">
+                                            <div class="field-wrapper">
 
-                                    <li class="short right">
-                                        <div class="field-wrapper">
-
-                                            <label for="last_name_field" class="last_name">
-                                                Last Name: </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="last_name"
-                                                id="last_name_field">
-                                        </div>
-                                    </li>
-
+                                                <label for="last_name_field" class="last_name">
+                                                    Last Name: </label>
+                                                <br>
+                                                {{ form.LastName }}
+                                               
+                                            </div>
+                                        </li>
 
 
-                                    <li class="short">
-                                        <div class="field-wrapper">
 
-                                            <label for="zip_field" class="zip">
-                                                Zip / Postal Code:<em>*</em> </label>
-                                            <br>
+                                        <li class="short">
+                                            <div class="field-wrapper">
 
-                                            <input type="text" maxlength="32" class="required" value="" size="30"
-                                                name="zip" id="zip_field">
-                                        </div>
-                                    </li>
+                                                <label for="zip_field" class="zip">
+                                                    Zip / Postal Code:<em>*</em> </label>
+                                                <br>
+                                                    
+                                                <input type="text" maxlength="32" class="required" value="" size="30"
+                                                    name="zip" id="zip_field">
+                                            </div>
+                                        </li>
 
-                                    <li class="short right">
-                                        <div class="field-wrapper">
+                                        <li class="short right">
+                                            <div class="field-wrapper">
 
-                                            <label class="virtuemart_country_id">
-                                                Country:<em>*</em> </label>
-                                            <br>
+                                                <label class="virtuemart_country_id">
+                                                    Country:<em>*</em> </label>
+                                                <br>
+                                                {{ form.Country }}
+                                            </div>
+                                        </li>
+                                        <li class="short">
+                                            <div class="field-wrapper">
 
-                                            <input type="text" maxlength="32" class="required" value="" size="30"
-                                                name="Country" id="country_id">
+                                                <label for="virtuemart_city" class="virtuemart_state_id">
+                                                    City:<em>*</em> </label>
+                                                <br>
+                                                {{ form.City }}
+                                                
+                                            </div>
+                                        </li>
 
-                                        </div>
-                                    </li>
-                                    <li class="short">
-                                        <div class="field-wrapper">
+                                        <li class="short right">
+                                            <div class="field-wrapper">
 
-                                            <label for="virtuemart_city" class="virtuemart_state_id">
-                                                City:<em>*</em> </label>
-                                            <br>
+                                                <label for="virtuemart_state_id_field" class="virtuemart_state_id">
+                                                    State / Province / Region:<em>*</em> </label>
+                                                <br>
+                                                {{ form.Region }}
+                                                
+                                            </div>
+                                        </li>
 
-                                            <input type="text" maxlength="32" class="required" value="" size="30"
-                                                name="City" id="city_id">
-                                        </div>
-                                    </li>
+                                        <li class="short">
+                                            <div class="field-wrapper">
 
-                                    <li class="short right">
-                                        <div class="field-wrapper">
+                                                <label for="phone_1_field" class="phone_1">
+                                                    Phone: </label>
+                                                <br>
+                                                {{ form.Phone }}
+                                                
+                                            </div>
+                                        </li>
 
-                                            <label for="virtuemart_state_id_field" class="virtuemart_state_id">
-                                                State / Province / Region:<em>*</em> </label>
-                                            <br>
+                                        <li class="short right">
+                                            <div class="field-wrapper">
 
-                                            <input type="text" maxlength="32" class="required" value="" size="30"
-                                                name="state" id="state_id">
-                                        </div>
-                                    </li>
+                                                <label for="phone_2_field" class="phone_2">
+                                                    Mobile phone: </label>
+                                                <br>
+                                                {{ form.Mobile }}
+                                            </div>
+                                        </li>
+                                        <li class="long">
+                                            <div class="field-wrapper">
 
-                                    <li class="short">
-                                        <div class="field-wrapper">
+                                                <label for="address_1_field" class="address_1">
+                                                    Address 1:<em>*</em> </label>
+                                                <br>
+                                                {{ form.Address }}
+                                            </div>
+                                        </li>
+                                        <!-- <li class="long">
+                                            <div class="field-wrapper">
 
-                                            <label for="phone_1_field" class="phone_1">
-                                                Phone: </label>
-                                            <br>
+                                                <label for="fax_field" class="fax">
+                                                    Front side Template: </label>
+                                                <br>
 
-                                            <input type="text" maxlength="32" value="" size="30" name="phone_1"
-                                                id="phone_1_field">
-                                        </div>
-                                    </li>
+                                                {{ form.TemplateOne }}
+                                            </div>
+                                        </li>
+                                        <li class="long">
+                                            <div class="field-wrapper">
 
-                                    <li class="short right">
-                                        <div class="field-wrapper">
+                                                <label for="fax_field" class="fax">
+                                                    Second side Template: </label>
+                                                <br>
 
-                                            <label for="phone_2_field" class="phone_2">
-                                                Mobile phone: </label>
-                                            <br>
+                                                {{ form.TemplateTwo }}
+                                            </div>
+                                        </li> -->
 
-                                            <input type="text" maxlength="32" value="" size="30" name="phone_2"
-                                                id="phone_2_field">
-                                        </div>
-                                    </li>
-                                    <li class="long">
-                                        <div class="field-wrapper">
-
-                                            <label for="address_1_field" class="address_1">
-                                                Address 1:<em>*</em> </label>
-                                            <br>
-
-                                            <input type="text" maxlength="64" class="required" value="" size="30"
-                                                name="address_1" id="address_1_field">
-                                        </div>
-                                    </li>
-                                    <li class="long">
-                                        <div class="field-wrapper">
-
-                                            <label for="fax_field" class="fax">
-                                                Fax: </label>
-                                            <br>
-
-                                            <input type="text" maxlength="32" value="" size="30" name="fax"
-                                                id="fax_field">
-                                        </div>
-                                    </li>
-
-                                </ul>
+                                    </ul>
+                                    <input class="btn-readmore" type="submit" value="Place Order" >
+                                    <br>
+                                </form>
                                 <!-- <ul id="user-actions-trigger">
                                     <li>
                                         <li class="long">
@@ -367,34 +366,34 @@
 
 {% block extra_js %}
 <script type="text/javascript">
- // form upload
- $('#id_ajax_upload_form').submit(function(e){
-     e.preventDefault();
-     $form = $(this)
-     var formData = new FormData(this);
-     $.ajax({
-         url: window.location.pathname,
-         type: 'POST',
-         data: formData,
-         success: function (response) {
-             $('.error').remove();
-             console.log(response)
-             if(response.error){
-                 $.each(response.errors, function(name, error){
-                     error = '<small class="text-muted error">' + error + '</small>'
-                     $form.find('[name=' + name + ']').after(error);
-                 })
-             }
-             else{
-                 alert(response.message)
-                 window.location = ""
-             }
-         },
-         cache: false,
-         contentType: false,
-         processData: false
-     });
- });
+    // form upload
+    $('#id_ajax_upload_form').submit(function (e) {
+        e.preventDefault();
+        $form = $(this)
+        var formData = new FormData(this);
+        $.ajax({
+            url: window.location.pathname,
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                $('.error').remove();
+                console.log(response)
+                if (response.error) {
+                    $.each(response.errors, function (name, error) {
+                        error = '<small class="text-muted error">' + error + '</small>'
+                        $form.find('[name=' + name + ']').after(error);
+                    })
+                }
+                else {
+                    alert(response.message)
+                    window.location = ""
+                }
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
  // end
 </script>
 {% endblock extra_js %}

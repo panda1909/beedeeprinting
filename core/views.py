@@ -11,11 +11,7 @@ from Marketing_Products.models import Products as mp_products
 
 from django.http import HttpResponse
 from django.template import loader
-<<<<<<< HEAD
-from .form import ImageFileUploadForm
-=======
-
->>>>>>> 63b0b5b8c31f513f6a69dbde81034f9189a63f6c
+from .form import checkoutForm
 
 
 
@@ -156,14 +152,15 @@ def Checkout(request):
 
     # Template form
     if request.method == 'POST':
-       form = ImageFileUploadForm(request.POST, request.FILES)
+       form = checkoutForm(request.POST)
        if form.is_valid():
            form.save()
-           return JsonResponse({'error': False, 'message': 'Uploaded Successfully'})
+           print ("--------->if")
+           print (form)
        else:
-           return JsonResponse({'error': True, 'errors': form.errors})
+           print ("-----> else")
     else:
-        form = ImageFileUploadForm()
+        form = checkoutForm()
 
     context ={
         'form': form,
