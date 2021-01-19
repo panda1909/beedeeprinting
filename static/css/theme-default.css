@@ -2,9 +2,16 @@ Del{
   color: red;
   font-size: 15px;
 }
-bold{
-  font-weight: bold;
+/* .sidefix{
+  position: -webkit-sticky; 
+  position: sticky; 
+  top: 13%;
 }
+@media only screen and (max-width: 600px) {
+  .sidefix{
+    position: inherit; 
+    } 
+} */
 body .short-description p{
 	font-family:"Arimo Regular";
  }
@@ -3775,6 +3782,7 @@ section.add-to-cart-w{
 .cart-bottom .subtotal li.grand-total span.sub-title{
   line-height: 34px;
 }
+
 @media(min-width: 768px){
   .cart-main-title,
   .cart-main-info
