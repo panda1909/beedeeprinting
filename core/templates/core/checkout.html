@@ -131,7 +131,8 @@
                                         </td> -->
 
                                         <td align="right" id="subtotal_with_tax_0" colspan="0"
-                                            class="sub-total td-last"><span class="line-through">${{ final_price }}</span></td>
+                                            class="sub-total td-last"><span class="line-through">${{ final_price
+                                                }}</span></td>
                                     </tr>
                                     <p style="color:red;"><strong> NOTE:</strong></p>
                                     <p>This price is an arbitary, our representative will contact you in <strong
@@ -141,7 +142,7 @@
                                 </tbody>
                             </table>
                         </fieldset>
-                       
+
                         <div id="right-pane-bottom">
                             <div class="customer-note">
                                 <p class="comment"><strong>Notes and special requests</strong></p>
@@ -188,7 +189,7 @@
                                                 <br>
                                                 {{ form.Email }}
 
-                                                
+
                                             </div>
                                         </li>
 
@@ -214,7 +215,7 @@
                                                 <br>
                                                 {{ form.FirstName }}
 
-                                               
+
                                             </div>
                                         </li>
 
@@ -236,7 +237,7 @@
                                                     Last Name: </label>
                                                 <br>
                                                 {{ form.LastName }}
-                                               
+
                                             </div>
                                         </li>
 
@@ -270,7 +271,7 @@
                                                     City:<em>*</em> </label>
                                                 <br>
                                                 {{ form.City }}
-                                                
+
                                             </div>
                                         </li>
 
@@ -281,7 +282,7 @@
                                                     State / Province / Region:<em>*</em> </label>
                                                 <br>
                                                 {{ form.Region }}
-                                                
+
                                             </div>
                                         </li>
 
@@ -292,7 +293,7 @@
                                                     Phone: </label>
                                                 <br>
                                                 {{ form.Phone }}
-                                                
+
                                             </div>
                                         </li>
 
@@ -314,7 +315,7 @@
                                                 {{ form.Address }}
                                             </div>
                                         </li>
-                                        <!-- <li class="long">
+                                        <li class="long">
                                             <div class="field-wrapper">
 
                                                 <label for="fax_field" class="fax">
@@ -333,12 +334,18 @@
 
                                                 {{ form.TemplateTwo }}
                                             </div>
-                                        </li> -->
-
+                                        </li>
+                                        <br>
+                                        <input class="btn-readmore" type="submit" value="Place Order">
+                                        <br>
+                                        <br>
                                     </ul>
-                                    <input class="btn-readmore" type="submit" value="Place Order" >
-                                    <br>
                                 </form>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                {% endif %}
                                 <!-- <ul id="user-actions-trigger">
                                     <li>
                                         <li class="long">

@@ -23,5 +23,5 @@ class checkoutForm(forms.Form):
     Email = forms.EmailField()
     Mobile = PhoneNumberField()
     Phone = PhoneNumberField()
-    # TemplateOne = forms.FileField(required=False ,validators=[validate_file_extension])
-    # TemplateTwo = forms.FileField(required=False ,validators=[validate_file_extension])
+    TemplateOne = forms.FileField(required=False ,validators=[validate_file_extension])
+    TemplateTwo = forms.FileField(required=False ,validators=[validate_file_extension])

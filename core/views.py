@@ -150,11 +150,13 @@ def Checkout(request):
     tax = round_tax
     price_final = price + tax
 
-    # Template form
+    # shipping info form
     if request.method == 'POST':
+       print("--------> POST")
        form = checkoutForm(request.POST)
+       print (form)
        if form.is_valid():
-           form.save()
+        #    form.ssave()
            print ("--------->if")
            print (form)
        else:
