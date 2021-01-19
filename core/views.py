@@ -11,7 +11,7 @@ from Marketing_Products.models import Products as mp_products
 
 from django.http import HttpResponse
 from django.template import loader
-from .form import ImageFileUploadForm, BusinessCard
+from .form import ImageFileUploadForm
 
 
 
@@ -92,6 +92,7 @@ def BC_Detail(request):
         print('Form not submitted')
     
 
+
     context = {
     #   Total Price and form 
         'total_price' : total_price,
@@ -149,7 +150,19 @@ def Checkout(request):
     tax = round_tax
     price_final = price + tax
 
+    # Template form
+    if request.method == 'POST':
+       form = ImageFileUploadForm(request.POST, request.FILES)
+       if form.is_valid():
+           form.save()
+           return JsonResponse({'error': False, 'message': 'Uploaded Successfully'})
+       else:
+           return JsonResponse({'error': True, 'errors': form.errors})
+    else:
+        form = ImageFileUploadForm()
+
     context ={
+        'form': form,
         'invoice': total,
         'label': label,
         'discount': discount,
