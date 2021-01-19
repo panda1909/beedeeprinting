@@ -11,7 +11,7 @@ from Marketing_Products.models import Products as mp_products
 
 from django.http import HttpResponse
 from django.template import loader
-from .form import ImageFileUploadForm, BusinessCard
+
 
 
 
