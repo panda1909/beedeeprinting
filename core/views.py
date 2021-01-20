@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
+import json
 # All category products
 from Business_Cards.models import Products as bc_products 
 from Business_Cards.models import business_cards_price, Extra_features
@@ -78,12 +79,21 @@ def BC_Detail(request):
                 
         total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
     
+        extra_f_dict = {"printing_type": printing_type,
+                        "size": size,
+                        "paper_type": paper_type,
+                        "sides": sides}        
+
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
         request.session['id'] = 1
         request.session['cat'] = 'bc_products'
+        request.session['extra_f'] = extra_f_dict
         print('Form Submitted')
+
+
+
 
     else:
         total_price = 0
@@ -131,6 +141,9 @@ def Checkout(request):
     discount = request.session['discount']
     id = request.session['id']
     category = request.session['cat']
+    extra_f_dict = request.session['extra_f']
+    json_dump = json.dumps(extra_f_dict)
+    json_obj = json.loads(json_dump)
 
     if category == 'bc_products':
         product = bc_products.objects.get(id=id)
@@ -155,6 +168,8 @@ def Checkout(request):
 
     # shipping info form
     if request.method == 'POST':
+       
+       
        print("--------> POST")
        form = checkoutForm(request.POST)
     #    print (form)
