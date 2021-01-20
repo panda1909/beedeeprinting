@@ -11,9 +11,7 @@
 	<meta name="description" content="Printing template">
 	<meta name="author" content="Netbase">
 	<!--Add css lib-->
-	{% block extra_css %}
-
-	{% endblock extra_css %}
+	
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
@@ -31,6 +29,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css8e24.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css3ad1.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css9fec.css' %}">
+	{% block extra_css %}
+
+	{% endblock extra_css %}
 </head>
 
 <body>
