@@ -352,12 +352,13 @@
 						</span>
 					</div>
 					<div class="col-lg-1 col-md-2 col-sm-2 col-xs-3 headerCS">
+						{% block cart %}
 						<div class="cart-w SC-w hd-pd ">
 							<span class="mcart-icon dropdowSCIcon">
 								<i class="fa fa-shopping-cart"></i>
-								<span class="mcart-dd-qty">2</span>
+								<span class="mcart-dd-qty">0</span>
 							</span>
-							<div class="mcart-dd-content dropdowSCContent clearfix">
+							<!-- <div class="mcart-dd-content dropdowSCContent clearfix">
 								<div class="mcart-item-w clearfix1">
 									<ul>
 										<li class="mcart-item">
@@ -415,8 +416,10 @@
 									<a href="cart.html" class="gbtn mcart-link-cart">View Cart</a>
 									<a href="checkout.html" class="gbtn mcart-link-checkout">Checkout</a>
 								</div>
-							</div>
+							</div> -->
 						</div>
+						{% endblock cart %}
+						
 						<div class="search-w SC-w hd-pd ">
 							<span class="search-icon dropdowSCIcon">
 								<i class="fa fa-search"></i>
