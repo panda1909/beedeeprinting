@@ -16,6 +16,7 @@ from .models import Orders, CustomerData
 from django.http import HttpResponse
 from django.template import loader
 from .form import checkoutForm
+import shortuuid
 
 
 
@@ -83,13 +84,14 @@ def BC_Detail(request):
                         "size": size,
                         "paper_type": paper_type,
                         "sides": sides}        
-
+        
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
         request.session['id'] = 1
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
+        request.session['quantity'] = quantity
         print('Form Submitted')
 
 
@@ -141,9 +143,12 @@ def Checkout(request):
     discount = request.session['discount']
     id = request.session['id']
     category = request.session['cat']
+    quantity = request.session['quantity']
     extra_f_dict = request.session['extra_f']
     json_dump = json.dumps(extra_f_dict)
     json_obj = json.loads(json_dump)
+    size = extra_f_dict['size']
+
 
     if category == 'bc_products':
         product = bc_products.objects.get(id=id)
@@ -165,7 +170,7 @@ def Checkout(request):
     round_tax = round(tax,2)
     tax = round_tax
     price_final = price + tax
-
+    order_id = shortuuid.ShortUUID().random(length=12)
     # shipping info form
     if request.method == 'POST':
        
@@ -187,8 +192,15 @@ def Checkout(request):
             TemplateTwo = form.cleaned_data["TemplateTwo"]
             Notes_Requests =  form.cleaned_data["Notes_Requests"]
             zipcode = form.cleaned_data["Zipcode"]
-            print(Name)
-            # order = Orders.objects.create(Customer=Name, Coun)
+            # print(Name)
+            order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address,  Mobile=Mobile, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
+
+            queryset = Orders.objects.raw("SELECT id FROM core_Orders WHERE OrderId = %s", [order_id])
+
+            for pk in queryset:
+                order_id = pk.id
+            print("-----> ",order_id)
+            Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address, Orders= Orders.set(order_id))
             print ("--------->if")
             
        else:
