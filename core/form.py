@@ -18,6 +18,7 @@ class checkoutForm(forms.Form):
     FirstName = forms.CharField(max_length=100)
     LastName = forms.CharField(max_length=100)
     Country = forms.CharField(max_length=100)
+    Zipcode = forms.CharField(max_length=100)
     City = forms.CharField(max_length=100)
     Region = forms.CharField(max_length=100)
     Address = forms.CharField(max_length=500)
@@ -27,7 +28,7 @@ class checkoutForm(forms.Form):
     Notes_Requests = forms.CharField(widget=forms.TextInput)
     TemplateOne = forms.FileField(required=False ,validators=[validate_file_extension])
     TemplateTwo = forms.FileField(required=False ,validators=[validate_file_extension])
-    Notes_Requests =  forms.CharField(widget=forms.Textarea)
+    Notes_Requests =  forms.CharField(widget=forms.Textarea, required=False)
 
 
 

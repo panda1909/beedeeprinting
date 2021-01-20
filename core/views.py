@@ -9,6 +9,9 @@ from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
 
+# order and customer table
+from .models import Orders, CustomerData
+
 from django.http import HttpResponse
 from django.template import loader
 from .form import checkoutForm
@@ -154,11 +157,25 @@ def Checkout(request):
     if request.method == 'POST':
        print("--------> POST")
        form = checkoutForm(request.POST)
-       print (form)
+    #    print (form)
        if form.is_valid():
-        #    form.save()
-           print ("--------->if")
-           print (form)
+            Name = form.cleaned_data["FirstName"]+" "+form.cleaned_data["LastName"]
+            Country = form.cleaned_data["Country"]
+            City = form.cleaned_data["City"]
+            Region = form.cleaned_data["Region"]
+            Address = form.cleaned_data["Address"]
+            Email = form.cleaned_data["Email"]
+            Mobile = form.cleaned_data["Mobile"]
+            Phone = form.cleaned_data["Phone"]
+            Notes_Requests = form.cleaned_data["Notes_Requests"]
+            TemplateOne = form.cleaned_data["TemplateOne"]
+            TemplateTwo = form.cleaned_data["TemplateTwo"]
+            Notes_Requests =  form.cleaned_data["Notes_Requests"]
+            zipcode = form.cleaned_data["Zipcode"]
+            print(Name)
+            # order = Orders.objects.create(Customer=Name, Coun)
+            print ("--------->if")
+            
        else:
            print ("-----> else")
     else:
