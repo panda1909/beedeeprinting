@@ -14,7 +14,7 @@ class ImageFileUploadForm (forms.ModelForm):
 
 
 class checkoutForm(forms.Form):
-    FirstName = forms.CharField(max_length=100 )
+    FirstName = forms.CharField(max_length=100)
     LastName = forms.CharField(max_length=100)
     Country = forms.CharField(max_length=100)
     City = forms.CharField(max_length=100)
@@ -23,10 +23,8 @@ class checkoutForm(forms.Form):
     Email = forms.EmailField()
     Mobile = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': 'Search'}))
     Phone = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': 'Search'}))
+    Notes_Special_Requests = forms.CharField(max_length=1000)
     TemplateOne = forms.FileField(required=False ,validators=[validate_file_extension])
     TemplateTwo = forms.FileField(required=False ,validators=[validate_file_extension])
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['Mobile'].widget.attrs.update({'placeholder': 'e.g. +12125552368'})
-        self.fields['Phone'].widget.attrs.update({'placeholder': 'e.g. +12125552368'})
+
 
