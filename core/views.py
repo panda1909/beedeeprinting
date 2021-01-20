@@ -156,7 +156,7 @@ def Checkout(request):
        form = checkoutForm(request.POST)
        print (form)
        if form.is_valid():
-        #    form.ssave()
+        #    form.save()
            print ("--------->if")
            print (form)
        else:
