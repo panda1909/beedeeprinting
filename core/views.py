@@ -195,12 +195,14 @@ def Checkout(request):
             # print(Name)
             order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address,  Mobile=Mobile, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
 
-            queryset = Orders.objects.raw("SELECT id FROM core_Orders WHERE OrderId = %s", [order_id])
-
-            for pk in queryset:
-                order_id = pk.id
-            print("-----> ",order_id)
-            Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address, Orders= Orders.set(order_id))
+          
+            if Orders.objects.filter(Email=Email).exists() :
+                Customerinfo = CustomerData.objects.get(Email=Email)
+                print(Customerinfo)
+                Customerinfo.Orders.add(order)
+            else:
+                Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
+                Customerinfo.Orders.add(order)
             print ("--------->if")
             
        else:
