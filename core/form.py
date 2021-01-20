@@ -24,6 +24,7 @@ class checkoutForm(forms.Form):
     Email = forms.EmailField()
     Mobile = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': 'e.g. +12125552368'}))
     Phone = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': 'e.g. +12125552368'}))
+    Notes_Requests = forms.CharField(widget=forms.TextInput)
     TemplateOne = forms.FileField(required=False ,validators=[validate_file_extension])
     TemplateTwo = forms.FileField(required=False ,validators=[validate_file_extension])
 
