@@ -15,7 +15,7 @@ class ImageFileUploadForm (forms.ModelForm):
 
 
 class checkoutForm(forms.Form):
-    FirstName = forms.CharField(max_length=100 )
+    FirstName = forms.CharField(max_length=100)
     LastName = forms.CharField(max_length=100)
     Country = forms.CharField(max_length=100)
     City = forms.CharField(max_length=100)
