@@ -22,6 +22,17 @@
     }
 </style>
 {% endblock extra_css %}
+
+{% block cart %}
+    <div class="cart-w SC-w hd-pd ">
+        <span class="mcart-icon dropdowSCIcon">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="mcart-dd-qty">1</span>
+        </span>
+    </div>
+							
+{% endblock cart %}
+                        
 {% block content %}
 <!--Main index : End-->
 <main class="main">
@@ -346,8 +357,8 @@
                                         </li>
                                         <li>
                                             <p class="comment"><strong>Notes and special requests</strong></p>
-                                            <textarea class="inputbox" rows="1" cols="60" name="customer_note"
-                                                id="customer_note_field" style="border: 2px solid #25bce9;">
+                                            <textarea class="inputbox"  cols="60" rows="10" name="Notes_Requests"
+                                                id="id_Notes_Requests" style="border: 2px solid #25bce9;">
                                             </textarea>
                                         </li>
                                         <br>

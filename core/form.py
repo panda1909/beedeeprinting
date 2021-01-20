@@ -26,5 +26,7 @@ class checkoutForm(forms.Form):
     Phone = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': 'e.g. +12125552368'}))
     TemplateOne = forms.FileField(required=False ,validators=[validate_file_extension])
     TemplateTwo = forms.FileField(required=False ,validators=[validate_file_extension])
+    Notes_Requests =  forms.CharField(widget=forms.Textarea)
+
 
 
