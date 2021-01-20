@@ -7,15 +7,17 @@
 {% endblock title %}
 {% block extra_css %}
 <style>
-    ::-webkit-input-placeholder { /* Edge */
+    ::-webkit-input-placeholder {
+        /* Edge */
         color: red;
-      }
-      
-      :-ms-input-placeholder { /* Internet Explorer */
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer */
         color: red;
-      }
-      
-      ::placeholder {
+    }
+
+    ::placeholder {
         color: red;
     }
 </style>
@@ -65,7 +67,6 @@
 
 
             <div class="onepage">
-
                 <!-- shipping_method -->
                 <!-- <div class="col-md-8 col-sm-6 col-xs-12">
                     <div id="right-pane-top" class="col-md-12 col-sm-12 col-xs-12">
@@ -94,114 +95,91 @@
                         </div>
                     </div>
                 </div> -->
-                <div id="checkfull" class="col-md-8 col-sm-12 col-xs-12">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <!-- render layout -->
+                    <!-- render layout -->
+                <fieldset class="round-box" id="cart-contents">
+                    <h3 class="title"><span class="icon fa fa-check"></span>ORDER REVIEWS</h3>
+                    <table cellspacing="0" cellpadding="0" border="0" class="cart-summary no-border">
+                        <tbody>
+                            <tr clas="top-header">
+                                <th align="left" class="th-name"><strong>Products Name</strong></th>
+                                <th width="10%" class="th-price"><strong>Price</strong></th>
+                                <th width="10%" class="th-tax"><span class="priceColor2"><strong>Tax</strong></span>
+                                </th>
+                                <th width="15%" class="th-quanlity"><strong>Discount</strong></th>
+                                <!-- <th width="15%" class="th-discount"><span class="priceColor2">Delivery Charges</span></th>  -->
+                                <th width="15%" align="left" class="th-total th-last"><strong>SubTotal</strong>
+                                </th>
+                            </tr>
 
-                        <fieldset class="round-box" id="cart-contents">
-                            <h3 class="title"><span class="icon fa fa-check"></span>ORDER REVIEWS</h3>
-                            <table cellspacing="0" cellpadding="0" border="0" class="cart-summary no-border">
-                                <tbody>
-                                    <tr clas="top-header">
-                                        <th align="left" class="th-name"><strong>Products Name</strong></th>
-                                        <th width="10%" class="th-price"><strong>Price</strong></th>
-                                        <th width="10%" class="th-tax"><span
-                                                class="priceColor2"><strong>Tax</strong></span></th>
-                                        <th width="15%" class="th-quanlity"><strong>Discount</strong></th>
-                                        <!-- <th width="15%" class="th-discount"><span class="priceColor2">Delivery Charges</span></th>  -->
-                                        <th width="15%" align="left" class="th-total th-last"><strong>SubTotal</strong>
-                                        </th>
-                                    </tr>
+                            <tr valign="top" id="product_row_0"
+                                class="product-detail-row product-detail-last-row sectiontableentry1">
+                                <td align="left" class="pro_name">
+                                    <img class="cart-images" style="height:100px; width:100px;" src="{{ image}}">
+                                    <span class="product-name" href="#"><strong> {{ label }} </strong></span>
+                                </td>
+                                <td align="left" class="base-price">
+                                    <div class="PricebasePrice vm-display vm-price-value"><span
+                                            class="vm-price-desc"></span><span class="PricebasePrice">
+                                            ${{ invoice }}</span></div>
+                                </td>
+                                <td align="right" class="pro_tax"><span class="priceColor2">
+                                        <div class="PricetaxAmount vm-display vm-price-value"><span
+                                                class="vm-price-desc"></span><span class="PricetaxAmount">$
+                                                {{ tax }}</span></div>
+                                    </span></td>
+                                <!-- Quantity -->
+                                <td align="left" class="discount-price">
+                                    <div class="PricebasePrice vm-display vm-price-value"><span
+                                            class="vm-price-desc"></span><span class="PricebasePrice">-$
+                                            {{ discount }}</span></div>
+                                </td>
+                                <!-- Action delete/refresh -->
+                                <!-- <td align="left" class="product-quanlity action">
+                                        <a data-pid="0" href="#" align="middle" title="DUpdate Quantity In Cart"
+                                            name="update" class="fa fa-refresh"> </a>
+                                        <a data-pid="0" href="#" align="middle" title="Delete Product From Cart"
+                                            name="remove" class="fa fa-times-circle"> </a>
+                                    </td> -->
 
-                                    <tr valign="top" id="product_row_0"
-                                        class="product-detail-row product-detail-last-row sectiontableentry1">
-                                        <td align="left" class="pro_name">
-                                            <img class="cart-images" style="height:100px; width:100px;"
-                                                src="{{ image}}">
-                                            <span class="product-name" href="#"><strong> {{ label }} </strong></span>
-                                        </td>
-                                        <td align="left" class="base-price">
-                                            <div class="PricebasePrice vm-display vm-price-value"><span
-                                                    class="vm-price-desc"></span><span class="PricebasePrice">
-                                                    ${{ invoice }}</span></div>
-                                        </td>
-                                        <td align="right" class="pro_tax"><span class="priceColor2">
-                                                <div class="PricetaxAmount vm-display vm-price-value"><span
-                                                        class="vm-price-desc"></span><span class="PricetaxAmount">$
-                                                        {{ tax }}</span></div>
-                                            </span></td>
-                                        <!-- Quantity -->
-                                        <td align="left" class="discount-price">
-                                            <div class="PricebasePrice vm-display vm-price-value"><span
-                                                    class="vm-price-desc"></span><span class="PricebasePrice">-$
-                                                    {{ discount }}</span></div>
-                                        </td>
-                                        <!-- Action delete/refresh -->
-                                        <!-- <td align="left" class="product-quanlity action">
-                                            <a data-pid="0" href="#" align="middle" title="DUpdate Quantity In Cart"
-                                                name="update" class="fa fa-refresh"> </a>
-                                            <a data-pid="0" href="#" align="middle" title="Delete Product From Cart"
-                                                name="remove" class="fa fa-times-circle"> </a>
-                                        </td> -->
+                                <td align="right" id="subtotal_with_tax_0" colspan="0" class="sub-total td-last">
+                                    <span class="line-through">
+                                        ${{ final_price }}</span></td>
+                            </tr>
+                            <p style="color:red;"><strong> NOTE:</strong></p>
+                            <p>This price is an arbitary, our representative will contact you in <strong
+                                    style="color: red">24 Hours</strong> with exact price according to your
+                                extra notes, special request and exact shipping price. Please fill shipping info
+                                so we can contact you.</p>
+                        </tbody>
+                    </table>
 
-                                        <td align="right" id="subtotal_with_tax_0" colspan="0"
-                                            class="sub-total td-last"><span class="line-through">
-                                                ${{ final_price }}</span></td>
-                                    </tr>
-                                    <p style="color:red;"><strong> NOTE:</strong></p>
-                                    <p>This price is an arbitary, our representative will contact you in <strong
-                                            style="color: red">24 Hours</strong> with exact price according to your
-                                        extra notes, special request and exact shipping price. Please fill shipping info
-                                        so we can contact you.</p>
-                                </tbody>
-                            </table>
-                               
 
-                        </fieldset>
-
-                        <div id="right-pane-bottom">
-                            <div class="customer-note">
-                                <p class="comment"><strong>Notes and special requests</strong></p>
-                                <textarea class="inputbox" rows="1" cols="60" name="customer_note"
-                                    id="customer_note_field" style="border: 2px solid #25bce9;"></textarea>
-                            </div>
-                            <fieldset class="vm-fieldset-tos">
-                                <input id="tos" class="terms-of-service" type="checkbox" name="tos" value="1">
-                                <span>Click here to read terms of service and check the box to accept
-                                    them.<em>*</em></span>
-                                <div class="checkout-button-top">
-                                    <a href="#" class="vm-button-correct"><span>Confirm Purchase</span></a>
-                                </div>
-                            </fieldset>
-                        </div><!-- right-pane-bottom -->
-                        
-                    </div>
-                    
-                </div>
-                
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                </fieldset>
+                    <!-- FORM -->
+                <div id="right-pane-bottom">
                     <div id="div_billto">
                         <div class="pane round-box">
                             <h3 class="title"><span class="icon icon-one">1</span>Shipping Info</h3>
                             <div class="pane-inner">
-                                <p style="color: red;"> Your information will not be used for advertisment purposes, as
+                                <p style="color: red;"> Your information will not be used for advertisment purposes,
+                                    as
                                     outlined in our privacy policy.</p>
                                 <form method="POST">
                                     {% csrf_token %}
                                     {% if form.errors %}
                                     {% for field in form %}
-                                        {% for error in field.errors %}
-                                        <div class="alert alert-danger">
-                                            <strong>{{ error|escape }}</strong>
-                                        </div>
-                                        {% endfor %}
+                                    {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                    {% endfor %}
                                     {% endfor %}
                                     {% for error in form.non_field_errors %}
-                                        <div class="alert alert-danger">
-                                            <strong>{{ error|escape }}</strong>
-                                        </div>
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
                                     {% endfor %}
-                                {% endif %}
+                                    {% endif %}
                                     <ul id="table_billto" class="adminform user-details no-border">
                                         <li class="short">
                                             <div class="field-wrapper">
@@ -256,8 +234,8 @@
                                                 <label for="middle_name_field" class="middle_name">
                                                     Middle Name: </label>
                                                 <br>
-                                                <input type="text" maxlength="32" value="" size="30" name="middle_name"
-                                                    id="middle_name_field">
+                                                <input type="text" maxlength="32" value="" size="30"
+                                                    name="middle_name" id="middle_name_field">
                                             </div>
                                         </li>
 
@@ -281,8 +259,8 @@
                                                     Zip / Postal Code:<em>*</em> </label>
                                                 <br>
 
-                                                <input type="text" maxlength="32" class="required" value="" size="30"
-                                                    name="zip" id="zip_field">
+                                                <input type="text" maxlength="32" class="required" value=""
+                                                    size="30" name="zip" id="zip_field">
                                             </div>
                                         </li>
 
@@ -366,6 +344,12 @@
                                                 {{ form.TemplateTwo }}
                                             </div>
                                         </li>
+                                        <li>
+                                            <p class="comment"><strong>Notes and special requests</strong></p>
+                                            <textarea class="inputbox" rows="1" cols="60" name="customer_note"
+                                                id="customer_note_field" style="border: 2px solid #25bce9;">
+                                            </textarea>
+                                        </li>
                                         <br>
                                         <input class="btn-readmore" type="submit" value="Place Order">
                                         <br>
@@ -377,8 +361,6 @@
 
                         </div>
                     </div>
-                    <!-- Cos 2 -->
-
                 </div>
             </div>
     </section>
