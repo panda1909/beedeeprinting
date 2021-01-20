@@ -5,7 +5,21 @@
 {% block title %}
 <title>Checkout</title>
 {% endblock title %}
-
+{% block extra_css %}
+<style>
+    ::-webkit-input-placeholder { /* Edge */
+        color: red;
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer */
+        color: red;
+      }
+      
+      ::placeholder {
+        color: red;
+    }
+</style>
+{% endblock extra_css %}
 {% block content %}
 <!--Main index : End-->
 <main class="main">
