@@ -62,6 +62,7 @@ def BC_Detail(request):
                 break
         else:
             price_side = 0
+
         for i in paper_price_query:
             price_paper = i.paper_type_price
 
@@ -93,16 +94,13 @@ def BC_Detail(request):
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
-
-
-
-
     else:
         total_price = 0
         request.session['invoice'] = 0
         request.session['label'] = ' '
         request.session['discount'] = 0
         request.session['id'] = 1
+        request.session['quantity'] = 0
         request.session['cat'] = 'bc_products'
         print('Form not submitted')
     
@@ -192,6 +190,8 @@ def Checkout(request):
             TemplateTwo = form.cleaned_data["TemplateTwo"]
             Notes_Requests =  form.cleaned_data["Notes_Requests"]
             zipcode = form.cleaned_data["Zipcode"]
+
+           
             # print(Name)
             order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address,  Mobile=Mobile, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
 
@@ -221,6 +221,9 @@ def Checkout(request):
         'image': product.image1,
     }
     return render(request, 'core/checkout.html', context)
+
+def Order_placed(request):
+    return render(request, 'core/order_placed.html')
 
 
 def Cart(request):

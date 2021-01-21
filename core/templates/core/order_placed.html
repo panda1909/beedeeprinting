@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Order status</title>
+{% endblock title %}
+{% block content %}
+  <!--Main category : Begin-->
+	<main id="main" class="account dashboard">
+		<section class="header-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3 hidden-xs">
+						<h1 class="mh-title">My Account</h1>
+					</div>
+					<div class="breadcrumb-w col-sm-9">
+						<span class="hidden-xs">You are here:</span>
+						<ul class="breadcrumb">
+							<li>
+								<a href="http://netbaseteam.com/">Home</a>
+							</li>
+							<li>
+								<span>My Account</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="account-content parten-bg">
+			<div class="container">
+				<!--Account top banner -->
+				<div class="row">
+					<div class="col-md-12 cart-banner-top hidden-xs">
+						<a href="#" title="cart top banner">
+							<img src="{% static 'images/banner/cart/top-banner.jpg' %}" alt="Cart top banner" />
+						</a>
+					</div>
+				</div>
+				<div class="row acc-dashboard">
+					
+					<!--Account main content : Begin -->
+					<section class="account-main ">
+						<h3 class="acc-title lg" style="text-align: center;"><strong>Order Id</strong></h3>
+						<div class="row db-content">
+							<div class="db-hello col-xs-12">
+								<div class="pad-1015">
+									<p class="hello-user">
+										Hello, Cmsmart User!
+									</p>
+									<p class="hello-par">
+										Kindly note down your ORDER ID, for checking status.
+									</p>
+								</div>
+							</div>
+							
+						</div>
+					</section><!-- Cart main content : End -->
+				</div>
+				
+			</div>
+		</section>
+	</main><!-- Main Category: End -->
+{% endblock content %}
