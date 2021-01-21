@@ -196,7 +196,7 @@ def Checkout(request):
             order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address,  Mobile=Mobile, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
 
           
-            if Orders.objects.filter(Email=Email).exists() :
+            if CustomerData.objects.filter(Email=Email).exists() :
                 Customerinfo = CustomerData.objects.get(Email=Email)
                 print(Customerinfo)
                 Customerinfo.Orders.add(order)
