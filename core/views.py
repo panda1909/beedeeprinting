@@ -171,8 +171,6 @@ def Checkout(request):
     order_id = shortuuid.ShortUUID().random(length=12)
     # shipping info form
     if request.method == 'POST':
-       
-       
        print("--------> POST")
        form = checkoutForm(request.POST)
     #    print (form)
@@ -191,7 +189,10 @@ def Checkout(request):
             Notes_Requests =  form.cleaned_data["Notes_Requests"]
             zipcode = form.cleaned_data["Zipcode"]
 
-           
+            # session for order id page
+            request.session['Name'] = Name
+            request.session['order_id'] = order_id
+
             # print(Name)
             order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address,  Mobile=Mobile, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
 
@@ -204,7 +205,7 @@ def Checkout(request):
                 Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
                 Customerinfo.Orders.add(order)
             print ("--------->if")
-            
+            return redirect('Order_placed')
        else:
            print ("-----> else")
     else:
@@ -223,7 +224,14 @@ def Checkout(request):
     return render(request, 'core/checkout.html', context)
 
 def Order_placed(request):
-    return render(request, 'core/order_placed.html')
+    Name = request.session['Name']
+    order_id = request.session['order_id'] 
+    context = {
+        'Name' : Name,
+        'order_id' : order_id,
+    }
+    del request.session['invoice']
+    return render(request, 'core/order_placed.html', context)
 
 
 def Cart(request):
