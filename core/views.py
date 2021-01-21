@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponse
 from django.views.generic import TemplateView
 from Marketing_Products.models import Calendars
 import json
@@ -138,17 +138,19 @@ class Aboutus(TemplateView):
         return render(request, 'core/aboutus.html')
 
 def Checkout(request):
-    total = request.session['invoice']
-    label = request.session['label']
-    discount = request.session['discount']
-    id = request.session['id']
-    category = request.session['cat']
-    quantity = request.session['quantity']
-    extra_f_dict = request.session['extra_f']
-    json_dump = json.dumps(extra_f_dict)
-    json_obj = json.loads(json_dump)
-    size = extra_f_dict['size']
-
+    try:
+        total = request.session['invoice']
+        label = request.session['label']
+        discount = request.session['discount']
+        id = request.session['id']
+        category = request.session['cat']
+        quantity = request.session['quantity']
+        extra_f_dict = request.session['extra_f']
+        json_dump = json.dumps(extra_f_dict)
+        json_obj = json.loads(json_dump)
+        size = extra_f_dict['size']
+    except:
+        return HttpResponse("Your cart is empty")
 
     if category == 'bc_products':
         product = bc_products.objects.get(id=id)
@@ -210,6 +212,7 @@ def Checkout(request):
     else:
         form = checkoutForm()
 
+
     context ={
         'form': form,
         'invoice': total,
@@ -220,8 +223,10 @@ def Checkout(request):
         'final_price': price_final,
         'image': product.image1,
     }
+    
+    del request.session['invoice']
+    
     return render(request, 'core/checkout.html', context)
-
 
 def Cart(request):
     return render(request, 'core/cart.html')
