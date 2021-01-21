@@ -45,7 +45,7 @@ def Edge_painted_Detail(request):
         if size == 'US_Standard_Size':
             type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, US_Standard_Size FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
         elif size == 'European_Size':
-            type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, Europen_Size FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
+            type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, European_Size FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
         elif size == 'Square':
             type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, Square FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
 
@@ -94,12 +94,18 @@ def Edge_painted_Detail(request):
         print(total_price)
         print('----------')
         print('-',price_discount)
+
+        extra_f_dict = {"size": size,
+                        "paper_type": paper_type,
+                        "sides": sides,
+                        "color": color}    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
         request.session['id'] = 2
         request.session['cat'] = 'bc_products'
+        request.session['extra_f'] = extra_f_dict
         print('Form Submitted')
 
 
