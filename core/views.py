@@ -207,7 +207,7 @@ def Checkout(request):
                 Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
                 Customerinfo.Orders.add(order)
             print ("--------->if")
-            return redirect('Order_placed')
+            return redirect('order')
        else:
            print ("-----> else")
     else:

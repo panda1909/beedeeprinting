@@ -140,7 +140,7 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-2 col-sm-4 col-xs-5 w-logo">
 						<div class="logo hd-pd ">
-							<a href="index.html">
+							<a href="{% url 'home' %}">
 								<img src="{% static 'images/logo.png' %}" alt="printshop logo">
 							</a>
 						</div>
@@ -630,10 +630,10 @@
 				<a href="category_grid.html" title="Marketing">Marketing</a>
 			</li>
 			<li class="level0">
-				<a href="{ url 'get_status' }" title="Postcards">Order Status</a>
+				<a href="{% url 'order_status' %}" title="Postcards">Order Status</a>
 			</li>
 			<li class="level0">
-				<a href="#" title="Stickers & Badges">About US</a>
+				<a href="{% url 'aboutus' %}" title="Stickers & Badges">About US</a>
 			</li>
 			<li class="level0" title="Promotional">
 				<a href="#">Contact US</a>
