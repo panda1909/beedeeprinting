@@ -5,6 +5,14 @@ from .validators import validate_file_extension
 
                           
 class Orders(models.Model):
+    # Status Choices
+    CHOICES = (
+        ('Pending', 'Pending'),
+        ('Printing', 'Printing'),
+        ('Dispatched', 'Dispatched'),
+        ('Delivered', 'Delivered'),
+        ('Designing', 'Designing'),
+    )
     OrderId = models.CharField(null=False, max_length=256)
     Product_name = models.CharField(null=False, max_length=512, default='pd')
     Customer = models.CharField(null=False, max_length=512)
@@ -17,7 +25,7 @@ class Orders(models.Model):
     Contact = PhoneNumberField()
     Email = models.EmailField()
     Delivery_date = models.DateField(null=True, auto_now=False, auto_now_add=False)
-    Status = models.CharField(null=False, max_length=256)
+    Status = models.CharField(null=False, max_length=256, choices=CHOICES, default='Pending')
     Quantity = models.PositiveIntegerField(default=1, blank=False, editable=True)
     Size = models.CharField(null=False, max_length=1024)
     Price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
