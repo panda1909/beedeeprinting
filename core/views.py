@@ -224,9 +224,6 @@ def Checkout(request):
         'final_price': price_final,
         'image': product.image1,
     }
-    
-    del request.session['invoice']
-    
     return render(request, 'core/checkout.html', context)
 
 def Order_placed(request):
@@ -238,6 +235,21 @@ def Order_placed(request):
     }
     del request.session['invoice']
     return render(request, 'core/order_placed.html', context)
+
+
+def get_status(request):
+    status = "Please Enter ID first."
+    if request.POST:
+        form = request.POST
+        Order_id = form['Order_id']
+        print("---------->>>>", Order_id)
+        status_query = Orders.objects.raw("SELECT id, Status FROM core_Orders WHERE OrderId = %s",[Order_id])
+        for p in status_query:
+            status = p.Status
+    context={
+        'status' : status,
+    }
+    return render(request, 'core/get_status.html', context)
 
 
 def Cart(request):
