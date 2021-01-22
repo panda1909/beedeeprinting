@@ -39,10 +39,10 @@
                             </a>
                             
                             <ul class="level0">
-                                {% for bc_product in bc_product %}
+                                {% for bc_object in bc_object %}
                                 <li class="level1 nav-1-1 first item">
                                     <a href="#" title="Premium Business Cards">
-                                        {{ bc_product.Label }}
+                                        {{ bc_object.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -102,10 +102,10 @@
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
                             <ul class="level0">
-                                {% for bc_product in bc_product %}
+                                {% for bc_object in bc_object %}
                                 <li class="level1 nav-1-1 first item">
                                     <a href="#" title="Premium Business Cards">
-                                        {{ bc_product.Label }}
+                                        {{ bc_object.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -200,12 +200,12 @@
                         </div>
                     </div>
                     <div class="row products-grid category-product">
-                        {% for bc_product in bc_product %}
+                        {% for urls_bc, bc_object in bc_list %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                 <div class="product-image-action">
-                                    <img  src="{{ bc_product.image1 }}"
-                                        alt="{{ bc_product.Label }}">
+                                    <img  src="{{ bc_object.image1 }}"
+                                        alt="{{ bc_object.Label }}">
                                     <div class="action">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
@@ -218,7 +218,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">{{ bc_product.Label }}</a>
+                                    <a href="{{ urls_bc }}" title="product" class="product-name">{{ bc_object.Label }}</a>
                                     <div class="price-box">
                                         <span class="normal-price">View Pricing</span>
                                     </div>
@@ -264,10 +264,8 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-
                                 </div>
                             </li>
-                            
                         </ul>
                         {% endfor %}
                         {% for mp_product in mp_product %}
@@ -288,7 +286,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">{{ mp_product.Label }}</a>
+                                    <a href="#" title="product" class="product-name">{{ mp_product.Label }}</a>
                                     <div class="price-box">
                                         <span class="normal-price">View Pricing</span>
                                     </div>
@@ -323,7 +321,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">{{ lf_product.Label }}</a>
+                                    <a href="#" title="product" class="product-name">{{ lf_product.Label }}</a>
                                     <div class="price-box">
                                         <span class="normal-price">View Pricing</span>
                                     </div>
