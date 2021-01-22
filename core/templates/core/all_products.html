@@ -10,7 +10,7 @@
     <section class="header-page">
         <div class="container">
             <div class="row">
-                
+
                 <div class="breadcrumb-w col-sm-12">
                     <span>You are here:</span>
                     <ul class="breadcrumb">
@@ -28,21 +28,21 @@
     <section class="category-w parten-bg">
         <div class="container">
             <div class="row">
-                <aside id="sidebar_cate" class="col-sm-3 hidden-xs" >
+                <aside id="sidebar_cate" class="col-sm-3 hidden-xs">
                     <h3 class="sidebar-title">Category</h3>
                     <ul id="cate_list" class="cate_list">
-                        
+
                         <li class="level0 parent">
                             <a href="#" title="Business Cards">
                                 <span style="color: black;">Business Cards</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
-                                {% for urls_bc, bc_object in bc_list %}
+                                {% for urls_bc_aside, bc_object_aside in bc_aside %}
                                 <li class="level1 nav-1-1 first item">
-                                    <a href="{{ urls_bc }}" title="Premium Business Cards">
-                                        {{ bc_object.Label }}
+                                    <a href="{{ urls_bc_aside }}" title="Premium Business Cards">
+                                        {{ bc_object_aside.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -53,7 +53,7 @@
                                 <span style="color: black;">Business Stationary</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
                                 {% for bs_product in bs_product %}
                                 <li class="level1 nav-1-1 first item">
@@ -69,7 +69,7 @@
                                 <span style="color: black;">Large Format Printing</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
                                 {% for lf_product in lf_product %}
                                 <li class="level1 nav-1-1 first item">
@@ -85,7 +85,7 @@
                                 <span style="color: black;">Marketing Products</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
                                 {% for mp_product in mp_product %}
                                 <li class="level1 nav-1-1 first item">
@@ -130,7 +130,7 @@
                                     </a>
                                 </li>
                                 {% endfor %}
-                                
+
                             </ul>
                         </li>
                     </ul>
@@ -145,42 +145,41 @@
                     <div class="row">
                         <div class="col-xs-12 category-image visible-md visible-lg">
                             <a href="#" title="category image">
-                                <img src="{% static 'images/banner/category/top-business-card-large.jpg' %}" alt="Business card">
+                                <img src="{% static 'images/banner/category/top-business-card-large.jpg' %}"
+                                    alt="Business card">
                             </a>
                         </div>
                         <div class="col-xs-12 category-image visible-sm">
                             <a href="#" title="category image">
-                                <img src="{% static 'images/banner/category/top-business-card-medium.jpg' %}" alt="Business card">
+                                <img src="{% static 'images/banner/category/top-business-card-medium.jpg' %}"
+                                    alt="Business card">
                             </a>
                         </div>
                         <div class="col-xs-12 category-image visible-xs">
                             <a href="#" title="category image">
-                                <img src="{% static 'images/banner/category/top-business-card-small.jpg' %}" alt="Business card">
+                                <img src="{% static 'images/banner/category/top-business-card-small.jpg' %}"
+                                    alt="Business card">
                             </a>
                         </div>
                     </div>
                     <div class="top-toolbar row">
                         <div class="col-md-3 col-sm-4 col-xs-4 type-filter">
                             <span class="cate-filter-title hidden-xs">Product Type:</span>
-                            
+
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4 industry-filter">
-                           <!-- extra type with option add here -->
+                            <!-- extra type with option add here -->
                         </div>
-                        
+
                     </div>
                     <div class="row products-grid category-product">
+
                         {% for urls_bc, bc_object in bc_list %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                 <div class="product-image-action">
-                                    <img  src="{{ bc_object.image1 }}"
-                                        alt="{{ bc_object.Label }}">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
+                                    <img src="{{ bc_object.image1 }}" alt="{{ bc_object.Label }}">
+                                    <div class="action" style="padding-left: 15%;">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                             <i class="fa fa-eye"></i>
@@ -188,7 +187,9 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="{{ urls_bc }}" title="product" class="product-name">{{ bc_object.Label }}</a>
+                                    <a href="{{ urls_bc }}" title="product" class="product-name">
+                                        {{ bc_object.Label }}
+                                    </a>
                                     <div class="price-box">
                                         <span class="normal-price">View Pricing</span>
                                     </div>
@@ -199,23 +200,17 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-
                                 </div>
                             </li>
-                            
                         </ul>
                         {% endfor %}
+
                         {% for bs_product in bs_product %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                 <div class="product-image-action">
-                                    <img src="{{ bs_product.image1 }}"
-                                        alt="{{ bs_product.Label }}">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
+                                    <img src="{{ bs_product.image1 }}" alt="{{ bs_product.Label }}">
+                                    <div class="action" style="padding-left: 22%;">
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                             <i class="fa fa-eye"></i>
@@ -223,7 +218,9 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="detail.html" title="product" class="product-name">{{ bs_product.Label }}</a>
+                                    <a href="detail.html" title="product" class="product-name">
+                                        {{ bs_product.Label }}
+                                    </a>
                                     <div class="price-box">
                                         <span class="normal-price">View Pricing</span>
                                     </div>
@@ -242,13 +239,9 @@
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                 <div class="product-image-action">
-                                    <img  src="{{ mp_product.image1 }}"
-                                        alt="{{ mp_product.Label }}">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
+                                    <img src="{{ mp_product.image1 }}" alt="{{ mp_product.Label }}">
+                                    <div class="action" style="padding-left: 22%;">
+
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                             <i class="fa fa-eye"></i>
@@ -270,20 +263,16 @@
 
                                 </div>
                             </li>
-                            
+
                         </ul>
                         {% endfor %}
                         {% for lf_product in lf_product %}
                         <ul>
                             <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                 <div class="product-image-action">
-                                    <img src="{{ lf_product.image1 }}"
-                                        alt="{{ lf_product.Label }}">
-                                    <div class="action">
-                                        <button type="button" data-toggle="tooltip" data-placement="top"
-                                            title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
+                                    <img src="{{ lf_product.image1 }}" alt="{{ lf_product.Label }}">
+                                    <div class="action" style="padding-left: 22%;">
+
                                         <button type="button" data-toggle="tooltip" data-placement="top"
                                             title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                             <i class="fa fa-eye"></i>
@@ -305,11 +294,11 @@
 
                                 </div>
                             </li>
-                            
+
                         </ul>
                         {% endfor %}
                     </div>
-                  
+
                 </section><!-- Category product grid : End -->
             </div>
             <br>
@@ -317,17 +306,20 @@
             <div class="row">
                 <div class="col-md-12 visible-md visible-lg cate-bottom-banner">
                     <a href="#" title="category bottom banner">
-                        <img src="{% static 'images/banner/category/category-bottom-banner-large.jpg' %}" alt="Business card">
+                        <img src="{% static 'images/banner/category/category-bottom-banner-large.jpg' %}"
+                            alt="Business card">
                     </a>
                 </div>
                 <div class="col-sm-12 visible-sm cate-bottom-banner">
                     <a href="#" title="category bottom banner">
-                        <img src="{% static 'images/banner/category/category-bottom-banner-medium.jpg' %}" alt="Business card">
+                        <img src="{% static 'images/banner/category/category-bottom-banner-medium.jpg' %}"
+                            alt="Business card">
                     </a>
                 </div>
                 <div class="col-xs-12 visible-xs cate-bottom-banner">
                     <a href="#" title="category bottom banner">
-                        <img src="{% static 'images/banner/category/category-bottom-banner-small.jpg' %}" alt="Business card">
+                        <img src="{% static 'images/banner/category/category-bottom-banner-small.jpg' %}"
+                            alt="Business card">
                     </a>
                 </div>
             </div>

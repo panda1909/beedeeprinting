@@ -134,7 +134,6 @@ def Order_placed(request):
 
 def get_status(request):
     status = "Please Enter ID first."
-    check = 0
     if request.POST:
         form = request.POST
         Order_id = form['Order_id']
@@ -144,7 +143,6 @@ def get_status(request):
             status = p.Status
     context={
         'status' : status,
-        'check' : check,
     }
     return render(request, 'core/get_status.html', context)
 
@@ -152,15 +150,22 @@ def get_status(request):
 def Cart(request):
     return render(request, 'core/cart.html')
 
+
+def Contactus(request):
+    return render(request, 'core/contactus.html')
+
 # ------  All Products page/funct  ------ # 
 
 def All_products(request):
     bc_object = bc_products.objects.all()
+    bc_object_aside = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
-    urls_bc = ["business-cards", "detail"]
+    urls_bc = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
+    urls_bc_aside = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
     bc_list = zip(urls_bc,bc_object)
+    bc_aside = zip(urls_bc_aside,bc_object_aside)
     print("------->> list",bc_list)
     context = {
         "bc_product" : bc_object,
@@ -168,6 +173,7 @@ def All_products(request):
         "lf_product" : lf_object,
         "mp_product" : mp_object,
         "bc_list"    : bc_list,
+        "bc_aside"   : bc_aside,
     }
     return render(request, "core/all_products.html", context)
 
