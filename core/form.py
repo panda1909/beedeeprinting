@@ -35,4 +35,4 @@ class checkoutForm(forms.Form):
 class queries(forms.ModelForm):
     class Meta:
         model = Messages
-        fields = ['Subject','Message','Name','Email']
+        fields = ['Subject','Message','Name','Email','Contacted']
