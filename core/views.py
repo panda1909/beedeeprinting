@@ -25,7 +25,6 @@ import shortuuid
 def Home(request):
     return render(request, "core/index.html")
 
-
 def BC_Detail(request):
     
     product = bc_products.objects.get(id=1)
@@ -239,6 +238,7 @@ def Order_placed(request):
 
 def get_status(request):
     status = "Please Enter ID first."
+    check = 0
     if request.POST:
         form = request.POST
         Order_id = form['Order_id']
@@ -248,6 +248,7 @@ def get_status(request):
             status = p.Status
     context={
         'status' : status,
+        'check' : check,
     }
     return render(request, 'core/get_status.html', context)
 

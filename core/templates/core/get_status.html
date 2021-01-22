@@ -6,75 +6,94 @@
 {% endblock title %}
 {% block content %}
 <!--Main category : Begin-->
-<main id="main" class="account dashboard">
-    <section class="header-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 hidden-xs">
-                    <h1 class="mh-title">Order Status</h1>
-                </div>
-                <div class="breadcrumb-w col-sm-9">
-                    <span class="hidden-xs">You are here:</span>
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="http://netbaseteam.com/">Order Status</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="account-content parten-bg">
-        <div class="container">
-            <!--Account top banner -->
-            <div class="row">
-                <div class="col-md-12 cart-banner-top hidden-xs">
-                    <a href="#" title="cart top banner">
-                        <img src="{% static 'images/banner/cart/top-banner.jpg' %}" alt="Cart top banner" />
-                    </a>
-                </div>
-            </div>
-            <div class="row acc-dashboard">
-                
-                <!--Account main content : Begin -->
-                <section class="account-main ">
-                    <h3 class="acc-title lg" style="text-align: center;"><strong>Order Status</strong></h3>
-                    <div class="row db-content">
-                        <div class="db-hello col-xs-12">
-                            <div class="pad-1015">
-                                
-                                <p>Enter Your Order Id For Checking Status </p>
-                                <form method="POST">
-                                    {% csrf_token %}
-                                    <br>
-                                    <input type="text" maxlength="12" value="" size="30"
-                                    name="Order_id" id="Order_id">
-                                    <br>
-                                    <br>
-                                    <input class="btn-readmore" type="submit" value="Submit">
-                                </form>
-                                <br>
-                                <div style="font-size: 20px;">
-                                    <span style="color: #25bce9;" > <Strong>Order Status: </Strong></span>{{ status }}
-                                </div>
-                                <!-- <p class="hello-user">
-                                    Hello, {{ Name }}!
-                                </p>
-                                <p class="hello-par">
-                                    Kindly note down your ORDER ID, for checking status.
-                                </p>
-                                <p class="hello-par">
-                                    {{ order_id }}
-                                </p> -->
-                            </div>
-                        </div>
-                        
+<div class="row">
+    <main id="main" class="account dashboard">
+        <section class="header-page">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-3 hidden-xs"> -->
+                    <!-- <h1 class="mh-title">Order Status</h1> -->
+                    <!-- </div> -->
+                    <div class="breadcrumb-w col-sm-9">
+                        <span class="hidden-xs">You are here:</span>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li>
+                                <a href="http://netbaseteam.com/">Order Status</a>
+                            </li>
+
+                        </ul>
                     </div>
-                </section><!-- Cart main content : End -->
+                </div>
             </div>
-            
+        </section>
+        <section class="account-content parten-bg">
+            <div class="container">
+                <!--Account top banner -->
+                <div class="row">
+                    <div class="col-md-12 cart-banner-top hidden-xs">
+                        <a href="#" title="cart top banner">
+                            <img src="{% static 'images/banner/cart/top-banner.jpg' %}" alt="Cart top banner" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row acc-dashboard">
+
+                    <!--Account main content : Begin -->
+                    <section class="account-main ">
+                        <h3 class="acc-title lg" style="text-align: center;"><strong>Order Status</strong></h3>
+                        <div class="row db-content">
+                            <div class="db-hello col-xs-12">
+                                <div class="pad-1015">
+
+                                    <p>Enter Your Order Id For Checking Status </p>
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <br>
+                                        <input type="text" maxlength="12" value="" size="30" name="Order_id"
+                                            id="Order_id">
+                                        <br>
+                                        <br>
+                                        <input class="btn-readmore" type="submit" value="Submit">
+                                    </form>
+                                    <br>
+                                    <div style="font-size: 20px;">
+                                        <span style="color: #25bce9;"> <Strong>Order Status: </Strong></span>
+                                        {{ status }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Cart main content : End -->
+                </div>
+
+            </div>
+        </section>
+
+        <div class="block-capabititie-w">
+            <!-- <div class="block-capabititie col-md-3 col-sm-3 col-xs-12"> -->
+            <div id="myDoughnut"> </div>
+    
+            <!-- </div> -->
+            <!-- <div class="block-capabititie col-md-3 col-sm-3 col-xs-12"> -->
+            <div id="myDoughnut2"> </div>
+    
+            <!-- </div> -->
+            <!-- <div class="block-capabititie col-md-3 col-sm-3 col-xs-12"> -->
+            <div id="myDoughnut3"> </div>
+    
+            <!-- </div> -->
+            <!-- <div class="block-capabititie col-md-3 col-sm-3 col-xs-12"> -->
+            <div id="myDoughnut4"> </div>
+    
+            <!-- </div> -->
         </div>
-    </section>
-</main><!-- Main Category: End -->
+
+    </main>
+</div>
+<!-- Main Category: End -->
 {% endblock content %}

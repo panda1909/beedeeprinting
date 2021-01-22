@@ -11,7 +11,10 @@
 	<meta name="description" content="Printing template">
 	<meta name="author" content="Netbase">
 	<!--Add css lib-->
-	
+	{% block extra_css %}
+
+	{% endblock extra_css %}
+
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
@@ -29,9 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css8e24.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css3ad1.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css9fec.css' %}">
-	{% block extra_css %}
-
-	{% endblock extra_css %}
+	
 </head>
 
 <body>
@@ -358,65 +359,6 @@
 								<i class="fa fa-shopping-cart"></i>
 								<span class="mcart-dd-qty">0</span>
 							</span>
-							<!-- <div class="mcart-dd-content dropdowSCContent clearfix">
-								<div class="mcart-item-w clearfix1">
-									<ul>
-										<li class="mcart-item">
-											<img src="{% static 'images/product/mcart-postcard.jpg' %}"
-												alt="postcard cards">
-											<div class="mcart-info">
-												<a href="detail.html" class="mcart-name">Postcards Cards</a>
-												<span class="mcart-qty">1 x </span>
-												<span class="mcart-price">$ 10.09</span>
-												<span class="mcart-remove-item">
-													<i class="fa fa-times-circle"></i>
-												</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-
-								<div class="mcart-item-w clearfix">
-									<ul>
-										<li class="mcart-item iteam2">
-											<img src="{% static 'images/product/mcart-postcard.jpg' %}"
-												alt="postcard cards">
-											<div class="mcart-info">
-												<a href="detail.html" class="mcart-name">Postcards Cards</a>
-												<span class="mcart-qty">1 x </span>
-												<span class="mcart-price">$ 10.09</span>
-												<span class="mcart-remove-item">
-													<i class="fa fa-times-circle"></i>
-												</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<div class="mcart-total clearfix">
-									<table>
-										<tr>
-											<td>Sub-Total</td>
-											<td>$ 10.09</td>
-										</tr>
-										<tr>
-											<td>Eco Tax (-2.00)</td>
-											<td>$ 2.00</td>
-										</tr>
-										<tr>
-											<td>VAT (20%)</td>
-											<td>$ 2.018</td>
-										</tr>
-										<tr class="total">
-											<td>Total</td>
-											<td>$ 10.108</td>
-										</tr>
-									</table>
-								</div>
-								<div class="mcart-links buttons-set clearfix">
-									<a href="cart.html" class="gbtn mcart-link-cart">View Cart</a>
-									<a href="checkout.html" class="gbtn mcart-link-checkout">Checkout</a>
-								</div>
-							</div> -->
 						</div>
 						{% endblock cart %}
 						
@@ -454,7 +396,7 @@
 					<div class="col-md-3 col-sm-4 col-xs-12 about-us footer-col">
 						<h2>About Us</h2>
 						<div class="footer-content">
-							<a href="index.html" title="Cmsmart logo footer" class="logo-footer">
+							<a href="{% url 'home' %}" title="Cmsmart logo footer" class="logo-footer">
 								<img src="{% static 'images/footer-logo.png' %}" alt="logo footer">
 							</a>
 							<ul class="info">
@@ -641,6 +583,7 @@
 		</ul>
 	</nav>
 	<!--Add js lib-->
+	
 	<script type="text/javascript" src="{% static 'js/jquery/jquery-1.11.3.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
@@ -649,9 +592,8 @@
 	<script type="text/javascript" src="{% static 'js/slideshow/jquery.themepunch.revolution.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/slideshow/jquery.themepunch.plugins.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/theme-home.js' %}"></script>
-	{% block extra_js %}
 
-	{% endblock extra_js %}
+	
 
 </body>
 
