@@ -1,6 +1,7 @@
 from django.urls import path, include
 from .views import Home, Aboutus, Cart, Business_card, All_products, Business_stationary, Large_format, Marketing_products, Checkout,  Order_placed, get_status, Contactus
 
+
 urlpatterns = [
      path('', Home, name='home'),
      path('all-Products', All_products, name='all_products' ),
