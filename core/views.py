@@ -152,26 +152,8 @@ def Cart(request):
 
 
 def Contactus(request):
-    form = queries(request.POST or None, request.FILES or None)
-    
-    # check if form data is valid 
-    if form.is_valid(): 
-        # save the form data to model 
-        form.save() 
-
-
-    context = {
-        "form": form
-    }
-    #  send_mail(
-    #     'Subject',
-    #     'Message.',
-    #     'from@example.com',
-    #     ['Umairmuhammad433@gmail.com', 'beedee.printing@gmail.com'],
-    # )
-
-
-    return render(request, 'core/contactus.html', context)
+   
+    return render(request, 'core/contactus.html')
 
 # ------  All Products page/funct  ------ # 
 

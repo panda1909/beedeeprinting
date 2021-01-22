@@ -61,7 +61,7 @@ class CustomerData(models.Model):
 
 class Messages(models.Model):
     Subject = models.CharField(max_length=1000)
-    Message = models.CharField(max_length=5000)
+    Message = models.TextField()
     Name = models.CharField(null=False, max_length=1024)
     Email = models.EmailField()
 
