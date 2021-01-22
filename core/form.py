@@ -4,6 +4,7 @@ from django.forms import ModelForm
 from phonenumber_field.formfields import PhoneNumberField
 from .validators import validate_file_extension
 from Business_Cards.models import business_cards_price, Extra_features
+from core.models import Messages
 
 
 
@@ -31,3 +32,7 @@ class checkoutForm(forms.Form):
 
 
 
+class queries(forms.ModelForm):
+    class Meta:
+        model = Messages
+        fields = ['Subject','Message','Name','Email']

@@ -25,7 +25,8 @@ def BC_Detail(request):
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
-
+    urls_bc_aside = ["business-card-detail" , "edge-painted-detail"]
+    bc_aside = zip(urls_bc_aside,bc_object)
     menu = business_cards_price.objects.all()
     menu1 = Extra_features.objects.all()
     
@@ -116,6 +117,7 @@ def BC_Detail(request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bc_aside"   : bc_aside,
     }
     if request.POST:
         return redirect('checkout')
@@ -131,6 +133,8 @@ def Edge_painted_Detail(request):
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
+    urls_bc_aside = ["business-card-detail" , "edge-painted-detail"]
+    bc_aside = zip(urls_bc_aside,bc_object)
 
     menu = edge_painted_business_cards_price.objects.all()
     menu1 = Extra_features.objects.all()
@@ -237,6 +241,7 @@ def Edge_painted_Detail(request):
         "mp_product" : mp_object,
     #    Product info   #
         "label" : product.Label,
+        "bc_aside": bc_aside,
         "Description": product.Description,
         "image1" : product.image1,
         "image2" : product.image2,

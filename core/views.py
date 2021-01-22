@@ -15,7 +15,7 @@ from .models import Orders, CustomerData
 
 from django.http import HttpResponse
 from django.template import loader
-from .form import checkoutForm
+from .form import checkoutForm,queries
 import shortuuid
 
 
@@ -152,7 +152,21 @@ def Cart(request):
 
 
 def Contactus(request):
-    return render(request, 'core/contactus.html')
+    form = queries(request.POST or None, request.FILES or None)
+    
+    # check if form data is valid 
+    if form.is_valid(): 
+        # save the form data to model 
+        form.save() 
+
+
+    context = {
+        "form": form
+    }
+
+
+
+    return render(request, 'core/contactus.html', context)
 
 # ------  All Products page/funct  ------ # 
 
