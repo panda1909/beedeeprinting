@@ -4,15 +4,11 @@ from django.core.validators import MinValueValidator
 # Create your models here.
 class Envelopes(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Number_10 = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '#10 (9.5x4.125)')
-    Number_10_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '#10 (9.5x4.125) Discounted')
-    Number_10_Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
-    Nine_By_Twleve = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9 x 12')
-    Nine_By_Twleve_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '9 x 12 Discounted')
-    Nine_By_Twelve_Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
-    A7 = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'A7 (5.25X7.25)')
-    A7_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = 'A7 (5.25X7.25) Discounted')
-    A7_Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
+    Number_10 = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '#10 (9.5x4.125)')
+    Nine_By_Twleve = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '9 x 12')
+    A7 = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'A7 (5.25X7.25)')
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
+    Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.Quantity)
@@ -22,8 +18,8 @@ class Envelopes(models.Model):
 
 class LetterHeads(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Eight_By_Five_By_Eleven = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '8.5" x 11"')
-    Eight_By_Five_By_Eleven_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '8.5" x 11" Discounted')
+    Eight_By_Five_By_Eleven = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '8.5" x 11"')
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
     Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
     
     def __str__(self):
@@ -34,8 +30,8 @@ class LetterHeads(models.Model):
 
 class NotePads(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Three_By_Six_By_Four_By_Eight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '3.625" x 4.875"')
-    Three_By_Six_By_Four_By_Eight_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '3.625" x 4.875" Discounted')
+    Three_By_Six_By_Four_By_Eight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '3.625" x 4.875"')
+    Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
     
     def __str__(self):
         return str(self.Quantity)
@@ -59,9 +55,9 @@ class Products(models.Model):
 
 class Extra_features(models.Model):
     paper_type = models.CharField(max_length=250, blank=True)
-    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    standard_window_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
-    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    paper_type_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    standard_window_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    second_side_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
 
 
     def __str__(self):

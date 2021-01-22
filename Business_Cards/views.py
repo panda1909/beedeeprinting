@@ -106,6 +106,7 @@ def Edge_painted_Detail(request):
         request.session['id'] = 2
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
+        request.session['quantity'] = quantity
         print('Form Submitted')
 
 

@@ -143,6 +143,7 @@ def Checkout(request):
         category = request.session['cat']
         quantity = request.session['quantity']
         extra_f_dict = request.session['extra_f']
+        print('CHeckout try')
         json_dump = json.dumps(extra_f_dict)
         json_obj = json.loads(json_dump)
         size = extra_f_dict['size']

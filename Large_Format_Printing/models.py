@@ -3,16 +3,6 @@ from django.core.validators import MinValueValidator
 
 # Create your models here.
 
-# class FoamcorePosters(models.Model):
-#    quantity = models.IntegerField(default=2, null=False)
-
-#    def __str__(self):
-#        return str(self.quantity)
-
-#    class Meta:
-#        verbose_name = "1 - Foamcore Poster"
-
-
 class FoamcorePosters(models.Model):
    Quantity = models.IntegerField(default=0, blank=True ,verbose_name='Quantity')
    Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
@@ -32,32 +22,28 @@ class FoamcorePosters(models.Model):
        verbose_name = "1 - Foamcore Poster"
 
 class PosterPrinting(models.Model):
-   quantity = models.IntegerField(default=2, null=False)
+    Quantity = models.IntegerField(default=0, blank=True ,verbose_name='Quantity')
+    Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    Eighteen_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" x 24" Cost')
+    Twenty_By_Thrity = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='20" x 30" Cost')
+    TwentyFour_By_ThirtySix = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 36" Cost')
+    TwentySeven_By_Forty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='27" x 40" Cost')
+    ThirtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='36" x 48" Cost')
+    FourtyEight_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='48" x 48" Cost')
+    SeventyTwo_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='72" x 24" Cost')
 
-   def __str__(self):
-       return str(self.quantity)
+    def __str__(self):
+       return str(self.Quantity)
 
-   class Meta:
+    class Meta:
        verbose_name = "2 - Poster Printing"
 
-class QuotationPosterPrinting(models.Model):
-   PosterPrinting = models.ForeignKey(PosterPrinting, on_delete=models.CASCADE, verbose_name='Poster Printing')
-   price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-   price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-   dimensionX = models.PositiveIntegerField(default=0, blank=False, editable=True)
-   dimensionY = models.PositiveIntegerField(default=0, blank=False, editable=True)
-
-   def __str__(self):
-       return (str(self.PosterPrinting) + " " + str(self.dimensionX) + "x" + str(self.dimensionY))
-
-   class Meta:
-       verbose_name = "2.1 - Poster Printing"
 
 class RetractableBanners(models.Model):
     Quantity_From = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Quantity_To = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Thirty_Three_By_Eighty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '33" x 80"')
-    Thirty_Three_By_Eighty_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '33" x 80" Discounted')
+    Thirty_Three_By_Eighty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '33" x 80"')
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '33" x 80" Discounted')
     Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
 
     def __str__(self):
@@ -69,8 +55,8 @@ class RetractableBanners(models.Model):
 class TableCovers(models.Model):
     Quantity_From = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Quantity_To = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Ninety_By_One_Three_Two = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '6 foot table cover (90" x 132")')
-    Ninety_By_One_Three_Two_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)], verbose_name = '6 foot table cover (90" x 132") Discounted')
+    Ninety_By_One_Three_Two = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '6 foot table cover (90" x 132")')
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
 
     def __str__(self):
         return (str(self.Quantity_From)+ "-" + str(self.Quantity_To))
@@ -79,26 +65,21 @@ class TableCovers(models.Model):
         verbose_name = "4 - Table Cover"     
 
 class FloorStickers(models.Model):
-   quantity = models.IntegerField(default=2, null=False)
-   
+   Quantity = models.IntegerField(default=2, null=False)
+   Twelve_By_Twelve = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='12" x 12" Square Cost')
+   TwentyFour_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='24" x 24" Square Cost')
+   Eighteen_By_TwentyFour = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" x 24" Rectangle Cost')
+   ThirtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='36" x 48" Rectangle Cost')
+   Eighteen = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" Circle Cost')
+   Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
+   Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
+
    def __str__(self):
        return str(self.quantity)
 
    class Meta:
        verbose_name = "5 - Floor Sticker"
-
-class QuotationFloorStickers(models.Model):
-   FloorStickers = models.ForeignKey(FloorStickers, on_delete=models.CASCADE, verbose_name='Floor Stickers')
-   price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-   price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
-   dimensionX = models.PositiveIntegerField(default=0, blank=False, editable=True)
-   dimensionY = models.PositiveIntegerField(default=0, blank=False, editable=True)
-
-   def __str__(self):
-       return (str(self.FloorStickers) + " " + str(self.dimensionX) + "x" + str(self.dimensionY))
-
-   class Meta:
-       verbose_name = "5.1 - Floor Sticker"        
+      
 
 class Products(models.Model):
     Label = models.CharField(max_length=50,default='prod')
@@ -115,8 +96,8 @@ class Products(models.Model):
 
 class Extra_features(models.Model):
     banner_material = models.CharField(max_length=250, blank=True)
-    banner_material_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])    
-    second_side_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.1)])
+    banner_material_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])    
+    second_side_printing_price = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
 
     def __str__(self):
         return(self.banner_material)
