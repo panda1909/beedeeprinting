@@ -25,111 +25,6 @@ import shortuuid
 def Home(request):
     return render(request, "core/index.html")
 
-def BC_Detail(request):
-    
-    product = bc_products.objects.get(id=1)
-    table = business_cards_price.objects.all() 
-    bc_object = bc_products.objects.all()
-    bs_object = bs_products.objects.all()
-    lf_object = lf_products.objects.all()
-    mp_object = mp_products.objects.all()
-
-    menu = business_cards_price.objects.all()
-    menu1 = Extra_features.objects.all()
-    
-    # if stament for getting info from template
-
-    if request.POST:
-        var = request.POST
-        #print(var)
-        #print('---------')
-        printing_type = var['printing_type']
-        quantity = var['quantity']
-        size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
-        type_quantity_query = business_cards_price.objects.raw('SELECT * FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
-        size_query = Extra_features.objects.raw('SELECT id, size_price FROM Business_Cards_Extra_features WHERE size = %s', [size])
-        paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
-        discount_query = business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_business_cards_price WHERE quantity = %s', [quantity])
-        if sides == 'two_sided':
-            sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            for u in sides_query:
-                print('------Second Side Price--------')
-                print(u.second_side_price)
-                price_side = u.second_side_price
-                break
-        else:
-            price_side = 0
-
-        for i in paper_price_query:
-            price_paper = i.paper_type_price
-
-        for o in size_query:
-            price_size = o.size_price
-        
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
-        
-        for y in discount_query:
-            price_discount = y.Discount
-                
-                
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
-    
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
-                        "paper_type": paper_type,
-                        "sides": sides}        
-        
-        request.session['invoice'] = total_price
-        request.session['label'] = product.Label
-        request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
-        request.session['extra_f'] = extra_f_dict
-        request.session['quantity'] = quantity
-        print('Form Submitted')
-    else:
-        total_price = 0
-        request.session['invoice'] = 0
-        request.session['label'] = ' '
-        request.session['discount'] = 0
-        request.session['id'] = 1
-        request.session['quantity'] = 0
-        request.session['cat'] = 'bc_products'
-        print('Form not submitted')
-    
-
-
-    context = {
-    #   Total Price and form 
-        'total_price' : total_price,
-        "menu": menu,
-        "menu1": menu1,
-    #   Price Table    #
-        "table" : table,        
-    #   side bar content    #
-        "bc_product" : bc_object,
-        "bs_product" : bs_object,
-        "lf_product" : lf_object,
-        "mp_product" : mp_object,
-    #    Product info   #
-        "label" : product.Label,
-        "Description": product.Description,
-        "image1" : product.image1,
-        "image2" : product.image2,
-        "image3" : product.image3,
-    }
-    if request.POST:
-        return redirect('checkout')
-    return render(request, "core/detail.html", context)
-
-
-
 class Aboutus(TemplateView):
     def get(self, request):
         return render(request, 'core/aboutus.html')
@@ -264,9 +159,9 @@ def All_products(request):
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
-    urls_bc = ["detail","business-cards"]
+    urls_bc = ["business-cards", "detail"]
     bc_list = zip(urls_bc,bc_object)
-
+    print("------->> list",bc_list)
     context = {
         "bc_product" : bc_object,
         "bs_product" : bs_object,
