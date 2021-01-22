@@ -15,5 +15,4 @@ urlpatterns = [
 #    path('PostCardDetail', PostCardDetail, name='PostCardDetail')
      path('order',Order_placed, name='order' ),
      path('order-status',get_status, name='order_status'),
-
 ]

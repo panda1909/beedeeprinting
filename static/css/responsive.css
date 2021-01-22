@@ -23,14 +23,14 @@
 }
 @media (min-width: 1200px){
 .block-capabititie .canvas-inner{
-		 width: 187px !important;
-		height: 187px !important;
+		 /* width: 187px !important;
+		height: 187px !important; */
 	}
 .block-capabititie .block-mydoughnut:before{
-		width: 164px;
+		/* width: 164px;
 		height: 164px;
 		margin-left: -82px;
-		margin-top: -82px;
+		margin-top: -82px; */
 	}
 	.main-header .w-logo{
 		width:28.23%;
@@ -51,14 +51,14 @@
 }
 @media (min-width: 992px) and (max-width: 1199px) {
 	.block-capabititie .block-mydoughnut:before{
-		width: 164px;
+		/* width: 164px;
 		height: 164px;
 		margin-left: -83px;
-		margin-top: -83px;
+		margin-top: -83px; */
 	}
 	.block-capabititie .canvas-inner{
-		 width: 186px !important;
-		height: 186px !important;
+		 /* width: 186px !important;
+		height: 186px !important; */
 	}
 	.home-blog .blog-content-w .item .info .read-more{
 		padding:12px 45px;
@@ -153,14 +153,14 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.block-capabititie .block-mydoughnut:before{
-		width: 164px;
+		/* width: 164px;
 		height: 164px;
 		margin-left: -83px;
-		margin-top: -83px;
+		margin-top: -83px; */
 	}
 	.block-capabititie .canvas-inner{
-		 width: 186px !important;
-		height: 186px !important;
+		 /* width: 186px !important;
+		height: 186px !important; */
 	}
 	.block-currency .currency-name{
 		border-left:none;
@@ -179,8 +179,8 @@
 		overflow:hidden;
 	}
 	.block-capabititie .decs p{
-		height:60px;
-		overflow:hidden;
+		/* height:60px;
+		overflow:hidden; */
 	}
 	.footer-main ul.info li span span{
 		float:left;
@@ -388,12 +388,12 @@
 		margin-top:30px;
 	}
 	.home-capabititie{
-		background: rgba(0, 0, 0, 0) url("../images/image_style/bg_capabiliti.jpg") no-repeat center;
-		background-size:cover;
+		/* background: rgba(0, 0, 0, 0) url("../images/image_style/bg_capabiliti.jpg") no-repeat center; */
+		/* background-size:cover; */
 	}
 	.block-capabititie .canvas-inner{
-		width:186px !important;
-		height:186px !important;
+		/* width:186px !important;
+		height:186px !important; */
 	}
 	.or-block{
 		margin-bottom:30px;
