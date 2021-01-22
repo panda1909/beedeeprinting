@@ -112,7 +112,6 @@ def BC_Detail(request):
     #    Product info   #
         "label" : product.Label,
         "Description": product.Description,
-        "product" : product,
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,

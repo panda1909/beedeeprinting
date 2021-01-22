@@ -12,7 +12,7 @@ from Marketing_Products.models import Products as mp_products
 
 # order and customer table
 from .models import Orders, CustomerData
-
+from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
 from .form import checkoutForm
@@ -152,6 +152,17 @@ def Cart(request):
 
 
 def Contactus(request):
+
+    if request.POST:
+        form = request.POST
+        print(form)
+
+    # send_mail(
+    #     'Subject',
+    #     'Message.',
+    #     'from@example.com',
+    #     ['Umairmuhammad433@gmail.com', 'beedee.printing@gmail.com'],
+    # )
     return render(request, 'core/contactus.html')
 
 # ------  All Products page/funct  ------ # 

@@ -73,21 +73,22 @@
                     </p>
                 </div>
             </div>
-            <form id="contact-form" class="form-validate form-horizontal" method="post" action="#">
+            <form  id="contact-form" class="form-validate form-horizontal" method="POST">
+                {% csrf_token %}
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <textarea aria-required="true" required="required" class="required invalid" rows="10" cols="50"
-                        id="jform_contact_message" name="contact_message" aria-invalid="true">Message *</textarea>
+                        id="message" name="contact_message" aria-invalid="true">Message *</textarea>
                     <p>Ask us a question and we'll write back to you promptly! Simply fill out the form below and click
                         Send Email.</p>
                     <p>Thanks. Items marked with an asterisk (<span class="star">*</span>) are required fields.</p>
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-12">
-                    <input class="name" type="text" value="Enter your name *">
-                    <input class="email" type="text" value="Enter E-mail *">
-                    <input class="mesage" type="text" value="Enter Mesage Subject *">
+                    <input class="name" type="text" value="Enter your name *" id="name">
+                    <input class="email" type="text" value="Enter E-mail *" id="email">
+                    <input class="mesage" type="text" value="Enter Mesage Subject *" id="subjact">
                     <div class="button">
-                        <input class="subject" type="checkbox" value="Enter Mesage Subject *">
+                        <input class="subject" type="checkbox" value="Enter Mesage Subject *" id="sendmail">
                         <span>Send copy to yourself</span>
                     </div>
                     <button type="submit" class="sendmail">Submit</button>
