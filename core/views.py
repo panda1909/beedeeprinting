@@ -144,6 +144,7 @@ def Checkout(request):
         category = request.session['cat']
         quantity = request.session['quantity']
         extra_f_dict = request.session['extra_f']
+        print('CHeckout try')
         json_dump = json.dumps(extra_f_dict)
         json_obj = json.loads(json_dump)
         size = extra_f_dict['size']
@@ -207,7 +208,7 @@ def Checkout(request):
                 Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
                 Customerinfo.Orders.add(order)
             print ("--------->if")
-            return redirect('Order_placed')
+            return redirect('order')
        else:
            print ("-----> else")
     else:

@@ -10,12 +10,13 @@ class business_cards_price(models.Model):
     digital_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     offset_HQ = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
 
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "1 - Simple business cards price"  
+        verbose_name = "1 - Simple business cards"  
   
 
 class edge_painted_business_cards_price(models.Model):
@@ -27,78 +28,79 @@ class edge_painted_business_cards_price(models.Model):
     Square = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Square_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])    
-
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "2 - Edge painted business cards price"    
+        verbose_name = "2 - Edge painted business cards"    
 
 
 class foil_business_cards_price(models.Model):
     US_Standard_size = models.CharField(max_length=555)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "3 - Foil business cards price"
+        verbose_name = "3 - Foil business cards"
 
 class raised_spot_uv_business_cards_price(models.Model):
     US_Standard_size = models.CharField(max_length=555)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "4 - Raised spot UV business cards price"
+        verbose_name = "4 - Raised spot UV business cards"
 
 class pantone_business_cards_price(models.Model):
     US_Standard_Size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "5 - Pantone business cards price"
+        verbose_name = "5 - Pantone business cards"
 
 class plastic_business_cards_price(models.Model):
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     US_Standard_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="US Standard Size Price")
-    US_Standard_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="US Standard Size Price Discounted")
-    US_Standard_Size_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     Credit_card_Size = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="Credit Card Size Price")
-    Credit_card_Size_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name="Credit Card Size Price Discounted")
-    Credit_card_Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
-    
-    def __str__(self):
-        return str(self.quantity)
-
-    class Meta:
-        verbose_name = "6 - Plastic business cards price"
-
-class raised_ink_business_cards_price(models.Model):
-    US_Standard_Size = models.CharField(max_length=555, blank=True)
-    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
-    price_Discounted = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
     def __str__(self):
         return str(self.quantity)
 
     class Meta:
-        verbose_name = "7 - Raised ink business cards price"
+        verbose_name = "6 - Plastic business cards"
+
+class raised_ink_business_cards_price(models.Model):
+    US_Standard_Size =  models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
+    
+    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
+    Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
+    
+    def __str__(self):
+        return str(self.quantity)
+
+    class Meta:
+        verbose_name = "7 - Raised ink business cards"
 
 class Products(models.Model):
     Label = models.CharField(max_length=50,default='prod')
