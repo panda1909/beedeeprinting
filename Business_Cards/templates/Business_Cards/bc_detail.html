@@ -100,10 +100,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for bc_product in bc_product %}
+                                    {% for urls_bc_aside, bc_object in bc_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bc_product.Label }}
+                                        <a href="{{ urls_bc_aside }}" title="Premium Business Cards">
+                                            {{ bc_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -209,6 +209,7 @@
                                 <div role="tabpanel" class="tab-pane active">
                                     <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w" style="margin-top: 10px;">
                                         <div class="ideal">
+<<<<<<< HEAD
                                             <img src="{{ image1.url }}" alt="ideal 1">
                                         </div>
                                         <div class="ideal">
@@ -216,6 +217,15 @@
                                         </div>
                                         <div class="ideal">
                                             <img src="{{ image3.url }}" alt="ideal 3">
+=======
+                                            <img src="{{ product.image1.url }}" alt="ideal 1">
+                                        </div>
+                                        <div class="ideal">
+                                            <img src="{{ product.image2.url }}" alt="ideal 2">
+                                        </div>
+                                        <div class="ideal">
+                                            <img src="{{ product.image3.url }}" alt="ideal 3">
+>>>>>>> 793ec0e8730bdd47ff731ab6d488021d63db21ba
                                         </div>
                                     </div>
                                 </div>

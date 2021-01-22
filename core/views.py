@@ -15,7 +15,7 @@ from .models import Orders, CustomerData
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
-from .form import checkoutForm
+from .form import checkoutForm,queries
 import shortuuid
 
 
@@ -152,18 +152,26 @@ def Cart(request):
 
 
 def Contactus(request):
+    form = queries(request.POST or None, request.FILES or None)
+    
+    # check if form data is valid 
+    if form.is_valid(): 
+        # save the form data to model 
+        form.save() 
 
-    if request.POST:
-        form = request.POST
-        print(form)
 
-    # send_mail(
+    context = {
+        "form": form
+    }
+    #  send_mail(
     #     'Subject',
     #     'Message.',
     #     'from@example.com',
     #     ['Umairmuhammad433@gmail.com', 'beedee.printing@gmail.com'],
     # )
-    return render(request, 'core/contactus.html')
+
+
+    return render(request, 'core/contactus.html', context)
 
 # ------  All Products page/funct  ------ # 
 

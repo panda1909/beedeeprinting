@@ -59,3 +59,15 @@ class CustomerData(models.Model):
         verbose_name = "2 - Customer Information"
         verbose_name_plural = "2 - Customer Information"
 
+class Messages(models.Model):
+    Subject = models.CharField(max_length=1000)
+    Message = models.CharField(max_length=5000)
+    Name = models.CharField(null=False, max_length=1024)
+    Email = models.EmailField()
+
+    def __str__(self):
+        return str(self.Subject)
+
+    class Meta:
+        verbose_name = "3 Clientle queries"
+        verbose_name_plural = "3 Clientle queries"

@@ -98,10 +98,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for bc_product in bc_product %}
+                                    {% for urls_bc_aside, bc_object in bc_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bc_product.Label }}
+                                        <a href="{{ urls_bc_aside }}" title="Premium Business Cards">
+                                            {{ bc_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}

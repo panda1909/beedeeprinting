@@ -73,6 +73,7 @@
                     </p>
                 </div>
             </div>
+<<<<<<< HEAD
             <form  id="contact-form" class="form-validate form-horizontal" method="POST">
                 {% csrf_token %}
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -87,6 +88,52 @@
                     <input class="name" type="text" value="Enter your name *" id="name">
                     <input class="email" type="text" value="Enter E-mail *" id="email">
                     <input class="mesage" type="text" value="Enter Mesage Subject *" id="subjact">
+=======
+            <form id="contact-form" class="form-validate form-horizontal" method="post">
+                {% csrf_token %}
+                {% if form.errors %}
+                    {% for field in form %}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <label for="message" class="message">
+                    Enter your query:
+                    <em> * </em>
+                    </label>
+                    <br>
+                    {{ form.Message }}
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <label for="name" class="first_name">
+                        Full Name:
+                        <em> * </em>
+                    </label>
+                    <br>
+                    {{ form.Name }}
+                    <label for="email_field" class="email">
+                        E-Mail:
+                        <em> * </em> 
+                    </label>
+                    <br>
+                    {{ form.Email }}
+                    <label for="Subject" class="Subject">
+                        Subject:
+                        <em> * </em> 
+                    </label>
+                    <br>
+                    {{ form.Subject }}
+>>>>>>> 793ec0e8730bdd47ff731ab6d488021d63db21ba
                     <div class="button">
                         <input class="subject" type="checkbox" value="Enter Mesage Subject *" id="sendmail">
                         <span>Send copy to yourself</span>
