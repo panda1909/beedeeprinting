@@ -61,9 +61,14 @@ class CustomerData(models.Model):
 
 class Messages(models.Model):
     Subject = models.CharField(max_length=1000)
+<<<<<<< HEAD
     Message = models.TextField()
+=======
+    Message = models.TextField(max_length=5000)
+>>>>>>> 946e34b31c8a396d3f09c4c63d470fb770f87fbd
     Name = models.CharField(null=False, max_length=1024)
     Email = models.EmailField()
+    Contacted = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return str(self.Subject)

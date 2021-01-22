@@ -152,8 +152,28 @@ def Cart(request):
 
 
 def Contactus(request):
+<<<<<<< HEAD
    
     return render(request, 'core/contactus.html')
+=======
+    form = queries(request.POST)    
+    if request.method == 'POST':
+
+        if form.is_valid(): 
+            # save the form data to model 
+            var = request.POST
+            print(var)
+            check = var['Message']
+            print(check)
+            form.save() 
+
+
+    context = {
+        "form": form
+    }
+
+    return render(request, 'core/contactus.html', context)
+>>>>>>> 946e34b31c8a396d3f09c4c63d470fb770f87fbd
 
 # ------  All Products page/funct  ------ # 
 

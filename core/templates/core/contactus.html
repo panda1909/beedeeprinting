@@ -104,9 +104,10 @@
                     </label>
                     <br>
                     {{ form.Subject }}
-                    <div class="button">
-                        <input class="subject" type="checkbox" value="Enter Mesage Subject *">
-                        <span>Send copy to yourself</span>
+                    <div>
+                        <label for="checkbox">Email a copy</label>
+                        <br>
+                        {{ form.Contacted }}
                     </div>
                     {% if form.errors %}
                     {% for field in form %}
