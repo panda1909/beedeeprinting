@@ -263,12 +263,15 @@ def All_products(request):
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
+    urls_bc = ["detail","business-cards"]
+    bc_list = zip(urls_bc,bc_object)
 
     context = {
         "bc_product" : bc_object,
         "bs_product" : bs_object,
         "lf_product" : lf_object,
         "mp_product" : mp_object,
+        "bc_list"    : bc_list,
     }
     return render(request, "core/all_products.html", context)
 
