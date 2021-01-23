@@ -52,10 +52,11 @@ def BC_Detail(request):
         print(paper_price_query)
         if sides == 'two_sided':
             # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.get('id','second_side_price')
+            sides_query = Extra_features.objects.filter(size=size).values('id', 'second_side_price')
+            print(sides_query)
             for u in sides_query:
                 # print('------Second Side Price--------')
-                # print(u.second_side_price)
+                # print(u)
                 price_side = u['second_side_price']
                 break
         else:
@@ -159,14 +160,15 @@ def Edge_painted_Detail(request):
 
         # queries against relevant options
         # size and quantity price query
+        print(size)
         if size == 'US_Standard_Size':
-            # type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, US_Standard_Size FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
-             type_quantity_query = edge_painted_business_cards_price.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+            extra_size = '2"x3.5" - US Standard Size'
+            type_quantity_query = edge_painted_business_cards_price.objects.filter(quantity=quantity).values('id','US_Standard_Size')
         elif size == 'European_Size':
-            # type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, European_Size FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
+            extra_size = '2.125"x3.375" - European Size'
             type_quantity_query = edge_painted_business_cards_price.objects.filter(quantity=quantity).values('id', 'European_Size')
         elif size == 'Square':
-            # type_quantity_query = edge_painted_business_cards_price.objects.raw('SELECT id, Square FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
+            extra_size = size
             type_quantity_query = edge_painted_business_cards_price.objects.filter(quantity=quantity).values('id', 'Square')
 
         # paper type price query
@@ -177,11 +179,16 @@ def Edge_painted_Detail(request):
         # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
         discount_query = edge_painted_business_cards_price.objects.filter(quantity=quantity).values('id', 'Discount')
 
+
+
         # sides price query
         if sides == 'two_sided':
-            sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.get('id', 'second_side_price')
+            # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
+            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_price')
+            print(sides_query)
             for u in sides_query:
+                # print('------Second Side Price--------')
+                # print(u)
                 price_side = u['second_side_price']
                 break
         else:
