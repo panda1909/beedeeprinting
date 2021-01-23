@@ -138,9 +138,10 @@ def get_status(request):
         form = request.POST
         Order_id = form['Order_id']
         print("---------->>>>", Order_id)
-        status_query = Orders.objects.raw("SELECT id, Status FROM core_Orders WHERE OrderId = %s",[Order_id])
+        # status_query = Orders.objects.raw("SELECT id, Status FROM core_Orders WHERE OrderId = %s",[Order_id])
+        status_query = Orders.objects.filter(OrderId=Order_id).values('Status')
         for p in status_query:
-            status = p.Status
+            status = p['Status']
     context={
         'status' : status,
     }
@@ -152,11 +153,11 @@ def Cart(request):
 
 
 def Contactus(request):
-    form = queries(request.POST)    
+    form = queries(request.POST)
     if request.method == 'POST':
 
-        if form.is_valid(): 
-            # save the form data to model 
+        if form.is_valid():
+            # save the form data to model
             var = request.POST
             message = var['Message']
             name = var['Name']
@@ -164,21 +165,21 @@ def Contactus(request):
             email = var['Email']
             subject = var['Subject']
             check = var['Contacted']
-            form.save() 
+            form.save()
             if check == 'on':
                 send_mail(
                 subject,
                 final_message,
                 'beedee.printing@gmail.com',
                 [email, 'bilalahmaddurrani707@gmail.com'],
-                fail_silently=False
+                fail_silently=True
             )
     context = {
         "form": form
     }
     return render(request, 'core/contactus.html', context)
 
-# ------  All Products page/funct  ------ # 
+# ------  All Products page/funct  ------ #
 
 def All_products(request):
     bc_object = bc_products.objects.all()
@@ -201,7 +202,7 @@ def All_products(request):
     }
     return render(request, "core/all_products.html", context)
 
-# ------  Catogirze Pages in frontend  ------ # 
+# ------  Catogirze Pages in frontend  ------ #
 # ------  All pages are dynamic using if else and db ------ #
 
 def Business_card(request):
@@ -209,10 +210,16 @@ def Business_card(request):
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
+    bc_object_aside = bc_products.objects.all()
     bc_card = 1
     bs_card = 0
     lf_card = 0
     mp_card = 0
+
+    urls_bc = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
+    urls_bc_aside = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
+    bc_list = zip(urls_bc,bc_object)
+    bc_aside = zip(urls_bc_aside,bc_object_aside)
 
     context = {
         "bc_product" : bc_object,
@@ -222,7 +229,9 @@ def Business_card(request):
         "bc_card" : bc_card,
         "bs_card" : bs_card,
         "lf_card" : lf_card,
-        "mp_card" : mp_card
+        "mp_card" : mp_card,
+        "bc_list"    : bc_list,
+        "bc_aside"   : bc_aside,
     }
     return render(request, "core/catogery.html", context)
 
