@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import django_heroku
 
 from pathlib import Path
 import os
@@ -88,8 +89,12 @@ WSGI_APPLICATION = 'beedeeprinting.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dc3qh620e88krj',
+        'USER': 'ffqjjqhwiyaffp',
+        'PASSWORD': 'c324b8aa51380a4056dedeafbfe10a7ebcf9c9a7df8a1d2380d514a9ad4f4c96',
+        'HOST': 'ec2-54-172-17-119.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -137,4 +142,7 @@ EMAIL_HOST_PASSWORD = "mlrliyridouecwze"
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT = os.path.join(BASE_DIR, "stactic")
+
+django_heroku.settings(locals())

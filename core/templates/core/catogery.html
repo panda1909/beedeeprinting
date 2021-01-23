@@ -46,10 +46,10 @@
                             </a>
                             
                             <ul class="level0">
-                                {% for bc_product in bc_product %}
+                                {% for urls_bc_aside,bc_object_aside in bc_aside %}
                                 <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ bc_product.Label }}
+                                    <a href="{{ urls_bc_aside }}" title="Premium Business Cards">
+                                        {{ bc_object_aside.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -60,7 +60,7 @@
                                 <span style="color: black;">Business Stationary</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
                                 {% for bs_product in bs_product %}
                                 <li class="level1 nav-1-1 first item">
@@ -76,7 +76,7 @@
                                 <span style="color: black;">Large Format Printing</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
                                 {% for lf_product in lf_product %}
                                 <li class="level1 nav-1-1 first item">
@@ -92,7 +92,7 @@
                                 <span style="color: black;">Marketing Products</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            
+
                             <ul class="level0">
                                 {% for mp_product in mp_product %}
                                 <li class="level1 nav-1-1 first item">
@@ -137,7 +137,7 @@
                                     </a>
                                 </li>
                                 {% endfor %}
-                                
+
                             </ul>
                         </li>
                     </ul>
@@ -166,20 +166,16 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     {% if bc_card  %}
                         <div class="row products-grid category-product">
-                            {% for bc_product in bc_product %}
+                            {% for urls_bc,bc_object in bc_list %}
                             <ul>
                                 <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                     <div class="product-image-action">
-                                        <img  src="{{ bc_product.image1 }}"
-                                            alt="{{ bc_product.Label }}">
-                                        <div class="action">
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
+                                        <img  src="{{ bc_object.image1 }}"
+                                            alt="{{ bc_object.Label }}">
+                                        <div class="action" style="padding-left: 22%;">
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                                 <i class="fa fa-eye"></i>
@@ -187,7 +183,7 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="detail.html" title="product" class="product-name">{{ bc_product.Label }}</a>
+                                        <a href="{{ urls_bc }}" title="product" class="product-name">{{ bc_object.Label }}</a>
                                         <div class="price-box">
                                             <span class="normal-price">View Pricing</span>
                                         </div>
@@ -201,7 +197,7 @@
 
                                     </div>
                                 </li>
-                                
+
                             </ul>
                             {% endfor %}
                         </div>
@@ -213,11 +209,8 @@
                                     <div class="product-image-action">
                                         <img src="{{ bs_product.image1 }}"
                                             alt="{{ bs_product.Label }}">
-                                        <div class="action">
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
+                                        <div class="action" style="padding-left: 22%;">
+
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                                 <i class="fa fa-eye"></i>
@@ -251,11 +244,8 @@
                                     <div class="product-image-action">
                                         <img  src="{{ mp_product.image1 }}"
                                             alt="{{ mp_product.Label }}">
-                                        <div class="action">
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
+                                        <div class="action" style="padding-left: 22%;">
+
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                                 <i class="fa fa-eye"></i>
@@ -277,7 +267,7 @@
 
                                     </div>
                                 </li>
-                                
+
                             </ul>
                             {% endfor %}
                         </div>
@@ -289,11 +279,8 @@
                                     <div class="product-image-action">
                                         <img src="{{ lf_product.image1 }}"
                                             alt="{{ lf_product.Label }}">
-                                        <div class="action">
-                                            <button type="button" data-toggle="tooltip" data-placement="top"
-                                                title="Add to cart" class="add-to-cart gbtn" title="Add to cart">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
+                                        <div class="action" style="padding-left: 22%;">
+
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
                                                 <i class="fa fa-eye"></i>
