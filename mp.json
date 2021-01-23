@@ -1,0 +1,133 @@
+[
+    {
+        "model": "Marketing_Products.calendars",
+        "pk": 2,
+        "fields": {
+            "quantity": 10,
+            "price": 10.0,
+            "Discount": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.postcards",
+        "pk": 1,
+        "fields": {
+            "Quantity": 120,
+            "Discount": 0.0,
+            "Template": "",
+            "Two_By_Eight": 0.0,
+            "Three_By_Five": 0.0,
+            "Three_By_Five_By_Five": 0.0,
+            "Four_By_Twelve": 0.0,
+            "Four_By_Four": 0.0,
+            "Four_By_Five": 0.0,
+            "Four_By_Six": 0.0,
+            "Four_By_Nine": 0.0,
+            "Four_By_TwoFive_By_Eleven": 0.0,
+            "Four_By_TwoFive_By_FiveByFive": 0.0,
+            "Five_By_Seven": 0.0,
+            "Four_By_TwoFive_By_Six": 0.0,
+            "Four_By_TwoFive_By_Nine": 0.0,
+            "Four_By_Five_By_Twelve": 0.0,
+            "Five_By_Five": 0.0,
+            "Eight_By_Five_By_Five_By_Five": 0.0,
+            "Six_By_Eleven": 0.0,
+            "Six_By_Six": 0.0,
+            "Six_By_Nine": 0.0,
+            "Six_By_TwoFive_By_Eleven": 0.0,
+            "Six_By_TwoFive_By_Nine": 0.0,
+            "Six_By_Five_By_Eleven": 0.0,
+            "Eight_By_Five": 0.0,
+            "Eight_By_Five_By_Three_By_Five": 0.0,
+            "Eight_By_Five_By_Eleven": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 1,
+        "fields": {
+            "Label": "Postcards",
+            "Description": "<p>View Instant Prices Now and Order Online for FREE Pickup in NYC. Thick 16pt. Postcards. Advertise your product or service in the best light possible with thick, luxurious,&nbsp;full-color&nbsp;<strong>Postcards&nbsp;</strong>from New York Printing&nbsp;Solutions. Come visit us in Manhattan or&nbsp;<a href=\"http://www.nyprintingsolutions.com/free-samples.html\">click here</a>&nbsp;for&nbsp;free samples of our&nbsp;beautiful postcards.</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>16pt. very thick paper. Don't settle for thin and flimsy&nbsp;10pt. or 12pt. or even 14pt. postcards.</li>\r\n<li>Design your custom postcard using our website or upload&nbsp;your own file or let our graphics professionals&nbsp;create a custom postcard design for you</li>\r\n<li>Thick 16pt. Rack Cards with our without a shiny UV varnish</li>\r\n<li>Beautiful Save The Date announcements&nbsp;for weddings or business events and club flyers</li>\r\n<li>High&nbsp;quality&nbsp;offset full-color printing or quick digital printing for next day postcards</li>\r\n<li>Low&nbsp;cost -&nbsp;as low as $.03&nbsp;per postcard</li>\r\n<li>Buy Local. Save both time and expensive shipping costs.</li>\r\n<li>Available with a shiny UV coating or with a&nbsp;Dull Matte coated finish, except for rush postcards.</li>\r\n</ul>\r\n<p><strong>For Next day postcards, please place orders by&nbsp;4:00 pm&nbsp;EST&nbsp;</strong></p>\r\n<p>&nbsp;</p>\r\n<p><strong>Orders&nbsp;will be available for pickup on 38th Street the Next Business Day before 4:00 pm EST</strong></p>",
+            "image1": "static/Product_Images/Marketing_Products/download.jpeg",
+            "image2": "static/Product_Images/Marketing_Products/download_1.jpeg",
+            "image3": "static/Product_Images/Marketing_Products/postcard_sample_325.jpg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 2,
+        "fields": {
+            "Label": "Calendars",
+            "Description": "<h1>Custom Calendar Printing</h1>\r\n<p>Provide your own pictures and logo and make a truly custom calendar.</p>\r\n<p>Give the holiday gift that keeps you in in their thoughts all year long.</p>\r\n<p>Quantities starting as low as&nbsp;10 calendars.</p>\r\n<p>Provide&nbsp;your own print ready calendar file for us to print&nbsp;or let us customize a calendar for you.</p>\r\n<p>Specifications: 28 page (12 month) Custom Calenders. The&nbsp;folded size is 8.5\" x 11\". The cover is 100lb cover&nbsp;gloss.&nbsp;The inside pages&nbsp;are 100lb text gloss. Choose from center stapled or&nbsp;coil binding.</p>\r\n<p><strong>Rush Wall&nbsp;</strong><strong>Calendars can be printed in as quickly as 2 business days. Please call for a quote and availability.</strong></p>",
+            "image1": "static/Product_Images/Marketing_Products/161120-Brooklyn_Calendar_Mockup-2.jpg",
+            "image2": "static/Product_Images/Marketing_Products/download_LzWAjum.jpeg",
+            "image3": "static/Product_Images/Marketing_Products/download_1_0FfBtZu.jpeg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 3,
+        "fields": {
+            "Label": "Brochures and Flyers",
+            "Description": "<p>Enhance brand recognition! Our quality 100lb text gloss paper for Flyers and Brochures are available in a variety of sizes and a wide range of folding options.</p>\r\n<p>Showcase your products or service while attracting attention. Share detailed information in an interesting and informative, yet&nbsp;professional manner.</p>\r\n<p>As low as 6 1/2&nbsp;cents each!</p>\r\n<p>We offer many folding options:</p>\r\n<p>Accordion Fold</p>\r\n<p>Half Fold</p>\r\n<p>Roll Fold</p>\r\n<p>Tri-Fold</p>\r\n<p>Z-Fold</p>\r\n<p>(Please call us if you are interested in the following&nbsp;folds) :</p>\r\n<p>Gatefold</p>\r\n<p>Double Parallel Fold</p>\r\n<p>French Fold</p>\r\n<p>Half-Fold and then Tri-Fold</p>\r\n<p>Double Gatefold</p>",
+            "image1": "static/Product_Images/Marketing_Products/Brochures_Business_01.jpg",
+            "image2": "static/Product_Images/Marketing_Products/download_uTlM75G.jpeg",
+            "image3": "static/Product_Images/Marketing_Products/tri-fold-brochures-nyc.jpg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 4,
+        "fields": {
+            "Label": "Hang Tags",
+            "Description": "<p>Our high quality offset printed NYC Hang Tags will compliment your garment or jewelry.</p>\r\n<p>Online hang tags have straight corners and a 1/8\" hole, but round corner hang tags are also available.</p>\r\n<p>The coated hang tag option has&nbsp;a more modern look and feel. It is&nbsp;considerably thicker than the uncoated option Our&nbsp;smooth uncoated paper option&nbsp;feels like real&nbsp;paper.</p>\r\n<p>If you are not sure which option to select and wish to come in to feel the papers for yourself, or you would like a higher-end option like&nbsp;our 200lb paper or any custom size hang tags,&nbsp;come in today&nbsp;for a free consultation.</p>",
+            "image1": "static/Product_Images/Marketing_Products/hang-tags.jpg",
+            "image2": "static/Product_Images/Marketing_Products/hang-tags-printing-nyc.jpeg",
+            "image3": "static/Product_Images/Marketing_Products/hangtags_sample_185.jpg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 5,
+        "fields": {
+            "Label": "Labels and Stickers",
+            "Description": "<div class=\"product-copy-block product-overview\"><strong>Labels and Stickers&nbsp;</strong>from New York Printing Solutions&nbsp;are printed in full color. Your product will look exclusive and justify&nbsp;higher&nbsp;prices with our beautiful custom labels.</div>\r\n<div class=\"product-copy-block product-overview\">&nbsp;</div>\r\n<div class=\"product-copy-block product-overview\"><strong>Hand Sanitizer Labels and Candle labels&nbsp;</strong>are our specialties.</div>\r\n<div class=\"product-copy-block product-overview\">&nbsp;</div>\r\n<div class=\"product-copy-block product-overview\"><strong>Labels</strong>&nbsp;are provided on a roll and are the most cost-effective option to increase the perceived&nbsp;value of your product. They are very easy to peel off the roll and apply to products or they can be machine applied.</div>\r\n<div class=\"product-copy-block product-overview\">&nbsp;</div>\r\n<div class=\"product-copy-block product-overview\"><strong>Stickers</strong>&nbsp;are slightly thicker vinyl and slightly more adhesive. They are often handed out individually as promotional items and can even be placed on glassware and mugs as they are dishwasher safe.</div>\r\n<div class=\"product-copy-inline product-uses-ideas\">\r\n<h5>Popular Uses For LABELS and Stickers:</h5>\r\n<ul>\r\n<li>Cosmetics and Skin&nbsp;Care Labels</li>\r\n<li>Food and Beverage Packaging Labels</li>\r\n<li>Promotional Packaging Labels</li>\r\n<li>Informational Labels on Bottles, Jars, Boxes, etc</li>\r\n<li>Online Products and Packaging Labels</li>\r\n<li>Health and Beauty Product Labels</li>\r\n<li>Souvenir Stickers</li>\r\n<li>Logo Stickers</li>\r\n</ul>\r\n</div>\r\n<p>Looking for custom shape labels for your product or to give away as a promotional item? New York Printing Solutions can laser die cut your stickers into a&nbsp;unique shape at no extra charge. High-quality&nbsp;labels and stickers with a quick turn-around at&nbsp;<strong>LOW PRICES.</strong></p>\r\n<p>Our expert American based graphics professionals can design the&nbsp;perfect label to enhance the value of your items.</p>\r\n<p><strong>Let us know if your labels will be machine applied.</strong></p>\r\n<h3>Key Features of our Customized Labels:</h3>\r\n<ul>\r\n<li><strong>Rapid Turn-Around</strong></li>\r\n<li><strong>High-End Manhattan Quality</strong></li>\r\n<li><strong>Any custom shape you can think of - No Extra Charge!</strong></li>\r\n</ul>\r\n<h1>&nbsp;</h1>\r\n<h1>Custom Printed Any Shape Labels:</h1>\r\n<p>Upload your logo or design and we will send you a PDF proof before printing showing a suggested shape based on your unique design.</p>\r\n<p>Our high quality, offset<strong>&nbsp;printed labels</strong>&nbsp;will make a lasting impression on your clients and customers! Not sure which style of badgeis for you?&nbsp;<strong>&nbsp;Come in and see and feel our stickers and labels for yourself!&nbsp;&nbsp;</strong>Visit us at our Midtown Manhattan location, (252 W 38th St, New York 10018) as we are not only online, but available in person too.</p>",
+            "image1": "static/Product_Images/Marketing_Products/custom_labels_opt52.jpg",
+            "image2": "static/Product_Images/Marketing_Products/download_tnIQxwM.jpeg",
+            "image3": "static/Product_Images/Marketing_Products/download_1_3Bmks9s.jpeg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 6,
+        "fields": {
+            "Label": "NCR Forms",
+            "Description": "<p>Carbonless NCR forms are great as receipts for writing up purchase orders during Market Week or during any industry event.</p>\r\n<p>Select from:</p>\r\n<p>5.5\" x 8.5\" (1/2 Sheet Forms)</p>\r\n<p>or</p>\r\n<p>8.5\" x 11\" (Full Sheet Forms)</p>\r\n<p>Carbonless forms are&nbsp;available in 2 Part (White, Canary) and 3 Part (White, Canary, Pink) collated sets. Use them to write up orders or for anything else that requires multiple copies.</p>\r\n<p>Design online or come in and have us edit your existing form or create a new one for you.&nbsp;Visit us in Manhattan at our 252 West&nbsp;38th Street location, New York, NY 10018. We&nbsp;are not only&nbsp;online,&nbsp;but available in person too!</p>\r\n<p>Full-color&nbsp;NCR forms are available, please contact us for a quote.</p>",
+            "image1": "static/Product_Images/Marketing_Products/ncr-form_1.jpg",
+            "image2": "static/Product_Images/Marketing_Products/ncr-form_2.jpg",
+            "image3": "static/Product_Images/Marketing_Products/ncr_forms_nyc.jpeg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 7,
+        "fields": {
+            "Label": "Presentation Folders",
+            "Description": "<p><strong>Presentation folders:</strong></p>\r\n<p>Organize your&nbsp;presentations&nbsp;and important documents with the use of colorful, professional high-quality bright white full color printed&nbsp;<strong>presentation folders</strong>&nbsp;from New York Printings Solutions. We offer&nbsp;thick 14pt and 16pt.&nbsp;presentation folders (compare this to the usual flimsy 10pt. &amp; 12pt. presentation folders many online&nbsp;companies&nbsp;offer.)</p>\r\n<p>Your Manhattan clients deserve this thick rich presentation folder&nbsp;paper&nbsp;that feels as&nbsp;exclusive as the&nbsp;product or service you offer.</p>\r\n<p><strong>Offset full color printed presentation folders:</strong></p>\r\n<ul>\r\n<li>Thick 14pt. or&nbsp;16pt card stock paper (contact us&nbsp;for 19pt. paper)</li>\r\n<li>One or two pockets</li>\r\n<li>One-sided or two-sided printing (printing on the inside pockets is considered front sided printing)</li>\r\n<li>Shiny UV coating or a silk finish coating on the front side&nbsp;and on the pockets</li>\r\n<li>Business card slits on one or both pockets (if desired)</li>\r\n</ul>\r\n<p><strong>Quick digital full color&nbsp;printed presentation folders:</strong></p>\r\n<ul>\r\n<li>Quantities starting at only&nbsp;10 presentation folders</li>\r\n<li>1-2 business day turnaround</li>\r\n<li>One or two pockets</li>\r\n</ul>\r\n<p>We can digitally print your folders for a quick turnaround.</p>",
+            "image1": "static/Product_Images/Marketing_Products/presentation.jpg",
+            "image2": "static/Product_Images/Marketing_Products/9_x_12_presentation_folder_140lb_larger.jpg",
+            "image3": "static/Product_Images/Marketing_Products/presentation-folders-printing-nyc.jpeg"
+        }
+    },
+    {
+        "model": "Marketing_Products.products",
+        "pk": 8,
+        "fields": {
+            "Label": "Custom Holiday Cards",
+            "Description": "<h1>Custom Holiday Cards</h1>\r\n<p><strong>Folding Holiday Cards.</strong></p>\r\n<p>Custom Holiday Cards have a Folded Size of 5\" x 7\"&nbsp;(10\" x 7\" is the flat unfolded size)</p>\r\n<p>Spread the love&nbsp;this holiday season with personalized Holiday cards for Season Greetings cards, Christmas cards, Hanukkah cards, and&nbsp;New Year Cards.</p>\r\n<h1>Custom Holiday Cards</h1>\r\n<p><strong>Folding Holiday Cards.</strong></p>\r\n<p>Custom Holiday Cards have a Folded Size of 5\" x 7\"&nbsp;(10\" x 7\" is the flat unfolded size)</p>\r\n<p>Spread the love&nbsp;this holiday season with personalized Holiday cards for Season Greetings cards, Christmas cards, Hanukkah cards, and&nbsp;New Year Cards.</p>\r\n<p>Rush holiday cards are available in quantities ranging from 25&nbsp;to 100&nbsp;cards.</p>\r\n<p>Holiday card quantities of 250 or more&nbsp;are available with&nbsp;a dull finish or a very shiny UV finish.</p>\r\n<p>2,500-holiday cards are only .19 per card!</p>\r\n<p>Choose&nbsp;from our many professionally created&nbsp;Holiday card templates to personalize. Make your own using our online designer.</p>",
+            "image1": "static/Product_Images/Marketing_Products/download_yhFVEQy.jpeg",
+            "image2": "static/Product_Images/Marketing_Products/Holiday-Cards-NYC37.jpeg",
+            "image3": "static/Product_Images/Marketing_Products/Holiday-Cards-NYC_opt.jpg"
+        }
+    }
+]
