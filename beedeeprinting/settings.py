@@ -27,7 +27,7 @@ SECRET_KEY = 'i5r&1uzex59xash772d$imx%q_e5p%o3y68*0mx5+nqt$sg3tw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost']
 
 ROOT_URLCONF = 'beedeeprinting.urls'
 
