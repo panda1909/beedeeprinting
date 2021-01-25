@@ -35,7 +35,7 @@ class Orders(models.Model):
     Extra_features = models.JSONField(default=dict)
 
     def __str__(self):
-        return str(self.OrderId)
+        return str((self.OrderId) + str(self.Product_name) + str(self.Customer))
 
     class Meta:
         verbose_name = "1 - Orders Table"
