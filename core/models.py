@@ -70,5 +70,5 @@ class Messages(models.Model):
         return str(self.Subject)
 
     class Meta:
-        verbose_name = "3 Clientle queries"
-        verbose_name_plural = "3 Clientle queries"
+        verbose_name = "3 - Clientle queries"
+        verbose_name_plural = "3 - Clientle queries"
