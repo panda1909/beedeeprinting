@@ -138,14 +138,14 @@
 						<nav id="main-menu" class="main-menu clearfix">
 							<ul>
 								<li class="level0 parent col1 all-product hd-pd">
-									<a href="{% url 'all_products' %}"><span>All Products</span><i
+									<a href="{% url 'all_products' %}"><span class="headerfont">All Products</span><i
 											class="fa fa-chevron-down"></i></a>
 									<ul class="level0">
 										<li class="level1">
 											<span class="menu-title">Categories</span>
 											<ul class="level1">
 												<li class="level2">
-													<a href="{% url 'business_card' %}" title="Calendar">Business
+													<a href="{% url 'business_card' %}">Business
 														Cards</a>
 													<ul class="level2">
 														<li><span class="menu-title">Business Cards</span></li>
@@ -291,46 +291,15 @@
 										</li>
 									</ul>
 								</li>
-								<li class="level0 parent col1 hd-pd">
-									<a href="{% url 'business_card' %}" title="Business Cards">
-										<span>Business Cards</span>
-										<i class="fa fa-chevron-down"></i>
-									</a>
-									<ul class="level0">
-										<li>
-											<a href="{% url 'Business_Cards:business-card-detail' %}" title="Marketing Materials">Simple Business Cards</a>
-										</li>
-										<li>
-											<a href="{% url 'Business_Cards:edge-painted-detail' %}" title="Dance Marketing Kit">Edge Painted Business
-												Cards</a>
-										</li>
-										<!-- <li>
-											<a href=" #" title="Event Marketing Kit">Foil Business Cards</a>
-										</li>
-										<li>
-											<a href=" #" title="Flyers Print">Panton Business Cards</a>
-										</li>
-										<li>
-											<a href=" #" title="Flyers Product">Plastic Business Cards</a>
-										</li>
-										<li>
-											<a href=" #" title="The Flyers Printing">Raised Ink Business
-												Cards</a>
-										</li>
-										<li>
-											<a href=" #" title="Marketing's Card">Raised Spot UV Business
-												Cards</a>
-										</li> -->
-									</ul>
-								</li>
+								
 								<li class="level0 hd-pd">
-									<a href="{% url 'marketing_products' %}" title="Marketing">Marketing</a>
-								</li>
-								<li class="level0 hd-pd">
-									<a href="{% url 'order_status' %}" title="Postcards">Order Status</a>
+									<a href="{% url 'order_status' %}" title="Postcards"><span class="headerfont">Order Status</span></a>
 								</li>
 								<li class="level0 hd-pd" title="About Us">
-									<a href="{% url 'contact-us' %}">Conatct Us</a>
+									<a href="{% url 'contact-us' %}"><span class="headerfont">Conatct Us</span></a>
+								</li>
+								<li class="level0 hd-pd" title="About Us">
+									<a href="{% url 'aboutus' %}"><span class="headerfont">About Us</span></a>
 								</li>
 							</ul>
 						</nav>
@@ -390,11 +359,11 @@
 							<ul class="info">
 								<li>
 									<i class="fa fa-home"></i>
-									<span>102580 Santa Monica Los Angeles</span>
+									<span class="span1">102580 Santa Monica Los Angeles</span>
 								</li>
 								<li>
 									<i class="fa fa-phone"></i>
-									<span>+3 045 224 33 12</span>
+									<span class="span1">+3 045 224 33 12</span>
 								</li>
 								<li>
 									<i class="fa fa-envelope-o"></i>
