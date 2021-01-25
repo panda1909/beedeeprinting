@@ -243,7 +243,7 @@ button{
 */
 a.product-name{
   font-size: 18px;
-  color: #190061;
+  color: black;
   font-weight: bold;
   float:left;
   width:100%;
@@ -255,7 +255,7 @@ a.product-name:hover{
 * Price box
 */
 .price-box span.special-price,.price-box span.normal-price{
-	color:#240090;
+	color:black;
 	font-weight:500;
 	font-size:15px
 }
@@ -1453,7 +1453,7 @@ section.trust-w{
   -o-transition: all 0.3s ease-out 0s; 
 } 
 .trust-w .tr-icon:hover{
-	border-color:#ade8fa;
+	border-color:#3500D3;
 	transition: all 0.3s ease-out 0s;
 	-webkit-transition: all 0.3s ease-out 0s;
 	-moz-transition: all 0.3s ease-out 0s;
@@ -5131,7 +5131,7 @@ h1.ct-header{
 }
 .onepage .pane-inner ul li label {
 	font-size:12px;
-	color:#444444;
+	color:#000000;
 	font-weight: normal;
 }
 #user-actions-trigger label.registers,#shipping_info_w label.registers{
