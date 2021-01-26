@@ -89,6 +89,7 @@ def Checkout(request):
             # session for order id page
             request.session['Name'] = Name
             request.session['order_id'] = order_id
+            request.session['email'] = Email
 
             # print(Name)
             order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
@@ -123,6 +124,7 @@ def Checkout(request):
 
 def Order_placed(request):
     Name = request.session['Name']
+    email = request.session['Email']
     order_id = request.session['order_id'] 
     context = {
         'Name' : Name,
