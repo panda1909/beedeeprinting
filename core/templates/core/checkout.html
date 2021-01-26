@@ -64,9 +64,16 @@
                 </div>
             </div>
             <div class="cart-view-top">
-                <div class="col-md-6 col-sm-6 col-xs-16">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <h1>Shopping Cart</h1>
                 </div>
+                {% comment %} <div class="col-md-6 col-sm-6 col-xs-12 right">
+                    <h1>Continue Shopping</h1>
+                </div> {% endcomment %}
+                {% comment %} <div id="login-pane" class="col-md-12 col-sm-12 col-xs-12">
+                    <p>Please fill in the fields below to complete your order.<a id="login-modal-trigger" href="#">
+                            Already registered? Click here to login.</a></p>
+                </div> {% endcomment %}
             </div>
 
 
@@ -150,7 +157,7 @@
                                         ${{ final_price }}</span></td>
                             </tr>
                             <p style="color:red;"><strong> NOTE:</strong></p>
-                            <p>This price is an arbitary, our representative will contact you in <strong
+                            <p>These price are subject to change, our representative will contact you in <strong
                                     style="color: red">24 Hours</strong> with exact price according to your
                                 extra notes, special request and exact shipping price. Please fill shipping info
                                 so we can contact you.</p>
@@ -188,9 +195,9 @@
                                         <ul id="table_billto" class="adminform user-details no-border">
                                             <li class="short">
                                                 <div class="field-wrapper">
-                                                    <label for="company_field" class="company">Company Name: </label>
+                                                    <label for="company_field" class="company" id="checkout">Company Name: </label>
                                                     <br>
-                                                    <input type="text" maxlength="64" value="Shipment" size="30"
+                                                    <input type="text" maxlength="64" value="" size="30"
                                                         name="company" id="company_field">
                                                 </div>
                                             </li>
@@ -198,7 +205,7 @@
                                             <li class="short right">
                                                 <div class="field-wrapper">
 
-                                                    <label for="email_field" class="email">
+                                                    <label for="email_field" id="checkout">
                                                         E-Mail:<em>*</em> </label>
                                                     <br>
                                                     {{ form.Email }}
@@ -207,10 +214,10 @@
                                                 </div>
                                             </li>
 
-                                            <li class="short">
+                                            {% comment %} <li class="short">
                                                 <div class="field-wrapper">
 
-                                                    <label for="title_field" class="title">Title:</label>
+                                                    <label for="title_field" class="title" id="checkout">Title:</label>
                                                     <br>
 
                                                     <select style="width: 210px" class="vm-chzn-select" name="title"
@@ -221,11 +228,11 @@
                                                     </select>
 
                                                 </div>
-                                            </li>
+                                            </li> {% endcomment %}
 
-                                            <li class="short right">
+                                            <li class="short ">
                                                 <div class="field-wrapper">
-                                                    <label for="first_name_field" class="first_name">First Name:</label>
+                                                    <label for="first_name_field" class="first_name" id="checkout">First Name:</label>
                                                     <br>
                                                     {{ form.FirstName }}
 
@@ -233,10 +240,10 @@
                                                 </div>
                                             </li>
 
-                                            <li class="short">
+                                            <li class="short right">
                                                 <div class="field-wrapper">
 
-                                                    <label for="middle_name_field" class="middle_name">
+                                                    <label for="middle_name_field" class="middle_name" id="checkout">
                                                         Middle Name: </label>
                                                     <br>
                                                     <input type="text" maxlength="32" value="" size="30"
@@ -244,10 +251,10 @@
                                                 </div>
                                             </li>
 
-                                            <li class="short right">
+                                            <li class="short">
                                                 <div class="field-wrapper">
 
-                                                    <label for="last_name_field" class="last_name">
+                                                    <label for="last_name_field" class="last_name" id="checkout">
                                                         Last Name: </label>
                                                     <br>
                                                     {{ form.LastName }}
@@ -257,29 +264,29 @@
 
 
 
-                                            <li class="short">
+                                            <li class="short right">
                                                 <div class="field-wrapper">
 
-                                                    <label for="zip_field" class="zip">
+                                                    <label for="zip_field" class="zip" id="checkout">
                                                         Zip / Postal Code:<em>*</em> </label>
                                                     <br>
                                                     {{ form.Zipcode }}
                                                 </div>
                                             </li>
 
-                                            <li class="short right">
+                                            <li class="short">
                                                 <div class="field-wrapper">
 
-                                                    <label class="virtuemart_country_id">
+                                                    <label class="virtuemart_country_id" id="checkout">
                                                         Country:<em>*</em> </label>
                                                     <br>
                                                     {{ form.Country }}
                                                 </div>
                                             </li>
-                                            <li class="short">
+                                            <li class="short right">
                                                 <div class="field-wrapper">
 
-                                                    <label for="virtuemart_city" class="virtuemart_state_id">
+                                                    <label for="virtuemart_city" class="virtuemart_state_id" id="checkout">
                                                         City:<em>*</em> </label>
                                                     <br>
                                                     {{ form.City }}
@@ -287,10 +294,10 @@
                                                 </div>
                                             </li>
 
-                                            <li class="short right">
+                                            <li class="short">
                                                 <div class="field-wrapper">
 
-                                                    <label for="virtuemart_state_id_field" class="virtuemart_state_id">
+                                                    <label for="virtuemart_state_id_field" class="virtuemart_state_id" id="checkout">
                                                         State / Province / Region:<em>*</em> </label>
                                                     <br>
                                                     {{ form.Region }}
@@ -298,10 +305,10 @@
                                                 </div>
                                             </li>
 
-                                            <li class="short">
+                                            <li class="short right">
                                                 <div class="field-wrapper">
 
-                                                    <label for="phone_1_field" class="phone_1">
+                                                    <label for="phone_1_field" class="phone_1" id="checkout">
                                                         Phone: </label>
                                                     <br>
                                                     {{ form.Phone }}
@@ -309,20 +316,20 @@
                                                 </div>
                                             </li>
 
-                                            <li class="short right">
+                                            {% comment %} <li class="short right">
                                                 <div class="field-wrapper">
 
-                                                    <label for="phone_2_field" class="phone_2">
+                                                    <label for="phone_2_field" class="phone_2" id="checkout">
                                                         Mobile phone: </label>
                                                     <br>
                                                     {{ form.Mobile }}
                                                 </div>
-                                            </li>
+                                            </li> {% endcomment %}
                                             <li class="long">
                                                 <div class="field-wrapper">
 
-                                                    <label for="address_1_field" class="address_1">
-                                                        Address 1:<em>*</em> </label>
+                                                    <label for="address_1_field" class="address_1" id="checkout">
+                                                        Address:<em>*</em> </label>
                                                     <br>
                                                     {{ form.Address }}
                                                 </div>
@@ -330,7 +337,7 @@
                                             <li class="long">
                                                 <div class="field-wrapper">
 
-                                                    <label for="fax_field" class="fax">
+                                                    <label for="fax_field" class="fax" id="checkout">
                                                         Front side Template: </label>
                                                     <br>
 
@@ -340,7 +347,7 @@
                                             <li class="long">
                                                 <div class="field-wrapper">
 
-                                                    <label for="fax_field" class="fax">
+                                                    <label for="fax_field" class="fax" id="checkout">
                                                         Second side Template: </label>
                                                     <br>
 
@@ -348,7 +355,7 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <p class="comment"><strong>Notes and special requests</strong></p>
+                                                <p class="comment" id="checkout"><strong>Notes and special requests</strong></p>
                                                 <textarea class="inputbox"  cols="60" rows="10" name="Notes_Requests"
                                                     id="id_Notes_Requests" style="border: 2px solid #25bce9;">
                                                 </textarea>

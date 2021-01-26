@@ -21,7 +21,7 @@ class Orders(models.Model):
     City = models.CharField(null=False, max_length=512, default='Ci')
     Zip_Code = models.PositiveIntegerField(null=False)
     Delivery_address = models.CharField(null=False, max_length=1000, default='pd')
-    Mobile = PhoneNumberField()
+    Mobile = PhoneNumberField(blank=True)
     Contact = PhoneNumberField()
     Email = models.EmailField()
     Delivery_date = models.DateField(null=True, auto_now=False, auto_now_add=False)
@@ -30,12 +30,12 @@ class Orders(models.Model):
     Size = models.CharField(null=False, max_length=1024)
     Price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.1)])
     Template = models.FileField(upload_to='static/Order_templates', blank=True ,max_length=256, validators=[validate_file_extension])
-    Second_Template = models.FileField(upload_to='static/Order_templates', blank=True, max_length=256, validators=[validate_file_extension])    
+    Second_Template = models.FileField(upload_to='static/Order_templates', blank=True, max_length=256, validators=[validate_file_extension])
     Special_requests = models.CharField(max_length=5000, blank=True)
     Extra_features = models.JSONField(default=dict)
 
     def __str__(self):
-        return str((self.OrderId) + str(self.Product_name) + str(self.Customer))
+        return str((self.OrderId) + ' / ' + str(self.Product_name) + ' / ' + str(self.Customer))
 
     class Meta:
         verbose_name = "1 - Orders Table"
@@ -70,5 +70,5 @@ class Messages(models.Model):
         return str(self.Subject)
 
     class Meta:
-        verbose_name = "3 - Clientle queries"
-        verbose_name_plural = "3 - Clientle queries"
+        verbose_name = "3 Clientle queries"
+        verbose_name_plural = "3 Clientle queries"
