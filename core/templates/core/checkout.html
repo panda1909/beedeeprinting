@@ -67,13 +67,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <h1>Shopping Cart</h1>
                 </div>
-                {% comment %} <div class="col-md-6 col-sm-6 col-xs-12 right">
-                    <h1>Continue Shopping</h1>
-                </div> {% endcomment %}
-                {% comment %} <div id="login-pane" class="col-md-12 col-sm-12 col-xs-12">
-                    <p>Please fill in the fields below to complete your order.<a id="login-modal-trigger" href="#">
-                            Already registered? Click here to login.</a></p>
-                </div> {% endcomment %}
+               
             </div>
 
 
@@ -178,19 +172,70 @@
                                     {% if invoice != '0' %}
                                     <form method="POST">
                                         {% csrf_token %}
-                                        {% if form.errors %}
-                                        {% for field in form %}
-                                        {% for error in field.errors %}
+                                        {% if form.Email.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Email.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.FirstName.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.FirstName.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.LastName.errors %}
                                         <div class="alert alert-danger">
-                                            <strong>{{ error|escape }}</strong>
+                                            <strong>{{ form.LastName.errors }}</strong>
                                         </div>
-                                        {% endfor %}
-                                        {% endfor %}
-                                        {% for error in form.non_field_errors %}
-                                        <div class="alert alert-danger">
-                                            <strong>{{ error|escape }}</strong>
-                                        </div>
-                                        {% endfor %}
+                                        {% endif %}
+                                        {% if form.Zipcode.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Zipcode.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Country.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Country.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.City.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.City.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Region.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Region.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Phone.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Phone.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Mobile.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Mobile.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Address.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Address.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.TemplateOne.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.TemplateOne.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.TemplateTwo.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.TemplateTwo.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Notes_Requests.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Notes_Requests.errors }}</strong>
+                                                    </div>
                                         {% endif %}
                                         <ul id="table_billto" class="adminform user-details no-border">
                                             <li class="short">
@@ -214,7 +259,7 @@
                                                 </div>
                                             </li>
 
-                                            {% comment %} <li class="short">
+                                            <!-- {% comment %} <li class="short">
                                                 <div class="field-wrapper">
 
                                                     <label for="title_field" class="title" id="checkout">Title:</label>
@@ -228,7 +273,7 @@
                                                     </select>
 
                                                 </div>
-                                            </li> {% endcomment %}
+                                            </li> {% endcomment %} -->
 
                                             <li class="short ">
                                                 <div class="field-wrapper">
@@ -316,7 +361,7 @@
                                                 </div>
                                             </li>
 
-                                            {% comment %} <li class="short right">
+                                            <!-- {% comment %} <li class="short right">
                                                 <div class="field-wrapper">
 
                                                     <label for="phone_2_field" class="phone_2" id="checkout">
@@ -324,7 +369,7 @@
                                                     <br>
                                                     {{ form.Mobile }}
                                                 </div>
-                                            </li> {% endcomment %}
+                                            </li> {% endcomment %} -->
                                             <li class="long">
                                                 <div class="field-wrapper">
 
@@ -340,7 +385,6 @@
                                                     <label for="fax_field" class="fax" id="checkout">
                                                         Front side Template: </label>
                                                     <br>
-
                                                     {{ form.TemplateOne }}
                                                 </div>
                                             </li>
@@ -350,14 +394,13 @@
                                                     <label for="fax_field" class="fax" id="checkout">
                                                         Second side Template: </label>
                                                     <br>
-
                                                     {{ form.TemplateTwo }}
                                                 </div>
                                             </li>
                                             <li>
                                                 <p class="comment" id="checkout"><strong>Notes and special requests</strong></p>
                                                 <textarea class="inputbox"  cols="60" rows="10" name="Notes_Requests"
-                                                    id="id_Notes_Requests" style="border: 2px solid #25bce9;">
+                                                    id="id_Notes_Requests">
                                                 </textarea>
                                             </li>
                                             <br>

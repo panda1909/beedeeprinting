@@ -78,7 +78,7 @@ def Checkout(request):
             Region = form.cleaned_data["Region"]
             Address = form.cleaned_data["Address"]
             Email = form.cleaned_data["Email"]
-            Mobile = form.cleaned_data["Mobile"]
+            # Mobile = form.cleaned_data["Mobile"]
             Phone = form.cleaned_data["Phone"]
             Notes_Requests = form.cleaned_data["Notes_Requests"]
             TemplateOne = form.cleaned_data["TemplateOne"]
@@ -91,7 +91,7 @@ def Checkout(request):
             request.session['order_id'] = order_id
 
             # print(Name)
-            order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address,  Mobile=Mobile, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
+            order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
 
           
             if CustomerData.objects.filter(Email=Email).exists() :
@@ -99,7 +99,7 @@ def Checkout(request):
                 print(Customerinfo)
                 Customerinfo.Orders.add(order)
             else:
-                Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Mobile, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
+                Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Phone, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
                 Customerinfo.Orders.add(order)
             print ("--------->if")
             return redirect('order')
