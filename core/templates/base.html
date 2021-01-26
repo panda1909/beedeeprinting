@@ -554,16 +554,16 @@
 
 
 	<script>
-	function copyToClipboard(element) {
-	var $temp = $("<input>");
-	$("body").append($temp);
-	$temp.val($(element).text()).select();
-	document.execCommand("copy");
-	$temp.remove();
-	}
-	$(document).ready(function(){
-	$('.btn-readmore-t').tooltip({title: "Copied to Clip Board!", trigger: "click", placement: "right"});
-	});
+		function copyToClipboard(element) {
+		var $temp = $("<input>");
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+		}
+		$(document).ready(function(){
+		$('.btn-readmore-t').tooltip({title: "Copied to Clip Board!", trigger: "click", placement: "right"});
+		});
 	</script>
 
 	{% block extra_js %}

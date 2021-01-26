@@ -124,13 +124,29 @@ def Checkout(request):
 
 def Order_placed(request):
     Name = request.session['Name']
-    email = request.session['Email']
+    email = request.session['email']
     order_id = request.session['order_id'] 
+    subject = "Order ID"
+    final_message= "Your Order Id:"+" "+order_id 
+    if request.POST:
+        send_mail(
+                subject,
+                final_message,
+                'beedee.printing@gmail.com',
+                [email],
+                fail_silently=True
+            )
+        return redirect('home')
     context = {
         'Name' : Name,
         'order_id' : order_id,
     }
+    try:
+        request.session['invoice']
+    except:
+        return redirect('home')
     del request.session['invoice']
+
     return render(request, 'core/order_placed.html', context)
 
 
