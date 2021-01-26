@@ -552,7 +552,23 @@
 	<script type="text/javascript" src="{% static 'js/slideshow/jquery.themepunch.plugins.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/theme-home.js' %}"></script>
 
-	
+
+	<script>
+	function copyToClipboard(element) {
+	var $temp = $("<input>");
+	$("body").append($temp);
+	$temp.val($(element).text()).select();
+	document.execCommand("copy");
+	$temp.remove();
+	}
+	$(document).ready(function(){
+	$('.btn-readmore-t').tooltip({title: "Copied to Clip Board!", trigger: "click", placement: "right"});
+	});
+	</script>
+
+	{% block extra_js %}
+
+	{% endblock extra_js %}
 
 </body>
 

@@ -48,17 +48,27 @@
 									<p class="hello-par">
 										Kindly note down your ORDER ID, for checking status.
                                     </p>
-                                    <p class="hello-par">
+                                    <span class="hello-par" id="p1" style="margin-right:2%;">
                                         {{ order_id }}
-                                    </p>
+                                    </span>
+									<button class="btn-readmore-t" onclick="copyToClipboard('#p1')">Copy Order ID</button>
 								</div>
 							</div>
-							
+
+						</div>
+
 						</div>
 					</section><!-- Cart main content : End -->
 				</div>
-				
+
 			</div>
 		</section>
 	</main><!-- Main Category: End -->
 {% endblock content %}
+{% block extra_js%}
+	<script type="text/javascript">
+		window.onbeforeunload = function() {
+            return "you can not refresh the page";
+        }
+	</script>
+{% endblock extra_js %}
