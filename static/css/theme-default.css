@@ -2047,10 +2047,10 @@ section.home-make-print{
 	margin-top:3px;
 }
 .or-text p{
-	color:#888;
+	color:#000000;
 }
 .or-title a{
-	color:#444;
+	color:#000000;
 	text-transform:uppercase; 
 }
 a.order-now{ 
@@ -6194,6 +6194,6 @@ section.home-slidershow{
 }
 .headerfont{
   font-size: 16px !important; 
-  color: #240090 !important;
+  color: #0C0032 !important;
   font-weight: 500 !important;
 }
