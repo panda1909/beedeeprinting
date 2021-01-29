@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('core.urls')),
     path('lf-format', include('Large_Format_Printing.urls')),
     path('business-cards/', include('Business_Cards.urls')),
+    path('boxes/', include('boxes.urls')),
 ]

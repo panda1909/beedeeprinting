@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Business_Stationary',
     'Large_Format_Printing',
     'Marketing_Products',
+    'boxes',
 
 ]
 
