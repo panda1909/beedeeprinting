@@ -53,7 +53,8 @@ def Pillow_Boxes(request):
     }
 
     if request.POST:
-        return redirect('b-checkout', {'label' : product.Label})
+        request.session['id'] = '1'
+        return redirect('b-checkout')
 
 
     return render(request, 'boxes/pillow-boxes.html', context)

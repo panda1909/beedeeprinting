@@ -9,13 +9,14 @@ from Business_Cards.models import business_cards_price, Extra_features
 from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
+from boxes.models import Products as b_products
 
 # order and customer table
 from .models import Orders, CustomerData
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
-from .form import checkoutForm,queries
+from .form import checkoutForm,queries,BoxcheckoutForm
 import shortuuid
 
 
@@ -38,7 +39,7 @@ def Checkout(request):
         category = request.session['cat']
         quantity = request.session['quantity']
         extra_f_dict = request.session['extra_f']
-        print('CHeckout try')
+        print('Checkout try')
         json_dump = json.dumps(extra_f_dict)
         json_obj = json.loads(json_dump)
         size = extra_f_dict['size']
@@ -121,6 +122,39 @@ def Checkout(request):
         'image': product.image1,
     }
     return render(request, 'core/checkout.html', context)
+
+def BoxCheckout(request):
+    id = request.session['id']
+    product = b_products.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = BoxcheckoutForm(request.POST)
+       
+        if form.is_valid():
+            Name = form.cleaned_data["FirstName"]+" "+form.cleaned_data["LastName"]
+            Country = form.cleaned_data["Country"]
+            City = form.cleaned_data["City"]
+            Region = form.cleaned_data["Region"]
+            Address = form.cleaned_data["Address"]
+            zipcode = form.cleaned_data["Zipcode"]
+            Email = form.cleaned_data["Email"]
+            Phone = form.cleaned_data["Phone"]
+            Width = form.cleaned_data["Width"]
+            Height = form.cleaned_data["Height"]
+            Depth = form.cleaned_data["Depth"]
+            Unit = form.cleaned_data["Unit"]
+            Quantity = form.cleaned_data["Quantity"]
+            Color = form.cleaned_data["Color"]
+            Stock = form.cleaned_data["Stock"]
+            Notes_Requests = form.cleaned_data["Notes_Requests"]
+            TemplateOne = form.cleaned_data["TemplateOne"]
+            TemplateTwo = form.cleaned_data["TemplateTwo"]
+            Notes_Requests =  form.cleaned_data["Notes_Requests"]
+        
+
+
+
+
 
 def Order_placed(request):
     Name = request.session['Name']
