@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import Home, Aboutus, Cart, Business_card, All_products, Business_stationary, Large_format, Marketing_products, Checkout,  Order_placed, get_status, Contactus
+from .views import BoxCheckout, Home, Aboutus, Cart, Business_card, All_products, Business_stationary, Large_format, Marketing_products, Checkout,  Order_placed, get_status, Contactus, BoxCheckout
 
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
      path('aboutus', Aboutus.as_view(), name='aboutus'),
      path('cart', Cart, name='cart'),
      path('checkout', Checkout, name='checkout'),
+     path('b-checkout', BoxCheckout, name='b-checkout'),
      # Catogery 
      path('business-Cards', Business_card, name='business_card' ),
      path('business-Stationary', Business_stationary, name='business_stationary'),
