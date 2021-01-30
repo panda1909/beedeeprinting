@@ -54,7 +54,7 @@
 									<button class="btn-readmore-t" onclick="copyToClipboard('#p1')">Copy Order ID</button>
 									<form method="POST">
 										{% csrf_token %}
-										<input style="margin-top: 1%; padding: 8px 49px" class="btn-readmore" type="submit" name="list" value="E-mail me" />
+										<input style="margin-top: 1%; padding: 8px 49px" class="btn-readmore" type="submit" name="list" value="E-mail me"/>				
 									</form>
 								</div>
 							</div>
@@ -69,10 +69,3 @@
 		</section>
 	</main><!-- Main Category: End -->
 {% endblock content %}
-{% block extra_js%}
-	<!-- <script type="text/javascript">
-		window.onbeforeunload = function() {
-            return "you can not refresh the page";
-        }
-	</script> -->
-{% endblock extra_js %}

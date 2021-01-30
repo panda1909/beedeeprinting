@@ -207,6 +207,7 @@ def Order_placed(request):
     subject = "Order ID"
     final_message= "Your Order Id:"+" "+order_id 
     if request.POST:
+        print('request.POST')
         send_mail(
                 subject,
                 final_message,
@@ -214,10 +215,12 @@ def Order_placed(request):
                 [email],
                 fail_silently=True
             )
+        print('order_plced view working')
         return redirect('home')
     context = {
         'Name' : Name,
         'order_id' : order_id,
+        'successful_submit': True,
     }
     try:
         request.session['invoice']
