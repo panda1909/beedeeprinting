@@ -7505,6 +7505,7 @@ section.home-slidershow {
     background: #3500D3;
     font-weight: 600;
     color: #fff;
+<<<<<<< HEAD
 }
 
 .span:hover{
@@ -7579,3 +7580,6 @@ section.home-slidershow {
         border-radius: 0px 5px 5px 5px;
     }
 }
+=======
+}
+>>>>>>> 07c1e4ff687f68f05040ec273b7a7753c1d3d28c

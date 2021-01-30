@@ -9,6 +9,7 @@ from Business_Cards.models import business_cards_price, Extra_features
 from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
+from boxes.models import Products as b_products
 
 # order and customer table
 from .models import Orders, CustomerData
@@ -42,7 +43,7 @@ def Checkout(request):
         category = request.session['cat']
         quantity = request.session['quantity']
         extra_f_dict = request.session['extra_f']
-        print('CHeckout try')
+        print('Checkout try')
         json_dump = json.dumps(extra_f_dict)
         json_obj = json.loads(json_dump)
         size = extra_f_dict['size']
@@ -126,6 +127,83 @@ def Checkout(request):
     }
     return render(request, 'core/checkout.html', context)
 
+def BoxCheckout(request):
+    id = request.session['id']
+    product = b_products.objects.get(id=id)
+    label = product.Label
+    order_id = shortuuid.ShortUUID().random(length=12)
+    form = BoxcheckoutForm
+
+    if request.method == 'POST':
+        form = BoxcheckoutForm(request.POST)
+        print('----------->POST')
+       
+        if form.is_valid():
+            print('----------->Form valid')
+            Name = form.cleaned_data["FirstName"]+" "+form.cleaned_data["LastName"]
+            Country = form.cleaned_data["Country"]
+            City = form.cleaned_data["City"]
+            Region = form.cleaned_data["Region"]
+            Address = form.cleaned_data["Address"]
+            zipcode = form.cleaned_data["Zipcode"]
+            Email = form.cleaned_data["Email"]
+            Phone = form.cleaned_data["Phone"]
+            Width = form.cleaned_data["Width"]
+            Height = form.cleaned_data["Height"]
+            Depth = form.cleaned_data["Depth"]
+            Unit = form.cleaned_data["Unit"]
+            Quantity = form.cleaned_data["Quantity"]
+            Color = form.cleaned_data["Color"]
+            Stock = form.cleaned_data["Stock"]
+            Notes_Requests = form.cleaned_data["Notes_Requests"]
+            Notes_Requests =  form.cleaned_data["Notes_Requests"]
+
+            # session for order id page
+            request.session['Name'] = Name
+            request.session['order_id'] = order_id
+            request.session['email'] = Email
+            request.session['invoice'] = '1'
+
+            extra_feature_dict ={
+                'Color' : Color,
+                'Stock' : Stock,
+                'Width' : Width,
+                'Height' : Height,
+                'Depth' : Depth,
+                'Unit' : Unit,
+            }
+
+            json_dump = json.dumps(extra_feature_dict)
+            json_obj = json.loads(json_dump)
+
+            order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Product_name=label, Quantity=Quantity, OrderId=order_id, Status="Pending")
+
+          
+            if CustomerData.objects.filter(Email=Email).exists() :
+                Customerinfo = CustomerData.objects.get(Email=Email)
+                print(Customerinfo)
+                Customerinfo.Orders.add(order)
+            else:
+                Customerinfo = CustomerData.objects.create(Name=Name, Email=Email, Cell=Phone, Country=Country, Region=Region, City=City, Zip_Code=zipcode, Address=Address)
+                Customerinfo.Orders.add(order)
+
+            return redirect('order')
+
+        else:
+            print('-----------> Invalid Form')
+            
+
+    context ={
+    'form': form,
+    'label': label,
+    'image': product.image1,
+    }
+    return render(request, 'core/box-checkout.html', context)
+
+
+
+
+
 def Order_placed(request):
     Name = request.session['Name']
     email = request.session['email']
@@ -133,6 +211,7 @@ def Order_placed(request):
     subject = "Order ID"
     final_message= "Your Order Id:"+" "+order_id 
     if request.POST:
+        print('request.POST')
         send_mail(
                 subject,
                 final_message,
@@ -140,10 +219,12 @@ def Order_placed(request):
                 [email],
                 fail_silently=True
             )
+        print('order_plced view working')
         return redirect('home')
     context = {
         'Name' : Name,
         'order_id' : order_id,
+        'successful_submit': True,
     }
     try:
         request.session['invoice']

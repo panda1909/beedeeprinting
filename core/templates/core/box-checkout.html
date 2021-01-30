@@ -1,0 +1,462 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Checkout</title>
+{% endblock title %}
+{% block extra_css %}
+<style>
+    ::-webkit-input-placeholder {
+        /* Edge */
+        color: red;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer */
+        color: red;
+    }
+
+    ::placeholder {
+        color: red;
+    }
+</style>
+{% endblock extra_css %}
+
+{% block cart %}
+    <div class="cart-w SC-w hd-pd ">
+        <span class="mcart-icon dropdowSCIcon">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="mcart-dd-qty">1</span>
+        </span>
+    </div>
+							
+{% endblock cart %}
+                        
+{% block content %}
+<!--Main index : End-->
+<main class="main">
+    <section class="header-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 hidden-xs">
+                    <h1 class="mh-title">Checkout</h1>
+                </div>
+                <div class="breadcrumb-w col-sm-9">
+                    <span class="hidden-xs">You are here:</span>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <span>Checkout</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="checkout" class="pr-main">
+        <div class="container">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="cart-top">
+                    <img alt="Cart top banner" src="{% static 'images/banner/cart/top-banner.jpg' %}">
+                </div>
+            </div>
+            <div class="cart-view-top">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h1>Shopping Cart</h1>
+                </div>
+               
+            </div>
+
+
+            <div class="onepage">
+                <!-- shipping_method -->
+                <!-- <div class="col-md-8 col-sm-6 col-xs-12">
+                    <div id="right-pane-top" class="col-md-12 col-sm-12 col-xs-12">
+                        <div id="shipping_method" class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="shipment-pane">
+                                <div class="pane round-box">
+                                    <h3 class="title">
+                                        <span class="icon icon-three">3</span>
+                                        Shipping method
+                                    </h3>
+                                    <div class="pane-inner" style="visibility: visible;">
+                                        Select shipment<fieldset id="shipments"><input type="radio" value="1"
+                                                id="shipment_id_1" name="virtuemart_shipmentmethod_id"
+                                                checked="checked">
+                                            <label for="shipment_id_1"><span class="vmshipment"><span
+                                                        class="vmshipment_name">Cmsmart</span></span></label>
+                                            <br><input type="radio" value="2" id="shipment_id_2"
+                                                name="virtuemart_shipmentmethod_id">
+                                            <label for="shipment_id_2"><span class="vmshipment"><span
+                                                        class="vmshipment_name">Printmart</span></span></label>
+                                            <br>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- render layout -->
+                <fieldset class="round-box" id="cart-contents">
+                    <h3 class="title"><span class="icon fa fa-check"></span>ORDER REVIEW</h3>
+                    <table cellspacing="0" cellpadding="0" border="0" class="cart-summary no-border">
+                        <tbody>
+                            <tr clas="top-header">
+                                <th align="left" class="th-name"><strong>Products Name</strong></th>
+                            </tr>
+
+                            <tr valign="top" id="product_row_0"
+                                class="product-detail-row product-detail-last-row sectiontableentry1">
+                                <td align="left" class="pro_name">
+                                    <img class="cart-images" style="height:100px; width:100px;" src="{{ image }}">
+                                    <span class="product-name" href="#"><strong> {{ label }} </strong></span>
+                                </td>
+                            </tr>
+                            <!-- <p style="color:red;"><strong> NOTE:</strong></p>
+                            <p>These price are subject to change, our representative will contact you in <strong
+                                    style="color: red">24 Hours</strong> with exact price according to your
+                                extra notes, special request and exact shipping price. Please fill shipping info
+                                so we can contact you.</p> -->
+                        </tbody>
+                    </table>
+
+
+                </fieldset>
+                    <!-- FORM -->
+                <div id="right-pane-bottom">
+                    <div id="div_billto">
+                        <div class="pane round-box">
+                            <h3 class="title"><span class="icon icon-one">1</span>Shipping Info</h3>
+                            <div class="pane-inner">
+                                <p style="color: red;"> Your information will not be used for advertisment purposes,
+                                    as
+                                    outlined in our privacy policy.</p>
+                                    {% if invoice != '0' %}
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        {% if form.Email.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Email.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.FirstName.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.FirstName.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.LastName.errors %}
+                                        <div class="alert alert-danger">
+                                            <strong>{{ form.LastName.errors }}</strong>
+                                        </div>
+                                        {% endif %}
+                                        {% if form.Zipcode.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Zipcode.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Country.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Country.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.City.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.City.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Region.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Region.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Phone.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Phone.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Mobile.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Mobile.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Address.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Address.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.TemplateOne.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.TemplateOne.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.TemplateTwo.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.TemplateTwo.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        {% if form.Notes_Requests.errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ form.Notes_Requests.errors }}</strong>
+                                                    </div>
+                                        {% endif %}
+                                        <ul id="table_billto" class="adminform user-details no-border">
+                                            <li class="short">
+                                                <div class="field-wrapper">
+                                                    <label for="company_field" class="company" id="checkout">Company Name: </label>
+                                                    <br>
+                                                    <input type="text" maxlength="64" value="" size="30"
+                                                        name="company" id="company_field">
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="email_field" id="checkout">
+                                                        E-Mail:<em>*</em> </label>
+                                                    <br>
+                                                    {{ form.Email }}
+
+
+                                                </div>
+                                            </li>
+
+                                            <!-- {% comment %} <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="title_field" class="title" id="checkout">Title:</label>
+                                                    <br>
+
+                                                    <select style="width: 210px" class="vm-chzn-select" name="title"
+                                                        id="title">
+                                                        <option selected="selected" value="">-- Select --</option>
+                                                        <option value="Mr">Mr</option>
+                                                        <option value="Mrs">Mrs</option>
+                                                    </select>
+
+                                                </div>
+                                            </li> {% endcomment %} -->
+
+                                            <li class="short ">
+                                                <div class="field-wrapper">
+                                                    <label for="first_name_field" class="first_name" id="checkout">First Name:</label>
+                                                    <br>
+                                                    {{ form.FirstName }}
+
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="last_name_field" class="last_name" id="checkout">
+                                                        Last Name: </label>
+                                                    <br>
+                                                    {{ form.LastName }}
+
+                                                </div>
+                                            </li>
+
+
+
+                                            <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="zip_field" class="zip" id="checkout">
+                                                        Zip / Postal Code:<em>*</em> </label>
+                                                    <br>
+                                                    {{ form.Zipcode }}
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label class="virtuemart_country_id" id="checkout">
+                                                        Country:<em>*</em> </label>
+                                                    <br>
+                                                    {{ form.Country }}
+                                                </div>
+                                            </li>
+                                            <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="virtuemart_city" class="virtuemart_state_id" id="checkout">
+                                                        City:<em>*</em> </label>
+                                                    <br>
+                                                    {{ form.City }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="virtuemart_state_id_field" class="virtuemart_state_id" id="checkout">
+                                                        State / Province / Region:<em>*</em> </label>
+                                                    <br>
+                                                    {{ form.Region }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Unit" class="title" id="checkout">
+                                                        Unit for Dimensions: </label>
+                                                    <br>
+                                                    {{ form.Unit }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Width" class="virtuemart_state_id" id="checkout">
+                                                        Width: </label>
+                                                    <br>
+                                                    {{ form.Width }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Height" class="virtuemart_state_id" id="checkout">
+                                                        Height: </label>
+                                                    <br>
+                                                    {{ form.Width }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Depth" class="virtuemart_state_id" id="checkout">
+                                                        Depth: </label>
+                                                    <br>
+                                                    {{ form.Depth }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Quantity" class="virtuemart_state_id" id="checkout">
+                                                        Quantity: </label>
+                                                    <br>
+                                                    {{ form.Quantity }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Color" class="title" id="checkout">
+                                                        Color: </label>
+                                                    <br>
+                                                    {{ form.Color }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Stock" class="title" id="checkout">
+                                                        Stock: </label>
+                                                    <br>
+                                                    {{ form.Stock }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="short right">
+                                                <div class="field-wrapper">
+
+                                                    <label for="Unit" class="phone_1" id="checkout">
+                                                        Phone: </label>
+                                                    <br>
+                                                    {{ form.Phone }}
+
+                                                </div>
+                                            </li>
+
+                                            <li class="long">
+                                                <div class="field-wrapper">
+
+                                                    <label for="address_1_field" class="address_1" id="checkout">
+                                                        Address:<em>*</em> </label>
+                                                    <br>
+                                                    {{ form.Address }}
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p class="comment" id="checkout"><strong>Notes and special requests</strong></p>
+                                                <textarea class="inputbox"  cols="60" rows="10" name="Notes_Requests"
+                                                    id="id_Notes_Requests">
+                                                </textarea>
+                                            </li>
+                                            <br>
+                                            <input class="btn-readmore" type="submit" value="Place Order">
+                                            <br>
+                                            <br>
+                                        </ul>
+
+                                    </form>
+                                    {% endif %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>
+<!--Main index : End-->
+{% endblock content %}
+
+{% block extra_js %}
+<script type="text/javascript">
+    // form upload
+    $('#id_ajax_upload_form').submit(function (e) {
+        e.preventDefault();
+        $form = $(this)
+        var formData = new FormData(this);
+        $.ajax({
+            url: window.location.pathname,
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                $('.error').remove();
+                console.log(response)
+                if (response.error) {
+                    $.each(response.errors, function (name, error) {
+                        error = '<small class="text-muted error">' + error + '</small>'
+                        $form.find('[name=' + name + ']').after(error);
+                    })
+                }
+                else {
+                    alert(response.message)
+                    window.location = ""
+                }
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+ // end
+</script>
+{% endblock extra_js %}
