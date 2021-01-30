@@ -70,5 +70,17 @@ class Messages(models.Model):
         return str(self.Subject)
 
     class Meta:
-        verbose_name = "3 Clientle queries"
-        verbose_name_plural = "3 Clientle queries"
+        verbose_name = "3 - Clientle queries"
+        verbose_name_plural = "3 - Clientle queries"
+
+class Bookedcalls(models.Model):
+    Name =models.CharField(max_length=100)
+    Email =models.EmailField()
+    Cell = PhoneNumberField()
+    Time = models.TimeField()
+    Date = models.DateField()
+    Description = models.TextField(max_length=2000)
+    class Meta:
+        verbose_name = "4 - Clients Booked call"
+        verbose_name_plural = "4 - Clients Booked call"
+

@@ -4,7 +4,7 @@ from django.forms import ModelForm
 from phonenumber_field.formfields import PhoneNumberField
 from .validators import validate_file_extension
 from Business_Cards.models import business_cards_price, Extra_features
-from core.models import Messages
+from core.models import Messages, Bookedcalls
 
 
 
@@ -36,3 +36,10 @@ class queries(forms.ModelForm):
     class Meta:
         model = Messages
         fields = ['Subject','Message','Name','Email','Contacted']
+        
+class bookcalls(forms.ModelForm):
+    class Meta:
+        model = Bookedcalls
+        fields = ['Name', 'Email', 'Cell', 'Time', 'Date', 'Description']
+
+      
