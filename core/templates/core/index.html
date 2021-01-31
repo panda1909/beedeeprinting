@@ -232,9 +232,9 @@
                                 <p style="color:black">Get in touch with our experts to refine your prodcut</p>
                             </div>
                             <div class="print-title">
-                                <button class="btn-readmore" type="button" id="add" onclick="show()">Book a
+                                <button class="btn-readmore" type="button" id="add">Book a
                                     Call</button>
-                                    
+
                             </div>
                         </div>
                     </div>
@@ -243,78 +243,7 @@
             </div>
         </div>
     </section>
-    <section id="fixed-form-container">
-        <div class="button">Click Me!</div>
-            <div class="body">
-             <div class="form-group">
-            <label for="email">Email address:</label>
-              <input type="email" class="form-control" id="email">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> Remember me</label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </div>
-    </section>
-    <!-- <div  style="z-index: 999;" id="popup">
-        <div class="col-md-6 col-sm-6 col-xs-12" >
-            <form id="contact" action="" method="post">
-                {% csrf_token %}
-                <h3>Quick Contact</h3>
-                <span for="name" class="first_name">
-                    Full Name:
-                    <em> * </em>
-                </span>
-                <br>
-                {{ form.Name }}
-                <br>
-                <span for="name" class="first_name">
-                    Email:
-                    <em> * </em>
-                </span>
-                <br>
-                {{ form.Email }}
-                <br>
-                <span for="name" class="first_name">
-                    Phone Number:
-                    <em> * </em>
-                </span>
-                <br>
-                {{ form.Cell }}
-                <br>
-                <span for="name" class="first_name">
-                    Date:
-                    <em> * </em>
-                </span>
-                <br>
-                {{ form.Date }}
-                <br>
-                <span for="name" class="first_name">
-                    Time:
-                    <em> * </em>
-                </span>
-                <br>
-                {{ form.Time }}
-                <br>
-                <span for="name" class="first_name">
-                    Project Description:
-                    <em> * </em>
-                </span>
-                <br>
-                {{ form.Description }}
-                <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                </fieldset>
-                <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" onclick="hide()">Cancel</button>
-                </fieldset>
-            </form>
-        </div>
-    </div> -->
+   
 
     <!--Home Promotions Products : Begin -->
     <section class="home-promotion-product home-product parten-bg">
@@ -673,10 +602,21 @@
 
 {% block extra_js %}
 <script type="text/javascript">
-    $("#fixed-form-container .body").hide();
-    $("#fixed-form-container .button").click(function () {
-            $(this).next("#fixed-form-container div").slideToggle(400);
-            $(this).toggleClass("expanded");
+    $(function () {
+        // contact form animations
+        $('#contact').click(function () {
+            $('#contactForm').fadeToggle();
+        })
+        $(document).mouseup(function (e) {
+            var container = $("#contactForm");
+
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && container.has(e.target).length === 0) // ... nor a descendant of the container
+            {
+                container.fadeOut();
+            }
         });
+
+    });
 </script>
 {% endblock extra_js %}
