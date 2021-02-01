@@ -124,6 +124,7 @@ def BC_Detail(request):
         "image3" : product.image3,
         "bc_aside"   : bc_aside,
         "bs_aside" : bs_aside,
+        "lf_aside": lf_aside
     }
     if request.POST:
         return redirect('checkout')
@@ -264,11 +265,13 @@ def Edge_painted_Detail(request):
         "mp_product" : mp_object,
     #    Product info   #
         "label" : product.Label,
-        "bc_aside": bc_aside,
         "Description": product.Description,
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bc_aside": bc_aside,
+        "bs_aside" : bs_aside,
+        "lf_aside": lf_aside,
     }
     if request.POST:
         return redirect('/checkout')
@@ -406,6 +409,8 @@ def Foil_business_card (request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bs_aside" : bs_aside,
+        "lf_aside": lf_aside,
     }
     if request.POST:
         return redirect('/checkout')
@@ -543,6 +548,8 @@ def Raised_spot_uv  (request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bs_aside" : bs_aside,
+        "lf_aside": lf_aside,
     }
     if request.POST:
         return redirect('/checkout')
@@ -679,6 +686,8 @@ def Pantone_business_cards(request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bs_aside" : bs_aside,
+        "lf_aside": lf_aside,
     }
     if request.POST:
         return redirect('/checkout')
@@ -814,6 +823,8 @@ def Plastic_business_card (request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bs_aside" : bs_aside,
+        "lf_aside": lf_aside,
     }
     if request.POST:
         return redirect('/checkout')
@@ -950,6 +961,8 @@ def raised_ink_business_cards (request):
         "image1" : product.image1,
         "image2" : product.image2,
         "image3" : product.image3,
+        "bs_aside" : bs_aside,
+        "lf_aside": lf_aside,
     }
     if request.POST:
         return redirect('/checkout')
