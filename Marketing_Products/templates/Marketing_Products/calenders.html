@@ -51,8 +51,9 @@
 
     .select-css option {
         font-weight: normal;
-
+        
     }
+   
 </style>
 {% endblock extra_css %}
 
@@ -101,7 +102,7 @@
                                 <ul class="level0">
                                     {% for urls_bc_aside, bc_object in bc_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="{{ urls_bc_aside }}" title="Premium Business Cards">
+                                        <a href="{{ urls_bc_aside }}" >
                                             {{ bc_object.Label }}
                                         </a>
                                     </li>
@@ -147,7 +148,7 @@
                                 </a>
 
                                 <ul class="level0">
-                                     {% for urls_mp_aside, mp_object in mp_aside %}
+                                    {% for urls_mp_aside, mp_object in mp_aside %}
                                     <li class="level1 nav-1-1 first item">
                                         <a href="{{ urls_mp_aside }}">
                                             {{ mp_object.Label }}
@@ -302,7 +303,8 @@
                                     <tr class="strikeout">
                                         <th>Quantity</th>
                                         <th>Discount</th>
-                                        <th rowspan="1"> US Standard Size </th>
+                                        <th rowspan="1"> Digital Fast</th>
+                                        <th rowspan="1"> Offset High Quality</th>
                                     </tr>
                                     {% for table in table %}
                                     <tr>
@@ -312,11 +314,24 @@
                                             <strong> -${{ table.Discount }} </strong>
                                             {% else %}
                                             ${{ table.Discount }}
+                                           {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if not table.digital_Fast_Discounted %}
+                                            ${{ table.digital_Fast }}
+                                            {% else %}
+                                            <Del>${{ table.digital_Fast }}</Del> &nbsp;
+                                            ${{ table.digital_Fast_Discounted }}
                                             {% endif %}
                                         </td>
                                         <td>
-                                            ${{ table.price }}
+                                            {% if not table.offset_HQ_Discounted %}
+                                            ${{ table.offset_HQ }}
+                                            {% else %}
+                                            <Del>${{ table.offset_HQ }}</Del> &nbsp; ${{ table.offset_HQ_Discounted }}
+                                            {% endif %}
                                         </td>
+
                                     </tr>
                                     {% endfor %}
                                 </table>
@@ -329,6 +344,19 @@
                         {% csrf_token %}
                         <p><strong>Please select following option according to your need.</strong></p>
                         <div class="options-list-w">
+                            <div class="row">
+                                <div class="block-options col-md-4 col-sm-5">
+                                    <div class="options-col">
+                                        <label for="quantity">Select Printing Type:</label>
+                                        <select class="select-css" name="printing_type">
+                                            <option value="digital_Fast">Rush options: Digital - Fast
+                                            </option>
+                                            <option value="offset_HQ">Non Rush options: Offset High Quality
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
                                     <div class="options-col">
@@ -346,7 +374,9 @@
                                     <div class="options-col">
                                         <label for="cars">Select Size:</label>
                                         <select class="select-css" name="size">
-                                            <option value="US_Standard_Size"> US Standard Size </option>
+                                            {% for menu1 in menu1 %}
+                                            <option value="{{  menu1.size }}">{{ menu1.size }}</option>
+                                            {% endfor %}
                                         </select>
                                     </div>
                                 </div>
@@ -357,56 +387,35 @@
                                         <label for="cars">Select Paper Type:</label>
                                         <select class="select-css" name="paper_type">
                                             {% for menu1 in menu1 %}
-                                            {% if menu1.paper_type == '19pt. Velvet Soft paper' %}
+                                            {% if menu1.paper_type %}
                                             <option value="{{  menu1.paper_type }}">{{ menu1.paper_type }}</option>
                                             {% endif %}
                                             {% endfor %}
                                         </select>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
                                     <div class="options-col">
-                                        <label for="cars">Select Ink Printing Sides:</label>
+                                        <label for="quantity">Select Printing Sides:</label>
                                         <select class="select-css" name="sides">
                                             <option value="one_side">One Sided</option>
                                             <option value="two_sided">Two Sided - Front and Back</option>
+
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <div class="options-col">
-                                        <label for="cars">Foil Sides:</label>
-                                        <select class="select-css" name="foils">
-                                            <option value="one_side">One Sided</option>
-                                            <option value="two_sided">Two Sided - Front and Back</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <div class="options-col">
-                                        <label for="cars">Foil Color:</label>
-                                        <select class="select-css" name="color">
-                                            <option value="Raised Gold Foil">Raised Gold Foil</option>
-                                            <option value="Raised Silver Foil">Raised Silver Foil</option>
-                                            <option value="Raised Holographic Foil">Raised Holographic Foil</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                        <input class="btn-readmore" type="submit" value="See Quote">
+                        </div>
+                        <input class="btn-readmore" type="submit" value="See Quote" >
                     </form>
                     <br>
                     <p style="padding-right:30px;"> Have some special requests?
                         <a href="{% url 'contact-us' %}" class="btn-readmore">Get in touch!</a>
                     </p>
-                    <!-- {% comment %} <a href="#" class="btn-readmore" title="Quality Printing"><strong> See Quote </strong></a> {% endcomment %} -->
+                        <!-- {% comment %} <a href="#" class="btn-readmore" title="Quality Printing"><strong> See Quote </strong></a> {% endcomment %} -->
                     <!-- <div class="add-to-cart">
                         <div class="quantity-price-w row">
                             <div class="price-total col-xs-6">
