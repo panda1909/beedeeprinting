@@ -18,7 +18,7 @@ def Pillow_Boxes(request):
     lf_object = lf_products.objects.all()
     mp_object = mp_products.objects.all()
 
-    bc_urls = ["business-card-detail" , "edge-painted-detail"]
+    bc_urls = ["/business-cards/business-cards:business-card-detail" , "/business-cards/edge-painted-detail"]
     bs_urls = [""]
     lf_urls = [""]
     mp_urls = [""]

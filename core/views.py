@@ -37,18 +37,20 @@ class Aboutus(TemplateView):
 def Checkout(request):
     try:
         total = request.session['invoice']
-        label = request.session['label']
-        discount = request.session['discount']
-        id = request.session['id']
-        category = request.session['cat']
-        quantity = request.session['quantity']
-        extra_f_dict = request.session['extra_f']
-        print('Checkout try')
-        json_dump = json.dumps(extra_f_dict)
-        json_obj = json.loads(json_dump)
-        size = extra_f_dict['size']
+        
     except:
         return HttpResponse("Your cart is empty")
+
+    label = request.session['label']
+    discount = request.session['discount']
+    id = request.session['id']
+    category = request.session['cat']
+    quantity = request.session['quantity']
+    extra_f_dict = request.session['extra_f']
+    print('Checkout try')
+    json_dump = json.dumps(extra_f_dict)
+    json_obj = json.loads(json_dump)
+    size = extra_f_dict['Size']
 
     if category == 'bc_products':
         product = bc_products.objects.get(id=id)
@@ -124,6 +126,7 @@ def Checkout(request):
         'tax': tax,
         'final_price': price_final,
         'image': product.image1,
+        'quantity': quantity,
     }
     return render(request, 'core/checkout.html', context)
 

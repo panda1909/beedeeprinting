@@ -38,7 +38,7 @@ class edge_painted_business_cards_price(models.Model):
 
 
 class foil_business_cards_price(models.Model):
-    US_Standard_size = models.CharField(max_length=555)
+    US_Standard_size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
@@ -51,7 +51,7 @@ class foil_business_cards_price(models.Model):
         verbose_name = "3 - Foil business cards"
 
 class raised_spot_uv_business_cards_price(models.Model):
-    US_Standard_size = models.CharField(max_length=555)
+    US_Standard_size = models.CharField(max_length=555, blank=True)
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     price = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])

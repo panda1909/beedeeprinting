@@ -282,19 +282,18 @@ def Foil_business_card (request):
 
     if request.POST:
         # assigning user selected option to variable for queries
-        var = request.POST
-        quantity = var['quantity']
-        size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
-        color = var['color']
+        
+        quantity = request.POST.get('quantity')
+        size = request.POST.get('size')
+        paper_type = request.POST.get('paper_type')
+        sides = request.POST.get('sides')
+        foil_sides = request.POST.get('foils')
+        color = request.POST.get('color')
 
-        # queries against relevant options
-        # size and quantity price query
-        print(size)
-        if size == 'US_Standard_Size':
-            extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = foil_business_cards_price.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+        print(quantity,size,paper_type,sides,foil_sides,color)
+
+        extra_size = '2"x3.5" - US Standard Size'
+        type_quantity_query = foil_business_cards_price.objects.filter(quantity=quantity).values('id','price')
        
         # paper type price query
         # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
@@ -302,7 +301,7 @@ def Foil_business_card (request):
 
         # Discount query
         # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
-        discount_query = edge_painted_business_cards_price.objects.filter(quantity=quantity).values('id', 'Discount')
+        discount_query = foil_business_cards_price.objects.filter(quantity=quantity).values('id', 'Discount')
 
 
 
@@ -319,18 +318,20 @@ def Foil_business_card (request):
         else:
             price_side = 0
 
+        # foil side query
+        if foil_sides == 'two_sided':
+            foil_sides_query = Extra_features.objects.filter(size=extra_size).values('second_side_foil_price')
+            for q in foil_sides_query:
+                foi_side_price = q['second_side_foil_price']
+
+
 
         for i in paper_price_query:
             price_paper = i['paper_type_price']
 
         for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
-
+            price_size_quantity = o['price']
+            
         for y in discount_query:
             price_discount = y['Discount']
 
@@ -350,15 +351,16 @@ def Foil_business_card (request):
         print('----------')
         print('-',price_discount)
 
-        extra_f_dict = {"size": size,
-                        "paper_type": paper_type,
-                        "sides": sides,
-                        "color": color}    
+        extra_f_dict = {"Size": size,
+                        "Paper_type": paper_type,
+                        "Sides": sides,
+                        "Foil color": color,
+                        "Foil Sides": foil_sides}    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
+        request.session['id'] = 3
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
@@ -371,6 +373,8 @@ def Foil_business_card (request):
         request.session['label'] = 0
         request.session['discount'] = 0
         print('Form Not Submitted')
+
+    print(request.session['invoice'])
 
     context = {
     #   Total Price and form 
@@ -397,10 +401,10 @@ def Foil_business_card (request):
     return render(request, "Business_Cards/foils_bc.html", context)
 
 
-def Raised_spot_uv  (request):
+def Raised_spot_uv(request):
 
     product = bc_products.objects.get(id=4)
-    table = foil_business_cards_price.objects.all()
+    table = raised_spot_uv_business_cards_price.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -420,14 +424,14 @@ def Raised_spot_uv  (request):
         size = var['size']
         paper_type = var['paper_type']
         sides = var['sides']
-        color = var['color']
+        raised = var['raised']
 
         # queries against relevant options
         # size and quantity price query
         print(size)
         if size == 'US_Standard_Size':
             extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = foil_business_cards_price.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+            type_quantity_query = foil_business_cards_price.objects.filter(quantity=quantity).values('id','price')
        
         # paper type price query
         # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
@@ -442,12 +446,12 @@ def Raised_spot_uv  (request):
         # sides price query
         if sides == 'two_sided':
             # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_price')
+            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_raied_price')
             print(sides_query)
             for u in sides_query:
                 # print('------Second Side Price--------')
                 # print(u)
-                price_side = u['second_side_price']
+                price_side = u['second_side_raied_price']
                 break
         else:
             price_side = 0
@@ -457,12 +461,8 @@ def Raised_spot_uv  (request):
             price_paper = i['paper_type_price']
 
         for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
+            price_size_quantity = o['price']
+
 
         for y in discount_query:
             price_discount = y['Discount']
@@ -483,15 +483,16 @@ def Raised_spot_uv  (request):
         print('----------')
         print('-',price_discount)
 
-        extra_f_dict = {"size": size,
-                        "paper_type": paper_type,
-                        "sides": sides,
-                        "color": color}    
+        extra_f_dict = {"Size": size,
+                        "Paper_type": paper_type,
+                        "Sides": sides,
+                        "Raised Sides": raised,
+                        }    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
+        request.session['id'] = 4
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
