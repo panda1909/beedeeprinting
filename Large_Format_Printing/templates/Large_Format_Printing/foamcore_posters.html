@@ -1,10 +1,61 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load index %}
-{{ my_list|index:x }}
+
 {% block title %}
 <title> Product detail </title>
 {% endblock title %}
+
+{% block extra_css %}
+<style>
+    .select-css {
+        display: block;
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 700;
+        color: rgb(133, 127, 127);
+        line-height: 1.3;
+        padding: .6em 1.4em .5em .8em;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        border: 1px solid #080808;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+        border-radius: .5em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+            linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+    }
+
+    .select-css::-ms-expand {
+        display: none;
+    }
+
+    .select-css:hover {
+        border-color: rgb(136, 136, 136);
+    }
+
+    .select-css:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 1px 3px #3500D3;
+        box-shadow: 0 0 0 3px -moz-mac-focusring;
+        color: #222;
+        outline: none;
+    }
+
+    .select-css option {
+        font-weight: normal;
+        
+    }
+   
+</style>
+{% endblock extra_css %}
 
 {% block content %}
 <!--Main Product Detail : Begin-->
@@ -23,7 +74,7 @@
                             <a href="{% url 'home' %}">Home</a>
                         </li>
                         <li>
-                            <a href="{% url 'FoamCorePosters' %}">Large Format Printing</a>
+                            <a href="{% url 'business_card' %}">Business Cards</a>
                         </li>
                         <li>
                             <span>{{ label }}</span>
@@ -49,10 +100,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for bc_product in bc_product %}
+                                    {% for urls_bc_aside, bc_object in bc_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bc_product.Label }}
+                                        <a href="{{ urls_bc_aside }}" >
+                                            {{ bc_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -65,10 +116,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for bs_product in bs_product %}
+                                    {% for urls_bs_aside, bs_object in bs_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bs_product.Label }}
+                                        <a href="{{ urls_bs_aside }}">
+                                            {{ bs_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -81,10 +132,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for lf_product in lf_product %}
+                                    {% for urls_lf_aside, lf_object in lf_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ lf_product.Label }}
+                                        <a href="{{ urls_lf_aside }}">
+                                            {{ lf_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -156,15 +207,15 @@
                         <div class="col-md-6">
                             <div class="tab-content clearfix">
                                 <div role="tabpanel" class="tab-pane active">
-                                    <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w">
+                                    <div class="col-md-8 col-md-offset-2 col-xs-12 ideals-w" style="margin-top: 10px;">
                                         <div class="ideal">
-                                            <img src="{{ image1 }}" alt="ideal 1">
+                                            <img src="{{ image1.url }}" alt="ideal 1">
                                         </div>
                                         <div class="ideal">
-                                            <img src="{{ image2 }}" alt="ideal 2">
+                                            <img src="{{ image2.url }}" alt="ideal 2">
                                         </div>
                                         <div class="ideal">
-                                            <img src="{{ image3 }}" alt="ideal 3">
+                                            <img src="{{ image3.url }}" alt="ideal 3">
                                         </div>
                                     </div>
                                 </div>
@@ -251,142 +302,132 @@
                                 <table>
                                     <tr class="strikeout">
                                         <th>Quantity</th>
-                                        <th rowspan="1"> 12" x 18" </th>
-                                        <th rowspan="1"> 18" x 24"</th>
-                                        <th rowspan="1"> 24" x 24" </th>
-                                        <th rowspan="1"> 20" x 30"</th>
-                                        <th rowspan="1"> 24" x 36" </th>
-                                        <th rowspan="1"> 36" x 48"</th>
-                                        <th rowspan="1"> 46" x 48" </th>
+                                        <th>Discount</th>
+                                        <th rowspan="1"> Digital Fast</th>
+                                        <th rowspan="1"> Offset High Quality</th>
                                     </tr>
                                     {% for table in table %}
                                     <tr>
-<<<<<<< HEAD
-                                        <td>{{ table.Quantity }}</td>
+                                        <th>{{ table.quantity }} </th>
                                         <td>
-                                            <!-- {% for price_1218 in price_1218 %} -->
-                                            <!-- {% with index=forloop.counter0 %} -->
-
-                                            {{ price_1218.1 }}
-                                            
-                                            <!-- {% endwith %} -->
-<!--                                                                         {% endfor %} -->
+                                            {% if table.Discount %}
+                                            <strong> -${{ table.Discount }} </strong>
+                                            {% else %}
+                                            ${{ table.Discount }}
+                                           {% endif %}
                                         </td>
-                                        <!-- <td>
-                                            {{ price.Eighteen_By_TwentyFour }} 
-                                        </td> -->
+                                        <td>
+                                            {% if not table.digital_Fast_Discounted %}
+                                            ${{ table.digital_Fast }}
+                                            {% else %}
+                                            <Del>${{ table.digital_Fast }}</Del> &nbsp;
+                                            ${{ table.digital_Fast_Discounted }}
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if not table.offset_HQ_Discounted %}
+                                            ${{ table.offset_HQ }}
+                                            {% else %}
+                                            <Del>${{ table.offset_HQ }}</Del> &nbsp; ${{ table.offset_HQ_Discounted }}
+                                            {% endif %}
+                                        </td>
+
                                     </tr>
                                     {% endfor %}
-
-=======
-                                        <td>
-                                            {{ table.Quantity }}
-                                        </td>
-                                    {% endfor %}    
-                                    {% for each in price_1218 %}
-                                        <td>
-                                            {{ each }} 
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                    
-                                   
->>>>>>> 6fcf06bebb64ec45810edbac3e533f9c8c063c52
                                 </table>
                             </div>
                         </div>
                     </div>
                     <br>
                     <br>
-                    <form method="POST">
+                    <form method="POST" id="product-detail-form">
+                        {% csrf_token %}
+                        <p><strong>Please select following option according to your need.</strong></p>
                         <div class="options-list-w">
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
-                                    <p> <strong>Select Business Card Turnaround Time:</strong></p>
-
                                     <div class="options-col">
-                                        <span class="cur-option-w">
-                                            <span class="cur-option-val">-----</span>
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                        <ul class="d-none po-list">
-                                            <li><span>Rush options: Digital - Fast</span></li>
-                                            <li><span>Non Rush options: Offset High Quality</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <p> <strong>Select Quantity:</strong></p>
-                                    <div class="options-col">
-                                        <span class="cur-option-w">
-                                            <span class="cur-option-val">-----</span>
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                        <ul class="d-none po-list">
-                                            <li><span>{{ menu.quantity }}</span></li>
-                                        </ul>
+                                        <label for="quantity">Select Printing Type:</label>
+                                        <select class="select-css" name="printing_type">
+                                            <option value="digital_Fast">Rush options: Digital - Fast
+                                            </option>
+                                            <option value="offset_HQ">Non Rush options: Offset High Quality
+                                            </option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
-                                    <p> <strong>Select Size:</strong></p>
                                     <div class="options-col">
-                                        <span class="cur-option-w">
-                                            <span class="cur-option-val">----</span>
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                        <ul class="d-none po-list">
-                                            {% for menu1 in menu1 %}
-                                            <li><span>{{ menu1.size }}</span></li>
+                                        <label for="cars">Select Quantity:</label>
+                                        <select class="select-css" name="quantity">
+                                            {% for menu in menu %}
+                                            <option value="{{ menu.quantity }}">{{ menu.quantity }}</option>
                                             {% endfor %}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <p> <strong> Select Paper Type: </strong></p>
-                                    <div class="options-col">
-                                        <span class="cur-option-w">
-                                            <span class="cur-option-val">-----</span>
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                        <ul class="d-none po-list">
-                                            {% for menu1 in menu1 %}
-                                            <li><span>{{ menu1.paper_type }}</span></li>
-                                            {% endfor %}
-                                        </ul>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
-                                    <p> <strong> Select Side Printing: </strong></p>
                                     <div class="options-col">
-                                        <span class="cur-option-w">
-                                            <span class="cur-option-val">-----</span>
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                        <ul class="d-none po-list">
-                                            <li><span>One Sided</span></li>
-                                            <li><span>Two Sided - Front and Back</span></li>
-                                        </ul>
+                                        <label for="cars">Select Size:</label>
+                                        <select class="select-css" name="size">
+                                            {% for menu1 in menu1 %}
+                                            <option value="{{  menu1.size }}">{{ menu1.size }}</option>
+                                            {% endfor %}
+                                        </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="block-options col-md-4 col-sm-5">
+                                    <div class="options-col">
+                                        <label for="cars">Select Paper Type:</label>
+                                        <select class="select-css" name="paper_type">
+                                            {% for menu1 in menu1 %}
+                                            {% if menu1.paper_type %}
+                                            <option value="{{  menu1.paper_type }}">{{ menu1.paper_type }}</option>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </div>
 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="block-options col-md-4 col-sm-5">
+                                    <div class="options-col">
+                                        <label for="quantity">Select Printing Sides:</label>
+                                        <select class="select-css" name="sides">
+                                            <option value="one_side">One Sided</option>
+                                            <option value="two_sided">Two Sided - Front and Back</option>
+
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- <input type="submit"/> -->
+                        <input class="btn-readmore" type="submit" value="See Quote" >
                     </form>
-                    <div class="add-to-cart">
+                    <br>
+                    <p style="padding-right:30px;"> Have some special requests?
+                        <a href="{% url 'contact-us' %}" class="btn-readmore">Get in touch!</a>
+                    </p>
+                        <!-- {% comment %} <a href="#" class="btn-readmore" title="Quality Printing"><strong> See Quote </strong></a> {% endcomment %} -->
+                    <!-- <div class="add-to-cart">
                         <div class="quantity-price-w row">
                             <div class="price-total col-xs-6">
                                 <label>Total:</label>
-                                <span class="price">$13.50</span>
+                                <span class="price">${{ total_price }}</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="col-md-12 col-sm-12 upload-add-cart">
+
+
+                <!-- <div class="col-md-12 col-sm-12 upload-add-cart">
                     <div class="row">
                         <div class="upload-file col-md-12 col-sm-12 hidden-xs">
                             <div class="atc-header">
@@ -421,14 +462,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
     <!--Add to cart : End-->
 
     <!-- Product upload file: Begin-->
-    <section class="upload-file-w d-none">
+    <!-- <section class="upload-file-w d-none">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-offset-md-3">
@@ -470,13 +511,19 @@
                 </div>
             </div>
         </div>
-    </section><!-- Product upload file: End-->
+    </section> -->
+    <!-- Product upload file: End-->
 </main><!-- Main Product Detail: End -->
 
 {% endblock content %}
 
 {% block extra_js %}
-<script type="text/javascript">
+<!-- <script type="text/javascript">
+    $(document).on('submit', '#product-detail-form', function(e){
+        e.preventDefault();
+    });
+</script> -->
+<!-- <script type="text/javascript">
     // form upload
     $('#id_ajax_upload_form').submit(function (e) {
         e.preventDefault();
@@ -506,5 +553,5 @@
         });
     });
     // end
-</script>
+</script> -->
 {% endblock extra_js %}

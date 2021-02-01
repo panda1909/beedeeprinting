@@ -19,7 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('lf-format', include('Large_Format_Printing.urls')),
+    path('large-format/', include('Large_Format_Printing.urls')),
     path('business-cards/', include('Business_Cards.urls')),
+    path('business-stationary/', include('Business_Stationary.urls')),
     path('boxes/', include('boxes.urls')),
 ]
