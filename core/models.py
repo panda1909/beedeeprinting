@@ -53,7 +53,7 @@ class CustomerData(models.Model):
     Orders = models.ManyToManyField(Orders)
 
     def __str__(self):
-        return str(self.Name)
+        return (str(self.Name) + " / " + str(self.Email))
 
     class Meta:
         verbose_name = "2 - Customer Information"
