@@ -146,10 +146,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for mp_product in mp_product %}
+                                     {% for urls_mp_aside, mp_object in mp_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ mp_product.Label }}
+                                        <a href="{{ urls_mp_aside }}">
+                                            {{ mp_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -182,10 +182,10 @@
                                         </a>
                                     </li>
                                     {% endfor %}
-                                    {% for mp_product in mp_product %}
+                                     {% for urls_mp_aside, mp_object in mp_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ mp_product.Label }}
+                                        <a href="{{ urls_mp_aside }}">
+                                            {{ mp_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
