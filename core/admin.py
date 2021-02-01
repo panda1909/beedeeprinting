@@ -11,3 +11,4 @@ from .models import *
 admin.site.register(Orders)
 admin.site.register(CustomerData)
 admin.site.register(Messages)
+admin.site.register(Bookedcalls)

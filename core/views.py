@@ -16,7 +16,7 @@ from .models import Orders, CustomerData
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
-from .form import checkoutForm,queries,BoxcheckoutForm
+from .form import checkoutForm,queries, bookcalls
 import shortuuid
 
 
@@ -24,7 +24,11 @@ import shortuuid
 # Create your views here.
 
 def Home(request):
-    return render(request, "core/index.html")
+    form = bookcalls(request.POST)
+    context = {
+        "form": form
+    }
+    return render(request, "core/index.html", context)
 
 class Aboutus(TemplateView):
     def get(self, request):
@@ -62,10 +66,10 @@ def Checkout(request):
     print(product)
 
     price = total - discount
-    tax = price * .16
-    round_tax = round(tax,2)
-    tax = round_tax
-    price_final = price + tax
+    tax = "Shipping will be calculated after order confirmation"
+    # round_tax = round(tax,2)
+    # tax = round_tax
+    price_final = price
     order_id = shortuuid.ShortUUID().random(length=12)
     # shipping info form
     if request.method == 'POST':
