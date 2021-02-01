@@ -115,10 +115,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for bs_product in bs_product %}
+                                    {% for urls_bs_aside, bs_object in bs_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bs_product.Label }}
+                                        <a href="{{ urls_bs_aside }}">
+                                            {{ bs_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -131,10 +131,10 @@
                                 </a>
 
                                 <ul class="level0">
-                                    {% for lf_product in lf_product %}
+                                    {% for urls_lf_aside, lf_object in lf_aside %}
                                     <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ lf_product.Label }}
+                                        <a href="{{ urls_lf_aside }}">
+                                            {{ lf_object.Label }}
                                         </a>
                                     </li>
                                     {% endfor %}
