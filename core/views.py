@@ -29,7 +29,8 @@ def Home(request):
         "form": form
     }
     return render(request, "core/index.html", context)
-
+def Emptycart(request):
+    return render(request, 'core/emptycart.html')
 class Aboutus(TemplateView):
     def get(self, request):
         return render(request, 'core/aboutus.html')

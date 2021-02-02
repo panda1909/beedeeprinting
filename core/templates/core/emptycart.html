@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Order status</title>
+{% endblock title %}
+{% block content %}
+<!--Main category : Begin-->
+<div class="row">
+    <main id="main" class="account dashboard">
+        <section class="header-page">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-3 hidden-xs">
+                    <h1 class="mh-title">Order Status</h1>
+                    </div> -->
+                    <div class="breadcrumb-w col-sm-12">
+                        <span class="hidden-xs">You are here:</span>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Order Status</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="account-content parten-bg">
+            <div class="container">
+                <!--Account top banner -->
+                <div class="row">
+                    <div class="col-md-12 cart-banner-top hidden-xs">
+                        <a href="#" title="cart top banner">
+                            <img src="{% static 'images/banner/cart/top-banner.jpg' %}" alt="Cart top banner" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row acc-dashboard">
+
+                    <!--Account main content : Begin -->
+                    <section class="account-main ">
+                       
+                        <div class="row db-content">
+                            <div class="db-hello col-xs-12">
+                                <div class="pad-1015" style="padding-left: 5%;">
+
+                                    <p style="color: red; font-size: 32px"><strong>Your art is empty.</strong> </p>
+                                    <a href="{% url 'home' %}">Continue shopping?</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- Cart main content : End -->
+                </div>
+
+            </div>
+        </section>
+
+       
+
+    </main>
+</div>
+<!-- Main Category: End -->
+{% endblock content %}
