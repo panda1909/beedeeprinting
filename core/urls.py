@@ -11,7 +11,7 @@ urlpatterns = [
      path('b-checkout', BoxCheckout, name='b-checkout'),
      path('empty-cart', Emptycart, name='empty-cart'),
      # Catogery 
-     path('business-Cards', Business_card, name='business_card' ),
+     path('business-cards', Business_card, name='business-cards' ),
      path('business-Stationary', Business_stationary, name='business_stationary'),
      path('marketing-Products', Marketing_products, name='marketing_products'),
      path('large-Format', Large_format, name='large_format'),
