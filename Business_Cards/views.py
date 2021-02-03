@@ -469,7 +469,7 @@ def Raised_spot_uv(request):
             type_quantity_query = foil_business_cards_price.objects.filter(quantity=quantity).values('id','price')
        
         # paper type price query
-        # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
+
         paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id', 'paper_type_price')
 
         # Discount query
@@ -598,17 +598,17 @@ def Pantone_business_cards(request):
         paper_type = var['paper_type']
         sides = var['sides']
         color = var['color']
+        printing_type = var['printing_type']
 
         # queries against relevant options
         # size and quantity price query
         print(size)
-        if size == 'US_Standard_Size':
-            extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = pantone_business_cards_price.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+        type_quantity_query = pantone_business_cards_price.objects.filter(quantity=quantity).values('id','price')
        
+        print(type_quantity_query)
+
         # paper type price query
-        # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id', 'paper_type_price')
+        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('paper_type_price')
 
         # Discount query
         # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
@@ -634,12 +634,7 @@ def Pantone_business_cards(request):
             price_paper = i['paper_type_price']
 
         for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
+            price_size_quantity = o['price']
 
         for y in discount_query:
             price_discount = y['Discount']
@@ -660,15 +655,16 @@ def Pantone_business_cards(request):
         print('----------')
         print('-',price_discount)
 
-        extra_f_dict = {"size": size,
+        extra_f_dict = {"Size": size,
                         "paper_type": paper_type,
                         "sides": sides,
-                        "color": color}    
-    
+                        "color": color,
+                        "printing_type": printing_type,}    
+        
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
+        request.session['id'] = 5
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
@@ -735,64 +731,44 @@ def Plastic_business_card (request):
         var = request.POST
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
-        color = var['color']
+        plastic_type = var['plastic_type']
+        corner = var['corner']
 
         # queries against relevant options
         # size and quantity price query
         print(size)
         if size == 'US_Standard_Size':
             extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = plastic_business_cards_price.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+            type_quantity_query = plastic_business_cards_price.objects.filter(quantity=quantity).values('id',size)
        
         # paper type price query
         # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id', 'paper_type_price')
+        plastic_price_query = Extra_features.objects.filter(plastic_type=plastic_type).values('id', 'plastic_type_price')
 
         # Discount query
         # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
         discount_query = plastic_business_cards_price.objects.filter(quantity=quantity).values('id', 'Discount')
 
 
-
-        # sides price query
-        if sides == 'two_sided':
-            # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_price')
-            print(sides_query)
-            for u in sides_query:
-                # print('------Second Side Price--------')
-                # print(u)
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
-
-
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
+        for i in plastic_price_query:
+            price_plastic = i['plastic_type_price']
 
         for o in type_quantity_query:
             if size == 'US_Standard_Size':
                 price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
+            elif size == 'Credit_card_Size':
+                price_size_quantity = o['Credit_card_Size']
 
         for y in discount_query:
             price_discount = y['Discount']
 
         # adding sum of options        
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity)
+        total_price = ((float(price_plastic) * float(quantity)) + price_size_quantity)
 
         
         #testing
         print('----------')
-        print(price_paper)
-        print('----------')
-        print(price_side)
+        print(price_plastic)
         print('----------')
         print(price_size_quantity)
         print('----------')
@@ -800,15 +776,15 @@ def Plastic_business_card (request):
         print('----------')
         print('-',price_discount)
 
-        extra_f_dict = {"size": size,
-                        "paper_type": paper_type,
-                        "sides": sides,
-                        "color": color}    
+        extra_f_dict = {"Size": size,
+                        "plastic_type": plastic_type,
+                        "corner": corner,
+                        }    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
+        request.session['id'] = 6
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
@@ -847,7 +823,7 @@ def Plastic_business_card (request):
     }
     if request.POST:
         return redirect('/checkout')
-    return render(request, "Business_Cards/pantone_cards.html", context)
+    return render(request, "Business_Cards/plastic_bc.html", context)
 
 def raised_ink_business_cards (request):
 
@@ -861,11 +837,12 @@ def raised_ink_business_cards (request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
-    mp_aside = zip(urls_mp_aside, mp_object)
     
+    mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
     lf_aside = zip(urls_lf_aside, lf_object)
+    
     menu = raised_ink_business_cards_price.objects.all()
     menu1 = Extra_features.objects.all()
 
@@ -915,12 +892,8 @@ def raised_ink_business_cards (request):
             price_paper = i['paper_type_price']
 
         for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
+            price_size_quantity = o['US_Standard_Size']
+
 
         for y in discount_query:
             price_discount = y['Discount']
@@ -941,7 +914,7 @@ def raised_ink_business_cards (request):
         print('----------')
         print('-',price_discount)
 
-        extra_f_dict = {"size": size,
+        extra_f_dict = {"Size": size,
                         "paper_type": paper_type,
                         "sides": sides,
                         "color": color}    
@@ -949,7 +922,7 @@ def raised_ink_business_cards (request):
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
+        request.session['id'] = 7
         request.session['cat'] = 'bc_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
@@ -989,4 +962,4 @@ def raised_ink_business_cards (request):
     }
     if request.POST:
         return redirect('/checkout')
-    return render(request, "Business_Cards/pantone_cards.html", context)
+    return render(request, "Business_Cards/raised_ink.html", context)

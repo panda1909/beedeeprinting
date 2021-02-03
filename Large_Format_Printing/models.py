@@ -40,26 +40,24 @@ class PosterPrinting(models.Model):
 
 
 class RetractableBanners(models.Model):
-    Quantity_From = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Quantity_To = models.PositiveIntegerField(default=0, blank=False, editable=True)
+    Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Thirty_Three_By_Eighty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '33" x 80"')
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '33" x 80" Discounted')
     Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
 
     def __str__(self):
-        return (str(self.Quantity_From)+ "-" + str(self.Quantity_To))
+        return str(self.Quantity)
 
     class Meta:
         verbose_name = "3 - Retractable Banner"
 
 class TableCovers(models.Model):
-    Quantity_From = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    Quantity_To = models.PositiveIntegerField(default=0, blank=False, editable=True)
+    Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Ninety_By_One_Three_Two = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '6 foot table cover (90" x 132")')
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
 
     def __str__(self):
-        return (str(self.Quantity_From)+ "-" + str(self.Quantity_To))
+        return str(self.Quantity)
 
     class Meta:
         verbose_name = "4 - Table Cover"     
@@ -75,7 +73,7 @@ class FloorStickers(models.Model):
    Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
 
    def __str__(self):
-       return str(self.quantity)
+       return str(self.Quantity)
 
    class Meta:
        verbose_name = "5 - Floor Sticker"

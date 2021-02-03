@@ -40,7 +40,7 @@ def Checkout(request):
         total = request.session['invoice']
         
     except:
-        return HttpResponse("Your cart is empty")
+        return redirect('empty-cart')
 
     label = request.session['label']
     discount = request.session['discount']
@@ -56,7 +56,7 @@ def Checkout(request):
     if category == 'bc_products':
         product = bc_products.objects.get(id=id)
         print(category, id)
-    elif category == 'bs_prodcuts':
+    elif category == 'bs_products':
         product = bs_products.objects.get(id=id)
         print(category, id)
     elif category == 'lf_products':
@@ -68,7 +68,7 @@ def Checkout(request):
 
     print(product)
 
-    price = total - discount
+    price = total
     tax = "Shipping will be calculated after order confirmation"
     # round_tax = round(tax,2)
     # tax = round_tax

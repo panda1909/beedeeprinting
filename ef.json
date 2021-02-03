@@ -1,0 +1,145 @@
+[{
+        "model": "Business_Cards.extra_features",
+        "pk": 1,
+        "fields": {
+            "size": "2\"x3.5\" - US Standard Size",
+            "size_price": 2.0,
+            "paper_type": "16pt. silk coated bright white",
+            "paper_type_price": 0.27,
+            "second_side_price": 1.0,
+            "second_side_foil_price": 0.5,
+            "second_side_raied_price": 0.3,
+            "traditional_raised_printing_price": 0.7,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 2,
+        "fields": {
+            "size": "2.125\"x3.375\" - European Size",
+            "size_price": 5.0,
+            "paper_type": "16pt. Smooth Uncoated bright white",
+            "paper_type_price": 3.0,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 3,
+        "fields": {
+            "size": "1.5\" x 3.5\" - Thin Size",
+            "size_price": 5.0,
+            "paper_type": "32pt. bright white uncoated paper",
+            "paper_type_price": 5.0,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 4,
+        "fields": {
+            "size": "12",
+            "size_price": 0.0,
+            "paper_type": "19pt. Velvet Soft paper",
+            "paper_type_price": 0.89,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 5,
+        "fields": {
+            "size": "15pt. (130lb) Uncoated Bright White paper",
+            "size_price": 10.0,
+            "paper_type": "",
+            "paper_type_price": 0.0,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 6,
+        "fields": {
+            "size": "15pt. (130lb) Uncoated Natural White paper (cream)",
+            "size_price": 12.0,
+            "paper_type": "",
+            "paper_type_price": 0.0,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 7,
+        "fields": {
+            "size": "21pt. (160lb) Uncoated Bright White paper",
+            "size_price": 5.0,
+            "paper_type": "",
+            "paper_type_price": 0.0,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.extra_features",
+        "pk": 8,
+        "fields": {
+            "size": "16pt. (130lb) Linen Texture Bright White paper",
+            "size_price": 6.0,
+            "paper_type": "",
+            "paper_type_price": 0.0,
+            "second_side_price": 0.0,
+            "second_side_foil_price": 0.0,
+            "second_side_raied_price": 0.0,
+            "traditional_raised_printing_price": 0.0,
+            "plastic_type": "",
+            "plastic_type_price": 0.0,
+            "raised_ink_colors": "",
+            "rasied_ink_colors_price": 0.0
+        }
+    }
+]
