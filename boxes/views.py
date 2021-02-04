@@ -26,7 +26,7 @@ def Pillow_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
     
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -64,7 +64,7 @@ def Pillow_Boxes(request):
     return render(request, 'boxes/pillow-boxes.html', context)
 
 def Gable_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=2)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -80,7 +80,7 @@ def Gable_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -111,14 +111,14 @@ def Gable_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '2'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/gable_box.html', context)
 
 def Windows_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=3)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -134,7 +134,7 @@ def Windows_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -165,14 +165,14 @@ def Windows_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '3'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/window_box.html', context)
 
 def Mailer_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=4)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -188,7 +188,7 @@ def Mailer_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -219,14 +219,14 @@ def Mailer_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '4'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/mailer_box.html', context)
 
 def Kraft_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=5)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -242,7 +242,7 @@ def Kraft_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -273,14 +273,14 @@ def Kraft_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '5'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/kraft_box.html', context)
 
 def Cosmetics_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=6)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -296,7 +296,7 @@ def Cosmetics_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
     lf_aside = zip(urls_lf_aside,lf_object)
@@ -326,14 +326,14 @@ def Cosmetics_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '6'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/cosmetics_box.html', context)
 
 def Display_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=8)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -349,7 +349,7 @@ def Display_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
     lf_aside = zip(urls_lf_aside,lf_object)
@@ -379,14 +379,14 @@ def Display_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '8'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/display_box.html', context)
 
 def Sleeve_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=7)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -402,7 +402,7 @@ def Sleeve_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -433,14 +433,14 @@ def Sleeve_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '7'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/sleeve_box.html', context)
 
 def Beverages_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=9)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -456,7 +456,7 @@ def Beverages_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -487,14 +487,14 @@ def Beverages_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '9'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/beverage_box.html', context)
 
 def Candle_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=10)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -510,7 +510,7 @@ def Candle_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -541,14 +541,14 @@ def Candle_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '10'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/candle_box.html', context)
 
 def Autoparts_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=11)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -564,7 +564,7 @@ def Autoparts_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -595,14 +595,14 @@ def Autoparts_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '11'
         return redirect('b-checkout')
 
 
     return render(request, 'boxes/auto_parts_box.html', context)
 
 def Pizza_Boxes(request):
-    product = b_products.objects.get(id=1)
+    product = b_products.objects.get(id=12)
     
     b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
@@ -618,7 +618,7 @@ def Pizza_Boxes(request):
     
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
    
-    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"display-boxes-detail", "sleeve-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
+    b_urls = ["pillow-boxes-detail", "gable-boxes-detail" ," window-boxes-detail", "mailer-boxes-detail" , " kraft-boxes-detail", "cosmetics-boxes-detail" ,"sleeve-boxes-detail", "display-boxes-detail", "beverage-boxes-detail", "candle-boxes-detail", "auto-parts-boxes-detail", "pizza-boxes-detail"]
 
     bc_aside = zip(urls_bc_aside,bc_object)
     bs_aside = zip(urls_bs_aside,bs_object)
@@ -649,9 +649,9 @@ def Pizza_Boxes(request):
     }
 
     if request.POST:
-        request.session['id'] = '1'
+        request.session['id'] = '12'
         return redirect('b-checkout')
 
 
-    return render(request, 'boxes/ppizza_box.html', context)
+    return render(request, 'boxes/pizza_box.html', context)
 

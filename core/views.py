@@ -16,7 +16,7 @@ from .models import Orders, CustomerData
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
-from .form import checkoutForm,queries, bookcalls
+from .form import checkoutForm,queries, bookcalls, BoxcheckoutForm
 import shortuuid
 
 
