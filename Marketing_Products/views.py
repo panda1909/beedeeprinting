@@ -484,6 +484,8 @@ def Laberlsandstickers_Detail(request):
         if format == 'individual_cut_labels_price':
             format_price_query = Extra_features.objects.values_list('individual_cut_labels_price', flat=True)
             price_format = format_price_query[0]
+        else:
+            price_format = 0
                 
 
         # Discount query
@@ -574,81 +576,56 @@ def NCRforms_Detail (request):
         var = request.POST
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
+        number = var['number']
+        parts = var['parts']
         color = var['color']
 
         # queries against relevant options
         # size and quantity price query
-        print(size)
-        if size == 'US_Standard_Size':
-            extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = NCRForms.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+        size_quantity_query = NCRForms.objects.filter(Quantity=quantity).values(size)
        
-        # paper type price query
-        # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id', 'paper_type_price')
-
-        # Discount query
-        # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
-        discount_query = NCRForms.objects.filter(quantity=quantity).values('id', 'Discount')
-
-
-
-        # sides price query
-        if sides == 'two_sided':
-            # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_price')
-            print(sides_query)
-            for u in sides_query:
-                # print('------Second Side Price--------')
-                # print(u)
-                price_side = u['second_side_price']
+        # numbered price query
+        if number == 'form_numbering_price':
+            number_price_query = Extra_features.objects.values(number)
+            for t in number_price_query:
+                price_number = t[number]
                 break
         else:
-            price_side = 0
+            price_number = 0 
+
+        # 3 part NCR query
+        if parts == 'three_part_form_price':
+            part_price_query = Extra_features.objects.values(parts)
+            for r in part_price_query:
+                price_parts = r[parts]
+                break
+        else:
+            price_parts = 0
+
+        # Discount query
+        discount_query = NCRForms.objects.filter(Quantity=quantity).values('Discount')
 
 
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-
-        for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
-
+        for o in size_quantity_query:
+            price_size_quantity = o[size]
+            
         for y in discount_query:
             price_discount = y['Discount']
 
         # adding sum of options        
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity)
+        total_price = ((float(price_parts) * float(quantity)) + (float(price_number) * float(quantity)) + price_size_quantity) - price_discount
 
-        
-        #testing
-        print('----------')
-        print(price_paper)
-        print('----------')
-        print(price_side)
-        print('----------')
-        print(price_size_quantity)
-        print('----------')
-        print(total_price)
-        print('----------')
-        print('-',price_discount)
 
-        extra_f_dict = {"size": size,
-                        "paper_type": paper_type,
-                        "sides": sides,
-                        "color": color}    
+        extra_f_dict = {"Size": size,
+                        "Form Numbering": number,
+                        "Parts": parts,
+                        "Color": color}    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 6
+        request.session['cat'] = 'mp_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -717,79 +694,48 @@ def Presentation_folder_Detail (request):
         size = var['size']
         paper_type = var['paper_type']
         sides = var['sides']
-        color = var['color']
+        coating = var['coating']
+        pockets = var['pockets']
+        slits = var['slits']
 
-        # queries against relevant options
+        ### queries against relevant options ###
+        
         # size and quantity price query
-        print(size)
-        if size == 'US_Standard_Size':
-            extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = PresentationFolders.objects.filter(quantity=quantity).values('id','US_Standard_Size')
-       
+        size_quantity_query = PresentationFolders.objects.filter(Quantity=quantity).values(size)
+
         # paper type price query
-        # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id', 'paper_type_price')
+        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('paper_type_price')
 
         # Discount query
-        # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
-        discount_query = PresentationFolders.objects.filter(quantity=quantity).values('id', 'Discount')
-
-
-
-        # sides price query
-        if sides == 'two_sided':
-            # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_price')
-            print(sides_query)
-            for u in sides_query:
-                # print('------Second Side Price--------')
-                # print(u)
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
+        discount_query = PresentationFolders.objects.filter(Quantity=quantity).values('id', 'Discount')
 
 
         for i in paper_price_query:
             price_paper = i['paper_type_price']
 
-        for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
+        for o in size_quantity_query:
+            price_size_quantity = o[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
         # adding sum of options        
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity)
+        total_price = ((float(price_paper) * float(quantity)) + price_size_quantity) - price_discount
 
         
-        #testing
-        print('----------')
-        print(price_paper)
-        print('----------')
-        print(price_side)
-        print('----------')
-        print(price_size_quantity)
-        print('----------')
-        print(total_price)
-        print('----------')
-        print('-',price_discount)
-
-        extra_f_dict = {"size": size,
+        extra_f_dict = {"Size": size,
                         "paper_type": paper_type,
                         "sides": sides,
-                        "color": color}    
+                        "coating": coating,
+                        "pockets": pockets,
+                        "slits": slits,
+                        }    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 7
+        request.session['cat'] = 'mp_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -833,7 +779,7 @@ def Presentation_folder_Detail (request):
 
 def Custom_holiday_cards_Detail (request):
 
-    product = mp_products.objects.get(id=7)
+    product = mp_products.objects.get(id=8)
     table = CustomHolidayCards.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
@@ -857,81 +803,47 @@ def Custom_holiday_cards_Detail (request):
         var = request.POST
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
         sides = var['sides']
-        color = var['color']
+        blank_envelope = var['blank_envelope']
 
         # queries against relevant options
         # size and quantity price query
-        print(size)
-        if size == 'US_Standard_Size':
-            extra_size = '2"x3.5" - US Standard Size'
-            type_quantity_query = CustomHolidayCards.objects.filter(quantity=quantity).values('id','US_Standard_Size')
+        size_quantity_query = CustomHolidayCards.objects.filter(Quantity=quantity).values(size)
        
         # paper type price query
-        # paper_price_query = Extra_features.objects.raw('SELECT id, paper_type_price FROM Business_Cards_Extra_features WHERE paper_type = %s', [paper_type])
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id', 'paper_type_price')
+        if blank_envelope == 'blank_envelope_price':
+            envelope_price_query = Extra_features.objects.values(blank_envelope)
+            for u in envelope_price_query:
+                price_envelope = u[blank_envelope]
+                break
+        else:
+            price_envelope = 0
 
         # Discount query
         # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
-        discount_query = CustomHolidayCards.objects.filter(quantity=quantity).values('id', 'Discount')
+        discount_query = CustomHolidayCards.objects.filter(Quantity=quantity).values('Discount')
 
 
-
-        # sides price query
-        if sides == 'two_sided':
-            # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
-            sides_query = Extra_features.objects.filter(size=extra_size).values('id', 'size', 'second_side_price')
-            print(sides_query)
-            for u in sides_query:
-                # print('------Second Side Price--------')
-                # print(u)
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
-
-
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-
-        for o in type_quantity_query:
-            if size == 'US_Standard_Size':
-                price_size_quantity = o['US_Standard_Size']
-            elif size == 'European_Size':
-                price_size_quantity = o['European_Size']
-            elif size == 'Square':
-                price_size_quantity = o['Square']
+        for o in size_quantity_query:
+            price_size_quantity = o[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
         # adding sum of options        
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity)
+        total_price = ((float(price_envelope) * float(quantity)) + price_size_quantity) - price_discount
 
-        
-        #testing
-        print('----------')
-        print(price_paper)
-        print('----------')
-        print(price_side)
-        print('----------')
-        print(price_size_quantity)
-        print('----------')
-        print(total_price)
-        print('----------')
-        print('-',price_discount)
 
-        extra_f_dict = {"size": size,
-                        "paper_type": paper_type,
-                        "sides": sides,
-                        "color": color}    
+        extra_f_dict = {"Size": size,
+                        "Sides": sides,
+                        "Blank Envelope": blank_envelope,
+                        }    
     
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 2
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 8
+        request.session['cat'] = 'mp_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
