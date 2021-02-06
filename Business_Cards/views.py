@@ -11,6 +11,7 @@ from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
 from Business_Cards.models import business_cards_price
+from boxes.models import Products as b_products
 
 from django.http import HttpResponse
 from django.template import loader
@@ -20,6 +21,7 @@ def BC_Detail(request):
     
     product = bc_products.objects.get(id=1)
     table = business_cards_price.objects.all() 
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -28,6 +30,10 @@ def BC_Detail(request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -127,7 +133,8 @@ def BC_Detail(request):
         "image3" : product.image3,
         "bc_aside"   : bc_aside,
         "bs_aside" : bs_aside,
-        "lf_aside": lf_aside, 
+        "lf_aside": lf_aside,
+        "b_aside": b_aside, 
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -140,6 +147,7 @@ def Edge_painted_Detail(request):
 
     product = bc_products.objects.get(id=2)
     table = edge_painted_business_cards_price.objects.all()
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -148,6 +156,9 @@ def Edge_painted_Detail(request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     
     bs_aside = zip(urls_bs_aside, bs_object)
@@ -278,6 +289,7 @@ def Edge_painted_Detail(request):
         "bc_aside": bc_aside,
         "bs_aside" : bs_aside,
         "lf_aside": lf_aside,
+         "b_aside": b_aside,
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -289,6 +301,7 @@ def Foil_business_card (request):
 
     product = bc_products.objects.get(id=3)
     table = foil_business_cards_price.objects.all()
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -297,6 +310,9 @@ def Foil_business_card (request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     
     bs_aside = zip(urls_bs_aside, bs_object)
@@ -424,6 +440,7 @@ def Foil_business_card (request):
         "image3" : product.image3,
         "bs_aside" : bs_aside,
         "lf_aside": lf_aside,
+         "b_aside": b_aside,
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -435,6 +452,7 @@ def Raised_spot_uv(request):
 
     product = bc_products.objects.get(id=4)
     table = raised_spot_uv_business_cards_price.objects.all()
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -443,6 +461,9 @@ def Raised_spot_uv(request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     
     bs_aside = zip(urls_bs_aside, bs_object)
@@ -562,7 +583,8 @@ def Raised_spot_uv(request):
         "image2" : product.image2,
         "image3" : product.image3,
         "bs_aside" : bs_aside,
-        "lf_aside": lf_aside,
+        "lf_aside": lf_aside, 
+        "b_aside": b_aside,
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -573,6 +595,7 @@ def Pantone_business_cards(request):
 
     product = bc_products.objects.get(id=5)
     table = pantone_business_cards_price.objects.all()
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -582,6 +605,9 @@ def Pantone_business_cards(request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -700,6 +726,7 @@ def Pantone_business_cards(request):
         "image3" : product.image3,
         "bs_aside" : bs_aside,
         "lf_aside": lf_aside,
+        "b_aside": b_aside,
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -710,6 +737,7 @@ def Plastic_business_card (request):
 
     product = bc_products.objects.get(id=6)
     table = plastic_business_cards_price.objects.all()
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -718,6 +746,9 @@ def Plastic_business_card (request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -820,6 +851,7 @@ def Plastic_business_card (request):
         "image3" : product.image3,
         "bs_aside" : bs_aside,
         "lf_aside": lf_aside,
+        "b_aside": b_aside,
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -830,6 +862,7 @@ def raised_ink_business_cards (request):
 
     product = bc_products.objects.get(id=7)
     table = raised_ink_business_cards_price.objects.all()
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -838,7 +871,9 @@ def raised_ink_business_cards (request):
     urls_bs_aside =  ["/business-stationary/envelopes-detail", "/business-stationary/letterhead-detail", "/business-stationary/notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
-    
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -957,7 +992,8 @@ def raised_ink_business_cards (request):
         "image2" : product.image2,
         "image3" : product.image3,
         "bs_aside" : bs_aside,
-        "lf_aside": lf_aside,
+        "lf_aside": lf_aside, 
+        "b_aside": b_aside,
         "mp_aside": mp_aside,
         
     }

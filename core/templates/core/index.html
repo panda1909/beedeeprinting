@@ -31,9 +31,9 @@
 
     /* Add styles to the form container */
     .form-container {
-        max-width: 300px;
+        max-width: 382px;
         padding: 10px;
-        background-color: white;
+        background-color: #0C0032;
     }
 
     /* Full-width input fields */
@@ -309,18 +309,20 @@
                                     Call</button>
                             </div>
                             <div class="form-popup" style="z-index: 999;" id="myForm">
-                                <form action="/action_page.php" class="form-container">
-                                    <span style="margin-right: 183px">Enter Name</span>
-                                    <input type="text" placeholder="Enter Name" name="email" required>
-                                    <span style="margin-right: 183px">Enter Name</span>
+                                
+                                <form method="POST" class="form-container">
+                                    <h1 style="font-size: 22px; color: white; margin: 5px; font-weight: 700">Book Call with our Professional</h1>
+                                    <span style="margin-right: 267px; color: white">Enter Name</span>
+                                    <input type="text" placeholder="Enter Name" name="name" required>
+                                    <span style="margin-right: 271px; color: white">Enter Email</span>
                                     <input type="text" placeholder="Enter Email" name="email" required>
-                                    <span style="margin-right: 183px">Enter Name</span>
-                                    <input type="text" placeholder="Enter Phone Number" name="email" required>
-                                    <span style="margin-right: 183px">Enter Name</span>
-                                    <input style="width: 270px; margin-bottom: 10px" type="date" placeholder="Enter Date" name="email"
+                                    <span style="margin-right: 196px; color: white">Enter Phone Number</span>
+                                    <input type="text" placeholder="Enter Phone Number" name="phonenumber" required>
+                                    <span style="margin-right: 278px; color: white">Enter Date</span>
+                                    <input style="width: 360px; margin-bottom: 10px" type="date" placeholder="Enter Date" name="email"
                                         required>
-                                    <span style="margin-right: 183px">Enter Name</span>
-                                    <input style="width: 270px; margin-bottom: 10px" type="time" placeholder="Enter Time" name="psw"
+                                    <span style="margin-right: 274px; color: white">Enter Time</span>
+                                    <input style="width: 360px; margin-bottom: 10px" type="time" placeholder="Enter Time" name="psw"
                                         required>
                                     <button type="submit" class="btn">Submit</button>
                                     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>

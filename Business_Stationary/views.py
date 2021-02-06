@@ -11,6 +11,7 @@ from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
 from Business_Cards.models import business_cards_price
+from boxes.models import Products as b_products
 
 from django.http import HttpResponse
 from django.template import loader
@@ -20,6 +21,7 @@ def Envelops_detail (request):
     
     product = bs_products.objects.get(id=1)
     table = Envelopes.objects.all() 
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -28,6 +30,9 @@ def Envelops_detail (request):
     urls_bs_aside =  ["envelopes-detail", "letterhead-detail", "notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -134,7 +139,8 @@ def Envelops_detail (request):
         "image3" : product.image3,
         "bc_aside"   : bc_aside,
         "bs_aside" : bs_aside,
-        "lf_aside" : lf_aside,
+        "lf_aside": lf_aside, 
+        "b_aside": b_aside,
         "mp_aside": mp_aside,
     }
     if request.POST:
@@ -145,6 +151,7 @@ def Letterhead_detail(request):
         
     product = bs_products.objects.get(id=2)
     table = LetterHeads.objects.all() 
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -153,6 +160,9 @@ def Letterhead_detail(request):
     urls_bs_aside =  ["envelopes-detail", "letterhead-detail", "notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -245,7 +255,8 @@ def Letterhead_detail(request):
         "image3" : product.image3,
         "bc_aside"   : bc_aside,
         "bs_aside" : bs_aside,
-        "lf_aside" : lf_aside,
+        "lf_aside": lf_aside, 
+        "b_aside": b_aside,
         "mp_aside": mp_aside,
 
     }
@@ -257,6 +268,7 @@ def Notepad_detail(request):
         
     product = bs_products.objects.get(id=3)
     table = NotePads.objects.all() 
+    b_object = b_products.objects.all()
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -265,6 +277,9 @@ def Notepad_detail(request):
     urls_bs_aside =  ["envelopes-detail", "letterhead-detail", "notepad-detail"]
     urls_lf_aside = ["/large-format/floor-stickers-detail", "/large-format/foamcore-poster-detail", "/large-format/poster-printing-detail", "/large-format/retractable-banners-detail", "/large-format/table-cover-detail"]
     urls_mp_aside = ["/marketing-products/calenders-detail", "/marketing-products/brouchers-flyers-detail" , "/marketing-products/postcards-detail", "/marketing-products/hangtags-detail", "/marketing-products/labels-and-stickers-detail" , "/marketing-products/ncr-forms-detail" , "/marketing-products/presentation-folder-detail", "custom-holiday-cards-detail"]
+    b_urls = ["/boxes/pillow-boxes-detail", "/boxes/gable-boxes-detail" ,"/boxes/window-boxes-detail", "/boxes/mailer-boxes-detail" , "/boxes/kraft-boxes-detail", "/boxes/cosmetics-boxes-detail" ,"/boxes/sleeve-boxes-detail", "/boxes/display-boxes-detail", "/boxes/beverage-boxes-detail", "/boxes/candle-boxes-detail", "/boxes/auto-parts-boxes-detail", "/boxes/pizza-boxes-detail"]
+
+    b_aside = zip(b_urls,b_object)
     mp_aside = zip(urls_mp_aside, mp_object)
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
@@ -346,7 +361,8 @@ def Notepad_detail(request):
         "image3" : product.image3,
         "bc_aside"   : bc_aside,
         "bs_aside" : bs_aside,
-        "lf_aside" : lf_aside, 
+        "lf_aside": lf_aside, 
+        "b_aside": b_aside, 
         "mp_aside": mp_aside,
     }
     if request.POST:
