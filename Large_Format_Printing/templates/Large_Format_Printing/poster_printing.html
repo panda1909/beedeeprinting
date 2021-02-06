@@ -303,12 +303,17 @@
                                     <tr class="strikeout">
                                         <th>Quantity</th>
                                         <th>Discount</th>
-                                        <th rowspan="1"> Digital Fast</th>
-                                        <th rowspan="1"> Offset High Quality</th>
+                                        <th rowspan="1"> 18" X 24" </th>
+                                        <th rowspan="1"> 20" x 30" </th>
+                                        <th rowspan="1"> 24" X 36" </th>
+                                        <th rowspan="1"> 27" X 40" </th>
+                                        <th rowspan="1"> 36" X 48" </th>
+                                        <th rowspan="1"> 48" x 48" </th>
+                                        <th rowspan="1"> 72" x 24" </th>
                                     </tr>
                                     {% for table in table %}
                                     <tr>
-                                        <th>{{ table.quantity }} </th>
+                                        <th>{{ table.Quantity }} </th>
                                         <td>
                                             {% if table.Discount %}
                                             <strong> -${{ table.Discount }} </strong>
@@ -317,21 +322,26 @@
                                            {% endif %}
                                         </td>
                                         <td>
-                                            {% if not table.digital_Fast_Discounted %}
-                                            ${{ table.digital_Fast }}
-                                            {% else %}
-                                            <Del>${{ table.digital_Fast }}</Del> &nbsp;
-                                            ${{ table.digital_Fast_Discounted }}
-                                            {% endif %}
+                                            ${{ table.Eighteen_By_TwentyFour }}
                                         </td>
                                         <td>
-                                            {% if not table.offset_HQ_Discounted %}
-                                            ${{ table.offset_HQ }}
-                                            {% else %}
-                                            <Del>${{ table.offset_HQ }}</Del> &nbsp; ${{ table.offset_HQ_Discounted }}
-                                            {% endif %}
+                                            ${{ table.Twenty_By_Thrity }}
                                         </td>
-
+                                        <td>
+                                            ${{ table.TwentyFour_By_ThirtySix }}
+                                        </td>
+                                        <td>
+                                            ${{ table.TwentySeven_By_Forty }}
+                                        </td>
+                                        <td>
+                                            ${{ table.ThirtySix_By_FourtyEight }}
+                                        </td>
+                                        <td>
+                                            ${{ table.FourtyEight_By_FourtyEight }}
+                                        </td>
+                                        <td>
+                                            ${{ table.SeventyTwo_By_TwentyFour }}
+                                        </td>
                                     </tr>
                                     {% endfor %}
                                 </table>
@@ -347,23 +357,10 @@
                             <div class="row">
                                 <div class="block-options col-md-4 col-sm-5">
                                     <div class="options-col">
-                                        <label for="quantity">Select Printing Type:</label>
-                                        <select class="select-css" name="printing_type">
-                                            <option value="digital_Fast">Rush options: Digital - Fast
-                                            </option>
-                                            <option value="offset_HQ">Non Rush options: Offset High Quality
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <div class="options-col">
                                         <label for="cars">Select Quantity:</label>
                                         <select class="select-css" name="quantity">
                                             {% for menu in menu %}
-                                            <option value="{{ menu.quantity }}">{{ menu.quantity }}</option>
+                                            <option value="{{ menu.Quantity }}">{{ menu.Quantity }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
@@ -374,36 +371,13 @@
                                     <div class="options-col">
                                         <label for="cars">Select Size:</label>
                                         <select class="select-css" name="size">
-                                            {% for menu1 in menu1 %}
-                                            <option value="{{  menu1.size }}">{{ menu1.size }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <div class="options-col">
-                                        <label for="cars">Select Paper Type:</label>
-                                        <select class="select-css" name="paper_type">
-                                            {% for menu1 in menu1 %}
-                                            {% if menu1.paper_type %}
-                                            <option value="{{  menu1.paper_type }}">{{ menu1.paper_type }}</option>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="block-options col-md-4 col-sm-5">
-                                    <div class="options-col">
-                                        <label for="quantity">Select Printing Sides:</label>
-                                        <select class="select-css" name="sides">
-                                            <option value="one_side">One Sided</option>
-                                            <option value="two_sided">Two Sided - Front and Back</option>
-
+                                            <option value="Eighteen_By_TwentyFour"> 18" X 24" </option>
+                                            <option value="Twenty_By_Thrity"> 20" x 30" </option>
+                                            <option value="TwentyFour_By_ThirtySix"> 24" X 36" </option>
+                                            <option value="TwentySeven_By_Forty"> 27" X 40" </option>
+                                            <option value="ThirtySix_By_FourtyEight"> 36" X 48" </option>
+                                            <option value="FourtyEight_By_FourtyEight"> 48" x 48" </option>
+                                            <option value="SeventyTwo_By_TwentyFour"> 72" x 24" </option>
                                         </select>
                                     </div>
                                 </div>

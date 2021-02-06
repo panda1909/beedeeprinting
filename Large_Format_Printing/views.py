@@ -32,6 +32,7 @@ def Foamcore_poster_detail (request):
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
     lf_aside = zip(urls_lf_aside, lf_object)
+    
     menu = FoamcorePosters.objects.all()
     menu1 = Extra_features.objects.all()
     
@@ -41,55 +42,30 @@ def Foamcore_poster_detail (request):
         var = request.POST
         #print(var)
         #print('---------')
-        printing_type = var['printing_type']
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
        
-        type_quantity_query = FoamcorePosters.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
-        if sides == 'two_sided':
-            print(sides_query)
-            for u in sides_query:
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
+        size_quantity_query = FoamcorePosters.objects.filter(Quantity=quantity).values(size)
 
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-            print(price_paper)
-
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
+        discount_query = FoamcorePosters.objects.filter(Quantity=quantity).values('Discount')
+        
+        for p in size_quantity_query:
+            size_quantity_price = p[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = size_quantity_price - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
-                        "paper_type": paper_type,
-                        "sides": sides}
+        extra_f_dict = {"Size": size,
+                       }
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 4
+        request.session['cat'] = 'lf_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -100,7 +76,7 @@ def Foamcore_poster_detail (request):
         request.session['discount'] = 0
         request.session['id'] = 1
         request.session['quantity'] = 0
-        request.session['cat'] = 'bc_products'
+        request.session['cat'] = 'lf_products'
         print('Form not submitted')
 
 
@@ -149,6 +125,7 @@ def Poster_printing_detail(request):
 
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
+    
     menu = PosterPrinting.objects.all()
     menu1 = Extra_features.objects.all()
     
@@ -156,57 +133,30 @@ def Poster_printing_detail(request):
 
     if request.POST:
         var = request.POST
-        #print(var)
-        #print('---------')
-        printing_type = var['printing_type']
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
        
-        type_quantity_query = PosterPrinting.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
-        if sides == 'two_sided':
-            print(sides_query)
-            for u in sides_query:
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
+        size_quantity_query = FoamcorePosters.objects.filter(Quantity=quantity).values(size)
 
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-            print(price_paper)
-
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
+        discount_query = FoamcorePosters.objects.filter(Quantity=quantity).values('Discount')
+        
+        for p in size_quantity_query:
+            size_quantity_price = p[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = size_quantity_price - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
-                        "paper_type": paper_type,
-                        "sides": sides}
+        extra_f_dict = {"Size": size,
+                       }
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 5
+        request.session['cat'] = 'lf_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -215,11 +165,10 @@ def Poster_printing_detail(request):
         request.session['invoice'] = 0
         request.session['label'] = ' '
         request.session['discount'] = 0
-        request.session['id'] = 1
+        request.session['id'] = 0
         request.session['quantity'] = 0
-        request.session['cat'] = 'bc_products'
+        request.session['cat'] = 'lf_products'
         print('Form not submitted')
-
 
 
     context = {
@@ -266,6 +215,7 @@ def Retractable_banners_detail(request):
 
     bs_aside = zip(urls_bs_aside, bs_object)
     bc_aside = zip(urls_bc_aside,bc_object)
+    
     menu = RetractableBanners.objects.all()
     menu1 = Extra_features.objects.all()
     
@@ -273,57 +223,31 @@ def Retractable_banners_detail(request):
 
     if request.POST:
         var = request.POST
-        #print(var)
-        #print('---------')
-        printing_type = var['printing_type']
+        
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
        
-        type_quantity_query = RetractableBanners.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
-        if sides == 'two_sided':
-            print(sides_query)
-            for u in sides_query:
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
+        size_quantity_query = RetractableBanners.objects.filter(Quantity=quantity).values(size)
 
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-            print(price_paper)
-
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
+        discount_query = RetractableBanners.objects.filter(Quantity=quantity).values('Discount')
+        
+        for p in size_quantity_query:
+            size_quantity_price = p[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = size_quantity_price - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
-                        "paper_type": paper_type,
-                        "sides": sides}
+        extra_f_dict = {"Size": size,
+                       }
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 7
+        request.session['cat'] = 'lf_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -332,9 +256,9 @@ def Retractable_banners_detail(request):
         request.session['invoice'] = 0
         request.session['label'] = ' '
         request.session['discount'] = 0
-        request.session['id'] = 1
+        request.session['id'] = 0
         request.session['quantity'] = 0
-        request.session['cat'] = 'bc_products'
+        request.session['cat'] = 'lf_products'
         print('Form not submitted')
 
 
@@ -367,8 +291,6 @@ def Retractable_banners_detail(request):
     return render( request,"Large_Format_Printing/retractable_banners.html", context )
 
 
-
-
 def Table_covers_detail(request):
         
     product = lf_products.objects.get(id=8)
@@ -393,57 +315,31 @@ def Table_covers_detail(request):
 
     if request.POST:
         var = request.POST
-        #print(var)
-        #print('---------')
-        printing_type = var['printing_type']
+        
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
        
-        type_quantity_query = TableCovers.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
-        if sides == 'two_sided':
-            print(sides_query)
-            for u in sides_query:
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
+        size_quantity_query = TableCovers.objects.filter(Quantity=quantity).values(size)
 
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-            print(price_paper)
-
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
+        discount_query = TableCovers.objects.filter(Quantity=quantity).values('Discount')
+        
+        for p in size_quantity_query:
+            size_quantity_price = p[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = size_quantity_price - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
-                        "paper_type": paper_type,
-                        "sides": sides}
+        extra_f_dict = {"Size": size,
+                       }
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 8
+        request.session['cat'] = 'lf_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -452,9 +348,9 @@ def Table_covers_detail(request):
         request.session['invoice'] = 0
         request.session['label'] = ' '
         request.session['discount'] = 0
-        request.session['id'] = 1
+        request.session['id'] = 0
         request.session['quantity'] = 0
-        request.session['cat'] = 'bc_products'
+        request.session['cat'] = 'lf_products'
         print('Form not submitted')
 
 
@@ -510,57 +406,33 @@ def Floor_stickers_detail(request):
 
     if request.POST:
         var = request.POST
-        #print(var)
-        #print('---------')
-        printing_type = var['printing_type']
+        
         quantity = var['quantity']
         size = var['size']
-        paper_type = var['paper_type']
-        sides = var['sides']
+
+        print(size)
        
-        type_quantity_query = FloorStickers.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
-        if sides == 'two_sided':
-            print(sides_query)
-            for u in sides_query:
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
+        size_quantity_query = FloorStickers.objects.filter(Quantity=quantity).values(size)
 
-        for i in paper_price_query:
-            price_paper = i['paper_type_price']
-            print(price_paper)
-
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
+        discount_query = FloorStickers.objects.filter(Quantity=quantity).values('Discount')
+        
+        for p in size_quantity_query:
+            size_quantity_price = p[size]
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = size_quantity_price - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
-                        "paper_type": paper_type,
-                        "sides": sides}
+        extra_f_dict = {"Size": size,
+                       }
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 3
+        request.session['cat'] = 'lf_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -569,9 +441,9 @@ def Floor_stickers_detail(request):
         request.session['invoice'] = 0
         request.session['label'] = ' '
         request.session['discount'] = 0
-        request.session['id'] = 1
+        request.session['id'] = 0
         request.session['quantity'] = 0
-        request.session['cat'] = 'bc_products'
+        request.session['cat'] = 'lf_products'
         print('Form not submitted')
 
 

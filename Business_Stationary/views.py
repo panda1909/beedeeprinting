@@ -40,49 +40,57 @@ def Envelops_detail (request):
 
     if request.POST:
         var = request.POST
-        #print(var)
-        #print('---------')
-        printing_type = var['printing_type']
+
         quantity = var['quantity']
         size = var['size']
         paper_type = var['paper_type']
         sides = var['sides']
+        window = var['window']
        
-        type_quantity_query = Envelopes.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
+        if size == 'Number_10':
+            size_quantity_query = Envelopes.objects.filter(Quantity=quantity).values('Number_10')
+        elif size == 'Nine_By_Twleve':
+            size_quantity_query = Envelopes.objects.filter(Quantity=quantity).values('Nine_By_Twleve')
+        elif size == 'A7':
+            size_quantity_query = Envelopes.objects.filter(Quantity=quantity).values('A7')
+
+        for r in size_quantity_query:
+            price_type = r[size]
+
+        discount_query = Envelopes.objects.filter(Quantity=quantity).values('Discount')
+        
         paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
+ 
         if sides == 'two_sided':
-            print(sides_query)
+            sides_query = Extra_features.objects.filter(paper_type=paper_type).values('second_side_price')
             for u in sides_query:
                 price_side = u['second_side_price']
                 break
         else:
             price_side = 0
 
+        if window == 'standard_window':
+            window_query = Extra_features.objects.filter(paper_type=paper_type).values('standard_window_price') 
+            for t in window_query:
+                price_window = t['standard_window_price']
+                break   
+        else:
+            price_window = 0
+
+
         for i in paper_price_query:
             price_paper = i['paper_type_price']
             print(price_paper)
 
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_type) - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
+        extra_f_dict = {"Window": window,
+                        "Size": size,
                         "paper_type": paper_type,
                         "sides": sides}
 
@@ -90,7 +98,7 @@ def Envelops_detail (request):
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
         request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['cat'] = 'bs_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -136,7 +144,7 @@ def Envelops_detail (request):
 def Letterhead_detail(request):
         
     product = bs_products.objects.get(id=2)
-    table = Envelopes.objects.all() 
+    table = LetterHeads.objects.all() 
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -150,7 +158,7 @@ def Letterhead_detail(request):
     bc_aside = zip(urls_bc_aside,bc_object)
     lf_aside = zip(urls_lf_aside, lf_object)
 
-    menu = Envelopes.objects.all()
+    menu = LetterHeads.objects.all()
     menu1 = Extra_features.objects.all()
     
     # if stament for getting info from template
@@ -159,19 +167,20 @@ def Letterhead_detail(request):
         var = request.POST
         #print(var)
         #print('---------')
-        printing_type = var['printing_type']
         quantity = var['quantity']
         size = var['size']
         paper_type = var['paper_type']
         sides = var['sides']
        
-        type_quantity_query = Envelopes.objects.filter(quantity=quantity)
-      
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
-        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
+        size_quantity_query = LetterHeads.objects.filter(Quantity=quantity).values('Eight_By_Five_By_Eleven')
+
+        paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('paper_type_price')
+
+        discount_query = LetterHeads.objects.filter(Quantity=quantity).values('Discount')
+
         print(paper_price_query)
         if sides == 'two_sided':
-            print(sides_query)
+            sides_query = Extra_features.objects.filter(paper_type=paper_type).values('second_side_price')
             for u in sides_query:
                 price_side = u['second_side_price']
                 break
@@ -182,32 +191,25 @@ def Letterhead_detail(request):
             price_paper = i['paper_type_price']
             print(price_paper)
 
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
+        for o in size_quantity_query:
+            price_size_quantity = o['Eight_By_Five_By_Eleven']
+            
 
         for y in discount_query:
             price_discount = y['Discount']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + price_size_quantity) - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
+        extra_f_dict = {"Size": size,
                         "paper_type": paper_type,
                         "sides": sides}
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 2
+        request.session['cat'] = 'bs_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')
@@ -254,7 +256,7 @@ def Letterhead_detail(request):
 def Notepad_detail(request):
         
     product = bs_products.objects.get(id=3)
-    table = Envelopes.objects.all() 
+    table = NotePads.objects.all() 
     bc_object = bc_products.objects.all()
     bs_object = bs_products.objects.all()
     lf_object = lf_products.objects.all()
@@ -268,7 +270,7 @@ def Notepad_detail(request):
     bc_aside = zip(urls_bc_aside,bc_object)
     lf_aside = zip(urls_lf_aside, lf_object)
 
-    menu = Envelopes.objects.all()
+    menu = NotePads.objects.all()
     menu1 = Extra_features.objects.all()
     
     # if stament for getting info from template
@@ -277,55 +279,38 @@ def Notepad_detail(request):
         var = request.POST
         #print(var)
         #print('---------')
-        printing_type = var['printing_type']
         quantity = var['quantity']
         size = var['size']
         paper_type = var['paper_type']
-        sides = var['sides']
        
-        type_quantity_query = Envelopes.objects.filter(quantity=quantity)
+        size_quantity_query = NotePads.objects.filter(Quantity=quantity).values('Three_By_Six_By_Four_By_Eight')
       
-        size_query = Extra_features.objects.filter(size=size).values('id','size_price')
         paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
-        if sides == 'two_sided':
-            print(sides_query)
-            for u in sides_query:
-                price_side = u['second_side_price']
-                break
-        else:
-            price_side = 0
 
+        discount_query = NotePads.objects.filter(Quantity=quantity).values('Discounted')
+
+        
         for i in paper_price_query:
             price_paper = i['paper_type_price']
-            print(price_paper)
 
-        for o in size_query:
-            price_size = o['size_price']
-            print(price_size)
-
-        for p in type_quantity_query:
-            if printing_type == 'digital_Fast':
-                price_type = p.digital_Fast
-            elif printing_type == 'offset_HQ':
-                price_type = p.offset_HQ
-
+        for p in size_quantity_query:
+            price_size_quantity = p['Three_By_Six_By_Four_By_Eight']
+        
         for y in discount_query:
-            price_discount = y['Discount']
+            price_discount = y['Discounted']
 
 
-        total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
+        total_price = ((float(price_paper) * float(quantity)) + price_size_quantity) - price_discount
 
-        extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
+        extra_f_dict = {"Size": size,
                         "paper_type": paper_type,
-                        "sides": sides}
+                        }
 
         request.session['invoice'] = total_price
         request.session['label'] = product.Label
         request.session['discount'] = price_discount
-        request.session['id'] = 1
-        request.session['cat'] = 'bc_products'
+        request.session['id'] = 3
+        request.session['cat'] = 'bs_products'
         request.session['extra_f'] = extra_f_dict
         request.session['quantity'] = quantity
         print('Form Submitted')

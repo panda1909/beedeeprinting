@@ -90,9 +90,8 @@ class plastic_business_cards_price(models.Model):
         verbose_name = "6 - Plastic business cards"
 
 class raised_ink_business_cards_price(models.Model):
-    US_Standard_Size =  models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
-    
+    US_Standard_Size =  models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)])
     Template = models.FileField(upload_to='static/Business_Cards_Templates', max_length=256, blank=True)
     
