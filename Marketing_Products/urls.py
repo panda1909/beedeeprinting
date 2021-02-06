@@ -1,6 +1,7 @@
 from django.urls import path, include
 from .views import Calendars_detail, Broucher_Flyers_Detail , Postcard_Detail, Hangtags_Detail, Laberlsandstickers_Detail, NCRforms_Detail, Presentation_folder_Detail, Custom_holiday_cards_Detail
 app_name = 'Marketing_Products'
+
 urlpatterns = [
     path('calenders-detail', Calendars_detail, name= 'calenders-detail'),
     path('brouchers-flyers-detail', Broucher_Flyers_Detail, name='brouchers-flyers-detail'),

@@ -58,9 +58,10 @@ def BC_Detail(request):
       
         size_query = Extra_features.objects.filter(size=size).values('id','size_price')
         paper_price_query = Extra_features.objects.filter(paper_type=paper_type).values('id','paper_type_price')
-        print(paper_price_query)
+        discount_query = business_cards_price.objects.filter(quantity=quantity).values('Discount')
+        # print(paper_price_query)
         if sides == 'two_sided':
-            print(sides_query)
+            sides_query = Extra_features.objects.filter(paper_type=paper_type).values('second_side_price')
             for u in sides_query:
                 price_side = u['second_side_price']
                 break
@@ -88,7 +89,7 @@ def BC_Detail(request):
         total_price = ((float(price_paper) * float(quantity)) + (float(price_side) * float(quantity)) + (float(price_size) * float(quantity)) + price_type) - price_discount
 
         extra_f_dict = {"printing_type": printing_type,
-                        "size": size,
+                        "Size": size,
                         "paper_type": paper_type,
                         "sides": sides}
 

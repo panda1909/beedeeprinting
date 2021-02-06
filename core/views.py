@@ -29,16 +29,20 @@ def Home(request):
         "form": form
     }
     return render(request, "core/index.html", context)
+
+
 def Emptycart(request):
     return render(request, 'core/emptycart.html')
+
+
 class Aboutus(TemplateView):
     def get(self, request):
         return render(request, 'core/aboutus.html')
 
+
 def Checkout(request):
     try:
-        total = request.session['invoice']
-        
+        total = request.session['invoice']    
     except:
         return redirect('empty-cart')
 
@@ -48,7 +52,6 @@ def Checkout(request):
     category = request.session['cat']
     quantity = request.session['quantity']
     extra_f_dict = request.session['extra_f']
-    print('Checkout try')
     json_dump = json.dumps(extra_f_dict)
     json_obj = json.loads(json_dump)
     size = extra_f_dict['Size']
@@ -131,6 +134,7 @@ def Checkout(request):
     }
     return render(request, 'core/checkout.html', context)
 
+
 def BoxCheckout(request):
     id = request.session['id']
     product = b_products.objects.get(id=id)
@@ -203,9 +207,6 @@ def BoxCheckout(request):
     'image': product.image1,
     }
     return render(request, 'core/box-checkout.html', context)
-
-
-
 
 
 def Order_placed(request):
@@ -292,20 +293,95 @@ def All_products(request):
     bc_object = bc_products.objects.all()
     bc_object_aside = bc_products.objects.all()
     bs_object = bs_products.objects.all()
+    bs_object_aside = bs_products.objects.all()
     lf_object = lf_products.objects.all()
+    lf_object_aside = lf_products.objects.all()
     mp_object = mp_products.objects.all()
-    urls_bc = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
-    urls_bc_aside = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
+    mp_object_aside = mp_products.objects.all()
+    b_object = b_products.objects.all()
+    b_object_aside = b_products.objects.all()
+    ### urls list for BC products ###
+    urls_bc = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail",
+                "business-cards/foil-business-card-detail" , "business-cards/raised-spot-uv-business-card-detail",
+                "business-cards/pantone-business-cards-detail", "business-cards/plastic-business-cards-detail",
+                "business-cards/raised-ink-business-cards-detail"]
+    ### urls list for navbar BC products ###
+    urls_bc_aside = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail",
+                "business-cards/foil-business-card-detail" , "business-cards/raised-spot-uv-business-card-detail",
+                "business-cards/pantone-business-cards-detail", "business-cards/plastic-business-cards-detail",
+                "business-cards/raised-ink-business-cards-detail"]
+    ### Business Cards zip objects ###
     bc_list = zip(urls_bc,bc_object)
     bc_aside = zip(urls_bc_aside,bc_object_aside)
-    print("------->> list",bc_list)
+    ### Urls list for BS products ###
+    urls_bs = ["business-stationary/envelopes-detail","business-stationary/letterhead-detail",
+                "business-stationary/notepad-detail"]
+    ### Urls list for navbar BS products ###
+    urls_bs_aside = ["business-stationary/envelopes-detail","business-stationary/letterhead-detail",
+                    "business-stationary/notepad-detail"]
+    ### Business Staionary zip objects ###
+    bs_list = zip(urls_bs,bs_object)
+    bs_list_aside = zip(urls_bs_aside,bs_object_aside)
+    ### Urls list for lf products ###
+    urls_lf = ["large-format/floor-stickers-detail", "large-format/foamcore-poster-detail",
+                "large-format/poster-printing-detail", "large-format/retractable-banners-detail",
+                "large-format/table-cover-detail"]
+    ### Urls list for navbar lf products ###
+    urls_lf_aside = ["large-format/floor-stickers-detail", "large-format/foamcore-poster-detail",
+                "large-format/poster-printing-detail", "large-format/retractable-banners-detail",
+                "large-format/table-cover-detail"]
+    ### LF prodcuts zip objects ###
+    lf_list = zip(urls_lf,lf_object)
+    lf_list_aside = zip(urls_lf_aside,lf_object_aside)
+    ### Urls list for Marketing prodcuts ###
+    urls_mp = ["marketing-products/postcards-detail","marketing-products/calenders-detail",
+                "marketing-products/brouchers-flyers-detail", "marketing-products/hangtags-detail",
+                "marketing-products/labels-and-stickers-detail", "marketing-products/ncr-forms-detail",
+                "marketing-products/presentation-folder-detail","marketing-products/custom-holiday-cards-detail"]
+    ### Urls list for navbar mp products ###
+    urls_mp_aside = ["marketing-products/postcards-detail","marketing-products/calenders-detail",
+                "marketing-products/brouchers-flyers-detail", "marketing-products/hangtags-detail",
+                "marketing-products/labels-and-stickers-detail", "marketing-products/ncr-forms-detail",
+                "marketing-products/presentation-folder-detail","marketing-products/custom-holiday-cards-detail"]
+    ### LF prodcuts zip objects ###
+    mp_list = zip(urls_mp,mp_object)
+    mp_list_aside = zip(urls_mp_aside,mp_object_aside)
+    ### Urls list for Boxes prducts ###
+    urls_b = ["boxes/pillow-boxes-detail", "boxes/gable-boxes-detail", 
+            "boxes/window-boxes-detail", "boxes/mailer-boxes-detail", 
+            "boxes/kraft-boxes-detail", "boxes/cosmetics-boxes-detail", 
+            "boxes/sleeve-boxes-detail", "boxes/display-boxes-detail", 
+            "boxes/beverage-boxes-detail", "boxes/candle-boxes-detail", 
+            "boxes/auto-parts-boxes-detail", "boxes/pizza-boxes-detail" 
+            ]
+    ### Urls list navbar Boxes prodcuts ###
+    urls_b_aside = ["boxes/pillow-boxes-detail", "boxes/gable-boxes-detail", 
+            "boxes/window-boxes-detail", "boxes/mailer-boxes-detail", 
+            "boxes/kraft-boxes-detail", "boxes/cosmetics-boxes-detail", 
+            "boxes/sleeve-boxes-detail", "boxes/display-boxes-detail", 
+            "boxes/beverage-boxes-detail", "boxes/candle-boxes-detail", 
+            "boxes/auto-parts-boxes-detail", "boxes/pizza-boxes-detail" 
+            ]
+    ### Boxes Zip objects ###
+    b_list = zip(urls_b,b_object)
+    b_list_aside = zip(urls_b_aside, b_object_aside)
+
     context = {
         "bc_product" : bc_object,
         "bs_product" : bs_object,
         "lf_product" : lf_object,
         "mp_product" : mp_object,
+        "b_product"  : b_object,
         "bc_list"    : bc_list,
         "bc_aside"   : bc_aside,
+        "bs_list"    : bs_list,
+        "bs_list_aside" :  bs_list_aside,
+        "lf_list"    : lf_list,
+        "lf_list_aside" : lf_list_aside,
+        "mp_list"    : mp_list,
+        "mp_list_aside" : mp_list_aside,
+        "b_list"     : b_list,
+        "b_list_aside": b_list_aside,
     }
     return render(request, "core/all_products.html", context)
 
