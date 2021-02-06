@@ -83,7 +83,7 @@ def Checkout(request):
     # shipping info form
     if request.method == 'POST':
        print("--------> POST")
-       form = checkoutForm(request.POST)
+       form = checkoutForm(request.POST , request.FILES)
     #    print (form)
        if form.is_valid():
             Name = form.cleaned_data["FirstName"]+" "+form.cleaned_data["LastName"]
@@ -95,8 +95,8 @@ def Checkout(request):
             # Mobile = form.cleaned_data["Mobile"]
             Phone = form.cleaned_data["Phone"]
             Notes_Requests = form.cleaned_data["Notes_Requests"]
-            TemplateOne = form.cleaned_data["TemplateOne"]
-            TemplateTwo = form.cleaned_data["TemplateTwo"]
+            TemplateOne = request.FILES.get('TemplateOne')
+            TemplateTwo = request.FILES.get('TemplateTwo')
             Notes_Requests =  form.cleaned_data["Notes_Requests"]
             zipcode = form.cleaned_data["Zipcode"]
 
@@ -106,7 +106,7 @@ def Checkout(request):
             request.session['email'] = Email
 
             # print(Name)
-            order = Orders.objects.create(Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
+            order = Orders.objects.create(Template=TemplateOne, Second_Template=TemplateTwo ,Customer=Name, Country=Country, City=City, Region=Region, Email=Email, Delivery_address=Address, Contact = Phone, Special_requests=Notes_Requests, Zip_Code=zipcode, Extra_features=json_obj, Price=price_final, Quantity=quantity , Size=size, Product_name=label, OrderId=order_id, Status="Pending")
 
           
             if CustomerData.objects.filter(Email=Email).exists() :

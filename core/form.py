@@ -9,12 +9,6 @@ from core.models import Messages, Bookedcalls
 
 
 
-class ImageFileUploadForm (forms.ModelForm):
-    class Meta:
-        model = Orders
-        fields = ('Template',)
-
-
 class checkoutForm(forms.Form):
     FirstName = forms.CharField(max_length=100)
     LastName = forms.CharField(max_length=100)

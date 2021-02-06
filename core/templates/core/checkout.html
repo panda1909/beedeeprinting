@@ -176,7 +176,7 @@
                                     as
                                     outlined in our privacy policy.</p>
                                     {% if invoice != '0' %}
-                                    <form method="POST">
+                                    <form method="POST" enctype="multipart/form-data">
                                         {% csrf_token %}
                                         {% if form.Email.errors %}
                                                     <div class="alert alert-danger">
