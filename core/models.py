@@ -80,6 +80,10 @@ class Bookedcalls(models.Model):
     Time = models.TimeField()
     Date = models.DateField()
     Description = models.TextField(max_length=2000)
+
+    def __str__(self):
+        return (str(self.Name) + " / " + str(self.Date) + " / " + str(self.Time))
+
     class Meta:
         verbose_name = "4 - Clients Booked call"
         verbose_name_plural = "4 - Clients Booked call"

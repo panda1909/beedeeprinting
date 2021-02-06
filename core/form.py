@@ -36,11 +36,12 @@ class queries(forms.ModelForm):
     class Meta:
         model = Messages
         fields = ['Subject','Message','Name','Email','Contacted']
+
         
 class bookcalls(forms.ModelForm):
     class Meta:
         model = Bookedcalls
-        fields = ['Name', 'Email', 'Cell', 'Time', 'Date', 'Description']
+        fields = ['Name', 'Email', 'Cell', 'Time', 'Date']
 
       
 

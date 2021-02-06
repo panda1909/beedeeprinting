@@ -25,6 +25,9 @@ import shortuuid
 
 def Home(request):
     form = bookcalls(request.POST)
+    if request.method == 'POST':
+        if form.is_valid:
+            form.save()
     context = {
         "form": form
     }

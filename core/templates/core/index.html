@@ -311,19 +311,18 @@
                             <div class="form-popup" style="z-index: 999;" id="myForm">
                                 
                                 <form method="POST" class="form-container">
+                                    {% csrf_token %}
                                     <h1 style="font-size: 22px; color: white; margin: 5px; font-weight: 700">Book Call with our Professional</h1>
                                     <span style="margin-right: 69%; color: white">Enter Name</span>
-                                    <input type="text" placeholder="Enter Name" name="name" required>
+                                    {{ form.Name }}
                                     <span style="margin-right: 70%; color: white">Enter Email</span>
-                                    <input type="text" placeholder="Enter Email" name="email" required>
+                                    {{ form.Email }}
                                     <span style="margin-right: 46%; color: white">Enter Phone Number</span>
-                                    <input type="text" placeholder="Enter Phone Number" name="phonenumber" required>
+                                    {{ form.Cell }}
                                     <span style="margin-right: 73%; color: white">Enter Date</span>
-                                    <input style="width: 311px; margin-bottom: 10px" type="date" placeholder="Enter Date" name="email"
-                                        required>
+                                    {{ form.Date }}
                                     <span style="margin-right: 72%; color: white">Enter Time</span>
-                                    <input style="width: 311px; margin-bottom: 10px" type="time" placeholder="Enter Time" name="psw"
-                                        required>
+                                    {{ form.Time }}
                                     <button type="submit" class="btn">Submit</button>
                                     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                                 </form>
