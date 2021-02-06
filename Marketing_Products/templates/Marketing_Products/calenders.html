@@ -157,43 +157,7 @@
                                     {% endfor %}
                                 </ul>
                             </li>
-                            <li class="level0 parent">
-                                <a href="#" title="Business Cards">
-                                    <span style="color: black;">All Products</span>
-                                    <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
-                                </a>
-                                <ul class="level0">
-                                    {% for bc_product in bc_product %}
-                                    <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bc_product.Label }}
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-                                    {% for bs_product in bs_product %}
-                                    <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ bs_product.Label }}
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-                                    {% for lf_product in lf_product %}
-                                    <li class="level1 nav-1-1 first item">
-                                        <a href="#" title="Premium Business Cards">
-                                            {{ lf_product.Label }}
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-                                     {% for urls_mp_aside, mp_object in mp_aside %}
-                                    <li class="level1 nav-1-1 first item">
-                                        <a href="{{ urls_mp_aside }}">
-                                            {{ mp_object.Label }}
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-
-                                </ul>
-                            </li>
+                             
                         </ul>
                         <div class="category-left-banner">
                             <a href="#" title="category left banner">
