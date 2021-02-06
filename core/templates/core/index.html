@@ -31,28 +31,15 @@
 
     /* Add styles to the form container */
     .form-container {
-        max-width: 332px;
+        max-width: 300px;
         padding: 10px;
         background-color: #0C0032;
     }
 
     /* Full-width input fields */
-    .form-container input[type=text],
-    .form-container input[type=password] {
-        width: 100%;
-        height: 75%;
-        padding: 10px;
-        margin: 5px 0 20px 0;
-        border: none;
-        background: #f1f1f1;
-    }
+    
 
     /* When the inputs get focus, do something */
-    .form-container input[type=text]:focus,
-    .form-container input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-    }
 
     /* Set a style for the submit/login button */
     .form-container .btn {
@@ -313,16 +300,23 @@
                                 <form method="POST" class="form-container">
                                     {% csrf_token %}
                                     <h1 style="font-size: 22px; color: white; margin: 5px; font-weight: 700">Book Call with our Professional</h1>
-                                    <span style="margin-right: 69%; color: white">Enter Name</span>
-                                    {{ form.Name }}
-                                    <span style="margin-right: 70%; color: white">Enter Email</span>
-                                    {{ form.Email }}
-                                    <span style="margin-right: 46%; color: white">Enter Phone Number</span>
-                                    {{ form.Cell }}
-                                    <span style="margin-right: 73%; color: white">Enter Date</span>
-                                    {{ form.Date }}
-                                    <span style="margin-right: 72%; color: white">Enter Time</span>
-                                    {{ form.Time }}
+
+                                    <span style="margin-right: 66%; color: white">Enter Name</span>
+                                    <input style="width: 100%;" type="text" name="Name" required id="id_Name">
+                                    
+                                    <span style="margin-right: 67%; color: white">Enter Email</span>
+                                    <input style="width: 100%;" type="email" name="Email" required id="id_Email">
+                                    
+                                    <span style="margin-right: 40%; color: white">Enter Phone Number</span>
+                                    <input style="width: 100%;" type="tel" name="Cell" required id="id_Cell">
+                                    
+                                    <span style="margin-right: 70%; color: white">Enter Date</span>
+                                    <input style="width: 100%;" type="date" name="Date" required id="id_Date">
+                                    
+                                    <span style="margin-right: 69%; color: white">Enter Time</span>
+                                    <input style="width: 100%;" type="time" name="Time" required id="id_Time">
+                                    <br>
+                                    <br>
                                     <button type="submit" class="btn">Submit</button>
                                     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                                 </form>
@@ -703,5 +697,8 @@
     function closeForm() {
         document.getElementById("myForm").style.display = "none";
     }
+</script>
+<script>
+   
 </script>
 {% endblock extra_js %}

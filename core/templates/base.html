@@ -34,7 +34,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css9fec.css' %}">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/ourstyle.css' %}">
-	
+
 </head>
 
 <body>
@@ -70,10 +70,11 @@
 						</ul>
 					</div>
 					<div class="top-links col-lg-3 col-md-3 col-sm-2 col-xs-3">
-						<marquee style="color: white; margin-top: 2%" direction="left" height="25" width="300" bgcolor="#0C0032">Free Shipping for orders over $500</marquee>
+						<marquee style="color: white; margin-top: 2%" direction="left" height="25" width="300"
+							bgcolor="#0C0032">Free Shipping for orders over $500</marquee>
 					</div>
 					<div class="top-header-right f-right col-lg-5 col-md-6 col-sm-7 col-xs-6">
-						
+
 						<div class="w-header-right">
 							<div class="th-hotline">
 								<span class="span"><strong>Press for Bulk Orders</strong></span>
@@ -115,33 +116,47 @@
 													<ul class="level2">
 														<li><span class="menu-title">Business Cards</span></li>
 														<li>
-															<a href="{% url 'Business_Cards:business-card-detail' %}" title="Marketing Materials">Simple
+															<a href="{% url 'Business_Cards:business-card-detail' %}"
+																title="Simple
+															Business Cards">Simple
 																Business Cards</a>
 														</li>
 														<li>
-															<a href="{% url 'Business_Cards:edge-painted-detail' %}" title="Dance Marketing Kit">Edge
+															<a href="{% url 'Business_Cards:edge-painted-detail' %}"
+																title="Edge
+															Painted Business Cards">Edge
 																Painted Business Cards</a>
 														</li>
-														<!-- <li>
-															<a href=" #" title="Event Marketing Kit">Foil
+														<li>
+															<a href="{% url 'Business_Cards:foil-business-card-detail' %}"
+																title="Foil
+															Business Cards">Foil
 																Business Cards</a>
 														</li>
 														<li>
-															<a href=" #" title="Flyers Print">Panton Business
+															<a href="{% url 'Business_Cards:pantone-business-cards-detail' %}"
+																title="Panton Business
+															Cards">Panton Business
 																Cards</a>
 														</li>
 														<li>
-															<a href=" #" title="Flyers Product">Plastic
+															<a href="{% url 'Business_Cards:plastic-business-cards-detail' %}"
+																title="Plastic
+															Business Cards">Plastic
 																Business Cards</a>
 														</li>
 														<li>
-															<a href=" #" title="The Flyers Printing">Raised Ink
+															<a href="{% url 'Business_Cards:raised-ink-business-cards-detail' %}"
+																title="Raised Ink
+															Business Cards">Raised Ink
 																Business Cards</a>
 														</li>
 														<li>
-															<a href=" #" title="Marketing's Card">Raised Spot
+															<a href="{% url 'Business_Cards:raised-spot-uv-business-card-detail' %}"
+																title="Raised Spot
+															UV Business Cards">Raised Spot
 																UV Business Cards</a>
-														</li> -->
+														</li>
 														<li><img src="{% static 'images/banner/menu/menu-cate-calendar.png' %}"
 																alt="Calendar"></li>
 													</ul>
@@ -152,14 +167,16 @@
 													<ul class="level2">
 														<li><span class="menu-title">Business Stationary</span></li>
 														<li>
-															<a href=" #" title="Business Card">Envlopes</a>
+															<a href="{% url 'Business_Stationary:envelopes-detail' %}"
+																title="envlopes">Envlopes</a>
 														</li>
 														<li>
-															<a href=" #" title="Business Card">Letter Head</a>
+															<a href="{% url 'Business_Stationary:letterhead-detail' %}"
+																title="Letter Head">Letter Head</a>
 														</li>
 														<li>
-															<a href=" #"
-																title="Premium Business Card">NotePads</a>
+															<a href="{% url 'Business_Stationary:notepad-detail' %}"
+																title="NotePads">NotePads</a>
 														</li>
 														<li><img src="{% static 'images/banner/menu/menu-cate-calendar.png' %}"
 																alt="Banners Signs"></li>
@@ -170,40 +187,29 @@
 														Format Printing</a>
 													<ul class="level2">
 														<li><span class="menu-title">Large Format Printing</span></li>
+
 														<li>
-															<a href=" #"
-																title="Marketing Materials">Banners</a>
-														</li>
-														<li>
-															<a href=" #" title="Dance Marketing Kit">Fabric
-																Banners</a>
-														</li>
-														<li>
-															<a href=" #" title="Event Marketing Kit">Floor
+															<a href="{% url 'Large_Format_Printing:floor-stickers-detail' %}"
+																title="floor stickers">Floor
 																Sticker</a>
 														</li>
 														<li>
-															<a href=" #"
-																title="Premium Pricelist Template">Foamcore Posters</a>
+															<a href="{% url 'Large_Format_Printing:foamcore-poster-detail' %}"
+																title="Foamcore Posters">Foamcore Posters</a>
 														</li>
 														<li>
-															<a href=" #" title="Postcards">Poster Printing</a>
+															<a href="{% url 'Large_Format_Printing:floor-stickers-detail' %}"
+																title="Poster printing">Poster Printing</a>
 														</li>
 														<li>
-															<a href=" #" title="Postcards Print">Poster
-																Printing</a>
-														</li>
-														<li>
-															<a href=" #" title="Marketing Postcards">PVC
-																Signs</a>
-														</li>
-														<li>
-															<a href=" #"
-																title="Marketing Postcards Product">Retraceable
+															<a href="{% url 'Large_Format_Printing:retractable-banners-detail' %}"
+																title="Retraceable
+																Banners">Retraceable
 																Banners</a>
 														</li>
 														<li>
-															<a href=" #" title="Marketing's Card">Table
+															<a href="{% url 'Large_Format_Printing:table-cover-detail' %}"
+																title="Marketing's Card">Table
 																Covers</a>
 														</li>
 														<li><img src="{% static 'images/banner/menu/menu-cate-calendar.png' %}"
@@ -216,33 +222,98 @@
 													<ul class="level2">
 														<li><span class="menu-title">Marketing Products</span></li>
 														<li>
-															<a href=" #"
+															<a href="{% url 'Marketing_Products:postcards-detail' %}"
 																title="Marketing Materials">Postcards</a>
 														</li>
 														<li>
-															<a href=" #"
+															<a href="{% url 'Marketing_Products:calenders-detail' %}"
 																title="Dance Marketing Kit">Calendars</a>
 														</li>
 														<li>
-															<a href=" #" title="Event Marketing Kit">Hang
+															<a href="{% url 'Marketing_Products:hangtags-detail' %}"
+																title="Event Marketing Kit">Hang
 																Tags</a>
 														</li>
 														<li>
-															<a href=" #"
+															<a href="{% url 'Marketing_Products:labels-and-stickers-detail' %}"
 																title="Premium Pricelist Template">Labels and
 																Stickers</a>
 														</li>
 														<li>
-															<a href=" #" title="Postcards">NCR Forms</a>
+															<a href="{% url 'Marketing_Products:ncr-forms-detail' %}"
+																title="Postcards">NCR Forms</a>
 														</li>
 														<li>
-															<a href=" #" title="Postcards Print">Presentation
+															<a href="{% url 'Marketing_Products:presentation-folder-detail' %}"
+																title="Postcards Print">Presentation
 																Folders</a>
 														</li>
 														<li>
-															<a href=" #" title="Postcards Print">Custom Holiday
+															<a href="{% url 'Marketing_Products:custom-holiday-cards-detail' %}"
+																title="Postcards Print">Custom Holiday
 																Cards</a>
 														</li>
+														<li>
+															<a href="{% url 'Marketing_Products:brouchers-flyers-detail' %}"
+																title="Postcards Print">Broushers and Flyers</a>
+														</li>
+														<li><img src="{% static 'images/banner/menu/menu-cate-calendar.png' %}"
+																alt="Business Stationery Forms"></li>
+													</ul>
+												</li>
+												<li class="level2">
+													<a href="#" title="Packaging Boxes">Packaging Boxes</a>
+													<ul class="level2">
+														<li><span class="menu-title">Packaging Boxes</span></li>
+														<li>
+															<a href="{% url 'boxes:pillow-boxes-detail' %}"
+																title="Marketing Materials">Pillow Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:gable-boxes-detail' %}"
+																title="Dance Marketing Kit">Gable Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:window-boxes-detail' %}"
+																title="Event Marketing Kit">Windows Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:mailer-boxes-detail' %}"
+																title="Premium Pricelist Template">Mailer Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:kraft-boxes-detail' %}"
+																title="Postcards">Kraft Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:cosmetics-boxes-detail' %}"
+																title="Postcards Print">Cosmetics Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:display-boxes-detail' %}"
+																title="Postcards Print">Display Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:sleeve-boxes-detail' %}"
+																title="Postcards Print">Sleeve Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:beverage-boxes-detail' %}"
+																title="Postcards">Beverages Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:candle-boxes-detail' %}"
+																title="Postcards Print">Candle Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:auto-parts-boxes-detail' %}"
+																title="Postcards Print">Autoparts Boxes</a>
+														</li>
+														<li>
+															<a href="{% url 'boxes:pizza-boxes-detail' %}"
+																title="Postcards Print">Pizza Boxes</a>
+														</li>
+
 														<li><img src="{% static 'images/banner/menu/menu-cate-calendar.png' %}"
 																alt="Business Stationery Forms"></li>
 													</ul>
@@ -256,9 +327,10 @@
 										</li>
 									</ul>
 								</li>
-								
+
 								<li class="level0 hd-pd">
-									<a href="{% url 'order_status' %}" title="Postcards"><span class="headerfont">Order Status</span></a>
+									<a href="{% url 'order_status' %}" title="Postcards"><span class="headerfont">Order
+											Status</span></a>
 								</li>
 								<li class="level0 hd-pd" title="About Us">
 									<a href="{% url 'contact-us' %}"><span class="headerfont">Conatct Us</span></a>
@@ -283,7 +355,7 @@
 							</span>
 						</div>
 						{% endblock cart %}
-						
+
 						<div class="search-w SC-w hd-pd ">
 							<span class="search-icon dropdowSCIcon">
 								<i class="fa fa-search"></i>
@@ -404,7 +476,8 @@
 						<h2>Other Info</h2>
 						<div class="footer-content">
 							<p>
-								<strong>BeeDee Printing</strong> provides fast online printing for both homes and businesses. We provide high
+								<strong>BeeDee Printing</strong> provides fast online printing for both homes and
+								businesses. We provide high
 								quality business cards, postcards, flyers, brochures, stationery and other premium
 								online print products.
 							</p>
@@ -450,15 +523,18 @@
 						<a href="{% url 'business-cards' %}" title="Business Card">Business Card</a>
 					</li>
 					<li class="level1">
-						<a href="{% url 'business_stationary' %}" title="Premium Business Card">Business Stationery</a>
+						<a href="{% url 'business_stationary' %}" title="Business Stationery">Business Stationery</a>
 					</li>
 					<li class="level1">
-						<a href="{% url 'large_format' %}" title="Free Business Card">Large Format Printing</a>
+						<a href="{% url 'large_format' %}" title="Large Format Printing">Large Format Printing</a>
 					</li>
 					<li class="level1">
-						<a href="{% url 'marketing_products' %}" title="Marketing Materials">Marketing Products</a>
+						<a href="{% url 'marketing_products' %}" title="Marketing Products">Marketing Products</a>
 					</li>
-					
+					<li class="level1">
+						<a href="#" title="Packaging Boxes">Packaging Boxes</a>
+					</li>
+
 				</ul>
 			</li>
 			<li class="level0 parent col1">
@@ -468,44 +544,55 @@
 				</a>
 				<ul class="level0">
 					<li class="level1 nav-1-1 first item">
-						<a href="{% url 'Business_Cards:business-card-detail' %}" title="Premium Business Cards">Simple Business Cards</a>
+						<a href="{% url 'Business_Cards:business-card-detail' %}" title="Premium Business Cards">Simple
+							Business Cards</a>
 					</li>
 					<li class="level1 nav-1-2 item">
-						<a href="{% url 'Business_Cards:edge-painted-detail' %}" title="Free Business Cards">Edge Painted Business Cards</a>
+						<a href="{% url 'Business_Cards:edge-painted-detail' %}" title="Free Business Cards">Edge
+							Painted Business Cards</a>
 					</li>
-					<!-- <li class="level1 nav-1-3 item">
-						<a href="#" title="Die-Cut Business Cards">Foil Business Cards</a>
+					<li>
+						<a href="{% url 'Business_Cards:foil-business-card-detail' %}" title="Foil
+						Business Cards">Foil
+							Business Cards</a>
 					</li>
-					<li class="level1 nav-1-4 item">
-						<a href="#" title="Standard Business Cards">Panton Business Cards</a>
+					<li>
+						<a href="{% url 'Business_Cards:pantone-business-cards-detail' %}" title="Panton Business
+						Cards">Panton Business
+							Cards</a>
 					</li>
-					<li class="level1 nav-1-5 item">
-						<a href="#" class="Personal Business Cards">Plastic Business Cards</a>
+					<li>
+						<a href="{% url 'Business_Cards:plastic-business-cards-detail' %}" title="Plastic
+						Business Cards">Plastic
+							Business Cards</a>
 					</li>
-					<li class="level1 nav-1-6 item">
-						<a href="#" title="Business Card Holders">Raised Ink Business Card</a>
+					<li>
+						<a href="{% url 'Business_Cards:raised-ink-business-cards-detail' %}" title="Raised Ink
+						Business Cards">Raised Ink
+							Business Cards</a>
 					</li>
-					<li class="level1 nav-1-7 item">
-						<a href="#" title="Networking Cards">Raised Spot Uv Business Card</a>
-					</li> -->
+					<li>
+						<a href="{% url 'Business_Cards:raised-spot-uv-business-card-detail' %}" title="Raised Spot
+						UV Business Cards">Raised Spot
+							UV Business Cards</a>
+					</li>
 				</ul>
 			</li>
-			<li class="level0">
-				<a href="{% url 'marketing_products' %}" title="Marketing">Marketing</a>
-			</li>
+			
 			<li class="level0">
 				<a href="{% url 'order_status' %}" title="Postcards">Order Status</a>
-			</li>
-			<li class="level0">
-				<a href="{% url 'aboutus' %}" title="Stickers & Badges">About US</a>
 			</li>
 			<li class="level0" title="Promotional">
 				<a href="{% url 'contact-us' %}">Contact US</a>
 			</li>
+			<li class="level0">
+				<a href="{% url 'aboutus' %}" title="Stickers & Badges">About US</a>
+			</li>
+			
 		</ul>
 	</nav>
 	<!--Add js lib-->
-	
+
 	<script type="text/javascript" src="{% static 'js/jquery/jquery-1.11.3.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
@@ -518,14 +605,14 @@
 
 	<script>
 		function copyToClipboard(element) {
-		var $temp = $("<input>");
-		$("body").append($temp);
-		$temp.val($(element).text()).select();
-		document.execCommand("copy");
-		$temp.remove();
+			var $temp = $("<input>");
+			$("body").append($temp);
+			$temp.val($(element).text()).select();
+			document.execCommand("copy");
+			$temp.remove();
 		}
-		$(document).ready(function(){
-		$('.btn-readmore-t').tooltip({title: "Copied to Clip Board!", trigger: "click", placement: "right"});
+		$(document).ready(function () {
+			$('.btn-readmore-t').tooltip({ title: "Copied to Clip Board!", trigger: "click", placement: "right" });
 		});
 	</script>
 
