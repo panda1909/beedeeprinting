@@ -196,7 +196,7 @@
                         <div class="product-image-action">
                             <img src="{% static 'images/product/263x263/1.jpeg' %}" alt="Grouper Business card">
                             <div class="action" style="padding-left: 20%;">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"
+                                <a href="{% url 'Business_Cards:business-card-detail' %}" data-toggle="tooltip" data-placement="top" title="Quickview"
                                     class="quick-view">
                                     <i class="fa fa-eye"></i>
                                 </a>
@@ -204,7 +204,7 @@
                             <span class="product-icon sale-icon">sale!</span>
                         </div>
                         <div class="product-info">
-                            <a href="detail.html" title="product" class="product-name">Business card</a>
+                            <a href="{% url 'Business_Cards:business-card-detail' %}" title="product" class="product-name">Business card</a>
                             <div class="price-box">
                                 <span class="normal-price">View Pricing</span>
                             </div>
@@ -214,14 +214,14 @@
                         <div class="product-image-action">
                             <img src="{% static 'images/product/263x263/boxes.jpeg' %}" alt="New Brochures">
                             <div class="action" style="padding-left: 20%;">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"
+                                <a href="{% url 'boxes:cosmetics-boxes-detail' %}" data-toggle="tooltip" data-placement="top" title="Quickview"
                                     class="quick-view">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <a href="detail.html" title="product" class="product-name">Packing Boxes</a>
+                            <a href="{% url 'boxes:cosmetics-boxes-detail' %}" title="product" class="product-name">Cosmetics Boxes</a>
                             <div class="price-box">
                                 <span class="normal-price">View Pricing</span>
                             </div>
@@ -231,7 +231,7 @@
                         <div class="product-image-action">
                             <img src="{% static 'images/product/263x263/postcard.jpeg' %}" alt="Flyers Two Page">
                             <div class="action" style="padding-left: 20%;">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"
+                                <a href="{% url 'Marketing_Products:postcards-detail' %}" data-toggle="tooltip" data-placement="top" title="Quickview"
                                     class="quick-view">
                                     <i class="fa fa-eye"></i>
                                 </a>
@@ -239,7 +239,7 @@
                             <span class="product-icon new-icon">new!</span>
                         </div>
                         <div class="product-info">
-                            <a href="detail.html" title="product" class="product-name">Postcard</a>
+                            <a href="{% url 'Marketing_Products:postcards-detail' %}" title="product" class="product-name">Postcard</a>
                             <div class="price-box">
                                 <span class="normal-price">View Pricing</span>
                             </div>
@@ -250,14 +250,14 @@
                         <div class="product-image-action">
                             <img src="{% static 'images/product/263x263/flyer.jpeg' %}" alt="Business Card">
                             <div class="action" style="padding-left: 20%;">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"
+                                <a href="{% url 'Marketing_Products:brouchers-flyers-detail' %}" data-toggle="tooltip" data-placement="top" title="Quickview"
                                     class="quick-view">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <a href="detail.html" title="product" class="product-name">Flyers</a>
+                            <a href="{% url 'Marketing_Products:brouchers-flyers-detail' %}" title="product" class="product-name">Flyers</a>
                             <div class="price-box">
                                 <span class="normal-price">View Pricing</span>
                             </div>
@@ -334,7 +334,7 @@
 
 
     <!--Home Promotions Products : Begin -->
-    <section class="home-promotion-product home-product parten-bg">
+    <!-- <section class="home-promotion-product home-product parten-bg">
         <div class="container">
             <div class="row">
                 <div class="block-title-w">
@@ -421,7 +421,7 @@
                 <br>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--Home Promotions Products : End -->
 
 
