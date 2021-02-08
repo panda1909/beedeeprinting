@@ -23,8 +23,10 @@
                                 <span>Business Stationary</span>
                             {% elif lf_card %}
                                 <span>Large Format printing</span>
-                            {% else %}
+                            {% elif mp_card %}
                                 <span>Marketing Products</span>
+                            {% else %}
+                                <span>Packaging Boxes</span>
                             {% endif %}
                         </li>
                     </ul>
@@ -62,10 +64,10 @@
                             </a>
 
                             <ul class="level0">
-                                {% for bs_product in bs_product %}
+                                {% for urls_bs_aside,bs_object_aside in bs_list_aside %}
                                 <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ bs_product.Label }}
+                                    <a href="{{ urls_bs_aside }}" title="Premium Business Cards">
+                                        {{ bs_list_aside.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -78,10 +80,10 @@
                             </a>
 
                             <ul class="level0">
-                                {% for lf_product in lf_product %}
+                                {% for urls_lf_aside,lf_object_aside in lf_list_aside %}
                                 <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ lf_product.Label }}
+                                    <a href="{{ urls_lf_aside }}" title="Premium Business Cards">
+                                        {{ lf_object_aside.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -94,50 +96,29 @@
                             </a>
 
                             <ul class="level0">
-                                {% for mp_product in mp_product %}
+                                {% for urls_mp_aside,mp_object_aside in mp_list_aside %}
                                 <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ mp_product.Label }}
+                                    <a href="{{ urls_mp_aside }}" title="Premium Business Cards">
+                                        {{ mp_object_aside.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
                             </ul>
                         </li>
                         <li class="level0 parent">
-                            <a href="#" title="Business Cards">
-                                <span style="color: black;">All Products</span>
+                            <a href="#" title="Marketing Products">
+                                <span style="color: black;">Packaging Boxes</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-                            <ul class="level0">
-                                {% for bc_product in bc_product %}
-                                <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ bc_product.Label }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                                {% for bs_product in bs_product %}
-                                <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ bs_product.Label }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                                {% for lf_product in lf_product %}
-                                <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ lf_product.Label }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                                {% for mp_product in mp_product %}
-                                <li class="level1 nav-1-1 first item">
-                                    <a href="#" title="Premium Business Cards">
-                                        {{ mp_product.Label }}
-                                    </a>
-                                </li>
-                                {% endfor %}
 
+                            <ul class="level0">
+                                {% for urls_b_aside,b_object_aside in b_list_aside %}
+                                <li class="level1 nav-1-1 first item">
+                                    <a href="{{ urls_b_aside }}" title="Premium Business Cards">
+                                        {{ b_object_aside.Label }}
+                                    </a>
+                                </li>
+                                {% endfor %}
                             </ul>
                         </li>
                     </ul>

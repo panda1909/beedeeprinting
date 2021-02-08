@@ -5,7 +5,6 @@ from Marketing_Products.models import Calendars
 import json
 # All category products
 from Business_Cards.models import Products as bc_products 
-from Business_Cards.models import business_cards_price, Extra_features
 from Business_Stationary.models import Products as bs_products
 from Large_Format_Printing.models import Products as lf_products
 from Marketing_Products.models import Products as mp_products
@@ -392,32 +391,72 @@ def All_products(request):
 # ------  All pages are dynamic using if else and db ------ #
 
 def Business_card(request):
-    bc_object = bc_products.objects.all()
-    bs_object = bs_products.objects.all()
-    lf_object = lf_products.objects.all()
-    mp_object = mp_products.objects.all()
-    bc_object_aside = bc_products.objects.all()
     bc_card = 1
     bs_card = 0
     lf_card = 0
     mp_card = 0
+    b_card = 0
 
-    urls_bc = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
-    urls_bc_aside = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail"]
+    bc_object = bc_products.objects.all()
+    bc_object_aside = bc_products.objects.all()
+    bs_object_aside = bs_products.objects.all()
+    lf_object_aside = lf_products.objects.all()
+    mp_object_aside = mp_products.objects.all()
+    b_object_aside = b_products.objects.all()
+    ### urls list for BC products ###
+    urls_bc = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail",
+                "business-cards/foil-business-card-detail" , "business-cards/raised-spot-uv-business-card-detail",
+                "business-cards/pantone-business-cards-detail", "business-cards/plastic-business-cards-detail",
+                "business-cards/raised-ink-business-cards-detail"]
+    ### urls list for navbar BC products ###
+    urls_bc_aside = ["business-cards/business-card-detail" , "business-cards/edge-painted-detail",
+                "business-cards/foil-business-card-detail" , "business-cards/raised-spot-uv-business-card-detail",
+                "business-cards/pantone-business-cards-detail", "business-cards/plastic-business-cards-detail",
+                "business-cards/raised-ink-business-cards-detail"]
+    ### Business Cards zip objects ###
     bc_list = zip(urls_bc,bc_object)
     bc_aside = zip(urls_bc_aside,bc_object_aside)
+    ### Urls list for navbar BS products ###
+    urls_bs_aside = ["business-stationary/envelopes-detail","business-stationary/letterhead-detail",
+                    "business-stationary/notepad-detail"]
+    ### Business Staionary zip objects ###
+    bs_list_aside = zip(urls_bs_aside,bs_object_aside)
+    ### Urls list for navbar lf products ###
+    urls_lf_aside = ["large-format/floor-stickers-detail", "large-format/foamcore-poster-detail",
+                "large-format/poster-printing-detail", "large-format/retractable-banners-detail",
+                "large-format/table-cover-detail"]
+    ### LF prodcuts zip objects ###
+    lf_list_aside = zip(urls_lf_aside,lf_object_aside)
+    ### Urls list for navbar mp products ###
+    urls_mp_aside = ["marketing-products/postcards-detail","marketing-products/calenders-detail",
+                "marketing-products/brouchers-flyers-detail", "marketing-products/hangtags-detail",
+                "marketing-products/labels-and-stickers-detail", "marketing-products/ncr-forms-detail",
+                "marketing-products/presentation-folder-detail","marketing-products/custom-holiday-cards-detail"]
+    ### LF prodcuts zip objects ###
+    mp_list_aside = zip(urls_mp_aside,mp_object_aside)
+    ### Urls list navbar Boxes prodcuts ###
+    urls_b_aside = ["boxes/pillow-boxes-detail", "boxes/gable-boxes-detail", 
+            "boxes/window-boxes-detail", "boxes/mailer-boxes-detail", 
+            "boxes/kraft-boxes-detail", "boxes/cosmetics-boxes-detail", 
+            "boxes/sleeve-boxes-detail", "boxes/display-boxes-detail", 
+            "boxes/beverage-boxes-detail", "boxes/candle-boxes-detail", 
+            "boxes/auto-parts-boxes-detail", "boxes/pizza-boxes-detail" 
+            ]
+    ### Boxes Zip objects ###
+    b_list_aside = zip(urls_b_aside, b_object_aside)
 
     context = {
-        "bc_product" : bc_object,
-        "bs_product" : bs_object,
-        "lf_product" : lf_object,
-        "mp_product" : mp_object,
+        "bc_list" : bc_list,
+        "bc_list_aside" : bc_aside,
+        "bs_list" : bs_list_aside,
+        "lf_list" : lf_list_aside,
+        "mp_list" : mp_list_aside,
+        "b_list"  : b_list_aside,
         "bc_card" : bc_card,
         "bs_card" : bs_card,
         "lf_card" : lf_card,
         "mp_card" : mp_card,
-        "bc_list"    : bc_list,
-        "bc_aside"   : bc_aside,
+        "b_card"  : b_card,
     }
     return render(request, "core/catogery.html", context)
 
