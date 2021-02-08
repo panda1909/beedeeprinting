@@ -48,7 +48,7 @@
                             </a>
                             
                             <ul class="level0">
-                                {% for urls_bc_aside,bc_object_aside in bc_aside %}
+                                {% for urls_bc_aside,bc_object_aside in bc_list_aside %}
                                 <li class="level1 nav-1-1 first item">
                                     <a href="{{ urls_bc_aside }}" title="Premium Business Cards">
                                         {{ bc_object_aside.Label }}
@@ -57,22 +57,24 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        
                         <li class="level0 parent">
-                            <a href="#" title="Business Stationary">
+                            <a href="#" title="Business Cards">
                                 <span style="color: black;">Business Stationary</span>
                                 <i class="fa fa-minus"></i><i class="fa fa-plus"></i>
                             </a>
-
+                            
                             <ul class="level0">
                                 {% for urls_bs_aside,bs_object_aside in bs_list_aside %}
                                 <li class="level1 nav-1-1 first item">
                                     <a href="{{ urls_bs_aside }}" title="Premium Business Cards">
-                                        {{ bs_list_aside.Label }}
+                                        {{ bs_object_aside.Label }}
                                     </a>
                                 </li>
                                 {% endfor %}
                             </ul>
                         </li>
+                        
                         <li class="level0 parent">
                             <a href="#" title="Large Format Printing">
                                 <span style="color: black;">Large Format Printing</span>
@@ -184,12 +186,12 @@
                         </div>
                     {% elif bs_card %}
                         <div class="row products-grid category-product">
-                            {% for bs_product in bs_product %}
+                            {% for urls_bs,bs_object in bs_list %}
                             <ul>
                                 <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                     <div class="product-image-action">
-                                        <img src="{{ bs_product.image1 }}"
-                                            alt="{{ bs_product.Label }}">
+                                        <img src="{{ bs_object.image1 }}"
+                                            alt="{{ bs_object.Label }}">
                                         <div class="action" style="padding-left: 22%;">
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
@@ -198,7 +200,7 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="detail.html" title="product" class="product-name">{{ bs_product.Label }}</a>
+                                        <a href="{{ urls_bs }}" title="product" class="product-name">{{ bs_object.Label }}</a>
                                         <div class="price-box">
                                             <span class="normal-price">View Pricing</span>
                                         </div>
@@ -218,12 +220,12 @@
                     {% elif mp_card %}
                         <div class="row products-grid category-product">
 
-                            {% for mp_product in mp_product %}
+                            {% for urls_mp,mp_object in mp_list %}
                             <ul>
                                 <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                     <div class="product-image-action">
-                                        <img  src="{{ mp_product.image1 }}"
-                                            alt="{{ mp_product.Label }}">
+                                        <img  src="{{ mp_object.image1 }}"
+                                            alt="{{ mp_object.Label }}">
                                         <div class="action" style="padding-left: 22%;">
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
@@ -232,7 +234,7 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="detail.html" title="product" class="product-name">{{ mp_product.Label }}</a>
+                                        <a href="{{ urls_mp }}" title="product" class="product-name">{{ mp_object.Label }}</a>
                                         <div class="price-box">
                                             <span class="normal-price">View Pricing</span>
                                         </div>
@@ -250,14 +252,14 @@
                             </ul>
                             {% endfor %}
                         </div>
-                    {% elif lf_card %}
+                        {% elif b_card %}
                         <div class="row products-grid category-product">
-                            {% for lf_product in lf_product %}
+                            {% for urls_b,b_object in b_list %}
                             <ul>
                                 <li class="pro-item col-md-4 col-sm-6 col-xs-12">
                                     <div class="product-image-action">
-                                        <img src="{{ lf_product.image1 }}"
-                                            alt="{{ lf_product.Label }}">
+                                        <img src="{{ b_object.image1 }}"
+                                            alt="{{ b_object.Label }}">
                                         <div class="action" style="padding-left: 22%;">
                                             <button type="button" data-toggle="tooltip" data-placement="top"
                                                 title="Quickview" class="add-to-cart gbtn" title="Quickview">
@@ -266,7 +268,41 @@
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <a href="detail.html" title="product" class="product-name">{{ lf_product.Label }}</a>
+                                        <a href="{{ urls_b }}" title="product" class="product-name">{{ b_object.Label }}</a>
+                                        <div class="price-box">
+                                            <span class="normal-price">View Pricing</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        {% elif lf_card %}
+                        <div class="row products-grid category-product">
+                            {% for urls_lf,lf_object in lf_list %}
+                            <ul>
+                                <li class="pro-item col-md-4 col-sm-6 col-xs-12">
+                                    <div class="product-image-action">
+                                        <img src="{{ lf_object.image1 }}"
+                                            alt="{{ lf_object.Label }}">
+                                        <div class="action" style="padding-left: 22%;">
+                                            <button type="button" data-toggle="tooltip" data-placement="top"
+                                                title="Quickview" class="add-to-cart gbtn" title="Quickview">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="{{ urls_lf }}" title="product" class="product-name">{{ lf_object.Label }}</a>
                                         <div class="price-box">
                                             <span class="normal-price">View Pricing</span>
                                         </div>
