@@ -362,10 +362,15 @@
 							</span>
 							<div class="search-safari">
 								<div class="search-form dropdowSCContent">
-									<form method="POST" action="#">
-										<input type="text" name="search" placeholder="Search" />
-										<input type="submit" name="search" value="Search">
+									<form method="POST" action="{% url 'search' %}">
+										{% csrf_token %}
+										<input type="text" list="listid" name="search" placeholder="Search" />
 										<i class="fa fa-search"></i>
+										<datalist id="listid">
+											{% for show_items in show_items %}
+												<option value="{{ show_items }}">
+											{% endfor %}
+										</datalist>
 									</form>
 								</div>
 							</div>

@@ -16,8 +16,9 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
 from .form import checkoutForm,queries, bookcalls, BoxcheckoutForm
-import shortuuid
 
+import shortuuid
+from nocasedict import NocaseDict
 
 
 # Create your views here.
@@ -27,11 +28,37 @@ def Home(request):
     if request.method == 'POST':
         if form.is_valid:
             form.save()
+    products_search = NocaseDict({'Business Card': "business-cards/business-card-detail",'Edge Painted business card': "business-cards/edge-painted-detail",
+                'Foil Business Card': "business-cards/foil-business-card-detail",'Raised spot UV business card': "business-cards/raised-spot-uv-business-card-detail",
+                'Pantone Business Card':"business-cards/pantone-business-cards-detail",'Plastic Business Card': "business-cards/plastic-business-cards-detail",
+                'Raised Ink Business Card':"business-cards/raised-ink-business-cards-detail",'Envelopes': "business-stationary/envelopes-detail",'Letter Head':  "business-stationary/letterhead-detail", 'Notepad': "business-stationary/notepad-detail",'Floor Stickers': "large-format/floor-stickers-detail",'Foamcore Poster': "large-format/foamcore-poster-detail",'Poster Printing': "large-format/poster-printing-detail",'Retractable Banners': "large-format/retractable-banners-detail",'Table Covers': "large-format/table-cover-detail",'Postcard': "marketing-products/postcards-detail", 'Calenders': "marketing-products/calenders-detail", 'Brouchers': "marketing-products/brouchers-flyers-detail", 'Flyers': "marketing-products/brouchers-flyers-detail",'Hangtags': "marketing-products/hangtags-detail",'Labels':"marketing-products/labels-and-stickers-detail", 'Stickers':"marketing-products/labels-and-stickers-detail",'NCR Forms': "marketing-products/ncr-forms-detail",'Presentation Folders':"marketing-products/presentation-folder-detail", 'Custom Holiday Card': "marketing-products/custom-holiday-cards-detail",'Pillow Boxes':"boxes/pillow-boxes-detail",'Gable Boxes': "boxes/gable-boxes-detail", 
+                'Window Boxes': "boxes/window-boxes-detail",'Mailer Boxes': "boxes/mailer-boxes-detail",'Kraft Boxes': "boxes/kraft-boxes-detail",'Cosmetics': "boxes/cosmetics-boxes-detail",'Sleeve Boxes': "boxes/sleeve-boxes-detail",'Display Boxes': "boxes/display-boxes-detail", 'Beverages Boxes': "boxes/beverage-boxes-detail",'Candle Boxes': "boxes/candle-boxes-detail",'Auto-Parts Boxes': "boxes/auto-parts-boxes-detail",'Pizza Boxes': "boxes/pizza-boxes-detail" })
+    if request.method == 'POST':
+        var = request.POST
+        search_item = var['search']
+        if search_item in products_search:
+            return redirect(products_search[search_item])
+        else:
+            print("not")
     context = {
+        'show_items': products_search.keys,
         "form": form
     }
     return render(request, "core/index.html", context)
-
+def Search(request):
+    products_search = NocaseDict({'Business Card': "business-cards/business-card-detail",'Edge Painted business card': "business-cards/edge-painted-detail",
+                'Foil Business Card': "business-cards/foil-business-card-detail",'Raised spot UV business card': "business-cards/raised-spot-uv-business-card-detail",
+                'Pantone Business Card':"business-cards/pantone-business-cards-detail",'Plastic Business Card': "business-cards/plastic-business-cards-detail",
+                'Raised Ink Business Card':"business-cards/raised-ink-business-cards-detail",'Envelopes': "business-stationary/envelopes-detail",'Letter Head':  "business-stationary/letterhead-detail", 'Notepad': "business-stationary/notepad-detail",'Floor Stickers': "large-format/floor-stickers-detail",'Foamcore Poster': "large-format/foamcore-poster-detail",'Poster Printing': "large-format/poster-printing-detail",'Retractable Banners': "large-format/retractable-banners-detail",'Table Covers': "large-format/table-cover-detail",'Postcard': "marketing-products/postcards-detail", 'Calenders': "marketing-products/calenders-detail", 'Brouchers': "marketing-products/brouchers-flyers-detail", 'Flyers': "marketing-products/brouchers-flyers-detail",'Hangtags': "marketing-products/hangtags-detail",'Labels':"marketing-products/labels-and-stickers-detail", 'Stickers':"marketing-products/labels-and-stickers-detail",'NCR Forms': "marketing-products/ncr-forms-detail",'Presentation Folders':"marketing-products/presentation-folder-detail", 'Custom Holiday Card': "marketing-products/custom-holiday-cards-detail",'Pillow Boxes':"boxes/pillow-boxes-detail",'Gable Boxes': "boxes/gable-boxes-detail", 
+                'Window Boxes': "boxes/window-boxes-detail",'Mailer Boxes': "boxes/mailer-boxes-detail",'Kraft Boxes': "boxes/kraft-boxes-detail",'Cosmetics': "boxes/cosmetics-boxes-detail",'Sleeve Boxes': "boxes/sleeve-boxes-detail",'Display Boxes': "boxes/display-boxes-detail", 'Beverages Boxes': "boxes/beverage-boxes-detail",'Candle Boxes': "boxes/candle-boxes-detail",'Auto-Parts Boxes': "boxes/auto-parts-boxes-detail",'Pizza Boxes': "boxes/pizza-boxes-detail" })
+    if request.method == 'POST':
+        var = request.POST
+        search_item = var['search']
+        if search_item in products_search:
+            return redirect(products_search[search_item])
+        else:
+            print("not")
+    return render(request, "core/index.html", {'show_items': products_search.keys})
 
 def Emptycart(request):
     return render(request, 'core/emptycart.html')
