@@ -684,6 +684,10 @@ def Pantone_business_cards(request):
         # discount_query = edge_painted_business_cards_price.objects.raw('SELECT id, Discount FROM Business_Cards_edge_painted_business_cards_price WHERE quantity = %s', [quantity])
         discount_query = pantone_business_cards_price.objects.filter(quantity=quantity).values('id', 'Discount')
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 47c6e4a0512abc5f27fc5093e136b12900469e80
         extra_size = '2"x3.5" - US Standard Size'
         # sides price query
         if sides == 'two_sided':
