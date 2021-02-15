@@ -642,7 +642,7 @@ def Pantone_business_cards(request):
         discount_query = pantone_business_cards_price.objects.filter(quantity=quantity).values('id', 'Discount')
 
 
-
+        extra_size = '2"x3.5" - US Standard Size'
         # sides price query
         if sides == 'two_sided':
             # sides_query = Extra_features.objects.raw('SELECT id, second_side_price FROM Business_Cards_Extra_features')
