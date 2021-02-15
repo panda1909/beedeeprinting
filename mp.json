@@ -1,5 +1,4 @@
-[
-    {
+[{
         "model": "Marketing_Products.calendars",
         "pk": 2,
         "fields": {
@@ -9,37 +8,451 @@
         }
     },
     {
+        "model": "Marketing_Products.calendars",
+        "pk": 3,
+        "fields": {
+            "quantity": 20,
+            "price": 200.0,
+            "Discount": 10.0
+        }
+    },
+    {
+        "model": "Marketing_Products.calendars",
+        "pk": 4,
+        "fields": {
+            "quantity": 300,
+            "price": 300.0,
+            "Discount": 20.0
+        }
+    },
+    {
+        "model": "Marketing_Products.calendars",
+        "pk": 5,
+        "fields": {
+            "quantity": 400,
+            "price": 400.0,
+            "Discount": 30.0
+        }
+    },
+    {
+        "model": "Marketing_Products.calendars",
+        "pk": 6,
+        "fields": {
+            "quantity": 500,
+            "price": 500.0,
+            "Discount": 35.0
+        }
+    },
+    {
+        "model": "Marketing_Products.brochuresandflyers",
+        "pk": 1,
+        "fields": {
+            "quantity": 100,
+            "price": 100.0,
+            "Discount": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.brochuresandflyers",
+        "pk": 2,
+        "fields": {
+            "quantity": 200,
+            "price": 200.0,
+            "Discount": 10.0
+        }
+    },
+    {
+        "model": "Marketing_Products.brochuresandflyers",
+        "pk": 3,
+        "fields": {
+            "quantity": 300,
+            "price": 300.0,
+            "Discount": 20.0
+        }
+    },
+    {
+        "model": "Marketing_Products.brochuresandflyers",
+        "pk": 4,
+        "fields": {
+            "quantity": 400,
+            "price": 400.0,
+            "Discount": 30.0
+        }
+    },
+    {
+        "model": "Marketing_Products.brochuresandflyers",
+        "pk": 5,
+        "fields": {
+            "quantity": 500,
+            "price": 500.0,
+            "Discount": 50.0
+        }
+    },
+    {
         "model": "Marketing_Products.postcards",
         "pk": 1,
         "fields": {
-            "Quantity": 120,
+            "Quantity": 100,
             "Discount": 0.0,
             "Template": "",
-            "Two_By_Eight": 0.0,
-            "Three_By_Five": 0.0,
-            "Three_By_Five_By_Five": 0.0,
-            "Four_By_Twelve": 0.0,
-            "Four_By_Four": 0.0,
-            "Four_By_Five": 0.0,
-            "Four_By_Six": 0.0,
-            "Four_By_Nine": 0.0,
-            "Four_By_TwoFive_By_Eleven": 0.0,
-            "Four_By_TwoFive_By_FiveByFive": 0.0,
-            "Five_By_Seven": 0.0,
-            "Four_By_TwoFive_By_Six": 0.0,
-            "Four_By_TwoFive_By_Nine": 0.0,
-            "Four_By_Five_By_Twelve": 0.0,
-            "Five_By_Five": 0.0,
-            "Eight_By_Five_By_Five_By_Five": 0.0,
-            "Six_By_Eleven": 0.0,
-            "Six_By_Six": 0.0,
-            "Six_By_Nine": 0.0,
-            "Six_By_TwoFive_By_Eleven": 0.0,
-            "Six_By_TwoFive_By_Nine": 0.0,
-            "Six_By_Five_By_Eleven": 0.0,
-            "Eight_By_Five": 0.0,
-            "Eight_By_Five_By_Three_By_Five": 0.0,
-            "Eight_By_Five_By_Eleven": 0.0
+            "Two_By_Eight": 1.0,
+            "Three_By_Five": 2.0,
+            "Three_By_Five_By_Five": 3.0,
+            "Four_By_Twelve": 4.0,
+            "Four_By_Four": 5.0,
+            "Four_By_Five": 6.0,
+            "Four_By_Six": 7.0,
+            "Four_By_Nine": 8.0,
+            "Four_By_TwoFive_By_Eleven": 9.0,
+            "Four_By_TwoFive_By_FiveByFive": 10.0,
+            "Five_By_Seven": 11.0,
+            "Four_By_TwoFive_By_Six": 12.0,
+            "Four_By_TwoFive_By_Nine": 13.0,
+            "Four_By_Five_By_Twelve": 14.0,
+            "Five_By_Five": 15.0,
+            "Eight_By_Five_By_Five_By_Five": 16.0,
+            "Six_By_Eleven": 17.0,
+            "Six_By_Six": 18.0,
+            "Six_By_Nine": 19.0,
+            "Six_By_TwoFive_By_Eleven": 20.0,
+            "Six_By_TwoFive_By_Nine": 21.0,
+            "Six_By_Five_By_Eleven": 22.0,
+            "Eight_By_Five": 23.0,
+            "Eight_By_Five_By_Three_By_Five": 24.0,
+            "Eight_By_Five_By_Eleven": 25.0
+        }
+    },
+    {
+        "model": "Marketing_Products.postcards",
+        "pk": 2,
+        "fields": {
+            "Quantity": 200,
+            "Discount": 0.0,
+            "Template": "",
+            "Two_By_Eight": 21.0,
+            "Three_By_Five": 22.0,
+            "Three_By_Five_By_Five": 23.0,
+            "Four_By_Twelve": 24.0,
+            "Four_By_Four": 25.0,
+            "Four_By_Five": 26.0,
+            "Four_By_Six": 27.0,
+            "Four_By_Nine": 28.0,
+            "Four_By_TwoFive_By_Eleven": 29.0,
+            "Four_By_TwoFive_By_FiveByFive": 30.0,
+            "Five_By_Seven": 31.0,
+            "Four_By_TwoFive_By_Six": 32.0,
+            "Four_By_TwoFive_By_Nine": 33.0,
+            "Four_By_Five_By_Twelve": 34.0,
+            "Five_By_Five": 35.0,
+            "Eight_By_Five_By_Five_By_Five": 36.0,
+            "Six_By_Eleven": 37.0,
+            "Six_By_Six": 38.0,
+            "Six_By_Nine": 39.0,
+            "Six_By_TwoFive_By_Eleven": 40.0,
+            "Six_By_TwoFive_By_Nine": 41.0,
+            "Six_By_Five_By_Eleven": 42.0,
+            "Eight_By_Five": 43.0,
+            "Eight_By_Five_By_Three_By_Five": 44.0,
+            "Eight_By_Five_By_Eleven": 45.0
+        }
+    },
+    {
+        "model": "Marketing_Products.postcards",
+        "pk": 3,
+        "fields": {
+            "Quantity": 300,
+            "Discount": 30.0,
+            "Template": "",
+            "Two_By_Eight": 50.0,
+            "Three_By_Five": 51.0,
+            "Three_By_Five_By_Five": 52.0,
+            "Four_By_Twelve": 53.0,
+            "Four_By_Four": 54.0,
+            "Four_By_Five": 55.0,
+            "Four_By_Six": 56.0,
+            "Four_By_Nine": 57.0,
+            "Four_By_TwoFive_By_Eleven": 58.0,
+            "Four_By_TwoFive_By_FiveByFive": 59.0,
+            "Five_By_Seven": 60.0,
+            "Four_By_TwoFive_By_Six": 61.0,
+            "Four_By_TwoFive_By_Nine": 62.0,
+            "Four_By_Five_By_Twelve": 63.0,
+            "Five_By_Five": 64.0,
+            "Eight_By_Five_By_Five_By_Five": 65.0,
+            "Six_By_Eleven": 66.0,
+            "Six_By_Six": 67.0,
+            "Six_By_Nine": 68.0,
+            "Six_By_TwoFive_By_Eleven": 69.0,
+            "Six_By_TwoFive_By_Nine": 70.0,
+            "Six_By_Five_By_Eleven": 71.0,
+            "Eight_By_Five": 72.0,
+            "Eight_By_Five_By_Three_By_Five": 73.0,
+            "Eight_By_Five_By_Eleven": 74.0
+        }
+    },
+    {
+        "model": "Marketing_Products.hangtags",
+        "pk": 1,
+        "fields": {
+            "Quantity": 100,
+            "Three_By_Five_By_One_By_Five": 100.0,
+            "Discount": 0.0,
+            "Two_By_Five_By_Two_By_Five": 110.0,
+            "Two_By_Six": 120.0
+        }
+    },
+    {
+        "model": "Marketing_Products.hangtags",
+        "pk": 2,
+        "fields": {
+            "Quantity": 200,
+            "Three_By_Five_By_One_By_Five": 200.0,
+            "Discount": 0.0,
+            "Two_By_Five_By_Two_By_Five": 210.0,
+            "Two_By_Six": 220.0
+        }
+    },
+    {
+        "model": "Marketing_Products.hangtags",
+        "pk": 3,
+        "fields": {
+            "Quantity": 300,
+            "Three_By_Five_By_One_By_Five": 300.0,
+            "Discount": 0.0,
+            "Two_By_Five_By_Two_By_Five": 310.0,
+            "Two_By_Six": 320.0
+        }
+    },
+    {
+        "model": "Marketing_Products.hangtags",
+        "pk": 4,
+        "fields": {
+            "Quantity": 400,
+            "Three_By_Five_By_One_By_Five": 400.0,
+            "Discount": 40.0,
+            "Two_By_Five_By_Two_By_Five": 410.0,
+            "Two_By_Six": 420.0
+        }
+    },
+    {
+        "model": "Marketing_Products.hangtags",
+        "pk": 5,
+        "fields": {
+            "Quantity": 500,
+            "Three_By_Five_By_One_By_Five": 500.0,
+            "Discount": 50.0,
+            "Two_By_Five_By_Two_By_Five": 510.0,
+            "Two_By_Six": 520.0
+        }
+    },
+    {
+        "model": "Marketing_Products.labelsandstickers",
+        "pk": 1,
+        "fields": {
+            "Quantity": 100,
+            "Two_By_Two": 100.0,
+            "Discount": 0.0,
+            "Three_By_Three": 110.0,
+            "Four_By_Four": 120.0
+        }
+    },
+    {
+        "model": "Marketing_Products.labelsandstickers",
+        "pk": 2,
+        "fields": {
+            "Quantity": 200,
+            "Two_By_Two": 200.0,
+            "Discount": 0.0,
+            "Three_By_Three": 210.0,
+            "Four_By_Four": 220.0
+        }
+    },
+    {
+        "model": "Marketing_Products.labelsandstickers",
+        "pk": 3,
+        "fields": {
+            "Quantity": 300,
+            "Two_By_Two": 300.0,
+            "Discount": 30.0,
+            "Three_By_Three": 310.0,
+            "Four_By_Four": 320.0
+        }
+    },
+    {
+        "model": "Marketing_Products.labelsandstickers",
+        "pk": 4,
+        "fields": {
+            "Quantity": 400,
+            "Two_By_Two": 400.0,
+            "Discount": 40.0,
+            "Three_By_Three": 410.0,
+            "Four_By_Four": 420.0
+        }
+    },
+    {
+        "model": "Marketing_Products.labelsandstickers",
+        "pk": 5,
+        "fields": {
+            "Quantity": 500,
+            "Two_By_Two": 500.0,
+            "Discount": 50.0,
+            "Three_By_Three": 510.0,
+            "Four_By_Four": 520.0
+        }
+    },
+    {
+        "model": "Marketing_Products.ncrforms",
+        "pk": 1,
+        "fields": {
+            "Quantity": 100,
+            "Five_By_Five_By_Eight_By_Five": 100.0,
+            "Discount": 10.0,
+            "Eight_By_Five_By_Eleven": 110.0
+        }
+    },
+    {
+        "model": "Marketing_Products.ncrforms",
+        "pk": 2,
+        "fields": {
+            "Quantity": 200,
+            "Five_By_Five_By_Eight_By_Five": 200.0,
+            "Discount": 20.0,
+            "Eight_By_Five_By_Eleven": 210.0
+        }
+    },
+    {
+        "model": "Marketing_Products.ncrforms",
+        "pk": 3,
+        "fields": {
+            "Quantity": 300,
+            "Five_By_Five_By_Eight_By_Five": 300.0,
+            "Discount": 30.0,
+            "Eight_By_Five_By_Eleven": 310.0
+        }
+    },
+    {
+        "model": "Marketing_Products.ncrforms",
+        "pk": 4,
+        "fields": {
+            "Quantity": 400,
+            "Five_By_Five_By_Eight_By_Five": 400.0,
+            "Discount": 40.0,
+            "Eight_By_Five_By_Eleven": 410.0
+        }
+    },
+    {
+        "model": "Marketing_Products.ncrforms",
+        "pk": 5,
+        "fields": {
+            "Quantity": 500,
+            "Five_By_Five_By_Eight_By_Five": 500.0,
+            "Discount": 50.0,
+            "Eight_By_Five_By_Eleven": 510.0
+        }
+    },
+    {
+        "model": "Marketing_Products.presentationfolders",
+        "pk": 1,
+        "fields": {
+            "Quantity": 10,
+            "Discount": 0.0,
+            "Template": "",
+            "Nine_By_Twelve_Fast": 100.0,
+            "Nine_By_Twelve_Offset": 90.0
+        }
+    },
+    {
+        "model": "Marketing_Products.presentationfolders",
+        "pk": 2,
+        "fields": {
+            "Quantity": 20,
+            "Discount": 0.0,
+            "Template": "",
+            "Nine_By_Twelve_Fast": 200.0,
+            "Nine_By_Twelve_Offset": 190.0
+        }
+    },
+    {
+        "model": "Marketing_Products.presentationfolders",
+        "pk": 3,
+        "fields": {
+            "Quantity": 30,
+            "Discount": 30.0,
+            "Template": "",
+            "Nine_By_Twelve_Fast": 300.0,
+            "Nine_By_Twelve_Offset": 290.0
+        }
+    },
+    {
+        "model": "Marketing_Products.presentationfolders",
+        "pk": 4,
+        "fields": {
+            "Quantity": 40,
+            "Discount": 40.0,
+            "Template": "",
+            "Nine_By_Twelve_Fast": 400.0,
+            "Nine_By_Twelve_Offset": 390.0
+        }
+    },
+    {
+        "model": "Marketing_Products.presentationfolders",
+        "pk": 5,
+        "fields": {
+            "Quantity": 50,
+            "Discount": 50.0,
+            "Template": "",
+            "Nine_By_Twelve_Fast": 500.0,
+            "Nine_By_Twelve_Offset": 490.0
+        }
+    },
+    {
+        "model": "Marketing_Products.customholidaycards",
+        "pk": 1,
+        "fields": {
+            "Quantity": 100,
+            "Folding_Card": 100.0,
+            "Discount": 0.0,
+            "Template": ""
+        }
+    },
+    {
+        "model": "Marketing_Products.customholidaycards",
+        "pk": 2,
+        "fields": {
+            "Quantity": 200,
+            "Folding_Card": 200.0,
+            "Discount": 0.0,
+            "Template": ""
+        }
+    },
+    {
+        "model": "Marketing_Products.customholidaycards",
+        "pk": 3,
+        "fields": {
+            "Quantity": 300,
+            "Folding_Card": 300.0,
+            "Discount": 30.0,
+            "Template": ""
+        }
+    },
+    {
+        "model": "Marketing_Products.customholidaycards",
+        "pk": 4,
+        "fields": {
+            "Quantity": 400,
+            "Folding_Card": 400.0,
+            "Discount": 40.0,
+            "Template": ""
+        }
+    },
+    {
+        "model": "Marketing_Products.customholidaycards",
+        "pk": 5,
+        "fields": {
+            "Quantity": 500,
+            "Folding_Card": 500.0,
+            "Discount": 50.0,
+            "Template": ""
         }
     },
     {
@@ -128,6 +541,96 @@
             "image1": "static/Product_Images/Marketing_Products/download_yhFVEQy.jpeg",
             "image2": "static/Product_Images/Marketing_Products/Holiday-Cards-NYC37.jpeg",
             "image3": "static/Product_Images/Marketing_Products/Holiday-Cards-NYC_opt.jpg"
+        }
+    },
+    {
+        "model": "Marketing_Products.extra_features",
+        "pk": 1,
+        "fields": {
+            "second_side_printing_price": 2.0,
+            "flat_price": 0.0,
+            "half_fold_price": 1.0,
+            "tri_fold_price": 2.0,
+            "z_fold_price": 3.0,
+            "double_parallel_fold_price": 4.0,
+            "individual_cut_labels_price": 0.4,
+            "three_part_form_price": 0.0,
+            "form_numbering_price": 0.0,
+            "paper_type": "100lb Text gloss",
+            "paper_type_price": 2.0,
+            "blank_envelope_price": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.extra_features",
+        "pk": 2,
+        "fields": {
+            "second_side_printing_price": 0.5,
+            "flat_price": 0.0,
+            "half_fold_price": 0.0,
+            "tri_fold_price": 0.0,
+            "z_fold_price": 0.0,
+            "double_parallel_fold_price": 0.0,
+            "individual_cut_labels_price": 0.0,
+            "three_part_form_price": 0.0,
+            "form_numbering_price": 0.0,
+            "paper_type": "16pt. (379 - GSM)  - Bright White",
+            "paper_type_price": 1.0,
+            "blank_envelope_price": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.extra_features",
+        "pk": 3,
+        "fields": {
+            "second_side_printing_price": 0.0,
+            "flat_price": 0.0,
+            "half_fold_price": 0.0,
+            "tri_fold_price": 0.0,
+            "z_fold_price": 0.0,
+            "double_parallel_fold_price": 0.0,
+            "individual_cut_labels_price": 0.0,
+            "three_part_form_price": 0.0,
+            "form_numbering_price": 0.0,
+            "paper_type": "16pt. Dull Coated Bright White",
+            "paper_type_price": 1.0,
+            "blank_envelope_price": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.extra_features",
+        "pk": 4,
+        "fields": {
+            "second_side_printing_price": 0.0,
+            "flat_price": 0.0,
+            "half_fold_price": 0.0,
+            "tri_fold_price": 0.0,
+            "z_fold_price": 0.0,
+            "double_parallel_fold_price": 0.0,
+            "individual_cut_labels_price": 0.0,
+            "three_part_form_price": 0.0,
+            "form_numbering_price": 0.0,
+            "paper_type": "14pt. Coated Finish Bright White",
+            "paper_type_price": 1.0,
+            "blank_envelope_price": 0.0
+        }
+    },
+    {
+        "model": "Marketing_Products.extra_features",
+        "pk": 5,
+        "fields": {
+            "second_side_printing_price": 0.0,
+            "flat_price": 0.0,
+            "half_fold_price": 0.0,
+            "tri_fold_price": 0.0,
+            "z_fold_price": 0.0,
+            "double_parallel_fold_price": 0.0,
+            "individual_cut_labels_price": 0.0,
+            "three_part_form_price": 0.0,
+            "form_numbering_price": 0.0,
+            "paper_type": "16pt. Coated Finish Bright White",
+            "paper_type_price": 3.0,
+            "blank_envelope_price": 0.0
         }
     }
 ]
