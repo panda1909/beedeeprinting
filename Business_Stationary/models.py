@@ -8,7 +8,9 @@ class Envelopes(models.Model):
     Nine_By_Twleve = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '9 x 12')
     A7 = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'A7 (5.25X7.25)')
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
-    Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
+    # Template1 = models.FileField(upload_to='', default='')
+    Template1 = models.FileField(upload_to='', default='')
+
     
     def __str__(self):
         return str(self.Quantity)
@@ -20,8 +22,10 @@ class LetterHeads(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Eight_By_Five_By_Eleven = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '8.5" x 11"')
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
-    Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
+    # Template = models.FileField(upload_to='static/Business_Stationary_Templates', max_length=256, blank=True)
+    Template1 = models.FileField(upload_to='', default='')
     
+
     def __str__(self):
         return str(self.Quantity)
 

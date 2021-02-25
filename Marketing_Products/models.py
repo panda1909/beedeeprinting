@@ -28,7 +28,7 @@ class BrochuresAndFlyers(models.Model):
 class PostCards(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Discount = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)])
-    Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+    Template1 = models.FileField(upload_to='', default='')
     Two_By_Eight = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], verbose_name='2" x 8" Cost')
     Three_By_Five = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], verbose_name='3" x 5" Cost')
     Three_By_Five_By_Five = models.FloatField(default=0, blank=True, editable=True, validators=[MinValueValidator(0.0)], verbose_name='3.5" x 5" Cost')
@@ -104,7 +104,7 @@ class NCRForms(models.Model):
 class PresentationFolders(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
-    Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+    Template1 = models.FileField(upload_to='', default='')
     Nine_By_Twelve_Fast = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '9" x 12" Fast - Digital Fast')
     Nine_By_Twelve_Offset = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '9" x 12" Offset Folders')
     
@@ -118,7 +118,7 @@ class CustomHolidayCards(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Folding_Card = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Folding card - closed size is 5" x 7"')
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Folding card - closed size is 5" x 7" Discounted')
-    Template = models.FileField(upload_to='static/Marketing_Products_Templates', max_length=256, blank=True)
+    Template1 = models.FileField(upload_to='',  default='')
 
     def __str__(self):
         return str(self.Quantity)

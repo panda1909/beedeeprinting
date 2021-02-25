@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title> Design Guide </title>
+{% endblock title %}
+
+{% block content %}
+
+<main class="main index">
+    <section class="header-page">
+        <div class="container">
+            <div class="row">
+                
+                <div class="breadcrumb-w col-sm-12">
+                    <span class="hidden-xs">You are here:</span>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <span>Design Guide</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="aboutus" class="pr-main">
+        <div class="container">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row products-grid category-product">
+                    <div class="top">
+                        {% for obj in obj %}
+                        <a href={{ obj.design.url }}> 
+                        <img style="width:50px; height:50px;" src="{% static 'images/pdf-icon.png' %}">
+                        {{ obj.label }} </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+</main>
+
+{% endblock content %}

@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from .views import BoxCheckout, Home, Aboutus, Cart, Business_card, All_products, Business_stationary, Large_format, Marketing_products, Packaging_products ,Checkout,  Order_placed, get_status, Contactus, BoxCheckout, Emptycart, Search
+from .views import BoxCheckout, Home, Aboutus, Cart, Business_card, All_products, Business_stationary, Large_format, Marketing_products, Packaging_products ,Checkout,  Order_placed, get_status, Contactus, BoxCheckout, Emptycart, Search, TermsOfService, PrivacyPolicy, DesignGuide
 
 
 urlpatterns = [
@@ -23,5 +23,10 @@ urlpatterns = [
      path('order',Order_placed, name='order' ),
      path('order-status',get_status, name='order_status'),
      path('contact-us',Contactus, name='contact-us'),
+     path('terms-of-service', TermsOfService, name='terms-of-service'),
+     path('privacy-policy', PrivacyPolicy, name='privacy-policy'),
+     path('design-guide', DesignGuide, name='design-guide'),
+
+
 
 ]

@@ -88,3 +88,13 @@ class Bookedcalls(models.Model):
         verbose_name = "4 - Clients Booked call"
         verbose_name_plural = "4 - Clients Booked call"
 
+class Designguide(models.Model):
+    label = models.CharField(max_length=256, blank=True, null=True)
+    design = models.FileField(upload_to='static/design_guide')
+
+    def __str__(self):
+        return self.label
+
+    class Meta:
+        verbose_name = "5 - Design Guide Template"
+        verbose_name_plural = "5 - Design Guide Templates"

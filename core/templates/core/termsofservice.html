@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title> Terms of Service </title>
+{% endblock title %}
+
+{% block content %}
+
+<!--Main index : End-->
+<main class="main index">
+    <section class="header-page">
+        <div class="container">
+            <div class="row">
+                
+                <div class="breadcrumb-w col-sm-12">
+                    <span class="hidden-xs">You are here:</span>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <span>Terms Of Sevice</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="aboutus" class="pr-main">
+        <div class="container">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="top">
+                    <h1>Website Terms and Conditions of Use</h1>
+                    <h2><strong>1. Terms</strong></h2>
+                <p>By accessing this Website, accessible from bd-printing.com, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
+                <br>
+                <h2><strong>2. Use License</strong></h2>
+                <p>Permission is granted to temporarily download one copy of the materials on bd-printing's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                <ul>
+                    <li>modify or copy the materials;</li>
+                    <li>use the materials for any commercial purpose or for any public display;</li>
+                    <li>attempt to reverse engineer any software contained on bd-printing's Website;</li>
+                    <li>remove any copyright or other proprietary notations from the materials; or</li>
+                    <li>transferring the materials to another person or "mirror" the materials on any other server.</li>
+                </ul>
+                <p>This will let bd-printing to terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format. </p>
+                <br>
+                <h2><strong>3. Disclaimer</strong></h2>
+                <p>All the materials on bd-printing’s Website are provided "as is". bd-printing makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, bd-printing does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website.</p>
+                <br>
+                <h2><strong>4. Limitations</strong></h2>
+                <p>bd-printing or its suppliers will not be hold accountable for any damages that will arise with the use or inability to use the materials on bd-printing’s Website, even if bd-printing or an authorize representative of this Website has been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on implied warranties or limitations of liability for incidental damages, these limitations may not apply to you.</p>
+                <br>
+                <h2><strong>5. Revisions and Errata</strong></h2>
+                <p>The materials appearing on bd-printing’s Website may include technical, typographical, or photographic errors. bd-printing will not promise that any of the materials in this Website are accurate, complete, or current. bd-printing may change the materials contained on its Website at any time without notice. bd-printing does not make any commitment to update the materials.</p>
+                <br>
+                <h2><strong>6. Links</strong></h2>
+                <p>bd-printing has not reviewed all of the sites linked to its Website and is not responsible for the contents of any such linked site. The presence of any link does not imply endorsement by bd-printing of the site. The use of any linked website is at the user’s own risk.</p>
+                <br>
+                <h2><strong>7. Site Terms of Use Modifications</strong></h2>
+                <p>bd-printing may revise these Terms of Use for its Website at any time without prior notice. By using this Website, you are agreeing to be bound by the current version of these Terms and Conditions of Use.</p>
+                <br>
+                <h2><strong>8. Your Privacy</strong></h2>
+                <p>Please read our<a href="{% url 'privacy-policy' %}"> Privacy Policy.</a></p>
+                <br>
+                <h2><strong>9. Governing Law</strong></h2>
+                <p>Any claim related to bd-printing's Website shall be governed by the laws of us without regards to its conflict of law provisions.</p>
+                </div>
+    </section>
+    
+</main>
+<!--Main index : End-->
+
+{% endblock content %}

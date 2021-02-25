@@ -43,7 +43,8 @@ class RetractableBanners(models.Model):
     Quantity = models.PositiveIntegerField(default=0, blank=False, editable=True)
     Thirty_Three_By_Eighty = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '33" x 80"')
     Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = '33" x 80" Discounted')
-    Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
+    # Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
+    Template1 = models.FileField(upload_to='', default='')
 
     def __str__(self):
         return str(self.Quantity)
@@ -70,7 +71,7 @@ class FloorStickers(models.Model):
    ThirtySix_By_FourtyEight = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='36" x 48" Rectangle Cost')
    Eighteen = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name='18" Circle Cost')
    Discount = models.FloatField(default=0, blank=False, editable=True, validators=[MinValueValidator(0.0)], verbose_name = 'Discount')
-   Template = models.FileField(upload_to='static/Large_Format_Printing_Templates', max_length=256, blank=True)
+   Template1 = models.FileField(upload_to='', default='')
 
    def __str__(self):
        return str(self.Quantity)

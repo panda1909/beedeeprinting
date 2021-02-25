@@ -1,0 +1,71 @@
+[{
+        "model": "Business_Cards.business_cards_price",
+        "pk": 6,
+        "fields": {
+            "quantity": 100,
+            "digital_Fast": 100.0,
+            "offset_HQ": 80.0,
+            "Discount": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.business_cards_price",
+        "pk": 7,
+        "fields": {
+            "quantity": 200,
+            "digital_Fast": 110.0,
+            "offset_HQ": 100.0,
+            "Discount": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.business_cards_price",
+        "pk": 8,
+        "fields": {
+            "quantity": 300,
+            "digital_Fast": 120.0,
+            "offset_HQ": 110.0,
+            "Discount": 0.0
+        }
+    },
+    {
+        "model": "Business_Cards.business_cards_price",
+        "pk": 9,
+        "fields": {
+            "quantity": 400,
+            "digital_Fast": 130.0,
+            "offset_HQ": 120.0,
+            "Discount": 5.0
+        }
+    },
+    {
+        "model": "Business_Cards.business_cards_price",
+        "pk": 10,
+        "fields": {
+            "quantity": 500,
+            "digital_Fast": 140.0,
+            "offset_HQ": 130.0,
+            "Discount": 10.0
+        }
+    },
+    {
+        "model": "Business_Cards.business_cards_price",
+        "pk": 11,
+        "fields": {
+            "quantity": 600,
+            "digital_Fast": 150.0,
+            "offset_HQ": 140.0,
+            "Discount": 15.0
+        }
+    },
+    {
+        "model": "Business_Cards.business_cards_price",
+        "pk": 12,
+        "fields": {
+            "quantity": 700,
+            "digital_Fast": 160.0,
+            "offset_HQ": 150.0,
+            "Discount": 20.0
+        }
+    }
+]

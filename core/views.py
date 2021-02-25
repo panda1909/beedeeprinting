@@ -11,7 +11,7 @@ from Marketing_Products.models import Products as mp_products
 from boxes.models import Products as b_products
 
 # order and customer table
-from .models import Orders, CustomerData
+from .models import Orders, CustomerData, Designguide
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.template import loader
@@ -67,10 +67,19 @@ def Search(request):
 def Emptycart(request):
     return render(request, 'core/emptycart.html')
 
+def TermsOfService(request):
+    return render(request, 'core/termsofservice.html')
+
+def PrivacyPolicy(request):
+    return render(request, 'core/privacypolicy.html')
 
 class Aboutus(TemplateView):
     def get(self, request):
         return render(request, 'core/aboutus.html')
+
+def DesignGuide(request):
+    obj = Designguide.objects.all()
+    return render(request, 'core/designguide.html', {'obj': obj})
 
 
 def Checkout(request):

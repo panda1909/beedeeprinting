@@ -81,7 +81,7 @@
 							</div>
 							<div class="th-hotline">
 								<i class="fa fa-phone"></i>
-								<span>1.866.614.8002</span>
+								<span>(213) 766-5911</span>
 							</div>
 						</div>
 					</div>
@@ -399,18 +399,22 @@
 								<img src="{% static 'images/footer-logo.png' %}" alt="logo footer">
 							</a>
 							<ul class="info">
-								<li>
+								{% comment %} <li>
 									<i class="fa fa-home"></i>
 									<span class="span1">102580 Santa Monica Los Angeles</span>
+								</li> {% endcomment %}
+								<li>
+									<i class="fa fa-phone"></i>
+									<span class="span1">(213) 766-5911</span>
 								</li>
 								<li>
 									<i class="fa fa-phone"></i>
-									<span class="span1">+3 045 224 33 12</span>
+									<span class="span1">(773) 334-5200</span>
 								</li>
 								<li>
 									<i class="fa fa-envelope-o"></i>
 									<span><a href="mailto:support@netbaseteam.net"
-											title="send mail to Cmsmart">Support@beedeePrinting.net</a></span>
+											title="send mail to Cmsmart">support@bd-printing.com</a></span>
 								</li>
 							</ul>
 							<ul class="footer-social">
@@ -437,23 +441,16 @@
 						<div class="footer-content">
 							<ul>
 								<li>
-									<a href="about-us.html" title="About us">About</a>
+									<a href="{% url 'aboutus' %}" title="About us">About</a>
+								</li>
+								
+								
+								
+								<li>
+									<a href="{% url 'terms-of-service' %}" title="Terms of Service">Terms of Service</a>
 								</li>
 								<li>
-									<a href="cart.html" title="Green">Green</a>
-								</li>
-								<li>
-									<a href="checkout.html" title="Afiliates">Afiliates</a>
-								</li>
-								<li>
-									<a href="contact.html" title="Non-profits and Government">Non-profits and
-										Government</a>
-								</li>
-								<li>
-									<a href=" #" title="Terms of Service">Terms of Service</a>
-								</li>
-								<li>
-									<a href="faq.html" title="Privacy Policy">Privacy Policy</a>
+									<a href="{% url 'privacy-policy' %}" title="Privacy Policy">Privacy Policy</a>
 								</li>
 							</ul>
 						</div>
@@ -463,16 +460,16 @@
 						<div class="footer-content">
 							<ul>
 								<li>
-									<a href="#" title="Design Guide">Design Guide</a>
+									<a href="{% url 'design-guide' %}" title="Design Guide">Design Guide</a>
 								</li>
-								<li>
-									<a href="faq.html" title="FAQ">FAQ</a>
+								<!--<li>
+									<a href="#" title="FAQ">FAQ</a>
 								</li>
 								<li>
 									<a href="#" title="Design Service">Design Services</a>
-								</li>
+								</li>-->
 								<li>
-									<a href="contact.html" title="Contact Us">Contact Us</a>
+									<a href="{% url 'contact-us' %}" title="Contact Us">Contact Us</a>
 								</li>
 							</ul>
 						</div>
@@ -481,7 +478,7 @@
 						<h2>Other Info</h2>
 						<div class="footer-content">
 							<p>
-								<strong>BeeDee Printing</strong> provides fast online printing for both homes and
+								<strong>BD Printing</strong> provides fast online printing for both homes and
 								businesses. We provide high
 								quality business cards, postcards, flyers, brochures, stationery and other premium
 								online print products.
@@ -495,10 +492,16 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-6">
 						<p class="copy-right">Central - Copyright ©
 							<script>document.write(new Date().getFullYear())</script> <a href="{% url 'home' %}"
-								title="Cmsmart - Magento theme">Bee Dee Printing</a>. All Rights Reserved
+								title="Cmsmart - Magento theme">BD Printing</a>. All Rights Reserved
+						</p>
+					</div>
+					<div class="col-md-6">
+						<p class="copy-right">Developed By
+							<a href="https://juggernauttech.herokuapp.com/">
+							Juggernaut Tech </a>
 						</p>
 						<a href="#" id="back-to-top">
 							<i class="fa fa-chevron-up"></i>
