@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	{% block title %}
-	<title>BeeDee Printing</title>
+	<title>BD Printing</title>
 	{% endblock title %}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes" />
 	<meta name="description" content="Printing template">
@@ -14,7 +14,7 @@
 	{% block extra_css %}
 
 	{% endblock extra_css %}
-
+	<link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
@@ -388,6 +388,7 @@
 
 	{% endblock content %}
 	<!--Footer : Begin-->
+	<hr style="border:1px solid #0C0032;" >
 	<footer>
 		<div class="footer-main">
 			<div class="container">
@@ -492,15 +493,9 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
-						<p class="copy-right">Central - Copyright ©
-							<script>document.write(new Date().getFullYear())</script> <a href="{% url 'home' %}"
-								title="Cmsmart - Magento theme">BD Printing</a>. All Rights Reserved
-						</p>
-					</div>
-					<div class="col-md-6">
-						<p class="copy-right">Developed By
-							<a href="https://juggernauttech.herokuapp.com/">
+					<div class="col-md-12">
+						<p class="copy-right" style="color:white">Developed By
+							<a style="color:white;" href="https://juggernauttech.herokuapp.com/" title="Pretty things lay ahead!">
 							Juggernaut Tech </a>
 						</p>
 						<a href="#" id="back-to-top">

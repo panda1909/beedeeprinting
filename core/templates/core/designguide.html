@@ -32,9 +32,15 @@
                 <div class="row products-grid category-product">
                     <div class="top">
                         {% for obj in obj %}
-                        <a href={{ obj.design.url }}> 
-                        <img style="width:50px; height:50px;" src="{% static 'images/pdf-icon.png' %}">
-                        {{ obj.label }} </a>
+                            <ul>
+                                <li class="pro-item col-md-4 col-sm-6 col-xs-12">
+                                    <div class="product-info">
+                                        <a href={{ obj.design.url }}> 
+                                        <img style="width:50px; height:50px;" src="{% static 'images/pdf-icon.png' %}">
+                                        {{ obj.label }} </a>
+                                    </div>
+                                </li>
+                            </ul>
                         {% endfor %}
                     </div>
                 </div>

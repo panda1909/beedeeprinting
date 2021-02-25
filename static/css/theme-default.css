@@ -1805,6 +1805,7 @@ section.trust-w {
     text-transform: uppercase;
     font-size: 12px;
 }
+
 .btn-book {
     border: 2px solid #0C0032;
     border-radius: 3px;
@@ -1816,6 +1817,7 @@ section.trust-w {
     font-size: 12px;
     margin-top: -23px;
 }
+
 .btn-book:hover {
     background: #3500D3;
     font-weight: 600;
@@ -2261,6 +2263,7 @@ section.home-make-print {
     min-height: 230px;
     background: #fff;
 }
+
 .w-print-book {
     text-align: center;
     border: 2px solid #0C0032;
@@ -2295,6 +2298,7 @@ section.home-make-print {
     -o-transition: all 0.3s ease-out 0s;
     margin-top: -53px;
 }
+
 .print-icon-book {
     display: inline-block;
     border-radius: 50%;
@@ -2313,6 +2317,7 @@ section.home-make-print {
     -o-transition: all 0.3s ease-out 0s;
     margin-top: -53px;
 }
+
 .print-block-left .print-icon:hover {
     border-color: #d55a51;
     transition: all 0.3s ease-out 0s;
@@ -4852,14 +4857,14 @@ footer {
 
 .footer-main {
     padding: 35px 0px;
-    background: #190061;
+    background: #fff;
     color: #666666;
 }
 
 .footer-main h2 {
     font-size: 16px;
     font-weight: normal;
-    color: #fff;
+    color: #0C0032;
     width: 100%;
     border-bottom: 1px solid #444;
     text-transform: uppercase;
@@ -4880,7 +4885,7 @@ footer {
 
 .footer-main a,
 .footer-main p {
-    color: #fff;
+    color: #000;
     font-size: 14px;
 }
 
@@ -4929,7 +4934,7 @@ footer {
 }
 
 .span1 {
-    color: #fff
+    color: #000
 }
 
 .footer-main .about-us .footer-social li i {
@@ -7445,12 +7450,14 @@ section.home-slidershow {
     color: #0C0032 !important;
     font-weight: 500 !important;
 }
+
 .bookacall {
     font-size: 16px !important;
     color: #fff !important;
     font-weight: 500 !important;
     margin-top: -23px !important;
 }
+
 
 /* .tooltip {
     position: relative;
@@ -7507,9 +7514,6 @@ section.home-slidershow {
     color: #fff;
 }
 
-.span:hover{
+.span:hover {
     background-color: red;
 }
-
-
-
