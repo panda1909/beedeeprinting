@@ -2,14 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/ihostingtest55/public_html/
-    - /bin/cp -R beedeeprinting $DEPLOYPATH
-    - /bin/cp -R boxes $DEPLOYPATH
-    - /bin/cp -R Business_Cards $DEPLOYPATH
-    - /bin/cp -R Business_Stationary $DEPLOYPATH
-    - /bin/cp -R core $DEPLOYPATH
-    - /bin/cp -R Large_format_Printing $DEPLOYPATH
-    - /bin/cp -R Marketing_Products $DEPLOYPATH
-    - /bin/cp -R Static $DEPLOYPATH
-    - /bin/cp -R staticfiles $DEPLOYPATH
-    - /bin/cp db.sqlite3 $DEPLOYPATH
-    - /bin/cp manage.py $DEPLOYPATH
+    - /bin/cp -r * $DEPLOYPATH
