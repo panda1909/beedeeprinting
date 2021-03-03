@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from phonenumber_field.modelfields import PhoneNumberField
 from .validators import validate_file_extension
+from jsonfield import JSONField
 
                           
 class Orders(models.Model):
@@ -32,7 +33,7 @@ class Orders(models.Model):
     Template = models.FileField(upload_to='static/Order_templates', blank=True ,max_length=256, validators=[validate_file_extension])
     Second_Template = models.FileField(upload_to='static/Order_templates', blank=True, max_length=256, validators=[validate_file_extension])
     Special_requests = models.CharField(max_length=5000, blank=True)
-    Extra_features = models.JSONField(default=dict)
+    Extra_features = JSONField(default=dict, null=True, blank=True)
 
     def __str__(self):
         return str((self.OrderId) + ' / ' + str(self.Product_name) + ' / ' + str(self.Customer))
