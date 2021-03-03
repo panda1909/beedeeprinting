@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/
+    - export DEPLOYPATH=/home2/ihostingtest55/public_html/
     - /bin/cp -R beedeeprinting $DEPLOYPATH
     - /bin/cp -R boxes $DEPLOYPATH
     - /bin/cp -R Business_Cards $DEPLOYPATH
