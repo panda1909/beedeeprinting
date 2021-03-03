@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import django_heroku
+# import django_heroku
 
 from pathlib import Path
 import os
@@ -27,7 +27,7 @@ SECRET_KEY = 'i5r&1uzex59xash772d$imx%q_e5p%o3y68*0mx5+nqt$sg3tw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 ROOT_URLCONF = 'beedeeprinting.urls'
 
@@ -145,7 +145,7 @@ EMAIL_HOST_PASSWORD = "mlrliyridouecwze"
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT = os.path.join(BASE_DIR, "stactic")
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
