@@ -27,7 +27,7 @@ SECRET_KEY = 'i5r&1uzex59xash772d$imx%q_e5p%o3y68*0mx5+nqt$sg3tw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'test.ihosting.pk']
 
 ROOT_URLCONF = 'beedeeprinting.urls'
 
@@ -90,14 +90,14 @@ WSGI_APPLICATION = 'beedeeprinting.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'dc3qh620e88krj', 
-        # 'USER': 'ffqjjqhwiyaffp', 
-        # 'PASSWORD': 'c324b8aa51380a4056dedeafbfe10a7ebcf9c9a7df8a1d2380d514a9ad4f4c96',
-        # 'HOST': 'ec2-54-172-17-119.compute-1.amazonaws.com', 
-        # 'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ihostingtest55_test', 
+        'USER': 'ihostingtest55_admin', 
+        'PASSWORD': 'ansy9kyjC+dF',
+        'HOST': 'localhost', 
+        'PORT': '3306',
     }
 }
 
