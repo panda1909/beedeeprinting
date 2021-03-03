@@ -145,7 +145,7 @@ EMAIL_HOST_PASSWORD = "mlrliyridouecwze"
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = 'home2/ihostingtest55/repositories/beedeeprintingv2/'
 # STATIC_ROOT = os.path.join(BASE_DIR, "stactic")
 
 # django_heroku.settings(locals())
